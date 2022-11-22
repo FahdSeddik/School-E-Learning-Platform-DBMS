@@ -41,41 +41,56 @@ function pwdMatch($pwd,$pwdRepeat){
 }
 
 function uidExists($conn,$username,$email){
-    $sql = "SELECT * FROM users WHERE usersUid = ? OR usersEmail = ?;";
+    $sql = "SELECT * FROM Student WHERE Username = 'fahdseddik' OR std_Email = 'fahdseddik@gmail.com';";
     // prevent sql injection
-    $stmt = mysqli_stmt_init($conn);
-    if (!mysqli_stmt_prepare($stmt,$sql)) {
-        header("location: ../signup.php?error=stmtfailed");
-        exit();
-    }
+    // $stmt = sqlsrv_stmt_init($conn);
+    // if (!sqlsrv_stmt_prepare($stmt,$sql)) {
+    //     header("location: ../signup.php?error=stmtfailed");
+    //     exit();
+    // }
 
-    mysqli_stmt_bind_param($stmt,"ss", $username,$email);
-    mysqli_stmt_execute($stmt);
-    $resultData = mysqli_stmt_get_result($stmt);
-    if($row = mysqli_fetch_assoc($resultData)){
+    // sqlsrv_stmt_bind_param($stmt,"ss", $username,$email);
+    // sqlsrv_stmt_execute($stmt);
+    // $resultData = sqlsrv_stmt_get_result($stmt);
+    // if($row = sqlsrv_fetch_assoc($resultData)){
+    //     return $row;
+    // }else{
+    //     $result = false;
+    //     return $result;
+    // }
+    // sqlsrv_stmt_close($stmt);
+
+    $stmt = sqlsrv_query($conn,$sql);
+    if($stmt===false){
+        echo 'Error in executing query';
+        die(print_r(sqlsrv_errors(),true));
+    }
+    if($row = sqlsrv_fetch_array($stmt)){
         return $row;
     }else{
         $result = false;
         return $result;
     }
-    mysqli_stmt_close($stmt);
+    sqlsrv_free_stmt($stmt);
+    sqlsrv_close($conn);
+
 }
 
 function createUser($conn, $name,$email,$username,$pwd){
     $sql = "INSERT INTO users (usersName,usersEmail,usersUid,usersPwd) VALUES (?,?,?,?);";
     // prevent sql injection
-    $stmt = mysqli_stmt_init($conn);
-    if (!mysqli_stmt_prepare($stmt,$sql)) {
+    $stmt = sqlsrv_stmt_init($conn);
+    if (!sqlsrv_stmt_prepare($stmt,$sql)) {
         header("location: ../signup.php?error=stmtfailed");
         exit();
     }
 
     // Hash Password for Security 
-    $hashedPwd = password_hash($pwd,PASSWORD_DEFAULT);
+    // $hashedPwd = password_hash($pwd,PASSWORD_DEFAULT);
 
-    mysqli_stmt_bind_param($stmt,"ssss", $name,$email,$username,$hashedPwd);
-    mysqli_stmt_execute($stmt);
-    mysqli_stmt_close($stmt);
+    sqlsrv_stmt_bind_param($stmt,"ssss", $name,$email,$username,$pwd);
+    sqlsrv_stmt_execute($stmt);
+    sqlsrv_stmt_close($stmt);
     header("location: ../signup.php?error=none");
     exit();
 
@@ -98,25 +113,28 @@ function loginUser($conn,$username,$pwd){
 
     // Error handler 
     if ($uidExists === false) {
+        echo 'error handler';
         header("location: ../login.php?error=wronglogin");
         exit();
     }
 
     // Associate array (column names)
-    $pwdHashed = $uidExists["usersPwd"];
-    $checkPwd = password_verify($pwd,$pwdHashed);
-
-    if($checkPwd === false){
+    // $pwdHashed = $uidExists["usersPwd"];
+    // $checkPwd = password_verify($pwd,$pwdHashed);
+    
+    if($uidExists["Password"] !== $pwd){
+        echo 'test';
         header("location: ../login.php?error=wronglogin");
         exit();
-    }else if ($checkPwd === true){
+    }else {
         // Allow session variables 
         session_start();
         // Super global session vars 
-        $_SESSION["usersid"] = $uidExists["usersId"];
-        $_SESSION["usersuid"] = $uidExists["usersUid"];
-        header("location: ../index.php");
-        exit();
+        $_SESSION["usersName"] = $uidExists["std_Name"];
+        $_SESSION["usersMobile"] = $uidExists["std_Mobile"];
+        // echo $_SESSION["usersName"];
+        header("location: ../StudentPortal/student.php");
+        // exit();
     }
 
 }

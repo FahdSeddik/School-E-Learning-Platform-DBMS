@@ -1,13 +1,12 @@
 <?php
 
-$serverName = "localhost";
-$dBUsername = "root";
-$dBPassword = "";
-$dBName = "schooldbproject";
-
-$conn = mysqli_connect($serverName,$dBUsername,$dBPassword,$dBName);
-
+// $dBUsername = "DESKTOP-BVFC9IT'\'fahds";
+// $dBPassword = "";
+// $dBName = "SchoolDBMS";
+$connectionInfo = array("UID"=>"","PWD"=>"","Database"=>"SchoolDBMS");
+$serverName = "DESKTOP-BVFC9IT";
+$conn = sqlsrv_connect($serverName,$connectionInfo);
 if (!$conn){
-    die("Connection failed: " . sqlsrv_connect_error());
+    die(print_r(sqlsrv_errors(), true));
 }
 
