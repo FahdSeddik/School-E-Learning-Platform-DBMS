@@ -41,7 +41,7 @@ function pwdMatch($pwd,$pwdRepeat){
 }
 
 function uidExists($conn,$username,$email){
-    $sql = "SELECT * FROM Student WHERE Username = 'fahdseddik' OR std_Email = 'fahdseddik@gmail.com';";
+    $sql = "SELECT * FROM Student WHERE Username = '".$username."' OR std_Email = '".$username."';";
     // prevent sql injection
     // $stmt = sqlsrv_stmt_init($conn);
     // if (!sqlsrv_stmt_prepare($stmt,$sql)) {
@@ -117,7 +117,6 @@ function loginUser($conn,$username,$pwd){
         header("location: ../login.php?error=wronglogin");
         exit();
     }
-
     // Associate array (column names)
     // $pwdHashed = $uidExists["usersPwd"];
     // $checkPwd = password_verify($pwd,$pwdHashed);
@@ -129,6 +128,16 @@ function loginUser($conn,$username,$pwd){
     }else {
         // Allow session variables 
         session_start();
+
+        //get courses
+        $sql = "SELECT COUNT(*)
+        FROM Student,Enrollment
+        Where (Username = '" . $username . "' or std_Email = '" . $username . "')
+        AND Student.std_ID=Enrollment.std_ID";
+        $stmt = sqlsrv_query($conn,$sql);
+        $_SESSION["class_count"] = sqlsrv_fetch_array($stmt);
+        $_SESSION["username"] = $username;
+        
         // Super global session vars 
         $_SESSION["usersName"] = $uidExists["std_Name"];
         $_SESSION["usersMobile"] = $uidExists["std_Mobile"];
