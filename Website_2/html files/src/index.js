@@ -60,7 +60,7 @@ let header = $(`<div class='flex flex-row'>
             <span>Settings</span>
 
         </a>
-        <a href="#"
+        <a href="./includes/logout.inc.php"
             class=' text-gray-400 text-sm flex items-center gap-x-4 cursor-pointer 
             hover:bg-slate-400 hover:text-gray-700 mx-4 mt-3 px-3 
             rounded-md'>
