@@ -14,14 +14,18 @@ namespace School_DB_System
     public partial class Application : Form
     {
         private ViewController ViewController;
+        private Controller Controller; //making controller object
         private UserControl MainPage;
         private UserControl SecondaryPage;
-        Controller controllerObj; //making controller object
+        bool drag;
+        Point StartPoint;
         public Application()// Default Constructor
         {
             InitializeComponent();//initiallize
-            controllerObj = new Controller();
-            ViewController = new ViewController(this);
+            Controller = new Controller();
+            ViewController = new ViewController(this,Controller);
+            drag = false;
+            StartPoint = new Point(0, 0);
         }
 
         //METHODS
@@ -31,26 +35,63 @@ namespace School_DB_System
         public void viewOnMainPage(UserControl Mainpage)
         {
             MainPage = Mainpage;
-            Main_Screen_Pnl.Controls.Clear();
-            Main_Screen_Pnl.Controls.Add(MainPage);
-            Secondary_Screen_Pnl.Hide();
-            Main_Screen_Pnl.Show();
+            MainScreen_Pnl.Controls.Clear();
+            MainScreen_Pnl.Controls.Add(MainPage);
+            SecondaryScreen_Pnl.Hide();
+            MainScreen_Pnl.Show();
         }
         public void viewOnSecondaryPage(UserControl Secondarypage)
         {
             SecondaryPage = Secondarypage;
-            Secondary_Screen_Pnl.Controls.Clear();
-            Secondary_Screen_Pnl.Controls.Add(SecondaryPage);
-            Main_Screen_Pnl.Hide();
-            Secondary_Screen_Pnl.Show();
+            SecondaryScreen_Pnl.Controls.Clear();
+            SecondaryScreen_Pnl.Controls.Add(SecondaryPage);
+            MainScreen_Pnl.Hide();
+            SecondaryScreen_Pnl.Show();
         }
+
 
         public void viewMainPage()
         {
-            Secondary_Screen_Pnl.Hide();
-            Main_Screen_Pnl.Show();
+            SecondaryScreen_Pnl.Hide();
+            MainScreen_Pnl.Show();
         }
 
+        private void Exit_Btn_Click(object sender, EventArgs e)
+        {
+            var result = RJMessageBox.Show("Your unsaved progress maybe lost.",
+             "Are you sure you want to exit?",
+             MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Controller.TerminateConnection();
+                this.Close();
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        public void Application_MouseDown(object sender, MouseEventArgs e)
+        {
+            drag = true;
+            StartPoint = new Point(e.X, e.Y);
+        }
+
+        public void Application_MouseMove(object sender, MouseEventArgs e)
+        {
+            if(drag)
+            {
+                Point NextLocation = PointToScreen(e.Location);
+                this.Location = new Point(NextLocation.X - StartPoint.X, NextLocation.Y - StartPoint.Y);
+            }
+        }
+
+        public void Application_MouseUp(object sender, MouseEventArgs e)
+        {
+            drag = false;
+        }
     }
 
 }

@@ -33,5 +33,25 @@ namespace School_DB_System
         {
             viewController.viewStaff();
         }
+
+        private void Trans_IBtn_Click(object sender, EventArgs e)
+        {
+            viewController.viewBus();
+        }
+
+        private void Reqs_IBtn_Click(object sender, EventArgs e)
+        {
+            viewController.viewRequest(1);
+        }
+
+        private void Stat_IBtn_Click(object sender, EventArgs e)
+        {
+            viewController.viewStatistics();
+        }
+
+        private void Subj_IBtn_Click(object sender, EventArgs e)
+        {
+            viewController.viewSubjects();
+        }
     }
 }

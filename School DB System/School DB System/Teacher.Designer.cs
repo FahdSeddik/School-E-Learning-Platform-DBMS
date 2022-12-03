@@ -51,6 +51,11 @@
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.Teach_DT = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.T_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.T_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.T_Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.T_Department = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Update_Pnl = new Guna.UI2.WinForms.Guna2Panel();
             this.Update_Submit_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.Update_S_Pnl = new Guna.UI2.WinForms.Guna2GradientPanel();
@@ -118,11 +123,6 @@
             this.View_Menu_Pnl = new Guna.UI2.WinForms.Guna2Panel();
             this.View_Back_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.View_Header_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.Select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.T_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.T_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.T_Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.T_Department = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Menu_Pnl.SuspendLayout();
             this.Filter_Pnl.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
@@ -488,9 +488,39 @@
             this.Teach_DT.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.Teach_DT.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // Select
+            // 
+            this.Select.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Select.Frozen = true;
+            this.Select.HeaderText = "";
+            this.Select.Name = "Select";
+            this.Select.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Select.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // T_ID
+            // 
+            this.T_ID.HeaderText = "ID";
+            this.T_ID.Name = "T_ID";
+            // 
+            // T_Name
+            // 
+            this.T_Name.HeaderText = "Name";
+            this.T_Name.Name = "T_Name";
+            // 
+            // T_Email
+            // 
+            this.T_Email.HeaderText = "Email";
+            this.T_Email.Name = "T_Email";
+            // 
+            // T_Department
+            // 
+            this.T_Department.HeaderText = "Department";
+            this.T_Department.Name = "T_Department";
+            // 
             // Update_Pnl
             // 
-            this.Update_Pnl.BorderThickness = 20;
+            this.Update_Pnl.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.Update_Pnl.BorderThickness = 3;
             this.Update_Pnl.Controls.Add(this.Update_Submit_Btn);
             this.Update_Pnl.Controls.Add(this.Update_S_Pnl);
             this.Update_Pnl.Controls.Add(this.Update_Menu_Pnl);
@@ -877,6 +907,8 @@
             // 
             // Add_Pnl
             // 
+            this.Add_Pnl.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.Add_Pnl.BorderThickness = 3;
             this.Add_Pnl.Controls.Add(this.Add_Submit_Btn);
             this.Add_Pnl.Controls.Add(this.Add_S_Pnl);
             this.Add_Pnl.Controls.Add(this.Add_Menu_Pnl);
@@ -1262,6 +1294,8 @@
             // 
             // ViewProf_Pnl
             // 
+            this.ViewProf_Pnl.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.ViewProf_Pnl.BorderThickness = 3;
             this.ViewProf_Pnl.Controls.Add(this.View_S_Pnl);
             this.ViewProf_Pnl.Controls.Add(this.View_Menu_Pnl);
             this.ViewProf_Pnl.Location = new System.Drawing.Point(72, 25);
@@ -1619,35 +1653,6 @@
             this.View_Header_Lbl.Size = new System.Drawing.Size(89, 39);
             this.View_Header_Lbl.TabIndex = 2;
             this.View_Header_Lbl.Text = "Profile";
-            // 
-            // Select
-            // 
-            this.Select.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Select.Frozen = true;
-            this.Select.HeaderText = "";
-            this.Select.Name = "Select";
-            this.Select.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Select.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // T_ID
-            // 
-            this.T_ID.HeaderText = "ID";
-            this.T_ID.Name = "T_ID";
-            // 
-            // T_Name
-            // 
-            this.T_Name.HeaderText = "Name";
-            this.T_Name.Name = "T_Name";
-            // 
-            // T_Email
-            // 
-            this.T_Email.HeaderText = "Email";
-            this.T_Email.Name = "T_Email";
-            // 
-            // T_Department
-            // 
-            this.T_Department.HeaderText = "Department";
-            this.T_Department.Name = "T_Department";
             // 
             // Teacher
             // 

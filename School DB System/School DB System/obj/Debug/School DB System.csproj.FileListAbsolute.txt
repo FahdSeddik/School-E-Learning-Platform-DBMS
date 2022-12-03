@@ -30,3 +30,40 @@ D:\Gaser\Univeristy\School DB System\School DB System\bin\Debug\Krypton.Toolkit.
 D:\Gaser\Univeristy\School DB System\School DB System\bin\Debug\Krypton.Toolkit.Suite.Extended.Tools.xml
 D:\Gaser\Univeristy\School DB System\School DB System\obj\Debug\School_DB_System.Teacher.resources
 D:\Gaser\Univeristy\School DB System\School DB System\obj\Debug\School_DB_System.Staff.resources
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\bin\Debug\School DB System.exe.config
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\bin\Debug\School DB System.exe
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\bin\Debug\School DB System.pdb
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\bin\Debug\Guna.UI2.dll
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\bin\Debug\Krypton.Toolkit.dll
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\bin\Debug\Krypton.Toolkit.Suite.Extended.Common.dll
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\bin\Debug\Krypton.Toolkit.Suite.Extended.Developer.Utilities.dll
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\bin\Debug\Krypton.Toolkit.Suite.Extended.Effects.dll
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\bin\Debug\Krypton.Toolkit.Suite.Extended.Tools.dll
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\bin\Debug\Krypton.Toolkit.xml
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\bin\Debug\Krypton.Toolkit.Suite.Extended.Common.xml
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\bin\Debug\Krypton.Toolkit.Suite.Extended.Developer.Utilities.xml
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\bin\Debug\Krypton.Toolkit.Suite.Extended.Effects.xml
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\bin\Debug\Krypton.Toolkit.Suite.Extended.Tools.xml
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School DB System.csproj.AssemblyReference.cache
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School DB System.csproj.SuggestedBindingRedirects.cache
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.Application.resources
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.HR.resources
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.LoginPage.resources
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.Properties.Resources.resources
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.HomePage.resources
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.Adminstrator.resources
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.Accountant.resources
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.Staff.resources
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.Student.resources
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.Teacher.resources
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School DB System.csproj.GenerateResource.cache
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School DB System.csproj.CoreCompileInputs.cache
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School DB System.csproj.CopyComplete
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School DB System.exe
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School DB System.pdb
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.Bus.resources
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.Requests.resources
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.Statistics.resources
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.Subject.resources
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.FormMessageBox.resources

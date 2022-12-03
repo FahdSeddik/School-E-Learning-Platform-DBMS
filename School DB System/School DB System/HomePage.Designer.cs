@@ -32,7 +32,6 @@
             this.HomePage_Pnl = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.profile_Pnl = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.Logout_Btn = new Guna.UI2.WinForms.Guna2Button();
-            this.Setting_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.Profile_DBtn = new Guna.UI2.WinForms.Guna2Button();
             this.Home_pnl = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.kryptonContextMenu1 = new Krypton.Toolkit.KryptonContextMenu();
@@ -68,14 +67,13 @@
             this.profile_Pnl.BackColor = System.Drawing.Color.Transparent;
             this.profile_Pnl.BorderRadius = 20;
             this.profile_Pnl.Controls.Add(this.Logout_Btn);
-            this.profile_Pnl.Controls.Add(this.Setting_Btn);
             this.profile_Pnl.Controls.Add(this.Profile_DBtn);
             this.profile_Pnl.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(142)))));
             this.profile_Pnl.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(142)))));
             this.profile_Pnl.ForeColor = System.Drawing.Color.Black;
             this.profile_Pnl.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.profile_Pnl.Location = new System.Drawing.Point(22, -43);
-            this.profile_Pnl.MaximumSize = new System.Drawing.Size(188, 190);
+            this.profile_Pnl.MaximumSize = new System.Drawing.Size(188, 138);
             this.profile_Pnl.MinimumSize = new System.Drawing.Size(188, 82);
             this.profile_Pnl.Name = "profile_Pnl";
             this.profile_Pnl.Size = new System.Drawing.Size(188, 82);
@@ -97,7 +95,7 @@
             this.Logout_Btn.Image = ((System.Drawing.Image)(resources.GetObject("Logout_Btn.Image")));
             this.Logout_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.Logout_Btn.ImageOffset = new System.Drawing.Point(15, 0);
-            this.Logout_Btn.Location = new System.Drawing.Point(0, 136);
+            this.Logout_Btn.Location = new System.Drawing.Point(0, 83);
             this.Logout_Btn.Margin = new System.Windows.Forms.Padding(0);
             this.Logout_Btn.Name = "Logout_Btn";
             this.Logout_Btn.Size = new System.Drawing.Size(188, 53);
@@ -105,29 +103,6 @@
             this.Logout_Btn.Text = "Logout";
             this.Logout_Btn.TextOffset = new System.Drawing.Point(15, 0);
             this.Logout_Btn.Click += new System.EventHandler(this.Logout_Btn_Click);
-            // 
-            // Setting_Btn
-            // 
-            this.Setting_Btn.BackColor = System.Drawing.Color.Transparent;
-            this.Setting_Btn.BorderRadius = 20;
-            this.Setting_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.Setting_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.Setting_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.Setting_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Setting_Btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Setting_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(142)))));
-            this.Setting_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Setting_Btn.ForeColor = System.Drawing.Color.White;
-            this.Setting_Btn.Image = ((System.Drawing.Image)(resources.GetObject("Setting_Btn.Image")));
-            this.Setting_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.Setting_Btn.ImageOffset = new System.Drawing.Point(15, 0);
-            this.Setting_Btn.Location = new System.Drawing.Point(0, 83);
-            this.Setting_Btn.Margin = new System.Windows.Forms.Padding(0);
-            this.Setting_Btn.Name = "Setting_Btn";
-            this.Setting_Btn.Size = new System.Drawing.Size(188, 53);
-            this.Setting_Btn.TabIndex = 1;
-            this.Setting_Btn.Text = "Setting";
-            this.Setting_Btn.TextOffset = new System.Drawing.Point(15, 0);
             // 
             // Profile_DBtn
             // 
@@ -244,7 +219,6 @@
         private Krypton.Toolkit.KryptonContextMenuItem kryptonContextMenuItem1;
         private Krypton.Toolkit.KryptonContextMenuItem kryptonContextMenuItem2;
         private Guna.UI2.WinForms.Guna2Button Logout_Btn;
-        private Guna.UI2.WinForms.Guna2Button Setting_Btn;
         private Guna.UI2.WinForms.Guna2Button Profile_DBtn;
     }
 }

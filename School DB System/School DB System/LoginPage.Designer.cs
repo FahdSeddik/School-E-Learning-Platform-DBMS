@@ -57,6 +57,9 @@
             this.LoginPage_Pnl.Size = new System.Drawing.Size(1000, 600);
             this.LoginPage_Pnl.TabIndex = 0;
             this.LoginPage_Pnl.UseTransparentBackground = true;
+            this.LoginPage_Pnl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LoginPage_Pnl_MouseDown);
+            this.LoginPage_Pnl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LoginPage_Pnl_MouseMove);
+            this.LoginPage_Pnl.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LoginPage_Pnl_MouseUp);
             // 
             // Login_Pnl
             // 
@@ -143,11 +146,12 @@
             this.Password_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Password_Txt.Location = new System.Drawing.Point(35, 280);
             this.Password_Txt.Name = "Password_Txt";
-            this.Password_Txt.PasswordChar = '\0';
+            this.Password_Txt.PasswordChar = '●';
             this.Password_Txt.PlaceholderText = "Type your password";
             this.Password_Txt.SelectedText = "";
             this.Password_Txt.Size = new System.Drawing.Size(360, 49);
             this.Password_Txt.TabIndex = 5;
+            this.Password_Txt.UseSystemPasswordChar = true;
             // 
             // Password_Lbl
             // 

@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Student));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Menu_Pnl = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.ViewProf_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.Update_Btn = new Guna.UI2.WinForms.Guna2Button();
@@ -83,22 +83,14 @@
             this.Update_Pnl = new Guna.UI2.WinForms.Guna2Panel();
             this.Update_Submit_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.Update_S_Pnl = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.Update_P_SSN_Txt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Update_Photo_Btn = new Guna.UI2.WinForms.Guna2Button();
-            this.Update_ProfPic_Picture = new Krypton.Toolkit.Suite.Extended.Common.CommonCircularPictureBox();
             this.Update_Grade_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.Update_Grade_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.Update_Dep_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.Update_Dep_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Update_Nationality_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.Update_Nationality_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Update_Phone_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.Update_Adress_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.Update_S_SSN_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.Update_S_ID_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.Update_Email_Txt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Update_LName_Txt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Update_Stud_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Update_FName_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.Update_Menu_Pnl = new Guna.UI2.WinForms.Guna2Panel();
             this.Update_Back_Btn = new Guna.UI2.WinForms.Guna2Button();
@@ -124,6 +116,25 @@
             this.View_Menu_Pnl = new Guna.UI2.WinForms.Guna2Panel();
             this.View_Back_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.View_Header_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel14 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel15 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel16 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox5 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2HtmlLabel17 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Menu_Pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Stud_DT)).BeginInit();
             this.Filter_Pnl.SuspendLayout();
@@ -136,7 +147,6 @@
             this.Add_Menu_Pnl.SuspendLayout();
             this.Update_Pnl.SuspendLayout();
             this.Update_S_Pnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Update_ProfPic_Picture)).BeginInit();
             this.Update_Menu_Pnl.SuspendLayout();
             this.ViewProf_Pnl.SuspendLayout();
             this.View_S_Pnl.SuspendLayout();
@@ -273,21 +283,21 @@
             // Stud_DT
             // 
             this.Stud_DT.AllowUserToResizeRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.Stud_DT.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.Stud_DT.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.Stud_DT.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Stud_DT.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Stud_DT.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.Stud_DT.ColumnHeadersHeight = 30;
             this.Stud_DT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.Stud_DT.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -297,28 +307,28 @@
             this.S_Email,
             this.S_Grade,
             this.S_Department});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Stud_DT.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Stud_DT.DefaultCellStyle = dataGridViewCellStyle3;
             this.Stud_DT.Dock = System.Windows.Forms.DockStyle.Right;
             this.Stud_DT.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.Stud_DT.Location = new System.Drawing.Point(216, 48);
             this.Stud_DT.Margin = new System.Windows.Forms.Padding(0);
             this.Stud_DT.Name = "Stud_DT";
             this.Stud_DT.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Stud_DT.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Stud_DT.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.Stud_DT.RowHeadersVisible = false;
             this.Stud_DT.Size = new System.Drawing.Size(784, 552);
             this.Stud_DT.TabIndex = 8;
@@ -526,6 +536,8 @@
             // 
             // Add_Pnl
             // 
+            this.Add_Pnl.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.Add_Pnl.BorderThickness = 3;
             this.Add_Pnl.Controls.Add(this.Add_Submit_Btn);
             this.Add_Pnl.Controls.Add(this.Add_S_Pnl);
             this.Add_Pnl.Controls.Add(this.Add_Menu_Pnl);
@@ -911,7 +923,9 @@
             // 
             // Update_Pnl
             // 
-            this.Update_Pnl.BorderThickness = 20;
+            this.Update_Pnl.BackColor = System.Drawing.SystemColors.Control;
+            this.Update_Pnl.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.Update_Pnl.BorderThickness = 3;
             this.Update_Pnl.Controls.Add(this.Update_Submit_Btn);
             this.Update_Pnl.Controls.Add(this.Update_S_Pnl);
             this.Update_Pnl.Controls.Add(this.Update_Menu_Pnl);
@@ -941,77 +955,38 @@
             // 
             this.Update_S_Pnl.AutoScroll = true;
             this.Update_S_Pnl.BackColor = System.Drawing.Color.White;
-            this.Update_S_Pnl.Controls.Add(this.Update_P_SSN_Txt);
-            this.Update_S_Pnl.Controls.Add(this.Update_Photo_Btn);
-            this.Update_S_Pnl.Controls.Add(this.Update_ProfPic_Picture);
+            this.Update_S_Pnl.Controls.Add(this.guna2HtmlLabel14);
+            this.Update_S_Pnl.Controls.Add(this.guna2HtmlLabel15);
+            this.Update_S_Pnl.Controls.Add(this.guna2HtmlLabel16);
+            this.Update_S_Pnl.Controls.Add(this.guna2TextBox2);
+            this.Update_S_Pnl.Controls.Add(this.guna2TextBox3);
+            this.Update_S_Pnl.Controls.Add(this.guna2TextBox4);
+            this.Update_S_Pnl.Controls.Add(this.guna2HtmlLabel4);
+            this.Update_S_Pnl.Controls.Add(this.guna2HtmlLabel11);
+            this.Update_S_Pnl.Controls.Add(this.guna2HtmlLabel10);
+            this.Update_S_Pnl.Controls.Add(this.guna2HtmlLabel17);
+            this.Update_S_Pnl.Controls.Add(this.guna2HtmlLabel9);
+            this.Update_S_Pnl.Controls.Add(this.guna2HtmlLabel7);
+            this.Update_S_Pnl.Controls.Add(this.guna2HtmlLabel8);
+            this.Update_S_Pnl.Controls.Add(this.guna2HtmlLabel6);
+            this.Update_S_Pnl.Controls.Add(this.guna2HtmlLabel13);
+            this.Update_S_Pnl.Controls.Add(this.guna2HtmlLabel5);
             this.Update_S_Pnl.Controls.Add(this.Update_Grade_CBox);
+            this.Update_S_Pnl.Controls.Add(this.guna2HtmlLabel12);
             this.Update_S_Pnl.Controls.Add(this.Update_Grade_Lbl);
-            this.Update_S_Pnl.Controls.Add(this.Update_Dep_CBox);
-            this.Update_S_Pnl.Controls.Add(this.Update_Dep_Lbl);
             this.Update_S_Pnl.Controls.Add(this.Update_Nationality_CBox);
-            this.Update_S_Pnl.Controls.Add(this.Update_Nationality_Lbl);
             this.Update_S_Pnl.Controls.Add(this.Update_Phone_Txt);
             this.Update_S_Pnl.Controls.Add(this.Update_Adress_Txt);
             this.Update_S_Pnl.Controls.Add(this.Update_S_SSN_Txt);
             this.Update_S_Pnl.Controls.Add(this.Update_S_ID_Txt);
+            this.Update_S_Pnl.Controls.Add(this.guna2TextBox5);
             this.Update_S_Pnl.Controls.Add(this.Update_Email_Txt);
-            this.Update_S_Pnl.Controls.Add(this.Update_LName_Txt);
-            this.Update_S_Pnl.Controls.Add(this.Update_Stud_Lbl);
+            this.Update_S_Pnl.Controls.Add(this.guna2TextBox1);
             this.Update_S_Pnl.Controls.Add(this.Update_FName_Txt);
             this.Update_S_Pnl.Location = new System.Drawing.Point(28, 69);
             this.Update_S_Pnl.Name = "Update_S_Pnl";
             this.Update_S_Pnl.Size = new System.Drawing.Size(822, 418);
             this.Update_S_Pnl.TabIndex = 3;
-            // 
-            // Update_P_SSN_Txt
-            // 
-            this.Update_P_SSN_Txt.BorderColor = System.Drawing.Color.Gray;
-            this.Update_P_SSN_Txt.BorderRadius = 3;
-            this.Update_P_SSN_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Update_P_SSN_Txt.DefaultText = "";
-            this.Update_P_SSN_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Update_P_SSN_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Update_P_SSN_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Update_P_SSN_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Update_P_SSN_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Update_P_SSN_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Update_P_SSN_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Update_P_SSN_Txt.Location = new System.Drawing.Point(119, 197);
-            this.Update_P_SSN_Txt.Name = "Update_P_SSN_Txt";
-            this.Update_P_SSN_Txt.PasswordChar = '\0';
-            this.Update_P_SSN_Txt.PlaceholderText = "Parent SSN";
-            this.Update_P_SSN_Txt.SelectedText = "";
-            this.Update_P_SSN_Txt.Size = new System.Drawing.Size(422, 31);
-            this.Update_P_SSN_Txt.TabIndex = 25;
-            // 
-            // Update_Photo_Btn
-            // 
-            this.Update_Photo_Btn.BorderColor = System.Drawing.Color.Gray;
-            this.Update_Photo_Btn.BorderRadius = 3;
-            this.Update_Photo_Btn.BorderThickness = 1;
-            this.Update_Photo_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.Update_Photo_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.Update_Photo_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.Update_Photo_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Update_Photo_Btn.FillColor = System.Drawing.Color.Transparent;
-            this.Update_Photo_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.Update_Photo_Btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.Update_Photo_Btn.Location = new System.Drawing.Point(611, 203);
-            this.Update_Photo_Btn.Name = "Update_Photo_Btn";
-            this.Update_Photo_Btn.Size = new System.Drawing.Size(180, 36);
-            this.Update_Photo_Btn.TabIndex = 24;
-            this.Update_Photo_Btn.Text = "Upload Photo";
-            // 
-            // Update_ProfPic_Picture
-            // 
-            this.Update_ProfPic_Picture.BackColor = System.Drawing.SystemColors.Control;
-            this.Update_ProfPic_Picture.Image = ((System.Drawing.Image)(resources.GetObject("Update_ProfPic_Picture.Image")));
-            this.Update_ProfPic_Picture.Location = new System.Drawing.Point(611, 23);
-            this.Update_ProfPic_Picture.Name = "Update_ProfPic_Picture";
-            this.Update_ProfPic_Picture.Size = new System.Drawing.Size(168, 163);
-            this.Update_ProfPic_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Update_ProfPic_Picture.TabIndex = 23;
-            this.Update_ProfPic_Picture.TabStop = false;
             // 
             // Update_Grade_CBox
             // 
@@ -1025,9 +1000,9 @@
             this.Update_Grade_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.Update_Grade_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.Update_Grade_CBox.ItemHeight = 30;
-            this.Update_Grade_CBox.Location = new System.Drawing.Point(116, 353);
+            this.Update_Grade_CBox.Location = new System.Drawing.Point(112, 168);
             this.Update_Grade_CBox.Name = "Update_Grade_CBox";
-            this.Update_Grade_CBox.Size = new System.Drawing.Size(425, 36);
+            this.Update_Grade_CBox.Size = new System.Drawing.Size(303, 36);
             this.Update_Grade_CBox.TabIndex = 22;
             // 
             // Update_Grade_Lbl
@@ -1035,39 +1010,11 @@
             this.Update_Grade_Lbl.BackColor = System.Drawing.Color.Transparent;
             this.Update_Grade_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Update_Grade_Lbl.ForeColor = System.Drawing.Color.Gray;
-            this.Update_Grade_Lbl.Location = new System.Drawing.Point(16, 362);
+            this.Update_Grade_Lbl.Location = new System.Drawing.Point(17, 45);
             this.Update_Grade_Lbl.Name = "Update_Grade_Lbl";
             this.Update_Grade_Lbl.Size = new System.Drawing.Size(34, 15);
             this.Update_Grade_Lbl.TabIndex = 21;
-            this.Update_Grade_Lbl.Text = "Grade";
-            // 
-            // Update_Dep_CBox
-            // 
-            this.Update_Dep_CBox.BackColor = System.Drawing.Color.Transparent;
-            this.Update_Dep_CBox.BorderColor = System.Drawing.Color.Gray;
-            this.Update_Dep_CBox.BorderRadius = 3;
-            this.Update_Dep_CBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.Update_Dep_CBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Update_Dep_CBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Update_Dep_CBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Update_Dep_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.Update_Dep_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.Update_Dep_CBox.ItemHeight = 30;
-            this.Update_Dep_CBox.Location = new System.Drawing.Point(116, 298);
-            this.Update_Dep_CBox.Name = "Update_Dep_CBox";
-            this.Update_Dep_CBox.Size = new System.Drawing.Size(425, 36);
-            this.Update_Dep_CBox.TabIndex = 20;
-            // 
-            // Update_Dep_Lbl
-            // 
-            this.Update_Dep_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.Update_Dep_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Update_Dep_Lbl.ForeColor = System.Drawing.Color.Gray;
-            this.Update_Dep_Lbl.Location = new System.Drawing.Point(16, 307);
-            this.Update_Dep_Lbl.Name = "Update_Dep_Lbl";
-            this.Update_Dep_Lbl.Size = new System.Drawing.Size(65, 15);
-            this.Update_Dep_Lbl.TabIndex = 19;
-            this.Update_Dep_Lbl.Text = "Department";
+            this.Update_Grade_Lbl.Text = "Name";
             // 
             // Update_Nationality_CBox
             // 
@@ -1081,21 +1028,10 @@
             this.Update_Nationality_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.Update_Nationality_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.Update_Nationality_CBox.ItemHeight = 30;
-            this.Update_Nationality_CBox.Location = new System.Drawing.Point(116, 244);
+            this.Update_Nationality_CBox.Location = new System.Drawing.Point(499, 166);
             this.Update_Nationality_CBox.Name = "Update_Nationality_CBox";
-            this.Update_Nationality_CBox.Size = new System.Drawing.Size(425, 36);
+            this.Update_Nationality_CBox.Size = new System.Drawing.Size(292, 36);
             this.Update_Nationality_CBox.TabIndex = 18;
-            // 
-            // Update_Nationality_Lbl
-            // 
-            this.Update_Nationality_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.Update_Nationality_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Update_Nationality_Lbl.ForeColor = System.Drawing.Color.Gray;
-            this.Update_Nationality_Lbl.Location = new System.Drawing.Point(16, 253);
-            this.Update_Nationality_Lbl.Name = "Update_Nationality_Lbl";
-            this.Update_Nationality_Lbl.Size = new System.Drawing.Size(61, 15);
-            this.Update_Nationality_Lbl.TabIndex = 17;
-            this.Update_Nationality_Lbl.Text = "Nationality";
             // 
             // Update_Phone_Txt
             // 
@@ -1110,12 +1046,12 @@
             this.Update_Phone_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Update_Phone_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Update_Phone_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Update_Phone_Txt.Location = new System.Drawing.Point(341, 155);
+            this.Update_Phone_Txt.Location = new System.Drawing.Point(114, 124);
             this.Update_Phone_Txt.Name = "Update_Phone_Txt";
             this.Update_Phone_Txt.PasswordChar = '\0';
             this.Update_Phone_Txt.PlaceholderText = "Phone Number";
             this.Update_Phone_Txt.SelectedText = "";
-            this.Update_Phone_Txt.Size = new System.Drawing.Size(200, 31);
+            this.Update_Phone_Txt.Size = new System.Drawing.Size(303, 31);
             this.Update_Phone_Txt.TabIndex = 16;
             // 
             // Update_Adress_Txt
@@ -1131,12 +1067,12 @@
             this.Update_Adress_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Update_Adress_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Update_Adress_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Update_Adress_Txt.Location = new System.Drawing.Point(119, 155);
+            this.Update_Adress_Txt.Location = new System.Drawing.Point(499, 124);
             this.Update_Adress_Txt.Name = "Update_Adress_Txt";
             this.Update_Adress_Txt.PasswordChar = '\0';
             this.Update_Adress_Txt.PlaceholderText = "Student Adress";
             this.Update_Adress_Txt.SelectedText = "";
-            this.Update_Adress_Txt.Size = new System.Drawing.Size(200, 31);
+            this.Update_Adress_Txt.Size = new System.Drawing.Size(294, 31);
             this.Update_Adress_Txt.TabIndex = 15;
             // 
             // Update_S_SSN_Txt
@@ -1152,12 +1088,12 @@
             this.Update_S_SSN_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Update_S_SSN_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Update_S_SSN_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Update_S_SSN_Txt.Location = new System.Drawing.Point(339, 109);
+            this.Update_S_SSN_Txt.Location = new System.Drawing.Point(499, 83);
             this.Update_S_SSN_Txt.Name = "Update_S_SSN_Txt";
             this.Update_S_SSN_Txt.PasswordChar = '\0';
             this.Update_S_SSN_Txt.PlaceholderText = "Student SSN";
             this.Update_S_SSN_Txt.SelectedText = "";
-            this.Update_S_SSN_Txt.Size = new System.Drawing.Size(200, 31);
+            this.Update_S_SSN_Txt.Size = new System.Drawing.Size(294, 31);
             this.Update_S_SSN_Txt.TabIndex = 14;
             // 
             // Update_S_ID_Txt
@@ -1173,12 +1109,12 @@
             this.Update_S_ID_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Update_S_ID_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Update_S_ID_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Update_S_ID_Txt.Location = new System.Drawing.Point(119, 109);
+            this.Update_S_ID_Txt.Location = new System.Drawing.Point(114, 87);
             this.Update_S_ID_Txt.Name = "Update_S_ID_Txt";
             this.Update_S_ID_Txt.PasswordChar = '\0';
             this.Update_S_ID_Txt.PlaceholderText = "Student ID";
             this.Update_S_ID_Txt.SelectedText = "";
-            this.Update_S_ID_Txt.Size = new System.Drawing.Size(200, 31);
+            this.Update_S_ID_Txt.Size = new System.Drawing.Size(303, 31);
             this.Update_S_ID_Txt.TabIndex = 13;
             // 
             // Update_Email_Txt
@@ -1194,45 +1130,13 @@
             this.Update_Email_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Update_Email_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Update_Email_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Update_Email_Txt.Location = new System.Drawing.Point(119, 69);
+            this.Update_Email_Txt.Location = new System.Drawing.Point(497, 41);
             this.Update_Email_Txt.Name = "Update_Email_Txt";
             this.Update_Email_Txt.PasswordChar = '\0';
             this.Update_Email_Txt.PlaceholderText = "Email Adress";
             this.Update_Email_Txt.SelectedText = "";
-            this.Update_Email_Txt.Size = new System.Drawing.Size(420, 31);
+            this.Update_Email_Txt.Size = new System.Drawing.Size(294, 31);
             this.Update_Email_Txt.TabIndex = 9;
-            // 
-            // Update_LName_Txt
-            // 
-            this.Update_LName_Txt.BorderColor = System.Drawing.Color.Gray;
-            this.Update_LName_Txt.BorderRadius = 3;
-            this.Update_LName_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Update_LName_Txt.DefaultText = "";
-            this.Update_LName_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Update_LName_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Update_LName_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Update_LName_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Update_LName_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Update_LName_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Update_LName_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Update_LName_Txt.Location = new System.Drawing.Point(339, 24);
-            this.Update_LName_Txt.Name = "Update_LName_Txt";
-            this.Update_LName_Txt.PasswordChar = '\0';
-            this.Update_LName_Txt.PlaceholderText = "Last Name";
-            this.Update_LName_Txt.SelectedText = "";
-            this.Update_LName_Txt.Size = new System.Drawing.Size(200, 31);
-            this.Update_LName_Txt.TabIndex = 3;
-            // 
-            // Update_Stud_Lbl
-            // 
-            this.Update_Stud_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.Update_Stud_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Update_Stud_Lbl.ForeColor = System.Drawing.Color.Gray;
-            this.Update_Stud_Lbl.Location = new System.Drawing.Point(17, 29);
-            this.Update_Stud_Lbl.Name = "Update_Stud_Lbl";
-            this.Update_Stud_Lbl.Size = new System.Drawing.Size(44, 15);
-            this.Update_Stud_Lbl.TabIndex = 2;
-            this.Update_Stud_Lbl.Text = "Student";
             // 
             // Update_FName_Txt
             // 
@@ -1247,12 +1151,12 @@
             this.Update_FName_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Update_FName_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Update_FName_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Update_FName_Txt.Location = new System.Drawing.Point(119, 23);
+            this.Update_FName_Txt.Location = new System.Drawing.Point(114, 45);
             this.Update_FName_Txt.Name = "Update_FName_Txt";
             this.Update_FName_Txt.PasswordChar = '\0';
-            this.Update_FName_Txt.PlaceholderText = "First Name";
+            this.Update_FName_Txt.PlaceholderText = "Name";
             this.Update_FName_Txt.SelectedText = "";
-            this.Update_FName_Txt.Size = new System.Drawing.Size(200, 31);
+            this.Update_FName_Txt.Size = new System.Drawing.Size(303, 31);
             this.Update_FName_Txt.TabIndex = 1;
             // 
             // Update_Menu_Pnl
@@ -1298,6 +1202,8 @@
             // 
             // ViewProf_Pnl
             // 
+            this.ViewProf_Pnl.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.ViewProf_Pnl.BorderThickness = 3;
             this.ViewProf_Pnl.Controls.Add(this.View_S_Pnl);
             this.ViewProf_Pnl.Controls.Add(this.View_Menu_Pnl);
             this.ViewProf_Pnl.Location = new System.Drawing.Point(72, 25);
@@ -1656,6 +1562,265 @@
             this.View_Header_Lbl.TabIndex = 2;
             this.View_Header_Lbl.Text = "Profile";
             // 
+            // guna2HtmlLabel5
+            // 
+            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(8, 216);
+            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(53, 23);
+            this.guna2HtmlLabel5.TabIndex = 32;
+            this.guna2HtmlLabel5.Text = "Parent";
+            // 
+            // guna2HtmlLabel6
+            // 
+            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel6.ForeColor = System.Drawing.Color.Gray;
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(17, 87);
+            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(14, 15);
+            this.guna2HtmlLabel6.TabIndex = 33;
+            this.guna2HtmlLabel6.Text = "ID";
+            // 
+            // guna2HtmlLabel7
+            // 
+            this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel7.ForeColor = System.Drawing.Color.Gray;
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(17, 168);
+            this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
+            this.guna2HtmlLabel7.Size = new System.Drawing.Size(61, 15);
+            this.guna2HtmlLabel7.TabIndex = 35;
+            this.guna2HtmlLabel7.Text = "Nationality";
+            // 
+            // guna2HtmlLabel8
+            // 
+            this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel8.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel8.ForeColor = System.Drawing.Color.Gray;
+            this.guna2HtmlLabel8.Location = new System.Drawing.Point(17, 124);
+            this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
+            this.guna2HtmlLabel8.Size = new System.Drawing.Size(83, 15);
+            this.guna2HtmlLabel8.TabIndex = 34;
+            this.guna2HtmlLabel8.Text = "Phone Number";
+            // 
+            // guna2HtmlLabel9
+            // 
+            this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel9.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel9.ForeColor = System.Drawing.Color.Gray;
+            this.guna2HtmlLabel9.Location = new System.Drawing.Point(443, 41);
+            this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
+            this.guna2HtmlLabel9.Size = new System.Drawing.Size(31, 15);
+            this.guna2HtmlLabel9.TabIndex = 36;
+            this.guna2HtmlLabel9.Text = "Email";
+            // 
+            // guna2HtmlLabel10
+            // 
+            this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel10.ForeColor = System.Drawing.Color.Gray;
+            this.guna2HtmlLabel10.Location = new System.Drawing.Point(444, 83);
+            this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
+            this.guna2HtmlLabel10.Size = new System.Drawing.Size(24, 15);
+            this.guna2HtmlLabel10.TabIndex = 37;
+            this.guna2HtmlLabel10.Text = "SSN";
+            // 
+            // guna2HtmlLabel4
+            // 
+            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.Gray;
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(444, 166);
+            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(25, 15);
+            this.guna2HtmlLabel4.TabIndex = 39;
+            this.guna2HtmlLabel4.Text = "year";
+            // 
+            // guna2HtmlLabel11
+            // 
+            this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel11.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel11.ForeColor = System.Drawing.Color.Gray;
+            this.guna2HtmlLabel11.Location = new System.Drawing.Point(444, 123);
+            this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
+            this.guna2HtmlLabel11.Size = new System.Drawing.Size(38, 15);
+            this.guna2HtmlLabel11.TabIndex = 38;
+            this.guna2HtmlLabel11.Text = "Adress";
+            // 
+            // guna2TextBox1
+            // 
+            this.guna2TextBox1.BorderColor = System.Drawing.Color.Gray;
+            this.guna2TextBox1.BorderRadius = 3;
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox1.DefaultText = "";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Location = new System.Drawing.Point(113, 261);
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.PasswordChar = '\0';
+            this.guna2TextBox1.PlaceholderText = "Name";
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.Size = new System.Drawing.Size(303, 31);
+            this.guna2TextBox1.TabIndex = 1;
+            // 
+            // guna2HtmlLabel12
+            // 
+            this.guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel12.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel12.ForeColor = System.Drawing.Color.Gray;
+            this.guna2HtmlLabel12.Location = new System.Drawing.Point(17, 261);
+            this.guna2HtmlLabel12.Name = "guna2HtmlLabel12";
+            this.guna2HtmlLabel12.Size = new System.Drawing.Size(34, 15);
+            this.guna2HtmlLabel12.TabIndex = 21;
+            this.guna2HtmlLabel12.Text = "Name";
+            // 
+            // guna2HtmlLabel13
+            // 
+            this.guna2HtmlLabel13.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.guna2HtmlLabel13.Location = new System.Drawing.Point(8, 3);
+            this.guna2HtmlLabel13.Name = "guna2HtmlLabel13";
+            this.guna2HtmlLabel13.Size = new System.Drawing.Size(63, 23);
+            this.guna2HtmlLabel13.TabIndex = 32;
+            this.guna2HtmlLabel13.Text = "Student";
+            // 
+            // guna2HtmlLabel14
+            // 
+            this.guna2HtmlLabel14.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel14.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel14.ForeColor = System.Drawing.Color.Gray;
+            this.guna2HtmlLabel14.Location = new System.Drawing.Point(443, 308);
+            this.guna2HtmlLabel14.Name = "guna2HtmlLabel14";
+            this.guna2HtmlLabel14.Size = new System.Drawing.Size(34, 15);
+            this.guna2HtmlLabel14.TabIndex = 45;
+            this.guna2HtmlLabel14.Text = "Name";
+            // 
+            // guna2HtmlLabel15
+            // 
+            this.guna2HtmlLabel15.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel15.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel15.ForeColor = System.Drawing.Color.Gray;
+            this.guna2HtmlLabel15.Location = new System.Drawing.Point(16, 357);
+            this.guna2HtmlLabel15.Name = "guna2HtmlLabel15";
+            this.guna2HtmlLabel15.Size = new System.Drawing.Size(34, 15);
+            this.guna2HtmlLabel15.TabIndex = 44;
+            this.guna2HtmlLabel15.Text = "Name";
+            // 
+            // guna2HtmlLabel16
+            // 
+            this.guna2HtmlLabel16.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel16.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel16.ForeColor = System.Drawing.Color.Gray;
+            this.guna2HtmlLabel16.Location = new System.Drawing.Point(16, 308);
+            this.guna2HtmlLabel16.Name = "guna2HtmlLabel16";
+            this.guna2HtmlLabel16.Size = new System.Drawing.Size(34, 15);
+            this.guna2HtmlLabel16.TabIndex = 43;
+            this.guna2HtmlLabel16.Text = "Name";
+            // 
+            // guna2TextBox2
+            // 
+            this.guna2TextBox2.BorderColor = System.Drawing.Color.Gray;
+            this.guna2TextBox2.BorderRadius = 3;
+            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox2.DefaultText = "";
+            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox2.Location = new System.Drawing.Point(113, 308);
+            this.guna2TextBox2.Name = "guna2TextBox2";
+            this.guna2TextBox2.PasswordChar = '\0';
+            this.guna2TextBox2.PlaceholderText = "Phone Number";
+            this.guna2TextBox2.SelectedText = "";
+            this.guna2TextBox2.Size = new System.Drawing.Size(303, 31);
+            this.guna2TextBox2.TabIndex = 42;
+            // 
+            // guna2TextBox3
+            // 
+            this.guna2TextBox3.BorderColor = System.Drawing.Color.Gray;
+            this.guna2TextBox3.BorderRadius = 3;
+            this.guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox3.DefaultText = "";
+            this.guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox3.Location = new System.Drawing.Point(497, 308);
+            this.guna2TextBox3.Name = "guna2TextBox3";
+            this.guna2TextBox3.PasswordChar = '\0';
+            this.guna2TextBox3.PlaceholderText = "Student Adress";
+            this.guna2TextBox3.SelectedText = "";
+            this.guna2TextBox3.Size = new System.Drawing.Size(294, 31);
+            this.guna2TextBox3.TabIndex = 41;
+            // 
+            // guna2TextBox4
+            // 
+            this.guna2TextBox4.BorderColor = System.Drawing.Color.Gray;
+            this.guna2TextBox4.BorderRadius = 3;
+            this.guna2TextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox4.DefaultText = "";
+            this.guna2TextBox4.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox4.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox4.Location = new System.Drawing.Point(110, 357);
+            this.guna2TextBox4.Name = "guna2TextBox4";
+            this.guna2TextBox4.PasswordChar = '\0';
+            this.guna2TextBox4.PlaceholderText = "Student SSN";
+            this.guna2TextBox4.SelectedText = "";
+            this.guna2TextBox4.Size = new System.Drawing.Size(303, 31);
+            this.guna2TextBox4.TabIndex = 40;
+            // 
+            // guna2TextBox5
+            // 
+            this.guna2TextBox5.BorderColor = System.Drawing.Color.Gray;
+            this.guna2TextBox5.BorderRadius = 3;
+            this.guna2TextBox5.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox5.DefaultText = "";
+            this.guna2TextBox5.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox5.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox5.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox5.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox5.Location = new System.Drawing.Point(497, 261);
+            this.guna2TextBox5.Name = "guna2TextBox5";
+            this.guna2TextBox5.PasswordChar = '\0';
+            this.guna2TextBox5.PlaceholderText = "Email Adress";
+            this.guna2TextBox5.SelectedText = "";
+            this.guna2TextBox5.Size = new System.Drawing.Size(294, 31);
+            this.guna2TextBox5.TabIndex = 9;
+            // 
+            // guna2HtmlLabel17
+            // 
+            this.guna2HtmlLabel17.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel17.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel17.ForeColor = System.Drawing.Color.Gray;
+            this.guna2HtmlLabel17.Location = new System.Drawing.Point(444, 261);
+            this.guna2HtmlLabel17.Name = "guna2HtmlLabel17";
+            this.guna2HtmlLabel17.Size = new System.Drawing.Size(34, 15);
+            this.guna2HtmlLabel17.TabIndex = 36;
+            this.guna2HtmlLabel17.Text = "Name";
+            // 
             // Student
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1686,7 +1851,6 @@
             this.Update_Pnl.ResumeLayout(false);
             this.Update_S_Pnl.ResumeLayout(false);
             this.Update_S_Pnl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Update_ProfPic_Picture)).EndInit();
             this.Update_Menu_Pnl.ResumeLayout(false);
             this.Update_Menu_Pnl.PerformLayout();
             this.ViewProf_Pnl.ResumeLayout(false);
@@ -1751,22 +1915,14 @@
         private Guna.UI2.WinForms.Guna2Panel Update_Pnl;
         private Guna.UI2.WinForms.Guna2Button Update_Submit_Btn;
         private Guna.UI2.WinForms.Guna2GradientPanel Update_S_Pnl;
-        private Guna.UI2.WinForms.Guna2TextBox Update_P_SSN_Txt;
-        private Guna.UI2.WinForms.Guna2Button Update_Photo_Btn;
-        private Krypton.Toolkit.Suite.Extended.Common.CommonCircularPictureBox Update_ProfPic_Picture;
         private Guna.UI2.WinForms.Guna2ComboBox Update_Grade_CBox;
         private Guna.UI2.WinForms.Guna2HtmlLabel Update_Grade_Lbl;
-        private Guna.UI2.WinForms.Guna2ComboBox Update_Dep_CBox;
-        private Guna.UI2.WinForms.Guna2HtmlLabel Update_Dep_Lbl;
         private Guna.UI2.WinForms.Guna2ComboBox Update_Nationality_CBox;
-        private Guna.UI2.WinForms.Guna2HtmlLabel Update_Nationality_Lbl;
         private Guna.UI2.WinForms.Guna2TextBox Update_Phone_Txt;
         private Guna.UI2.WinForms.Guna2TextBox Update_Adress_Txt;
         private Guna.UI2.WinForms.Guna2TextBox Update_S_SSN_Txt;
         private Guna.UI2.WinForms.Guna2TextBox Update_S_ID_Txt;
         private Guna.UI2.WinForms.Guna2TextBox Update_Email_Txt;
-        private Guna.UI2.WinForms.Guna2TextBox Update_LName_Txt;
-        private Guna.UI2.WinForms.Guna2HtmlLabel Update_Stud_Lbl;
         private Guna.UI2.WinForms.Guna2TextBox Update_FName_Txt;
         private Guna.UI2.WinForms.Guna2Panel Update_Menu_Pnl;
         private Guna.UI2.WinForms.Guna2Button Update_Back_Btn;
@@ -1792,5 +1948,24 @@
         private Guna.UI2.WinForms.Guna2Panel View_Menu_Pnl;
         private Guna.UI2.WinForms.Guna2Button View_Back_Btn;
         private Guna.UI2.WinForms.Guna2HtmlLabel View_Header_Lbl;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel14;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel15;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel16;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox4;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel17;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel13;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel12;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox5;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
     }
 }

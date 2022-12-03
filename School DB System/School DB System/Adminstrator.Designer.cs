@@ -92,6 +92,7 @@
             this.Subj_IBtn.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.Subj_IBtn.Size = new System.Drawing.Size(150, 100);
             this.Subj_IBtn.TabIndex = 36;
+            this.Subj_IBtn.Click += new System.EventHandler(this.Subj_IBtn_Click);
             // 
             // Subj_Lbl
             // 
@@ -106,7 +107,6 @@
             // Stat_IBtn
             // 
             this.Stat_IBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.Stat_IBtn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.Stat_IBtn.HoverState.ImageSize = new System.Drawing.Size(84, 84);
             this.Stat_IBtn.Image = ((System.Drawing.Image)(resources.GetObject("Stat_IBtn.Image")));
             this.Stat_IBtn.ImageOffset = new System.Drawing.Point(0, 0);
@@ -116,6 +116,7 @@
             this.Stat_IBtn.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.Stat_IBtn.Size = new System.Drawing.Size(150, 100);
             this.Stat_IBtn.TabIndex = 34;
+            this.Stat_IBtn.Click += new System.EventHandler(this.Stat_IBtn_Click);
             // 
             // Stat_Lbl
             // 
@@ -130,7 +131,7 @@
             // Reqs_IBtn
             // 
             this.Reqs_IBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.Reqs_IBtn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.Reqs_IBtn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.Reqs_IBtn.HoverState.ImageSize = new System.Drawing.Size(84, 84);
             this.Reqs_IBtn.Image = ((System.Drawing.Image)(resources.GetObject("Reqs_IBtn.Image")));
             this.Reqs_IBtn.ImageOffset = new System.Drawing.Point(0, 0);
@@ -140,6 +141,7 @@
             this.Reqs_IBtn.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.Reqs_IBtn.Size = new System.Drawing.Size(150, 100);
             this.Reqs_IBtn.TabIndex = 32;
+            this.Reqs_IBtn.Click += new System.EventHandler(this.Reqs_IBtn_Click);
             // 
             // Reqs_Lbl
             // 
@@ -154,7 +156,7 @@
             // Trans_IBtn
             // 
             this.Trans_IBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.Trans_IBtn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.Trans_IBtn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.Trans_IBtn.HoverState.ImageSize = new System.Drawing.Size(84, 84);
             this.Trans_IBtn.Image = ((System.Drawing.Image)(resources.GetObject("Trans_IBtn.Image")));
             this.Trans_IBtn.ImageOffset = new System.Drawing.Point(0, 0);
@@ -164,6 +166,7 @@
             this.Trans_IBtn.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.Trans_IBtn.Size = new System.Drawing.Size(150, 100);
             this.Trans_IBtn.TabIndex = 30;
+            this.Trans_IBtn.Click += new System.EventHandler(this.Trans_IBtn_Click);
             // 
             // Trans_Lbl
             // 
@@ -178,7 +181,7 @@
             // Staff_IBtn
             // 
             this.Staff_IBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.Staff_IBtn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.Staff_IBtn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.Staff_IBtn.HoverState.ImageSize = new System.Drawing.Size(84, 84);
             this.Staff_IBtn.Image = ((System.Drawing.Image)(resources.GetObject("Staff_IBtn.Image")));
             this.Staff_IBtn.ImageOffset = new System.Drawing.Point(0, 0);
@@ -203,7 +206,7 @@
             // Teach_IBtn
             // 
             this.Teach_IBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.Teach_IBtn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            this.Teach_IBtn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.Teach_IBtn.HoverState.ImageSize = new System.Drawing.Size(84, 84);
             this.Teach_IBtn.Image = ((System.Drawing.Image)(resources.GetObject("Teach_IBtn.Image")));
             this.Teach_IBtn.ImageOffset = new System.Drawing.Point(0, 0);
@@ -228,7 +231,7 @@
             // Stud_IBtn
             // 
             this.Stud_IBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.Stud_IBtn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
+            this.Stud_IBtn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
             this.Stud_IBtn.HoverState.ImageSize = new System.Drawing.Size(84, 84);
             this.Stud_IBtn.Image = ((System.Drawing.Image)(resources.GetObject("Stud_IBtn.Image")));
             this.Stud_IBtn.ImageOffset = new System.Drawing.Point(0, 0);

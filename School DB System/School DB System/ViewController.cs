@@ -14,11 +14,13 @@ namespace School_DB_System
         private UserControl MainPage;
         private UserControl SecondaryPage;
         private UserControl home;
+        private Controller controller;
 
         //Non Default constructor
-        public ViewController(Application Application_Handler)
+        public ViewController(Application Application_Handler, Controller controller)
         {
             this.Application_Handler = Application_Handler;//Connecting with Application base (the base form) 
+            this.controller = controller;
             viewLoginPage();
         }
 
@@ -47,7 +49,7 @@ namespace School_DB_System
 
         public void viewLoginPage()
         {
-            MainPage = new LoginPage(this);//creating the login page
+            MainPage = new LoginPage(this,controller);//creating the login page
             Application_Handler.viewOnMainPage(MainPage);//viewing homepage on the main application window
         }
 
@@ -69,14 +71,49 @@ namespace School_DB_System
             Application_Handler.viewOnSecondaryPage(SecondaryPage);//viewing homepage on the main application window
         }
 
+        public void viewBus()
+        {
+            SecondaryPage = new Bus(this);//creating the login page
+            Application_Handler.viewOnSecondaryPage(SecondaryPage);//viewing homepage on the main application window
+        }
+
+        public void viewRequest(int authority)
+        {
+            SecondaryPage = new Requests(this,authority);//creating the login page
+            Application_Handler.viewOnSecondaryPage(SecondaryPage);//viewing homepage on the main application window
+        }
+
+        public void viewStatistics()
+        {
+            SecondaryPage = new Statistics(this);//creating the login page
+            Application_Handler.viewOnSecondaryPage(SecondaryPage);//viewing homepage on the main application window
+        }
+
+        public void viewSubjects()
+        {
+            SecondaryPage = new Subject(this);//creating the login page
+            Application_Handler.viewOnSecondaryPage(SecondaryPage);//viewing homepage on the main application window
+        }
+
         public void viewMainPage()
         {
             Application_Handler.viewMainPage();
         }
-
+        public void ApplicationMouseDown(object sender, MouseEventArgs e)
+        {
+            Application_Handler.Application_MouseDown(sender, e);
+        }
+        public void ApplicationMouseMove(object sender, MouseEventArgs e)
+        {
+            Application_Handler.Application_MouseMove(sender, e);
+        }
+        public void ApplicationMouseUp(object sender, MouseEventArgs e)
+        {
+            Application_Handler.Application_MouseUp(sender, e);
+        }
         public void Logout()
         {
-            MainPage = new LoginPage(this);//creating the login page
+            MainPage = new LoginPage(this,controller);//creating the login page
             Application_Handler.viewOnMainPage(MainPage);//viewing homepage on the main application window
         }
 

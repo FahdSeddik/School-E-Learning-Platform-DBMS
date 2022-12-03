@@ -18,5 +18,25 @@ namespace School_DB_System
             InitializeComponent();
             this.viewController = viewController;
         }
+
+        private void Stud_IBtn_Click(object sender, EventArgs e)
+        {
+            viewController.viewStudent();
+        }
+
+        private void Teach_IBtn_Click(object sender, EventArgs e)
+        {
+            viewController.viewTeacher();
+        }
+
+        private void Stat_IBtn_Click(object sender, EventArgs e)
+        {
+            viewController.viewStatistics();
+        }
+
+        private void Reqs_IBtn_Click(object sender, EventArgs e)
+        {
+            viewController.viewRequest(0);
+        }
     }
 }

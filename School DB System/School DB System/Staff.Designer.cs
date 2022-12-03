@@ -519,6 +519,8 @@
             // 
             // ViewProf_Pnl
             // 
+            this.ViewProf_Pnl.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.ViewProf_Pnl.BorderThickness = 3;
             this.ViewProf_Pnl.Controls.Add(this.View_S_Pnl);
             this.ViewProf_Pnl.Controls.Add(this.View_Menu_Pnl);
             this.ViewProf_Pnl.Location = new System.Drawing.Point(72, 25);
@@ -879,6 +881,8 @@
             // 
             // Add_Pnl
             // 
+            this.Add_Pnl.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.Add_Pnl.BorderThickness = 3;
             this.Add_Pnl.Controls.Add(this.Add_Submit_Btn);
             this.Add_Pnl.Controls.Add(this.Add_S_Pnl);
             this.Add_Pnl.Controls.Add(this.Add_Menu_Pnl);
@@ -1264,7 +1268,8 @@
             // 
             // Update_Pnl
             // 
-            this.Update_Pnl.BorderThickness = 20;
+            this.Update_Pnl.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.Update_Pnl.BorderThickness = 3;
             this.Update_Pnl.Controls.Add(this.Update_Submit_Btn);
             this.Update_Pnl.Controls.Add(this.Update_S_Pnl);
             this.Update_Pnl.Controls.Add(this.Update_Menu_Pnl);
