@@ -32,12 +32,8 @@
             this.HomePage_Pnl = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.profile_Pnl = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.Logout_Btn = new Guna.UI2.WinForms.Guna2Button();
-            this.Profile_DBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.Profile_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.Home_pnl = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.kryptonContextMenu1 = new Krypton.Toolkit.KryptonContextMenu();
-            this.kryptonContextMenuItems2 = new Krypton.Toolkit.KryptonContextMenuItems();
-            this.kryptonContextMenuCheckButton1 = new Krypton.Toolkit.KryptonContextMenuCheckButton();
-            this.kryptonContextMenuCheckButton2 = new Krypton.Toolkit.KryptonContextMenuCheckButton();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.kryptonContextMenuItems1 = new Krypton.Toolkit.KryptonContextMenuItems();
             this.kryptonContextMenuHeading1 = new Krypton.Toolkit.KryptonContextMenuHeading();
@@ -67,7 +63,7 @@
             this.profile_Pnl.BackColor = System.Drawing.Color.Transparent;
             this.profile_Pnl.BorderRadius = 20;
             this.profile_Pnl.Controls.Add(this.Logout_Btn);
-            this.profile_Pnl.Controls.Add(this.Profile_DBtn);
+            this.profile_Pnl.Controls.Add(this.Profile_Btn);
             this.profile_Pnl.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(142)))));
             this.profile_Pnl.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(142)))));
             this.profile_Pnl.ForeColor = System.Drawing.Color.Black;
@@ -104,28 +100,29 @@
             this.Logout_Btn.TextOffset = new System.Drawing.Point(15, 0);
             this.Logout_Btn.Click += new System.EventHandler(this.Logout_Btn_Click);
             // 
-            // Profile_DBtn
+            // Profile_Btn
             // 
-            this.Profile_DBtn.BackColor = System.Drawing.Color.Transparent;
-            this.Profile_DBtn.BorderRadius = 20;
-            this.Profile_DBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.Profile_DBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.Profile_DBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.Profile_DBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Profile_DBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Profile_DBtn.FillColor = System.Drawing.Color.White;
-            this.Profile_DBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.Profile_DBtn.ForeColor = System.Drawing.Color.DimGray;
-            this.Profile_DBtn.Image = ((System.Drawing.Image)(resources.GetObject("Profile_DBtn.Image")));
-            this.Profile_DBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.Profile_DBtn.ImageOffset = new System.Drawing.Point(15, 20);
-            this.Profile_DBtn.Location = new System.Drawing.Point(0, 0);
-            this.Profile_DBtn.Name = "Profile_DBtn";
-            this.Profile_DBtn.Size = new System.Drawing.Size(188, 83);
-            this.Profile_DBtn.TabIndex = 0;
-            this.Profile_DBtn.Text = "Username";
-            this.Profile_DBtn.TextOffset = new System.Drawing.Point(15, 20);
-            this.Profile_DBtn.Click += new System.EventHandler(this.Profile_DBtn_Click);
+            this.Profile_Btn.BackColor = System.Drawing.Color.Transparent;
+            this.Profile_Btn.BorderRadius = 20;
+            this.Profile_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Profile_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Profile_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Profile_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Profile_Btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Profile_Btn.FillColor = System.Drawing.Color.White;
+            this.Profile_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.Profile_Btn.ForeColor = System.Drawing.Color.DimGray;
+            this.Profile_Btn.Image = global::School_DB_System.Properties.Resources.Down_Arrow;
+            this.Profile_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Profile_Btn.ImageOffset = new System.Drawing.Point(15, 20);
+            this.Profile_Btn.Location = new System.Drawing.Point(0, 0);
+            this.Profile_Btn.Name = "Profile_Btn";
+            this.Profile_Btn.Size = new System.Drawing.Size(188, 83);
+            this.Profile_Btn.TabIndex = 0;
+            this.Profile_Btn.Text = "Username";
+            this.Profile_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Profile_Btn.TextOffset = new System.Drawing.Point(30, 20);
+            this.Profile_Btn.Click += new System.EventHandler(this.Profile_DBtn_Click);
             // 
             // Home_pnl
             // 
@@ -140,23 +137,6 @@
             this.Home_pnl.Size = new System.Drawing.Size(955, 514);
             this.Home_pnl.TabIndex = 1;
             this.Home_pnl.UseTransparentBackground = true;
-            // 
-            // kryptonContextMenu1
-            // 
-            this.kryptonContextMenu1.Items.AddRange(new Krypton.Toolkit.KryptonContextMenuItemBase[] {
-            this.kryptonContextMenuItems2,
-            this.kryptonContextMenuCheckButton1,
-            this.kryptonContextMenuCheckButton2});
-            // 
-            // kryptonContextMenuCheckButton1
-            // 
-            this.kryptonContextMenuCheckButton1.ButtonStyle = Krypton.Toolkit.ButtonStyle.NavigatorMini;
-            this.kryptonContextMenuCheckButton1.Text = "Setting";
-            // 
-            // kryptonContextMenuCheckButton2
-            // 
-            this.kryptonContextMenuCheckButton2.ButtonStyle = Krypton.Toolkit.ButtonStyle.NavigatorMini;
-            this.kryptonContextMenuCheckButton2.Text = "Logout";
             // 
             // guna2HtmlLabel2
             // 
@@ -209,16 +189,12 @@
         private Guna.UI2.WinForms.Guna2GradientPanel profile_Pnl;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Krypton.Toolkit.KryptonContextMenuItems kryptonContextMenuItems1;
-        private Krypton.Toolkit.KryptonContextMenu kryptonContextMenu1;
-        private Krypton.Toolkit.KryptonContextMenuItems kryptonContextMenuItems2;
         private Krypton.Toolkit.KryptonContextMenuHeading kryptonContextMenuHeading1;
         private Krypton.Toolkit.KryptonContextMenuRadioButton kryptonContextMenuRadioButton1;
         private Krypton.Toolkit.KryptonContextMenuCheckBox kryptonContextMenuCheckBox1;
-        private Krypton.Toolkit.KryptonContextMenuCheckButton kryptonContextMenuCheckButton1;
-        private Krypton.Toolkit.KryptonContextMenuCheckButton kryptonContextMenuCheckButton2;
         private Krypton.Toolkit.KryptonContextMenuItem kryptonContextMenuItem1;
         private Krypton.Toolkit.KryptonContextMenuItem kryptonContextMenuItem2;
         private Guna.UI2.WinForms.Guna2Button Logout_Btn;
-        private Guna.UI2.WinForms.Guna2Button Profile_DBtn;
+        private Guna.UI2.WinForms.Guna2Button Profile_Btn;
     }
 }

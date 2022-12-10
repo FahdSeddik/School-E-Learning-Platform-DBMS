@@ -55,43 +55,43 @@ namespace School_DB_System
 
         public void viewStudent()
         {
-            SecondaryPage = new Student(this);//creating the login page
+            SecondaryPage = new Student(this,controller);//creating the login page
             Application_Handler.viewOnSecondaryPage(SecondaryPage);//viewing homepage on the main application window
         }
 
         public void viewTeacher()
         {
-            SecondaryPage = new Teacher(this);//creating the login page
+            SecondaryPage = new Teacher(this,controller);//creating the login page
             Application_Handler.viewOnSecondaryPage(SecondaryPage);//viewing homepage on the main application window
         }
 
         public void viewStaff()
         {
-            SecondaryPage = new Staff(this);//creating the login page
+            SecondaryPage = new Staff(this,controller);//creating the login page
             Application_Handler.viewOnSecondaryPage(SecondaryPage);//viewing homepage on the main application window
         }
 
         public void viewBus()
         {
-            SecondaryPage = new Bus(this);//creating the login page
+            SecondaryPage = new Bus(this,controller);//creating the login page
             Application_Handler.viewOnSecondaryPage(SecondaryPage);//viewing homepage on the main application window
         }
 
-        public void viewRequest(int authority)
+        public void viewMail()
         {
-            SecondaryPage = new Requests(this,authority);//creating the login page
+            SecondaryPage = new Mail(this,controller);//creating the login page
             Application_Handler.viewOnSecondaryPage(SecondaryPage);//viewing homepage on the main application window
         }
 
         public void viewStatistics()
         {
-            SecondaryPage = new Statistics(this);//creating the login page
+            SecondaryPage = new Statistics(this,controller);//creating the login page
             Application_Handler.viewOnSecondaryPage(SecondaryPage);//viewing homepage on the main application window
         }
 
         public void viewSubjects()
         {
-            SecondaryPage = new Subject(this);//creating the login page
+            SecondaryPage = new Subject(this,controller);//creating the login page
             Application_Handler.viewOnSecondaryPage(SecondaryPage);//viewing homepage on the main application window
         }
 

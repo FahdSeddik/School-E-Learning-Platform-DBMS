@@ -19,8 +19,8 @@ namespace School_DB_System
         {
             InitializeComponent();
             this.ViewController = ViewController;
-            Username_Txt.Select();
             this.controller = controller;
+            Username_Txt.Select();
         }
 
         private void Login_Btn_Click(object sender, EventArgs e)
@@ -30,29 +30,25 @@ namespace School_DB_System
             int authority;
             try
             {
-                authority = controller.Login(Username, Password);
+                authority = controller.Login(Username, Password); //return null if user does not exist.
             }
             catch (Exception error)
             {
                 LoginError_Lbl.Show();
+                Username_Txt.Clear();
+                Password_Txt.Clear();
+                Username_Txt.Select();
                 return;
             }
-            if(authority == 4 || authority == 5)
+            if(authority > 3 || authority == 0)
             {
                 LoginError_Lbl.Show();
+                Username_Txt.Clear();
+                Password_Txt.Clear();
+                Username_Txt.Select();
                 return;
             }
                 ViewController.ViewHomePage(authority, Username);//view homepage function takes authority to view the sutiable view for this user
-        }
-
-        private void ForgetPass_Lbl_MouseHover(object sender, EventArgs e)
-        {
-            ForgetPass_Lbl.ForeColor = Color.FromArgb(81, 93, 255);
-        }
-
-        private void ForgetPass_Lbl_MouseLeave(object sender, EventArgs e)
-        {
-            ForgetPass_Lbl.ForeColor = Color.FromArgb(94, 148, 255);
         }
 
         private void LoginPage_Pnl_MouseDown(object sender, MouseEventArgs e)
@@ -68,6 +64,22 @@ namespace School_DB_System
         private void LoginPage_Pnl_MouseUp(object sender, MouseEventArgs e)
         {
             ViewController.ApplicationMouseUp(sender, e);
+        }
+
+        private void Username_Txt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                Login_Btn_Click(sender, e);
+            }
+        }
+
+        private void Password_Txt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Login_Btn_Click(sender, e);
+            }
         }
     }
 }

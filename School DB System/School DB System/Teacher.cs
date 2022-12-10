@@ -13,16 +13,12 @@ namespace School_DB_System
     public partial class Teacher : UserControl
     {
         ViewController viewController;
-        public Teacher(ViewController viewController)
+        Controller controllerObj;
+        public Teacher(ViewController viewController, Controller controllerObj)
         {
             InitializeComponent();
             this.viewController = viewController;
-            Teach_DT.Rows.Add(0, "12302", "Abaymooooon", "amrashraf@amrashraf.com","CS");
-            Teach_DT.Rows.Add(0, "12302", "Abaymooooon", "amrashraf@amrashraf.com", "CS");
-            Teach_DT.Rows.Add(0, "12302", "Abaymooooon", "amrashraf@amrashraf.com", "CS");
-            Teach_DT.Rows.Add(0, "12302", "Abaymooooon", "amrashraf@amrashraf.com", "CS");
-            Teach_DT.Rows.Add(0, "12302", "Abaymooooon", "amrashraf@amrashraf.com", "CS");
-            Teach_DT.Rows.Add(0, "12302", "Abaymooooon", "amrashraf@amrashraf.com", "CS");
+            this.controllerObj = controllerObj;
             ViewProf_Pnl.Hide();
             Add_Pnl.Hide();
             Update_Pnl.Hide();

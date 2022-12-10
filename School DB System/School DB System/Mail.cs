@@ -10,36 +10,21 @@ using System.Windows.Forms;
 
 namespace School_DB_System
 {
-    public partial class Requests : UserControl
+    public partial class Mail : UserControl
     {
         ViewController viewController;
-        public Requests(ViewController viewController,int authority)
+        Controller controllerObj;
+        public Mail(ViewController viewController,Controller controllerObj)
         {
             InitializeComponent();
             this.viewController = viewController;
+            this.controllerObj = controllerObj;
             MainNewReq_Pnl.Hide();
             ViewReqMain_Pnl.Hide();
             Inbox_Tab.PerformClick();
-            if(authority != 1)
-            {
-                NormalView();
-            }
         }
 
-        private void NormalView()
-        {
-            ApproveReq_Btn.Hide();
-            Req_DT.Columns.RemoveAt(2);
-            Req_DT.Columns[2].HeaderText = "Email";
-            int LblX = SenderEmail_Lbl.Location.X;
-            int LblY = SenderEmail_Lbl.Location.Y;
-            ReceiverEmail_Lbl.Location = new Point(LblX, LblY);
-            LblX = SenderEmail_Txt.Location.X;
-            LblY = SenderEmail_Txt.Location.Y;
-            ReceiverEmail_Txt.Location = new Point(LblX, LblY);
-            SenderEmail_Lbl.Hide();
-            SenderEmail_Txt.Hide();
-        }
+        
 
         private void Sent_Tab_Click(object sender, EventArgs e)
         {

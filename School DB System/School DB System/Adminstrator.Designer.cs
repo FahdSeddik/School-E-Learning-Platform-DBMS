@@ -35,8 +35,8 @@
             this.Subj_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Stat_IBtn = new Guna.UI2.WinForms.Guna2ImageButton();
             this.Stat_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.Reqs_IBtn = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.Reqs_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.Mail_IBtn = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.Mail_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Trans_IBtn = new Guna.UI2.WinForms.Guna2ImageButton();
             this.Trans_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Staff_IBtn = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -63,8 +63,8 @@
             this.AdminHome_Pnl.Controls.Add(this.Subj_Lbl);
             this.AdminHome_Pnl.Controls.Add(this.Stat_IBtn);
             this.AdminHome_Pnl.Controls.Add(this.Stat_Lbl);
-            this.AdminHome_Pnl.Controls.Add(this.Reqs_IBtn);
-            this.AdminHome_Pnl.Controls.Add(this.Reqs_Lbl);
+            this.AdminHome_Pnl.Controls.Add(this.Mail_IBtn);
+            this.AdminHome_Pnl.Controls.Add(this.Mail_Lbl);
             this.AdminHome_Pnl.Controls.Add(this.Trans_IBtn);
             this.AdminHome_Pnl.Controls.Add(this.Trans_Lbl);
             this.AdminHome_Pnl.Controls.Add(this.Staff_IBtn);
@@ -128,35 +128,34 @@
             this.Stat_Lbl.TabIndex = 33;
             this.Stat_Lbl.Text = "Statistics";
             // 
-            // Reqs_IBtn
+            // Mail_IBtn
             // 
-            this.Reqs_IBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.Reqs_IBtn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.Reqs_IBtn.HoverState.ImageSize = new System.Drawing.Size(84, 84);
-            this.Reqs_IBtn.Image = ((System.Drawing.Image)(resources.GetObject("Reqs_IBtn.Image")));
-            this.Reqs_IBtn.ImageOffset = new System.Drawing.Point(0, 0);
-            this.Reqs_IBtn.ImageRotate = 0F;
-            this.Reqs_IBtn.Location = new System.Drawing.Point(172, 292);
-            this.Reqs_IBtn.Name = "Reqs_IBtn";
-            this.Reqs_IBtn.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.Reqs_IBtn.Size = new System.Drawing.Size(150, 100);
-            this.Reqs_IBtn.TabIndex = 32;
-            this.Reqs_IBtn.Click += new System.EventHandler(this.Reqs_IBtn_Click);
+            this.Mail_IBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.Mail_IBtn.HoverState.ImageSize = new System.Drawing.Size(84, 84);
+            this.Mail_IBtn.Image = global::School_DB_System.Properties.Resources.mail;
+            this.Mail_IBtn.ImageOffset = new System.Drawing.Point(0, 0);
+            this.Mail_IBtn.ImageRotate = 0F;
+            this.Mail_IBtn.Location = new System.Drawing.Point(171, 292);
+            this.Mail_IBtn.Name = "Mail_IBtn";
+            this.Mail_IBtn.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.Mail_IBtn.Size = new System.Drawing.Size(150, 100);
+            this.Mail_IBtn.TabIndex = 32;
+            this.Mail_IBtn.Click += new System.EventHandler(this.Reqs_IBtn_Click);
             // 
-            // Reqs_Lbl
+            // Mail_Lbl
             // 
-            this.Reqs_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.Reqs_Lbl.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Reqs_Lbl.Location = new System.Drawing.Point(223, 398);
-            this.Reqs_Lbl.Name = "Reqs_Lbl";
-            this.Reqs_Lbl.Size = new System.Drawing.Size(56, 19);
-            this.Reqs_Lbl.TabIndex = 31;
-            this.Reqs_Lbl.Text = "Requests";
+            this.Mail_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.Mail_Lbl.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Mail_Lbl.Location = new System.Drawing.Point(231, 398);
+            this.Mail_Lbl.Name = "Mail_Lbl";
+            this.Mail_Lbl.Size = new System.Drawing.Size(28, 19);
+            this.Mail_Lbl.TabIndex = 31;
+            this.Mail_Lbl.Text = "Mail";
             // 
             // Trans_IBtn
             // 
             this.Trans_IBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.Trans_IBtn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.Trans_IBtn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.Trans_IBtn.HoverState.ImageSize = new System.Drawing.Size(84, 84);
             this.Trans_IBtn.Image = ((System.Drawing.Image)(resources.GetObject("Trans_IBtn.Image")));
             this.Trans_IBtn.ImageOffset = new System.Drawing.Point(0, 0);
@@ -181,7 +180,7 @@
             // Staff_IBtn
             // 
             this.Staff_IBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.Staff_IBtn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.Staff_IBtn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.Staff_IBtn.HoverState.ImageSize = new System.Drawing.Size(84, 84);
             this.Staff_IBtn.Image = ((System.Drawing.Image)(resources.GetObject("Staff_IBtn.Image")));
             this.Staff_IBtn.ImageOffset = new System.Drawing.Point(0, 0);
@@ -206,7 +205,7 @@
             // Teach_IBtn
             // 
             this.Teach_IBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.Teach_IBtn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.Teach_IBtn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.Teach_IBtn.HoverState.ImageSize = new System.Drawing.Size(84, 84);
             this.Teach_IBtn.Image = ((System.Drawing.Image)(resources.GetObject("Teach_IBtn.Image")));
             this.Teach_IBtn.ImageOffset = new System.Drawing.Point(0, 0);
@@ -231,7 +230,7 @@
             // Stud_IBtn
             // 
             this.Stud_IBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.Stud_IBtn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            this.Stud_IBtn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.Stud_IBtn.HoverState.ImageSize = new System.Drawing.Size(84, 84);
             this.Stud_IBtn.Image = ((System.Drawing.Image)(resources.GetObject("Stud_IBtn.Image")));
             this.Stud_IBtn.ImageOffset = new System.Drawing.Point(0, 0);
@@ -263,8 +262,8 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel Subj_Lbl;
         private Guna.UI2.WinForms.Guna2ImageButton Stat_IBtn;
         private Guna.UI2.WinForms.Guna2HtmlLabel Stat_Lbl;
-        private Guna.UI2.WinForms.Guna2ImageButton Reqs_IBtn;
-        private Guna.UI2.WinForms.Guna2HtmlLabel Reqs_Lbl;
+        private Guna.UI2.WinForms.Guna2ImageButton Mail_IBtn;
+        private Guna.UI2.WinForms.Guna2HtmlLabel Mail_Lbl;
         private Guna.UI2.WinForms.Guna2ImageButton Trans_IBtn;
         private Guna.UI2.WinForms.Guna2HtmlLabel Trans_Lbl;
         private Guna.UI2.WinForms.Guna2ImageButton Staff_IBtn;

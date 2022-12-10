@@ -121,11 +121,11 @@
     <Compile Include="Accountant.Designer.cs">
       <DependentUpon>Accountant.cs</DependentUpon>
     </Compile>
-    <Compile Include="Requests.cs">
+    <Compile Include="Mail.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Requests.Designer.cs">
-      <DependentUpon>Requests.cs</DependentUpon>
+    <Compile Include="Mail.Designer.cs">
+      <DependentUpon>Mail.cs</DependentUpon>
     </Compile>
     <Compile Include="RJMessageBox.cs" />
     <Compile Include="Staff.cs">
@@ -193,8 +193,8 @@
     <EmbeddedResource Include="Accountant.resx">
       <DependentUpon>Accountant.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Requests.resx">
-      <DependentUpon>Requests.cs</DependentUpon>
+    <EmbeddedResource Include="Mail.resx">
+      <DependentUpon>Mail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>
@@ -232,6 +232,8 @@
     <None Include="Resources\exclamation.png" />
     <None Include="Resources\information.png" />
     <None Include="Resources\question.png" />
+    <None Include="Resources\Down_Arrow.png" />
+    <None Include="Resources\mail.png" />
     <Content Include="Windows Logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -13,14 +13,12 @@ namespace School_DB_System
     public partial class Bus : UserControl
     {
         ViewController viewController;
-        public Bus(ViewController viewController)
+        Controller controllerObj;
+        public Bus(ViewController viewController, Controller controllerObj)
         {
             InitializeComponent();
             this.viewController = viewController;
-            Bus_DT.Rows.Add(0, "12302", "1200135", "october", "11");
-            Bus_DT.Rows.Add(0, "13302", "1200135", "october", "11");
-            Bus_DT.Rows.Add(0, "12302", "1200135", "october", "11");
-            Bus_DT.Rows.Add(0, "12302", "1200135", "october", "11");
+            this.controllerObj = controllerObj;
             DList_Pnl.Hide();
             AddStudList_Pnl.Hide();
             BStudList_Pnl.Hide();
@@ -28,6 +26,7 @@ namespace School_DB_System
             BInfoMain_Pnl.Hide();
             Update_Pnl.Hide();
             Add_Pnl.Hide();
+            this.controllerObj = controllerObj;
         }
 
         private void Add_B_ID_Txt_Click(object sender, EventArgs e)

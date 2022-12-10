@@ -16,16 +16,17 @@ namespace School_DB_System
     {
         UserControl Home;
         ViewController ViewController;
-        private bool IsCollapsed = true;
+        private bool IsCollapsed; //minimum size
         public HomePage(ViewController ViewController, String Username,UserControl home)
         {
             InitializeComponent();
             this.ViewController = ViewController;
-            Profile_DBtn.Text = Username;
-            this.Home = home;
+            Profile_Btn.Text = Username;
+            Home = home;
             Home_pnl.Controls.Clear();
             Home_pnl.Controls.Add(Home);
             Home.Dock = DockStyle.Fill;
+            IsCollapsed = true;
 
         }
 
@@ -40,12 +41,13 @@ namespace School_DB_System
             {
                 profile_Pnl.Size = profile_Pnl.MaximumSize;
                 IsCollapsed = false;
-
+                Profile_Btn.Image = null;
             }
             else
             {
                 profile_Pnl.Size = profile_Pnl.MinimumSize;
                 IsCollapsed = true;
+                Profile_Btn.Image = Properties.Resources.Down_Arrow;
             }
             
         }

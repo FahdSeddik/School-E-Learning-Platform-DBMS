@@ -13,16 +13,12 @@ namespace School_DB_System
     public partial class Staff : UserControl
     {
         ViewController viewController;
-        public Staff(ViewController viewController)
+        Controller controllerObj;
+        public Staff(ViewController viewController, Controller controllerObj)
         {
             InitializeComponent();
             this.viewController = viewController;
-            Staff_DT.Rows.Add(0, "12302", "Abaymooooon", "Abaymooooon@amrashraf.com", "CS");
-            Staff_DT.Rows.Add(0, "12302", "Abaymooooon", "Abaymooooon@amrashraf.com", "CS");
-            Staff_DT.Rows.Add(0, "12302", "Abaymooooon", "Abaymooooon@amrashraf.com", "CS");
-            Staff_DT.Rows.Add(0, "12302", "Abaymooooon", "Abaymooooonf@amrashraf.com", "CS");
-            Staff_DT.Rows.Add(0, "12302", "Abaymooooon", "amrashraf@amrashraf.com", "CS");
-            Staff_DT.Rows.Add(0, "12302", "Abaymooooon", "amrashraf@amrashraf.com", "CS");
+            this.controllerObj = controllerObj;
             ViewProf_Pnl.Hide();
             Add_Pnl.Hide();
             Update_Pnl.Hide();

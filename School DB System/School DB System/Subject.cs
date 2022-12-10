@@ -13,10 +13,12 @@ namespace School_DB_System
     public partial class Subject : UserControl
     {
         ViewController viewController;
-        public Subject(ViewController viewController)
+        Controller controllerObj;
+        public Subject(ViewController viewController, Controller controllerObj)
         {
             InitializeComponent();
             this.viewController = viewController;
+            this.controllerObj = controllerObj;
             TeachersListMain_Pnl.Hide();
             AddSubjMain_Pnl.Hide();
             UpdateSubjMain_Pnl.Hide();

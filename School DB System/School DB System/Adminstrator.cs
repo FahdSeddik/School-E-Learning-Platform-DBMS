@@ -41,7 +41,7 @@ namespace School_DB_System
 
         private void Reqs_IBtn_Click(object sender, EventArgs e)
         {
-            viewController.viewRequest(1);
+            viewController.viewMail();
         }
 
         private void Stat_IBtn_Click(object sender, EventArgs e)
