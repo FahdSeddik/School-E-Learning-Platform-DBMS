@@ -60,7 +60,7 @@ namespace School_DB_System
         {
             var result = RJMessageBox.Show("Your unsaved progress maybe lost.",
              "Are you sure you want to exit?",
-             MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+             MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (result == DialogResult.Yes)
             {

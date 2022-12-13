@@ -37,13 +37,52 @@ namespace School_DB_System
             string query = "select Student.std_ID,std_Name,std_Email,std_Year from Student,Current_Student where Current_Student.std_ID = Student.std_ID;";
             return dbMan.ExecuteReader(query);
         }
+        public DataTable getAllGraduatedStudents()
+        {
+            string query = "select Student.std_ID,std_Name,std_Email,gstd_University from Student,Grad_Student where Grad_Student.std_ID = Student.std_ID;";
+            return dbMan.ExecuteReader(query);
+        }
+        public int getStudentsCount()
+        {
+            string query = "select count(std_ID) from Student";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+        public DataTable getStudentsOfYear(int year)
+        {
+            string query = "select Student.std_ID,std_Name,std_Email,std_Year from Student,Current_Student where Current_Student.std_ID = Student.std_ID and std_Year = "+year+";";
+            return dbMan.ExecuteReader(query);
+        }
 
-        public int AddStudent(int pssn,string pname,string paddress,int pmob,string pemail,int sid,string sname,int sssn,string semail,int smob,string dob,string nationatity,string saddress,string seclan,int syear)
+        public DataTable getStudentData(long stdID)
+        {
+            string query = "select s.std_ID,std_Name,std_Year,std_Mobile,std_SSN,std_Email,P_Mobile,std_DoB,std_Nationality,std_Address,second_language,p_SSN,p_Name,p_Address,p_Mobile,p_Email from Student as s,Parent as p,Current_Student as cs where s.std_ID=" + stdID+" and s.std_ParentSSN=p.p_SSN and cs.std_ID = s.std_ID;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable getGradStudentData(long stdID)
+        {
+            string query = "select s.std_ID,std_Name,std_Mobile,std_SSN,std_Email,P_Mobile,std_DoB,std_Nationality,std_Address,second_language,p_SSN,p_Name,p_Address,p_Mobile,p_Email,gstd_University from Student as s,Parent as p,Grad_Student as g where s.std_ID=" + stdID+" and s.std_ParentSSN=p.p_SSN and g.std_ID=s.std_ID;";
+            return dbMan.ExecuteReader(query);
+        }
+        public int deleteStudent(long stdid)
+        {
+            string query = "delete Parent where p_SSN in ((select std_ParentSSN from Student where std_ID=" + stdid + "));";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int AddStudent(long pssn,string pname,string paddress,long pmob,string pemail,long sid,string sname,long sssn,string semail,long smob,string dob,string nationatity,string saddress,string seclan,int syear)
         {
             string query = "insert into Parent(p_SSN, p_Name, p_Address, p_Mobile, p_Email) values("+pssn+",'"+pname+"','"+paddress+"',"+pmob+",'"+pemail+"');"
             + "insert into Student(std_ID, std_Name, std_SSN, std_Email, std_Mobile, std_DoB, std_Nationality, std_Address, std_ParentSSN, Username, Password, second_language)"
             + "values("+sid+",'"+sname+"',"+sssn+",'"+semail+"',"+smob+",'"+dob+"','"+nationatity+"','"+saddress+"',"+pssn+",'"+sid.ToString()+"','"+sname+"','"+seclan+"');"
             +"insert into Current_Student(std_ID, std_Year) values("+sid+","+syear+");";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int UpdateCurrentStudent(long pssn, string pname, string paddress, long pmob, string pemail, long sid, string sname, long sssn, string semail, long smob, string dob, string nationatity, string saddress, string seclan, int syear)
+        {
+           string query = "update Student set std_Name = '"+sname+"', std_SSN = "+sid+", std_Email = '"+semail+"', std_Mobile = "+smob+", std_DoB = '"+dob+"', std_Nationality = '"+nationatity+"', std_Address = '"+saddress+"', std_ParentSSN = "+pssn+", second_language = '"+seclan+"' where std_ID = "+sid+";"
+
+            +"update Current_Student set std_Year = "+syear+" where std_ID = "+sid+";"
+
+            +"update Parent set p_SSN = "+pssn+", p_Name = '"+pname+"', p_Address = '"+paddress+"', p_Mobile = "+pmob+", p_Email = '"+pemail+"' where p_SSN in ((select std_ParentSSN from Student where std_ID = "+sid+" ));";
             return dbMan.ExecuteNonQuery(query);
         }
 

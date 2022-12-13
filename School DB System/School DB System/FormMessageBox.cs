@@ -261,7 +261,7 @@ namespace School_DB_System
                     break;
                 case MessageBoxIcon.Information: //Information
                     this.pictureBoxIcon.Image = Properties.Resources.information;
-                    PrimaryColor = Color.FromArgb(38, 191, 166);
+                    PrimaryColor = Color.FromArgb(64, 66, 88);
                     break;
                 case MessageBoxIcon.Question://Question
                     this.pictureBoxIcon.Image = Properties.Resources.question;
