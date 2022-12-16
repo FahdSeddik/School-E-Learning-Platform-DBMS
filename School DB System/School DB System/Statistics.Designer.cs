@@ -29,53 +29,49 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Statistics));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 60D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 40D);
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 20D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 15D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint5 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 17D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint6 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 5D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint7 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 22D);
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint8 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 60D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint9 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 40D);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint10 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 20D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint11 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 15D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint12 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 17D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint13 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 5D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint14 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 22D);
             this.Menu_Pnl = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.MainBack_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.Tabs_Menu = new Guna.UI2.WinForms.Guna2TabControl();
             this.Students_Tab = new System.Windows.Forms.TabPage();
+            this.ViewStat_Btn = new Guna.UI2.WinForms.Guna2Button();
+            this.Stat_Table = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Name_Col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Value_Col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumOfStudsVal_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.NumOfStuds_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Select_Subject_CBox = new Krypton.Toolkit.KryptonComboBox();
-            this.Select_Department_CBox = new Krypton.Toolkit.KryptonComboBox();
-            this.Select_Grade_CBox = new Krypton.Toolkit.KryptonComboBox();
             this.Stud_Pass_Chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Select_year_CBox = new Krypton.Toolkit.KryptonComboBox();
             this.Stud_Grades_Chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Teachers_Tab = new System.Windows.Forms.TabPage();
             this.Financial_Tab = new System.Windows.Forms.TabPage();
-            this.Stat_Table = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.ViewStat_Btn = new Guna.UI2.WinForms.Guna2Button();
-            this.Name_Col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Value_Col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Menu_Pnl.SuspendLayout();
             this.Tabs_Menu.SuspendLayout();
             this.Students_Tab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Stat_Table)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Select_Subject_CBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Select_Department_CBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Select_Grade_CBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Stud_Pass_Chart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Select_year_CBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Stud_Grades_Chart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Stat_Table)).BeginInit();
             this.SuspendLayout();
             // 
             // Menu_Pnl
@@ -151,8 +147,6 @@
             this.Students_Tab.Controls.Add(this.NumOfStudsVal_Lbl);
             this.Students_Tab.Controls.Add(this.NumOfStuds_Lbl);
             this.Students_Tab.Controls.Add(this.Select_Subject_CBox);
-            this.Students_Tab.Controls.Add(this.Select_Department_CBox);
-            this.Students_Tab.Controls.Add(this.Select_Grade_CBox);
             this.Students_Tab.Controls.Add(this.Stud_Pass_Chart);
             this.Students_Tab.Controls.Add(this.Select_year_CBox);
             this.Students_Tab.Controls.Add(this.Stud_Grades_Chart);
@@ -162,6 +156,113 @@
             this.Students_Tab.Size = new System.Drawing.Size(812, 544);
             this.Students_Tab.TabIndex = 0;
             this.Students_Tab.Text = "Students";
+            // 
+            // ViewStat_Btn
+            // 
+            this.ViewStat_Btn.BorderRadius = 10;
+            this.ViewStat_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ViewStat_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ViewStat_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ViewStat_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ViewStat_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.ViewStat_Btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ViewStat_Btn.ForeColor = System.Drawing.Color.White;
+            this.ViewStat_Btn.Location = new System.Drawing.Point(12, 63);
+            this.ViewStat_Btn.Name = "ViewStat_Btn";
+            this.ViewStat_Btn.Size = new System.Drawing.Size(142, 28);
+            this.ViewStat_Btn.TabIndex = 22;
+            this.ViewStat_Btn.Text = "View";
+            // 
+            // Stat_Table
+            // 
+            this.Stat_Table.AllowUserToResizeRows = false;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            this.Stat_Table.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.Stat_Table.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Stat_Table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.Stat_Table.ColumnHeadersHeight = 30;
+            this.Stat_Table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.Stat_Table.ColumnHeadersVisible = false;
+            this.Stat_Table.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Name_Col,
+            this.Value_Col});
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Stat_Table.DefaultCellStyle = dataGridViewCellStyle11;
+            this.Stat_Table.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.Stat_Table.Location = new System.Drawing.Point(12, 104);
+            this.Stat_Table.Margin = new System.Windows.Forms.Padding(0);
+            this.Stat_Table.Name = "Stat_Table";
+            this.Stat_Table.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Stat_Table.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.Stat_Table.RowHeadersVisible = false;
+            this.Stat_Table.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.Stat_Table.Size = new System.Drawing.Size(343, 343);
+            this.Stat_Table.TabIndex = 21;
+            this.Stat_Table.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.Stat_Table.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Stat_Table.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Stat_Table.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.Stat_Table.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.Stat_Table.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.Stat_Table.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.Stat_Table.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.Stat_Table.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.Stat_Table.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Stat_Table.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.Stat_Table.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.Stat_Table.ThemeStyle.HeaderStyle.Height = 30;
+            this.Stat_Table.ThemeStyle.ReadOnly = false;
+            this.Stat_Table.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.Stat_Table.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.Stat_Table.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Stat_Table.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.Stat_Table.ThemeStyle.RowsStyle.Height = 22;
+            this.Stat_Table.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.Stat_Table.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // Name_Col
+            // 
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            this.Name_Col.DefaultCellStyle = dataGridViewCellStyle9;
+            this.Name_Col.HeaderText = "Name";
+            this.Name_Col.Name = "Name_Col";
+            // 
+            // Value_Col
+            // 
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            this.Value_Col.DefaultCellStyle = dataGridViewCellStyle10;
+            this.Value_Col.HeaderText = "Value";
+            this.Value_Col.Name = "Value_Col";
             // 
             // NumOfStudsVal_Lbl
             // 
@@ -190,7 +291,7 @@
             this.Select_Subject_CBox.CornerRoundingRadius = -1F;
             this.Select_Subject_CBox.DropDownWidth = 400;
             this.Select_Subject_CBox.IntegralHeight = false;
-            this.Select_Subject_CBox.Location = new System.Drawing.Point(13, 93);
+            this.Select_Subject_CBox.Location = new System.Drawing.Point(12, 36);
             this.Select_Subject_CBox.Name = "Select_Subject_CBox";
             this.Select_Subject_CBox.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.Select_Subject_CBox.Size = new System.Drawing.Size(342, 18);
@@ -198,50 +299,24 @@
             this.Select_Subject_CBox.TabIndex = 17;
             this.Select_Subject_CBox.Text = "Select Subjects";
             // 
-            // Select_Department_CBox
-            // 
-            this.Select_Department_CBox.CornerRoundingRadius = -1F;
-            this.Select_Department_CBox.DropDownWidth = 400;
-            this.Select_Department_CBox.IntegralHeight = false;
-            this.Select_Department_CBox.Location = new System.Drawing.Point(12, 63);
-            this.Select_Department_CBox.Name = "Select_Department_CBox";
-            this.Select_Department_CBox.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.Select_Department_CBox.Size = new System.Drawing.Size(343, 18);
-            this.Select_Department_CBox.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            this.Select_Department_CBox.TabIndex = 16;
-            this.Select_Department_CBox.Text = "Select Department";
-            // 
-            // Select_Grade_CBox
-            // 
-            this.Select_Grade_CBox.CornerRoundingRadius = -1F;
-            this.Select_Grade_CBox.DropDownWidth = 400;
-            this.Select_Grade_CBox.IntegralHeight = false;
-            this.Select_Grade_CBox.Location = new System.Drawing.Point(12, 37);
-            this.Select_Grade_CBox.Name = "Select_Grade_CBox";
-            this.Select_Grade_CBox.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.Select_Grade_CBox.Size = new System.Drawing.Size(343, 18);
-            this.Select_Grade_CBox.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            this.Select_Grade_CBox.TabIndex = 15;
-            this.Select_Grade_CBox.Text = "Select Grade";
-            // 
             // Stud_Pass_Chart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.Stud_Pass_Chart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.Stud_Pass_Chart.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.Stud_Pass_Chart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.Stud_Pass_Chart.Legends.Add(legend3);
             this.Stud_Pass_Chart.Location = new System.Drawing.Point(391, 270);
             this.Stud_Pass_Chart.Name = "Stud_Pass_Chart";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.IsValueShownAsLabel = true;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            dataPoint1.Label = "Failed";
-            dataPoint2.Label = "Passed";
-            series1.Points.Add(dataPoint1);
-            series1.Points.Add(dataPoint2);
-            this.Stud_Pass_Chart.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series3.IsValueShownAsLabel = true;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            dataPoint8.Label = "Failed";
+            dataPoint9.Label = "Passed";
+            series3.Points.Add(dataPoint8);
+            series3.Points.Add(dataPoint9);
+            this.Stud_Pass_Chart.Series.Add(series3);
             this.Stud_Pass_Chart.Size = new System.Drawing.Size(400, 233);
             this.Stud_Pass_Chart.TabIndex = 14;
             this.Stud_Pass_Chart.Text = "chart2";
@@ -261,27 +336,27 @@
             // 
             // Stud_Grades_Chart
             // 
-            chartArea2.Name = "ChartArea1";
-            this.Stud_Grades_Chart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.Stud_Grades_Chart.Legends.Add(legend2);
+            chartArea4.Name = "ChartArea1";
+            this.Stud_Grades_Chart.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.Stud_Grades_Chart.Legends.Add(legend4);
             this.Stud_Grades_Chart.Location = new System.Drawing.Point(391, 12);
             this.Stud_Grades_Chart.Name = "Stud_Grades_Chart";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Students";
-            dataPoint3.IsValueShownAsLabel = false;
-            dataPoint3.Label = "A";
-            dataPoint4.Label = "B";
-            dataPoint5.Label = "C";
-            dataPoint6.Label = "D";
-            dataPoint7.Label = "F";
-            series2.Points.Add(dataPoint3);
-            series2.Points.Add(dataPoint4);
-            series2.Points.Add(dataPoint5);
-            series2.Points.Add(dataPoint6);
-            series2.Points.Add(dataPoint7);
-            this.Stud_Grades_Chart.Series.Add(series2);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Students";
+            dataPoint10.IsValueShownAsLabel = false;
+            dataPoint10.Label = "A";
+            dataPoint11.Label = "B";
+            dataPoint12.Label = "C";
+            dataPoint13.Label = "D";
+            dataPoint14.Label = "F";
+            series4.Points.Add(dataPoint10);
+            series4.Points.Add(dataPoint11);
+            series4.Points.Add(dataPoint12);
+            series4.Points.Add(dataPoint13);
+            series4.Points.Add(dataPoint14);
+            this.Stud_Grades_Chart.Series.Add(series4);
             this.Stud_Grades_Chart.Size = new System.Drawing.Size(400, 238);
             this.Stud_Grades_Chart.TabIndex = 12;
             this.Stud_Grades_Chart.Text = "Grades";
@@ -306,113 +381,6 @@
             this.Financial_Tab.Text = "Financial";
             this.Financial_Tab.UseVisualStyleBackColor = true;
             // 
-            // Stat_Table
-            // 
-            this.Stat_Table.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.Stat_Table.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.Stat_Table.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Stat_Table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.Stat_Table.ColumnHeadersHeight = 30;
-            this.Stat_Table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.Stat_Table.ColumnHeadersVisible = false;
-            this.Stat_Table.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Name_Col,
-            this.Value_Col});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Stat_Table.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Stat_Table.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.Stat_Table.Location = new System.Drawing.Point(14, 173);
-            this.Stat_Table.Margin = new System.Windows.Forms.Padding(0);
-            this.Stat_Table.Name = "Stat_Table";
-            this.Stat_Table.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Stat_Table.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.Stat_Table.RowHeadersVisible = false;
-            this.Stat_Table.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.Stat_Table.Size = new System.Drawing.Size(343, 155);
-            this.Stat_Table.TabIndex = 21;
-            this.Stat_Table.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.Stat_Table.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Stat_Table.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Stat_Table.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.Stat_Table.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.Stat_Table.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.Stat_Table.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.Stat_Table.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.Stat_Table.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.Stat_Table.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Stat_Table.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.Stat_Table.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.Stat_Table.ThemeStyle.HeaderStyle.Height = 30;
-            this.Stat_Table.ThemeStyle.ReadOnly = false;
-            this.Stat_Table.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.Stat_Table.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.Stat_Table.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Stat_Table.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.Stat_Table.ThemeStyle.RowsStyle.Height = 22;
-            this.Stat_Table.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.Stat_Table.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // ViewStat_Btn
-            // 
-            this.ViewStat_Btn.BorderRadius = 10;
-            this.ViewStat_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.ViewStat_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.ViewStat_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.ViewStat_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.ViewStat_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
-            this.ViewStat_Btn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ViewStat_Btn.ForeColor = System.Drawing.Color.White;
-            this.ViewStat_Btn.Location = new System.Drawing.Point(13, 122);
-            this.ViewStat_Btn.Name = "ViewStat_Btn";
-            this.ViewStat_Btn.Size = new System.Drawing.Size(142, 28);
-            this.ViewStat_Btn.TabIndex = 22;
-            this.ViewStat_Btn.Text = "View";
-            // 
-            // Name_Col
-            // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.Name_Col.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Name_Col.HeaderText = "Name";
-            this.Name_Col.Name = "Name_Col";
-            // 
-            // Value_Col
-            // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.Value_Col.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Value_Col.HeaderText = "Value";
-            this.Value_Col.Name = "Value_Col";
-            // 
             // Statistics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -425,13 +393,11 @@
             this.Tabs_Menu.ResumeLayout(false);
             this.Students_Tab.ResumeLayout(false);
             this.Students_Tab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Stat_Table)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Select_Subject_CBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Select_Department_CBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Select_Grade_CBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Stud_Pass_Chart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Select_year_CBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Stud_Grades_Chart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Stat_Table)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -445,8 +411,6 @@
         private System.Windows.Forms.TabPage Teachers_Tab;
         private System.Windows.Forms.TabPage Financial_Tab;
         private System.Windows.Forms.DataVisualization.Charting.Chart Stud_Grades_Chart;
-        private Krypton.Toolkit.KryptonComboBox Select_Department_CBox;
-        private Krypton.Toolkit.KryptonComboBox Select_Grade_CBox;
         private System.Windows.Forms.DataVisualization.Charting.Chart Stud_Pass_Chart;
         private Krypton.Toolkit.KryptonComboBox Select_year_CBox;
         private Krypton.Toolkit.KryptonComboBox Select_Subject_CBox;

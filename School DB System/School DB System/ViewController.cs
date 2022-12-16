@@ -55,7 +55,7 @@ namespace School_DB_System
 
         public void viewStudent()
         {
-            SecondaryPage = new Student(this,controller);//creating the login page
+            SecondaryPage = new SSSTPageParent(this,controller);//creating the login page
             Application_Handler.viewOnSecondaryPage(SecondaryPage);//viewing homepage on the main application window
         }
 

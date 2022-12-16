@@ -1,6 +1,6 @@
 ﻿namespace School_DB_System
 {
-    partial class Student
+    partial class UpdateStudent
     {
         /// <summary> 
         /// Required designer variable.

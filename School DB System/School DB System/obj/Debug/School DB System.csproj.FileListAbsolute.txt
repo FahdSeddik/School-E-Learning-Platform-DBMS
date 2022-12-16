@@ -55,7 +55,6 @@ D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System
 D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.Adminstrator.resources
 D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.Accountant.resources
 D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.Staff.resources
-D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.Student.resources
 D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.Teacher.resources
 D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School DB System.csproj.GenerateResource.cache
 D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School DB System.csproj.CoreCompileInputs.cache
@@ -67,3 +66,6 @@ D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System
 D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.Subject.resources
 D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.FormMessageBox.resources
 D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.Mail.resources
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.AUDStudentParent.resources
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.AddStudent.resources
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.SSSTPageParent.resources

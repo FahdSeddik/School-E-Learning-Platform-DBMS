@@ -69,11 +69,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddStudent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddStudent.Designer.cs">
+      <DependentUpon>AddStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Application.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Application.Designer.cs">
       <DependentUpon>Application.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AUDStudentParent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AUDStudentParent.Designer.cs">
+      <DependentUpon>AUDStudentParent.cs</DependentUpon>
     </Compile>
     <Compile Include="Bus.cs">
       <SubType>UserControl</SubType>
@@ -88,6 +100,12 @@
     </Compile>
     <Compile Include="FormMessageBox.Designer.cs">
       <DependentUpon>FormMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MiddleClass.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MiddleClass.Designer.cs">
+      <DependentUpon>MiddleClass.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -128,6 +146,12 @@
       <DependentUpon>Mail.cs</DependentUpon>
     </Compile>
     <Compile Include="RJMessageBox.cs" />
+    <Compile Include="SSSTBaseUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SSSTBaseUserControl.Designer.cs">
+      <DependentUpon>SSSTBaseUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Staff.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -139,6 +163,12 @@
     </Compile>
     <Compile Include="Statistics.Designer.cs">
       <DependentUpon>Statistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SSSTPageParent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SSSTPageParent.Designer.cs">
+      <DependentUpon>SSSTPageParent.cs</DependentUpon>
     </Compile>
     <Compile Include="Student.cs">
       <SubType>UserControl</SubType>
@@ -158,9 +188,27 @@
     <Compile Include="Teacher.Designer.cs">
       <DependentUpon>Teacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateStudent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UpdateStudent.Designer.cs">
+      <DependentUpon>UpdateStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewController.cs" />
+    <Compile Include="ViewStudent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewStudent.Designer.cs">
+      <DependentUpon>ViewStudent.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddStudent.resx">
+      <DependentUpon>AddStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Application.resx">
       <DependentUpon>Application.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AUDStudentParent.resx">
+      <DependentUpon>AUDStudentParent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Bus.resx">
       <DependentUpon>Bus.cs</DependentUpon>
@@ -202,8 +250,8 @@
     <EmbeddedResource Include="Statistics.resx">
       <DependentUpon>Statistics.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Student.resx">
-      <DependentUpon>Student.cs</DependentUpon>
+    <EmbeddedResource Include="SSSTPageParent.resx">
+      <DependentUpon>SSSTPageParent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Subject.resx">
       <DependentUpon>Subject.cs</DependentUpon>

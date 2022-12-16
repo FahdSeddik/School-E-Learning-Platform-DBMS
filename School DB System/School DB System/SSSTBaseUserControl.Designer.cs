@@ -1,6 +1,6 @@
 ﻿namespace School_DB_System
 {
-    partial class Student
+    partial class SSSTBaseUserControl
     {
         /// <summary> 
         /// Required designer variable.
