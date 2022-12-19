@@ -17,7 +17,7 @@ namespace School_DB_System
     //(Txt -> TextBox) (CBox -> Comboobox) (Pnl -> Panel) (Lbl -> Label)
 
     //ADD STUDENT USERCONTROL
-    public partial class AddStudent : AUDStudentParent //inherits from the base usercontrol which contains the main design and functions (AUDSTUDENTPARENT)
+    public partial class AddStudent : StudentAUD //inherits from the base usercontrol which contains the main design and functions (AUDSTUDENTPARENT)
     {
         //DATA MEMBERS
         ViewController viewController; //viewcontroller object
@@ -34,14 +34,14 @@ namespace School_DB_System
             StdYear_CBox.DisplayMember = "std_Year"; //displaying std_Year column from the datatable "yearsList"
             StdYear_CBox.ValueMember = "std_Year"; //linking value to std_Year column from the datatable "yearsList"
             StdYear_CBox.DataSource = yearsList; //linking yearlist comboobox and yearlist datable
-            StdYear_CBox.SelectedIndex = 0; //intially selecting item at index = 0 which is "1"
+            //StdYear_CBox.SelectedIndex = 0; //intially selecting item at index = 0 which is "1"
             //intiallizing student nationality comboobox (Egyptian, American ...etc)
-            StdNationality_CBox.DataSource = GetCountryList(); //linking StdNationality with countries list
-            StdNationality_CBox.SelectedIndex = 0; //intilly selecting the first item in the comboobox which is "Egyptian"
+            StdNation_CBox.DataSource = GetNationalityList(); //linking StdNationality with Nationalities list
+            //StdNation_CBox.SelectedIndex = 0; //intilly selecting the first item in the comboobox which is "Egyptian"
             //intiallizing student second language comboobox (French, German)
-            StdSecondLang_CBox.Items.Add("French"); //adding French item at row index = 0  
-            StdSecondLang_CBox.Items.Add("German"); //adding German item at row index = 1 
-            StdSecondLang_CBox.SelectedIndex = 0; //intially selecting item at index = 0 which is "French"
+            Std2ndLang_CBox.Items.Add("French"); //adding French item at row index = 0  
+            Std2ndLang_CBox.Items.Add("German"); //adding German item at row index = 1 
+            Std2ndLang_CBox.SelectedIndex = 0; //intially selecting item at index = 0 which is "French"
         }
 
         //overriding onPaint function to change derived class (Add student) design
@@ -49,6 +49,12 @@ namespace School_DB_System
         {
             Tittle_Lbl.Text = "Add Student"; //changes control title text to update student
             Tittle_Lbl.TextAlignment = ContentAlignment.MiddleCenter; //changes tittle text alignment to center
+            StdSub_Pnl.Visible = true;
+            TeachSub_Pnl.Visible = false;
+            StdSub_Pnl.BringToFront();
+            this.Controls.Remove(TeachSub_Pnl);
+            StdName_Txt.Select();//initially selecting student name textbox
+            StdPayedTuition_CBox.Visible = false; //hiding payed tuition check box in add student panel
         }
 
         //METHODS
@@ -62,6 +68,11 @@ namespace School_DB_System
         //Note that in updating student information student id is not changed even if selected year and SSN changed
         private void updateStudentID()
         {
+            if(StdSSN_Txt.TextLength < 2)
+            {
+                StdID_Txt.Text = ""; //empty student ID (reset)
+                return; //return (do nothing)
+            }
             if (StdSSN_Txt.BorderColor == Color.Gray) //if SSN textbox bordercolor is gray means enetered Valid SSN generate student ID
             {
                 int stdsCount = controllerObj.getStudentsCount(); //retrieves student count
@@ -86,7 +97,7 @@ namespace School_DB_System
         private void resetAddPanel()
         {
             //looping on each item on the panel (Add Panel)
-            foreach (Control item in Sub_Pnl.Controls)
+            foreach (Control item in StdSub_Pnl.Controls)
             {
                 if (item is Guna2TextBox) //if item is textbox
                 {
@@ -106,9 +117,9 @@ namespace School_DB_System
 
 
         //EVENTS
-
         //add student year comboobox selection changed event
-        //if the selected year changed change student ID as it depeneds on the selected year (first 2 digits of the ID are the last 2 digits of the graduation year that depends on the year the student enrolled in the school) 
+        //if the selected year changed change student ID as it depeneds on the selected year
+        //(first 2 digits of the ID are the last 2 digits of the graduation year that depends on the year the student enrolled in the school) 
         private void StdYear_CBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             updateStudentID(); //Call update student ID that updates ID and handles uniqness of the ID
@@ -120,7 +131,7 @@ namespace School_DB_System
         {
             //checks if there a empty required data (empty textboxs)
             //loops on each textbox in the control
-            foreach (Control item in Sub_Pnl.Controls) //loop on each item in the panel
+            foreach (Control item in StdSub_Pnl.Controls) //loop on each item in the panel
             {
                 if (item is Guna2TextBox) //if the item is textbox
                 {
@@ -144,12 +155,12 @@ namespace School_DB_System
                 }
             }
             //if the all the data entered by the user is valid
-            try //handles any unexpected error while converting any string to int64 or query fail
+            try //handles any unexpected error while converting any string to string or query fail
             {
                 //send a query and gets the result of the query in queryres
-                int queryRes = controllerObj.AddStudent(Int64.Parse(ParSSN_Txt.Text.ToString()), ParName_Txt.Text.ToString(), ParAdress_Txt.Text.ToString(), Int64.Parse(ParPNumber_Txt.Text.ToString()), ParEmail_Txt.Text.ToString(),
-                   Int64.Parse(StdID_Txt.Text.ToString()), StdName_Txt.Text.ToString(), Int64.Parse(StdSSN_Txt.Text.ToString()), StdEmail_Txt.Text.ToString(), Int64.Parse(StdPNumber_Txt.Text.ToString()), StdDob_Dtp.Value.ToString(),
-                   StdNationality_CBox.Text.ToString(), StdAdress_Txt.Text.ToString(), StdSecondLang_CBox.Text.ToString(), int.Parse(StdYear_CBox.Text.ToString()));
+                int queryRes = controllerObj.AddStudent(StdParSSN_Txt.Text.ToString(), StdParName_Txt.Text.ToString(), StdParAdress_Txt.Text.ToString(), StdParPNum_Txt.Text.ToString(), StdParEmail_Txt.Text.ToString(),
+                   StdID_Txt.Text.ToString(), StdName_Txt.Text.ToString(), StdSSN_Txt.Text.ToString(), StdEmail_Txt.Text.ToString(), StdPNum_Txt.Text.ToString(), StdDob_Dtp.Value.ToString(),
+                   StdNation_CBox.Text.ToString(), StdAdress_Txt.Text.ToString(), Std2ndLang_CBox.Text.ToString(), int.Parse(StdYear_CBox.Text.ToString()));
 
                 if (queryRes == 0) //if queryres = 0 i.e query executing failed
                 {
@@ -167,10 +178,13 @@ namespace School_DB_System
                    "Successfully added",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
+                    resetAddPanel();//reset the panel to be ready for the next insertion
+                    viewController.refreshDatagridView(); //refresh datagrid view after insert or delete student
+                    //resets all textboxes text, clear error message...etc
                     return; //return
                 }
             }
-            catch (Exception error) //if any unexpected error while converting any string to int64 or query fail
+            catch (Exception error) //if any unexpected error while converting any string to string or query fail
             {
                 //inform the user that the data is invalid
                 RJMessageBox.Show("Invalid data, please correct entered data and try again.",
@@ -181,12 +195,26 @@ namespace School_DB_System
             }
         }
 
-        //add student year comboobox selection changed event
-        //if the selected year changed change student ID as it depeneds on the selected year
-        //(first 2 digits of the ID are the last 2 digits of the graduation year that depends on the year the student enrolled in the school) 
-        private void StdYear_CBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        //Student SSN Textbox text changed event
+        //also used for Student SSN Textbox leave event
+        protected override void StdSSN_Txt_TextChanged(object sender, EventArgs e)
         {
-                updateStudentID(); //Call update student ID that updates ID and handles uniqness of the ID
+            //if name text contains length is out of range (from 14 to 20 digit) this is invalid
+            if (StdSSN_Txt.TextLength < 14 || StdSSN_Txt.TextLength > 20 || StdSSN_Txt.Text.Any(char.IsLetter))
+            {
+                showErrorMessage("invalid SSN, please inert a valid 14 - 20 numbers SSN"); //informing the user with a suitable message
+                StdSSN_Txt.BorderColor = Color.Red; //changing text border color to red informing the user that this is invalid data
+                updateStudentID();
+                return; //return
+            }
+            else //if valid data (no characters or ovalid SSN length)
+            {
+                //if valid data (no characters or ovalid SSN length) inform the user that the entered data is valid
+                hideErrorMessage(); //hide error message
+                StdSSN_Txt.BorderColor = Color.Gray; //changing textbox color back to gray informing the user that it is a valid data
+                updateStudentID();
+                return; //return
+            }
         }
 
     }

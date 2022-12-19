@@ -25,7 +25,7 @@ namespace School_DB_System
             catch (Exception e)
             {
                 // this message should not appear to user in the final application
-                MessageBox.Show("An error occurred while connecting to the database!");
+                //MessageBox.Show("An error occurred while connecting to the database!");
             }
         }
 
@@ -39,7 +39,7 @@ namespace School_DB_System
             catch (Exception ex)
             {
                 // this message should not appear to user in the final application
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
                 return 0;
             }
         }
@@ -66,7 +66,7 @@ namespace School_DB_System
             catch (Exception ex)
             {
                 // this message should not appear to user in the final application
-                MessageBox.Show(ex.Message);
+               // MessageBox.Show(ex.Message);
                 return null;
             }
         }
@@ -81,7 +81,7 @@ namespace School_DB_System
             catch (Exception ex)
             {
                 // this message should not appear to user in the final application
-                MessageBox.Show(ex.Message);
+               // MessageBox.Show(ex.Message);
                 return 0;
             }
         }
@@ -95,7 +95,7 @@ namespace School_DB_System
             catch (Exception e)
             {
                 // this message should not appear to user in the final application
-                MessageBox.Show(e.Message);
+               // MessageBox.Show(e.Message);
             }
         }
 

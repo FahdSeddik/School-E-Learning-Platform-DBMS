@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,9 +17,13 @@ namespace School_DB_System
         private ViewController ViewController;
         private Controller Controller; //making controller object
         private UserControl MainPage;
-        private UserControl SecondaryPage;
+        private SSSTPageParent MainTab;
+        private BaseAUD SubTab;
+        private UserControl TempTab;
         bool drag;
         Point StartPoint;
+
+
         public Application()// Default Constructor
         {
             InitializeComponent();//initiallize
@@ -26,35 +31,82 @@ namespace School_DB_System
             ViewController = new ViewController(this,Controller);
             drag = false;
             StartPoint = new Point(0, 0);
-        }
+            MainTab_Pnl.Visible = false;
+            SubTab_Pnl.Visible =false;
+            TempTab_Pnl.Visible =false;
+    }
 
         //METHODS
 
         //Function that displays the sutiable form view for a student
 
-        public void viewOnMainPage(UserControl Mainpage)
+        public void ViewOnMainPage(UserControl Mainpage)
         {
             MainPage = Mainpage;
-            MainScreen_Pnl.Controls.Clear();
-            MainScreen_Pnl.Controls.Add(MainPage);
-            SecondaryScreen_Pnl.Hide();
-            MainScreen_Pnl.Show();
+            MainPage_Pnl.Controls.Clear();
+            MainPage_Pnl.Controls.Add(MainPage);
+            MainPage_Pnl.Visible = true;
+            MainPage_Pnl.BringToFront();
+            Exit_Btn.BringToFront();
         }
-        public void viewOnSecondaryPage(UserControl Secondarypage)
+        //logout w homepage w loginpage
+
+        public void ViewOnMainTab(SSSTPageParent Maintab)
         {
-            SecondaryPage = Secondarypage;
-            SecondaryScreen_Pnl.Controls.Clear();
-            SecondaryScreen_Pnl.Controls.Add(SecondaryPage);
-            MainScreen_Pnl.Hide();
-            SecondaryScreen_Pnl.Show();
+            MainTab = Maintab;
+            MainTab_Pnl.Controls.Clear();
+            MainTab_Pnl.Controls.Add(Maintab);
+            MainTab_Pnl.Visible = true;
+            MainTab_Pnl.BringToFront();
+            Exit_Btn.BringToFront();
+        }
+        //Student Teacher Bus ....etc
+
+        public void CloseMainTab()
+        {
+            MainTab = null;
+            MainTab_Pnl.Controls.Clear();
+            MainTab_Pnl.Visible = false;
+            CloseSubTab();
         }
 
-
-        public void viewMainPage()
+        public void ViewOnSubTab(BaseAUD Subtab)
         {
-            SecondaryScreen_Pnl.Hide();
-            MainScreen_Pnl.Show();
+            SubTab = Subtab;
+            SubTab_Pnl.Controls.Clear();
+            SubTab_Pnl.Controls.Add(Subtab);
+            SubTab_Pnl.Visible = true;
+            SubTab_Pnl.BringToFront();
+            Exit_Btn.BringToFront();
         }
+        //Add ,update,view...etc....
+
+        public void CloseSubTab()
+        {
+            SubTab = null;
+            SubTab_Pnl.Controls.Clear();
+            SubTab_Pnl.Visible = false;
+            CloseTempTab();
+        }
+
+        public void ViewOnTempTab(UserControl Temptab)
+        {
+            TempTab = Temptab;
+            TempTab_Pnl.Controls.Clear();
+            TempTab_Pnl.Controls.Add(TempTab);
+            TempTab_Pnl.Visible = true;
+            TempTab_Pnl.BringToFront();
+            Exit_Btn.BringToFront();
+        }
+        //drivers list, students list...etc ....etc
+
+        public void CloseTempTab()
+        {
+            TempTab = null;
+            TempTab_Pnl.Controls.Clear();
+            TempTab_Pnl.Visible = false;
+        }
+
 
         private void Exit_Btn_Click(object sender, EventArgs e)
         {

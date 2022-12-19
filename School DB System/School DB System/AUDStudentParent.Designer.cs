@@ -32,13 +32,21 @@
             this.Main_Pnl = new Guna.UI2.WinForms.Guna2Panel();
             this.TitleBar_Pnl = new Guna.UI2.WinForms.Guna2Panel();
             this.Tittle_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.Back_btn = new Guna.UI2.WinForms.Guna2Button();
             this.ErrorMessage_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Submit_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.Sub_Pnl = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.PayedTuition_CBox = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.University_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.University_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.DobRequired_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.StdSSNRequired_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.ParPhoneRequired_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.ParSSNRequired_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.StdSecondLangRequired_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.StdUnivesityRequired_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.StdEmailRequired_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.StdnationalityRequired_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.StdPhoneRequired_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.StdIDRequired_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.stdNameRequired_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -75,7 +83,6 @@
             this.StdEmail_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.ParName_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.StdName_Txt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Back_btn = new Guna.UI2.WinForms.Guna2Button();
             this.Main_Pnl.SuspendLayout();
             this.TitleBar_Pnl.SuspendLayout();
             this.Sub_Pnl.SuspendLayout();
@@ -118,6 +125,25 @@
             this.Tittle_Lbl.TabIndex = 3;
             this.Tittle_Lbl.Text = "Ttittle";
             // 
+            // Back_btn
+            // 
+            this.Back_btn.BorderColor = System.Drawing.Color.Silver;
+            this.Back_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Back_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Back_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Back_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Back_btn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Back_btn.FillColor = System.Drawing.Color.DarkGray;
+            this.Back_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Back_btn.ForeColor = System.Drawing.Color.White;
+            this.Back_btn.Image = ((System.Drawing.Image)(resources.GetObject("Back_btn.Image")));
+            this.Back_btn.Location = new System.Drawing.Point(0, 0);
+            this.Back_btn.Margin = new System.Windows.Forms.Padding(0);
+            this.Back_btn.Name = "Back_btn";
+            this.Back_btn.Size = new System.Drawing.Size(144, 52);
+            this.Back_btn.TabIndex = 1;
+//            this.Back_btn.Click += new System.EventHandler(this.Back_btn_Click);
+            // 
             // ErrorMessage_Lbl
             // 
             this.ErrorMessage_Lbl.BackColor = System.Drawing.Color.Transparent;
@@ -145,16 +171,23 @@
             this.Submit_Btn.Size = new System.Drawing.Size(180, 40);
             this.Submit_Btn.TabIndex = 6;
             this.Submit_Btn.Text = "Submit";
-            this.Submit_Btn.Click += new System.EventHandler(this.Submit_Btn_Click);
+           // this.Submit_Btn.Click += new System.EventHandler(this.Submit_Btn_Click);
             // 
             // Sub_Pnl
             // 
             this.Sub_Pnl.AutoScroll = true;
             this.Sub_Pnl.BackColor = System.Drawing.Color.White;
+            this.Sub_Pnl.Controls.Add(this.PayedTuition_CBox);
+            this.Sub_Pnl.Controls.Add(this.University_Lbl);
+            this.Sub_Pnl.Controls.Add(this.University_Txt);
             this.Sub_Pnl.Controls.Add(this.DobRequired_Lbl);
             this.Sub_Pnl.Controls.Add(this.StdSSNRequired_Lbl);
             this.Sub_Pnl.Controls.Add(this.ParPhoneRequired_Lbl);
             this.Sub_Pnl.Controls.Add(this.ParSSNRequired_Lbl);
+            this.Sub_Pnl.Controls.Add(this.StdSecondLangRequired_Lbl);
+            this.Sub_Pnl.Controls.Add(this.StdUnivesityRequired_Lbl);
+            this.Sub_Pnl.Controls.Add(this.StdEmailRequired_Lbl);
+            this.Sub_Pnl.Controls.Add(this.StdnationalityRequired_Lbl);
             this.Sub_Pnl.Controls.Add(this.StdPhoneRequired_Lbl);
             this.Sub_Pnl.Controls.Add(this.StdIDRequired_Lbl);
             this.Sub_Pnl.Controls.Add(this.stdNameRequired_Lbl);
@@ -195,6 +228,61 @@
             this.Sub_Pnl.Name = "Sub_Pnl";
             this.Sub_Pnl.Size = new System.Drawing.Size(818, 422);
             this.Sub_Pnl.TabIndex = 7;
+            // 
+            // PayedTuition_CBox
+            // 
+            this.PayedTuition_CBox.AutoSize = true;
+            this.PayedTuition_CBox.CheckedState.BorderColor = System.Drawing.Color.Silver;
+            this.PayedTuition_CBox.CheckedState.BorderRadius = 0;
+            this.PayedTuition_CBox.CheckedState.BorderThickness = 0;
+            this.PayedTuition_CBox.CheckedState.FillColor = System.Drawing.Color.Silver;
+            this.PayedTuition_CBox.CheckMarkColor = System.Drawing.Color.ForestGreen;
+            this.PayedTuition_CBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.PayedTuition_CBox.ForeColor = System.Drawing.Color.Silver;
+            this.PayedTuition_CBox.Location = new System.Drawing.Point(689, 253);
+            this.PayedTuition_CBox.Name = "PayedTuition_CBox";
+            this.PayedTuition_CBox.Size = new System.Drawing.Size(96, 17);
+            this.PayedTuition_CBox.TabIndex = 52;
+            this.PayedTuition_CBox.Text = "payed tuition";
+            this.PayedTuition_CBox.UncheckedState.BorderColor = System.Drawing.Color.Silver;
+            this.PayedTuition_CBox.UncheckedState.BorderRadius = 0;
+            this.PayedTuition_CBox.UncheckedState.BorderThickness = 0;
+            this.PayedTuition_CBox.UncheckedState.FillColor = System.Drawing.Color.Silver;
+            // 
+            // University_Lbl
+            // 
+            this.University_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.University_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.University_Lbl.ForeColor = System.Drawing.Color.Gray;
+            this.University_Lbl.Location = new System.Drawing.Point(435, 154);
+            this.University_Lbl.Name = "University_Lbl";
+            this.University_Lbl.Size = new System.Drawing.Size(54, 15);
+            this.University_Lbl.TabIndex = 51;
+            this.University_Lbl.Text = "university";
+            this.University_Lbl.Visible = false;
+            // 
+            // University_Txt
+            // 
+            this.University_Txt.BorderColor = System.Drawing.Color.Gray;
+            this.University_Txt.BorderRadius = 3;
+            this.University_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.University_Txt.DefaultText = "";
+            this.University_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.University_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.University_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.University_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.University_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.University_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.University_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.University_Txt.Location = new System.Drawing.Point(497, 154);
+            this.University_Txt.Name = "University_Txt";
+            this.University_Txt.PasswordChar = '\0';
+            this.University_Txt.PlaceholderText = "University";
+            this.University_Txt.SelectedText = "";
+            this.University_Txt.Size = new System.Drawing.Size(292, 36);
+            this.University_Txt.TabIndex = 50;
+            this.University_Txt.Visible = false;
+            this.University_Txt.TextChanged += new System.EventHandler(this.University_Txt_TextChanged);
             // 
             // DobRequired_Lbl
             // 
@@ -239,6 +327,50 @@
             this.ParSSNRequired_Lbl.Size = new System.Drawing.Size(11, 27);
             this.ParSSNRequired_Lbl.TabIndex = 49;
             this.ParSSNRequired_Lbl.Text = "*";
+            // 
+            // StdSecondLangRequired_Lbl
+            // 
+            this.StdSecondLangRequired_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.StdSecondLangRequired_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StdSecondLangRequired_Lbl.ForeColor = System.Drawing.Color.DarkRed;
+            this.StdSecondLangRequired_Lbl.Location = new System.Drawing.Point(795, 198);
+            this.StdSecondLangRequired_Lbl.Name = "StdSecondLangRequired_Lbl";
+            this.StdSecondLangRequired_Lbl.Size = new System.Drawing.Size(11, 27);
+            this.StdSecondLangRequired_Lbl.TabIndex = 49;
+            this.StdSecondLangRequired_Lbl.Text = "*";
+            // 
+            // StdUnivesityRequired_Lbl
+            // 
+            this.StdUnivesityRequired_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.StdUnivesityRequired_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StdUnivesityRequired_Lbl.ForeColor = System.Drawing.Color.DarkRed;
+            this.StdUnivesityRequired_Lbl.Location = new System.Drawing.Point(795, 156);
+            this.StdUnivesityRequired_Lbl.Name = "StdUnivesityRequired_Lbl";
+            this.StdUnivesityRequired_Lbl.Size = new System.Drawing.Size(11, 27);
+            this.StdUnivesityRequired_Lbl.TabIndex = 49;
+            this.StdUnivesityRequired_Lbl.Text = "*";
+            // 
+            // StdEmailRequired_Lbl
+            // 
+            this.StdEmailRequired_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.StdEmailRequired_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StdEmailRequired_Lbl.ForeColor = System.Drawing.Color.DarkRed;
+            this.StdEmailRequired_Lbl.Location = new System.Drawing.Point(480, 34);
+            this.StdEmailRequired_Lbl.Name = "StdEmailRequired_Lbl";
+            this.StdEmailRequired_Lbl.Size = new System.Drawing.Size(11, 27);
+            this.StdEmailRequired_Lbl.TabIndex = 49;
+            this.StdEmailRequired_Lbl.Text = "*";
+            // 
+            // StdnationalityRequired_Lbl
+            // 
+            this.StdnationalityRequired_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.StdnationalityRequired_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StdnationalityRequired_Lbl.ForeColor = System.Drawing.Color.DarkRed;
+            this.StdnationalityRequired_Lbl.Location = new System.Drawing.Point(97, 156);
+            this.StdnationalityRequired_Lbl.Name = "StdnationalityRequired_Lbl";
+            this.StdnationalityRequired_Lbl.Size = new System.Drawing.Size(11, 27);
+            this.StdnationalityRequired_Lbl.TabIndex = 49;
+            this.StdnationalityRequired_Lbl.Text = "*";
             // 
             // StdPhoneRequired_Lbl
             // 
@@ -434,9 +566,9 @@
             this.StdYear_Lbl.ForeColor = System.Drawing.Color.Gray;
             this.StdYear_Lbl.Location = new System.Drawing.Point(435, 154);
             this.StdYear_Lbl.Name = "StdYear_Lbl";
-            this.StdYear_Lbl.Size = new System.Drawing.Size(25, 15);
+            this.StdYear_Lbl.Size = new System.Drawing.Size(26, 15);
             this.StdYear_Lbl.TabIndex = 39;
-            this.StdYear_Lbl.Text = "year";
+            this.StdYear_Lbl.Text = "Year";
             // 
             // StdAdress_Lbl
             // 
@@ -510,11 +642,13 @@
             this.StdNationality_CBox.BorderColor = System.Drawing.Color.Gray;
             this.StdNationality_CBox.BorderRadius = 3;
             this.StdNationality_CBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.StdNationality_CBox.DropDownHeight = 120;
             this.StdNationality_CBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.StdNationality_CBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.StdNationality_CBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.StdNationality_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.StdNationality_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.StdNationality_CBox.IntegralHeight = false;
             this.StdNationality_CBox.ItemHeight = 30;
             this.StdNationality_CBox.Location = new System.Drawing.Point(114, 154);
             this.StdNationality_CBox.Name = "StdNationality_CBox";
@@ -735,6 +869,8 @@
             this.StdEmail_Txt.SelectedText = "";
             this.StdEmail_Txt.Size = new System.Drawing.Size(294, 31);
             this.StdEmail_Txt.TabIndex = 2;
+            this.StdEmail_Txt.TextChanged += new System.EventHandler(this.StdEmail_Txt_TextChanged);
+            this.StdEmail_Txt.Leave += new System.EventHandler(this.StdEmail_Txt_TextChanged);
             // 
             // ParName_Txt
             // 
@@ -779,27 +915,8 @@
             this.StdName_Txt.SelectedText = "";
             this.StdName_Txt.Size = new System.Drawing.Size(303, 31);
             this.StdName_Txt.TabIndex = 1;
-            this.StdName_Txt.TextChanged += new System.EventHandler(this.StdName_Txt_TextChanged);
-            this.StdName_Txt.Leave += new System.EventHandler(this.StdName_Txt_TextChanged);
-            // 
-            // Back_btn
-            // 
-            this.Back_btn.BorderColor = System.Drawing.Color.Silver;
-            this.Back_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.Back_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.Back_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.Back_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Back_btn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Back_btn.FillColor = System.Drawing.Color.DarkGray;
-            this.Back_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Back_btn.ForeColor = System.Drawing.Color.White;
-            this.Back_btn.Image = ((System.Drawing.Image)(resources.GetObject("Back_btn.Image")));
-            this.Back_btn.Location = new System.Drawing.Point(0, 0);
-            this.Back_btn.Margin = new System.Windows.Forms.Padding(0);
-            this.Back_btn.Name = "Back_btn";
-            this.Back_btn.Size = new System.Drawing.Size(144, 52);
-            this.Back_btn.TabIndex = 1;
-            this.Back_btn.Click += new System.EventHandler(this.Back_btn_Click);
+           // this.StdName_Txt.TextChanged += new System.EventHandler(this.StdName_Txt_TextChanged);
+           // this.StdName_Txt.Leave += new System.EventHandler(this.StdName_Txt_TextChanged);
             // 
             // AUDStudentParent
             // 
@@ -839,7 +956,6 @@
         protected Guna.UI2.WinForms.Guna2HtmlLabel StdSecond_Lbl;
         protected Guna.UI2.WinForms.Guna2ComboBox StdSecondLang_CBox;
         protected Guna.UI2.WinForms.Guna2DateTimePicker StdDob_Dtp;
-        protected Guna.UI2.WinForms.Guna2HtmlLabel ParAdress_Lbl;
         protected Guna.UI2.WinForms.Guna2HtmlLabel ParSSN_Lbl;
         protected Guna.UI2.WinForms.Guna2HtmlLabel ParPNumber_Lbl;
         protected Guna.UI2.WinForms.Guna2TextBox ParPNumber_Txt;
@@ -848,7 +964,6 @@
         protected Guna.UI2.WinForms.Guna2HtmlLabel StdYear_Lbl;
         protected Guna.UI2.WinForms.Guna2HtmlLabel StdAdress_Lbl;
         protected Guna.UI2.WinForms.Guna2HtmlLabel StdSSN_Lbl;
-        protected Guna.UI2.WinForms.Guna2HtmlLabel ParEmail_Lbl;
         protected Guna.UI2.WinForms.Guna2HtmlLabel StdEmail_Lbl;
         protected Guna.UI2.WinForms.Guna2HtmlLabel StdDob_Lbl;
         protected Guna.UI2.WinForms.Guna2HtmlLabel StdNationality_Lbl;
@@ -867,5 +982,14 @@
         protected Guna.UI2.WinForms.Guna2TextBox ParEmail_Txt;
         protected Guna.UI2.WinForms.Guna2TextBox StdEmail_Txt;
         protected Guna.UI2.WinForms.Guna2TextBox ParName_Txt;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel University_Lbl;
+        protected Guna.UI2.WinForms.Guna2TextBox University_Txt;
+        protected Guna.UI2.WinForms.Guna2CheckBox PayedTuition_CBox;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel StdSecondLangRequired_Lbl;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel StdUnivesityRequired_Lbl;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel StdEmailRequired_Lbl;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel StdnationalityRequired_Lbl;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel ParAdress_Lbl;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel ParEmail_Lbl;
     }
 }

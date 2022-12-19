@@ -51,7 +51,7 @@ namespace School_DB_System
 
         private void Subj_IBtn_Click(object sender, EventArgs e)
         {
-            viewController.viewSubjects();
+            viewController.viewSubject();
         }
     }
 }

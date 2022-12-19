@@ -75,11 +75,29 @@
     <Compile Include="AddStudent.Designer.cs">
       <DependentUpon>AddStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddTeacher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddTeacher.Designer.cs">
+      <DependentUpon>AddTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADUTeacherParent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ADUTeacherParent.Designer.cs">
+      <DependentUpon>ADUTeacherParent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Application.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Application.Designer.cs">
       <DependentUpon>Application.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseAUD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseAUD.Designer.cs">
+      <DependentUpon>BaseAUD.cs</DependentUpon>
     </Compile>
     <Compile Include="AUDStudentParent.cs">
       <SubType>UserControl</SubType>
@@ -146,12 +164,6 @@
       <DependentUpon>Mail.cs</DependentUpon>
     </Compile>
     <Compile Include="RJMessageBox.cs" />
-    <Compile Include="SSSTBaseUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SSSTBaseUserControl.Designer.cs">
-      <DependentUpon>SSSTBaseUserControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="Staff.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -176,6 +188,12 @@
     <Compile Include="Student.Designer.cs">
       <DependentUpon>Student.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentAUD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StudentAUD.Designer.cs">
+      <DependentUpon>StudentAUD.cs</DependentUpon>
+    </Compile>
     <Compile Include="Subject.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -194,6 +212,12 @@
     <Compile Include="UpdateStudent.Designer.cs">
       <DependentUpon>UpdateStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateTeacher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UpdateTeacher.Designer.cs">
+      <DependentUpon>UpdateTeacher.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewController.cs" />
     <Compile Include="ViewStudent.cs">
       <SubType>UserControl</SubType>
@@ -201,11 +225,23 @@
     <Compile Include="ViewStudent.Designer.cs">
       <DependentUpon>ViewStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewTeacher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewTeacher.Designer.cs">
+      <DependentUpon>ViewTeacher.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddStudent.resx">
       <DependentUpon>AddStudent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ADUTeacherParent.resx">
+      <DependentUpon>ADUTeacherParent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Application.resx">
       <DependentUpon>Application.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseAUD.resx">
+      <DependentUpon>BaseAUD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AUDStudentParent.resx">
       <DependentUpon>AUDStudentParent.cs</DependentUpon>

@@ -31,7 +31,7 @@ namespace School_DB_System
 
         private void MainBack_Btn_Click(object sender, EventArgs e)
         {
-            viewController.viewMainPage();
+            viewController.Logout();
         }
     }
 }

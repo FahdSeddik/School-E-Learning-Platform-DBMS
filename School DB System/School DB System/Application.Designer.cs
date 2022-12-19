@@ -29,21 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.MainScreen_Pnl = new Guna.UI2.WinForms.Guna2Panel();
+            this.MainPage_Pnl = new Guna.UI2.WinForms.Guna2Panel();
             this.BorderlessDesign = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.SecondaryScreen_Pnl = new Guna.UI2.WinForms.Guna2Panel();
             this.Exit_Btn = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.MainTab_Pnl = new Guna.UI2.WinForms.Guna2Panel();
+            this.SubTab_Pnl = new Guna.UI2.WinForms.Guna2Panel();
+            this.TempTab_Pnl = new Guna.UI2.WinForms.Guna2Panel();
             this.SuspendLayout();
             // 
-            // MainScreen_Pnl
+            // MainPage_Pnl
             // 
-            this.MainScreen_Pnl.AutoRoundedCorners = true;
-            this.MainScreen_Pnl.BorderRadius = 299;
-            this.MainScreen_Pnl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainScreen_Pnl.Location = new System.Drawing.Point(0, 0);
-            this.MainScreen_Pnl.Name = "MainScreen_Pnl";
-            this.MainScreen_Pnl.Size = new System.Drawing.Size(1000, 600);
-            this.MainScreen_Pnl.TabIndex = 0;
+            this.MainPage_Pnl.AutoRoundedCorners = true;
+            this.MainPage_Pnl.BorderRadius = 299;
+            this.MainPage_Pnl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPage_Pnl.Location = new System.Drawing.Point(0, 0);
+            this.MainPage_Pnl.Name = "MainPage_Pnl";
+            this.MainPage_Pnl.Size = new System.Drawing.Size(1000, 600);
+            this.MainPage_Pnl.TabIndex = 0;
             // 
             // BorderlessDesign
             // 
@@ -51,14 +53,6 @@
             this.BorderlessDesign.ContainerControl = this;
             this.BorderlessDesign.DockIndicatorTransparencyValue = 0.6D;
             this.BorderlessDesign.TransparentWhileDrag = true;
-            // 
-            // SecondaryScreen_Pnl
-            // 
-            this.SecondaryScreen_Pnl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SecondaryScreen_Pnl.Location = new System.Drawing.Point(0, 0);
-            this.SecondaryScreen_Pnl.Name = "SecondaryScreen_Pnl";
-            this.SecondaryScreen_Pnl.Size = new System.Drawing.Size(1000, 600);
-            this.SecondaryScreen_Pnl.TabIndex = 0;
             // 
             // Exit_Btn
             // 
@@ -83,14 +77,44 @@
             this.Exit_Btn.Text = "X";
             this.Exit_Btn.Click += new System.EventHandler(this.Exit_Btn_Click);
             // 
+            // MainTab_Pnl
+            // 
+            this.MainTab_Pnl.AutoRoundedCorners = true;
+            this.MainTab_Pnl.BorderRadius = 299;
+            this.MainTab_Pnl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainTab_Pnl.Location = new System.Drawing.Point(0, 0);
+            this.MainTab_Pnl.Name = "MainTab_Pnl";
+            this.MainTab_Pnl.Size = new System.Drawing.Size(1000, 600);
+            this.MainTab_Pnl.TabIndex = 8;
+            // 
+            // SubTab_Pnl
+            // 
+            this.SubTab_Pnl.AutoRoundedCorners = true;
+            this.SubTab_Pnl.BorderRadius = 268;
+            this.SubTab_Pnl.Location = new System.Drawing.Point(64, 31);
+            this.SubTab_Pnl.Name = "SubTab_Pnl";
+            this.SubTab_Pnl.Size = new System.Drawing.Size(873, 539);
+            this.SubTab_Pnl.TabIndex = 9;
+            // 
+            // TempTab_Pnl
+            // 
+            this.TempTab_Pnl.AutoRoundedCorners = true;
+            this.TempTab_Pnl.BorderRadius = 268;
+            this.TempTab_Pnl.Location = new System.Drawing.Point(64, 31);
+            this.TempTab_Pnl.Name = "TempTab_Pnl";
+            this.TempTab_Pnl.Size = new System.Drawing.Size(873, 539);
+            this.TempTab_Pnl.TabIndex = 10;
+            // 
             // Application
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 600);
             this.Controls.Add(this.Exit_Btn);
-            this.Controls.Add(this.SecondaryScreen_Pnl);
-            this.Controls.Add(this.MainScreen_Pnl);
+            this.Controls.Add(this.TempTab_Pnl);
+            this.Controls.Add(this.SubTab_Pnl);
+            this.Controls.Add(this.MainTab_Pnl);
+            this.Controls.Add(this.MainPage_Pnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Application";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -103,10 +127,12 @@
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2Panel MainScreen_Pnl;
+        private Guna.UI2.WinForms.Guna2Panel MainPage_Pnl;
         private Guna.UI2.WinForms.Guna2BorderlessForm BorderlessDesign;
-        private Guna.UI2.WinForms.Guna2Panel SecondaryScreen_Pnl;
         private Guna.UI2.WinForms.Guna2GradientButton Exit_Btn;
+        private Guna.UI2.WinForms.Guna2Panel TempTab_Pnl;
+        private Guna.UI2.WinForms.Guna2Panel SubTab_Pnl;
+        private Guna.UI2.WinForms.Guna2Panel MainTab_Pnl;
     }
 }
 

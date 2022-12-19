@@ -40,7 +40,9 @@ namespace School_DB_System
                 Username_Txt.Select();
                 return;
             }
-            if(authority > 3 || authority == 0)
+            
+            int res = ViewController.ViewHomePage(authority, Username);//view homepage function takes authority to view the sutiable view for this user
+            if (res == 0)
             {
                 LoginError_Lbl.Show();
                 Username_Txt.Clear();
@@ -48,7 +50,6 @@ namespace School_DB_System
                 Username_Txt.Select();
                 return;
             }
-                ViewController.ViewHomePage(authority, Username);//view homepage function takes authority to view the sutiable view for this user
         }
 
         private void LoginPage_Pnl_MouseDown(object sender, MouseEventArgs e)

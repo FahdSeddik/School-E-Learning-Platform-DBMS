@@ -15,12 +15,12 @@ namespace School_DB_System
     public partial class HomePage : UserControl
     {
         UserControl Home;
-        ViewController ViewController;
+        ViewController viewController;
         private bool IsCollapsed; //minimum size
-        public HomePage(ViewController ViewController, String Username,UserControl home)
+        public HomePage(ViewController viewController, String Username,UserControl home)
         {
             InitializeComponent();
-            this.ViewController = ViewController;
+            this.viewController = viewController;
             Profile_Btn.Text = Username;
             Home = home;
             Home_pnl.Controls.Clear();
@@ -32,7 +32,7 @@ namespace School_DB_System
 
         private void Logout_Btn_Click(object sender, EventArgs e)
         {
-            ViewController.Logout();
+            viewController.Logout();
         }
 
         private void Profile_DBtn_Click(object sender, EventArgs e)
@@ -52,6 +52,23 @@ namespace School_DB_System
             
         }
 
-       
+        //title bar on click event
+        private void HomePage_Pnl_MouseDown(object sender, MouseEventArgs e)
+        {
+            viewController.ApplicationMouseDown(sender,e);
+        }
+
+        //title bar mouse move event
+        private void HomePage_Pnl_MouseMove(object sender, MouseEventArgs e)
+        {
+            viewController.ApplicationMouseMove(sender, e);
+        }
+
+        //title bar mouse up event
+        private void HomePage_Pnl_MouseUp(object sender, MouseEventArgs e)
+        {
+            viewController.ApplicationMouseUp(sender, e);
+        }
+
     }
 }

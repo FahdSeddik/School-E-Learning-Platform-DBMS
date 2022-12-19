@@ -57,6 +57,9 @@
             this.HomePage_Pnl.Name = "HomePage_Pnl";
             this.HomePage_Pnl.Size = new System.Drawing.Size(1000, 600);
             this.HomePage_Pnl.TabIndex = 0;
+            this.HomePage_Pnl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HomePage_Pnl_MouseDown);
+            this.HomePage_Pnl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.HomePage_Pnl_MouseMove);
+            this.HomePage_Pnl.MouseUp += new System.Windows.Forms.MouseEventHandler(this.HomePage_Pnl_MouseUp);
             // 
             // profile_Pnl
             // 

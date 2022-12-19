@@ -42,12 +42,6 @@ namespace School_DB_System
             InitializeComponent(); //initializing component
             this.viewController = viewController; //linking viewcontroller object with one viewcontroller object the whole applicaiton use
             this.controllerObj = controllerObj;  //linking controller object with one controller object the whole applicaiton use
-            //initially hide subpage panel which contains Add Student usercontrol or update Student usercontrol or view student information usercontrol
-            SubPage_Pnl.Visible = false;
-            initializeDataGridView();//initialize Datagridview data (columns and rows)
-            //(adding column names, adjusting datagridview style...etc)
-            initializeFilter(); //initialize filter panel components (ComboBoxes)
-                                //for example (Student states : Current, Graduated, Years : 1,2,3,...etc)
         }
 
         //METHODS
@@ -68,6 +62,20 @@ namespace School_DB_System
             //so it is virtual function
         }
 
+        //adds the needed controls to the usercontrol i.e adding combooboxes and labels and textboxes...etc
+        protected virtual void PrepareControls()
+        {
+            //functinality depending on the child usercontrol (student, staff, subject, teacher)
+            //so it is virtual function
+        }
+
+        //clicks filter button to refresh the datagridview
+        //refreshes database
+        public void refreshDatagridView()
+        {
+            Filter_Btn.PerformClick();//clicks filter button to refresh the datagridview
+        }
+
         //Page back button
         //closes page and return to home page
         private void MainBack_Btn_Click(object sender, EventArgs e)
@@ -79,7 +87,7 @@ namespace School_DB_System
 
             if (result == DialogResult.Yes) //if confirmed "Yes"
             {
-                viewController.viewMainPage(); //closes page and return to home page
+                viewController.CloseMainTab(); //closes page and return to home page
             }
             else //if didn't confirm "No"
             {
@@ -88,13 +96,6 @@ namespace School_DB_System
 
         }
 
-        private void closeSubMenu()
-        {
-            //removes any item from panel
-            SubPage_Pnl.Controls.Clear();
-            //hide subpage panel which contains Add Student usercontrol or update Student usercontrol or view student information usercontrol
-            SubPage_Pnl.Visible = false;
-        }
 
         //EVENTS
 
@@ -102,7 +103,6 @@ namespace School_DB_System
         //the button functionality depends on the page student or staff or teacher or subject 
         protected virtual void Add_Btn_Click(object sender, EventArgs e)
         {
-
             //functinality depending on the child usercontrol (student, staff, subject, teacher)
             //so it is virtual function
         }
@@ -140,14 +140,14 @@ namespace School_DB_System
                 //toggels the checkbox value
                 if (Convert.ToInt32(Data_Dt[e.ColumnIndex, e.RowIndex].Value) == 0) //if the value of the cell is = 0  i.e row is selected and checkbox is unchecked
                 {
-                    Data_Dt[e.ColumnIndex, e.RowIndex].Value = 1; //change cell value to 1 i.e check the checkbox
+                    Data_Dt[this.Select_Col.Index, e.RowIndex].Value = 1; //change select cell value to 1 i.e (check the checkbox)
                     Data_Dt[e.ColumnIndex, e.RowIndex].Selected = true; //change selected state of row to true i.e select the row
                     //note that checkbox state and row selectedstate need to be done explisitly beacuse they are not linked by default
 
                 }
                 else //if the value of the cell is = 1  i.e row is selected and checkbox is checked
                 {
-                    Data_Dt[e.ColumnIndex, e.RowIndex].Value = 0; //change cell value to 0 i.e uncheck the checkbox
+                    Data_Dt[this.Select_Col.Index, e.RowIndex].Value = 0; //change select cell value to 0 i.e (uncheck the checkbox)
                     Data_Dt[e.ColumnIndex, e.RowIndex].Selected = false; //change selected state of row to false i.e deselect the row
                     //note that checkbox state and row selectedstate need to be done explisitly beacuse they are not linked by default
                 }
@@ -205,5 +205,23 @@ namespace School_DB_System
             //so it is virtual function
         }
 
+        //title bar on click event
+        private void TtitleBar_Pnl_MouseDown(object sender, MouseEventArgs e)
+        {
+            viewController.ApplicationMouseDown(sender, e);
+
+        }
+
+        //title bar mouse move event
+        private void TtitleBar_Pnl_MouseMove(object sender, MouseEventArgs e)
+        {
+            viewController.ApplicationMouseMove(sender, e);
+        }
+
+        //title bar mouse up event
+        private void TtitleBar_Pnl_MouseUp(object sender, MouseEventArgs e)
+        {
+            viewController.ApplicationMouseUp(sender, e);
+        }
     }
 }
