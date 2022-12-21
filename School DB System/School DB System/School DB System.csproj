@@ -69,6 +69,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddStaff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddStaff.Designer.cs">
+      <DependentUpon>AddStaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddStudent.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -92,6 +98,18 @@
     </Compile>
     <Compile Include="Application.Designer.cs">
       <DependentUpon>Application.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AUVStaffBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AUVStaffBase.Designer.cs">
+      <DependentUpon>AUVStaffBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AUVSubject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AUVSubject.Designer.cs">
+      <DependentUpon>AUVSubject.cs</DependentUpon>
     </Compile>
     <Compile Include="BaseAUD.cs">
       <SubType>UserControl</SubType>
@@ -118,6 +136,12 @@
     </Compile>
     <Compile Include="FormMessageBox.Designer.cs">
       <DependentUpon>FormMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Message1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Message1.Designer.cs">
+      <DependentUpon>Message1.cs</DependentUpon>
     </Compile>
     <Compile Include="MiddleClass.cs">
       <SubType>UserControl</SubType>
@@ -157,11 +181,17 @@
     <Compile Include="Accountant.Designer.cs">
       <DependentUpon>Accountant.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mail.cs">
+    <Compile Include="Request.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Mail.Designer.cs">
-      <DependentUpon>Mail.cs</DependentUpon>
+    <Compile Include="Request.Designer.cs">
+      <DependentUpon>Request.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Request1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Request1.Designer.cs">
+      <DependentUpon>Request1.cs</DependentUpon>
     </Compile>
     <Compile Include="RJMessageBox.cs" />
     <Compile Include="Staff.cs">
@@ -200,11 +230,29 @@
     <Compile Include="Subject.Designer.cs">
       <DependentUpon>Subject.cs</DependentUpon>
     </Compile>
+    <Compile Include="Subject1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Subject1.Designer.cs">
+      <DependentUpon>Subject1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teacher.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Teacher.Designer.cs">
       <DependentUpon>Teacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TempTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TempTab.Designer.cs">
+      <DependentUpon>TempTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateStaff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UpdateStaff.Designer.cs">
+      <DependentUpon>UpdateStaff.cs</DependentUpon>
     </Compile>
     <Compile Include="UpdateStudent.cs">
       <SubType>UserControl</SubType>
@@ -219,6 +267,12 @@
       <DependentUpon>UpdateTeacher.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewController.cs" />
+    <Compile Include="ViewStaff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewStaff.Designer.cs">
+      <DependentUpon>ViewStaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewStudent.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -258,6 +312,9 @@
     <EmbeddedResource Include="LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Message1.resx">
+      <DependentUpon>Message1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -277,11 +334,8 @@
     <EmbeddedResource Include="Accountant.resx">
       <DependentUpon>Accountant.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mail.resx">
-      <DependentUpon>Mail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Staff.resx">
-      <DependentUpon>Staff.cs</DependentUpon>
+    <EmbeddedResource Include="Request1.resx">
+      <DependentUpon>Request1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Statistics.resx">
       <DependentUpon>Statistics.cs</DependentUpon>
@@ -289,11 +343,14 @@
     <EmbeddedResource Include="SSSTPageParent.resx">
       <DependentUpon>SSSTPageParent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Subject.resx">
-      <DependentUpon>Subject.cs</DependentUpon>
+    <EmbeddedResource Include="Subject1.resx">
+      <DependentUpon>Subject1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher.resx">
       <DependentUpon>Teacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TempTab.resx">
+      <DependentUpon>TempTab.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

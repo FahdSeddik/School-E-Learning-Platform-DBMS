@@ -17,14 +17,14 @@ namespace School_DB_System
     //(Txt -> TextBox) (CBox -> Comboobox) (Pnl -> Panel) (Lbl -> Label)
 
     //VIEW Teacher USERCONTROL
-    public partial class ViewTeacher : ADUTeacherParent
+    public partial class ViewTeacher : ViewStaff
     {
         //DATA MEMBERS
         ViewController viewController; //viewcontroller object
         Controller controllerObj; // controller object
 
         //NON DEFAULT CONSTRUCTOR
-        public ViewTeacher(ViewController viewController, Controller controllerObj, string TeachID) : base(viewController, controllerObj) //sends base class parameters
+        public ViewTeacher(ViewController viewController, Controller controllerObj, string TeachID) : base(viewController, controllerObj, TeachID) //sends base class parameters
         {
             InitializeComponent(); //initializing component
             this.viewController = viewController; //linking viewcontroller object with one viewcontroller object the whole applicaiton use
@@ -41,7 +41,7 @@ namespace School_DB_System
             Tittle_Lbl.TextAlignment = ContentAlignment.MiddleCenter; //changes tittle text alignment to center
             Submit_Btn.Visible = false; //hides submit button as view doesn't use it
             //loops on each textbox in the control
-            foreach (Control item in TeachSub_Pnl.Controls) //loop on each item in the panel
+            foreach (Control item in StaffSub_Pnl.Controls) //loop on each item in the panel
             {
                 if (item is Guna2TextBox) //if the item is textbox
                 {
@@ -62,7 +62,13 @@ namespace School_DB_System
                     comboobox.Enabled = false; //make all combooboxes unenabled (read only)
                 }
             }
-            TeachFullTime_CHBox.Enabled = false; //disable editing payed tuition comboobox in view Teacher page
+            StaffFullTime_CHBox.Enabled = false; //disable editing payed tuition comboobox in view Teacher page
+            StaffPos_CBox.Visible = false;
+            StaffPosReq_Lbl.Visible = false;
+            StaffPos_Lbl.Visible = false;
+            StaffDepReq_Lbl.Location = StaffPos_Lbl.Location;
+            StaffDep_CBox.Location = StaffPos_CBox.Location;
+            StaffDep_Lbl.Location = StaffPos_Lbl.Location;
             hideErrorMessage();
         }
 

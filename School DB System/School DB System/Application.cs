@@ -17,8 +17,8 @@ namespace School_DB_System
         private ViewController ViewController;
         private Controller Controller; //making controller object
         private UserControl MainPage;
-        private SSSTPageParent MainTab;
-        private BaseAUD SubTab;
+        private UserControl MainTab;
+        private UserControl SubTab;
         private UserControl TempTab;
         bool drag;
         Point StartPoint;
@@ -51,7 +51,7 @@ namespace School_DB_System
         }
         //logout w homepage w loginpage
 
-        public void ViewOnMainTab(SSSTPageParent Maintab)
+        public void ViewOnMainTab(UserControl Maintab)
         {
             MainTab = Maintab;
             MainTab_Pnl.Controls.Clear();
@@ -70,11 +70,11 @@ namespace School_DB_System
             CloseSubTab();
         }
 
-        public void ViewOnSubTab(BaseAUD Subtab)
+        public void ViewOnSubTab(UserControl subtab)
         {
-            SubTab = Subtab;
+            SubTab = subtab;
             SubTab_Pnl.Controls.Clear();
-            SubTab_Pnl.Controls.Add(Subtab);
+            SubTab_Pnl.Controls.Add(subtab);
             SubTab_Pnl.Visible = true;
             SubTab_Pnl.BringToFront();
             Exit_Btn.BringToFront();

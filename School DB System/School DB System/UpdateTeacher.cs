@@ -17,14 +17,14 @@ namespace School_DB_System
     //(Txt -> TextBox) (CBox -> Comboobox) (Pnl -> Panel) (Lbl -> Label)
 
     //UPDATE Teacher USERCONTROL
-    public partial class UpdateTeacher : ADUTeacherParent //inherits from the base usercontrol which contains the main design and functions (AUDTeacherPARENT)
+    public partial class UpdateTeacher : UpdateStaff //inherits from the base usercontrol which contains the main design and functions (AUDTeacherPARENT)
     {
         //DATA MEMBERS
         ViewController viewController; //viewcontroller object
         Controller controllerObj; // controller object
 
         //NON DEFAULT CONSTRUCTOR
-        public UpdateTeacher(ViewController viewController, Controller controllerObj, string TeachID) : base(viewController, controllerObj) //sends base class parameters
+        public UpdateTeacher(ViewController viewController, Controller controllerObj, string TeachID) : base(viewController, controllerObj, TeachID) //sends base class parameters
         {
             InitializeComponent(); //initializing component
             this.viewController = viewController; //linking viewcontroller object with one viewcontroller object the whole applicaiton use
@@ -39,7 +39,13 @@ namespace School_DB_System
         {
             Tittle_Lbl.Text = "Update Teacher"; //changes control title text to update Teacher
             Tittle_Lbl.TextAlignment = ContentAlignment.MiddleCenter; //changes tittle text alignment to center
-            TeachName_Txt.Select(); //intially selecting Teacher name textbox
+            StaffName_Txt.Select(); //intially selecting Teacher name textbox
+            StaffPos_CBox.Visible = false;
+            StaffPosReq_Lbl.Visible = false;
+            StaffPos_Lbl.Visible = false;
+            StaffDepReq_Lbl.Location = StaffPos_Lbl.Location;
+            StaffDep_CBox.Location = StaffPos_CBox.Location;
+            StaffDep_Lbl.Location = StaffPos_Lbl.Location;
         }
         //METHODS
 
@@ -52,7 +58,7 @@ namespace School_DB_System
         {
             //checks if there a empty required data (empty textboxs)
             //loops on each textbox in the control
-            foreach (Control item in TeachSub_Pnl.Controls) //loop on each item in the panel
+            foreach (Control item in StaffSub_Pnl.Controls) //loop on each item in the panel
             {
                 if (item is Guna2TextBox) //if the item is textbox
                 {
@@ -81,7 +87,7 @@ namespace School_DB_System
                 //send a query and gets the result of the query in queryres
                 int queryRes = 0;//intially = 0
 
-                queryRes = controllerObj.UpdateTeacher(TeachID_Txt.Text.ToString(), TeachName_Txt.Text.ToString(), TeachSSN_Txt.Text.ToString(), Int64.Parse(TeachSalary_Txt.Text), TeachAdress_Txt.Text.ToString(), TeachEmail_Txt.Text.ToString(), TeachPNum_Txt.Text.ToString(), TeachDep_CBox.Text.ToString(), TeachFullTime_CHBox.Checked, TeachID_Txt.Text.ToString(), "0000");
+                queryRes = controllerObj.UpdateTeacher(StaffID_Txt.Text.ToString(), StaffName_Txt.Text.ToString(), StaffSSN_Txt.Text.ToString(), Int64.Parse(StaffSalary_Txt.Text), StaffAdress_Txt.Text.ToString(), StaffEmail_Txt.Text.ToString(), StaffPNum_Txt.Text.ToString(), int.Parse(StaffDep_CBox.SelectedValue.ToString()), StaffFullTime_CHBox.Checked, StaffID_Txt.Text.ToString(), "0000");
 
                 if (queryRes == 0) //if queryres = 0 i.e query executing failed
                 {

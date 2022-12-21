@@ -61,7 +61,7 @@ namespace School_DB_System
             teachersList.Columns.Add().ColumnName = "ID";//adding the first column with header text = "ID"
             teachersList.Columns.Add().ColumnName = "Name"; //adding the second column with header text = "Name"
             teachersList.Columns.Add().ColumnName = "Email"; //adding the thhird column with header text = "Email"
-            teachersList.Columns.Add().ColumnName = "Department";//adding the fourth column with header text = "Department"
+            teachersList.Columns.Add().ColumnName = "MobileNumber";//adding the fourth column with header text = "Department"
             Data_Dt.DataSource = teachersList; //linking datagridview data with the created datatable (teacherslist)
             //adjusting teachers datagridview columns style
             Data_Dt.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; //adjusting first column style (auto size mode depending on the length of content)

@@ -95,13 +95,13 @@ namespace School_DB_System
         protected override void initializeDataGridView()
         {
             //initializing datagridview wirh empty columns (ID, Name, Email, Year)
-            DataTable studentsList = new DataTable(); //creating an empty datatable
-            //creating empty columns in studentslist datatable
-            studentsList.Columns.Add().ColumnName = "ID";//adding the first column with header text = "ID"
-            studentsList.Columns.Add().ColumnName = "Name"; //adding the second column with header text = "Name"
-            studentsList.Columns.Add().ColumnName = "Email"; //adding the thhird column with header text = "Email"
-            studentsList.Columns.Add().ColumnName = "Year";//adding the fourth column with header text = "Year"
-            Data_Dt.DataSource = studentsList; //linking datagridview data with the created datatable (studentslist)
+            DataTable RequestList = new DataTable(); //creating an empty datatable
+            //creating empty columns in RequestList datatable
+            RequestList.Columns.Add().ColumnName = "ID";//adding the first column with header text = "ID"
+            RequestList.Columns.Add().ColumnName = "Name"; //adding the second column with header text = "Name"
+            RequestList.Columns.Add().ColumnName = "Email"; //adding the thhird column with header text = "Email"
+            RequestList.Columns.Add().ColumnName = "Year";//adding the fourth column with header text = "Year"
+            Data_Dt.DataSource = RequestList; //linking datagridview data with the created datatable (RequestList)
             //adjusting students datagridview columns style
             Data_Dt.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; //adjusting first column style (auto size mode depending on the length of content)
             Data_Dt.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; //adjusting second column style (auto size mode depending on the length of content)
@@ -221,25 +221,25 @@ namespace School_DB_System
                 Data_Dt.Columns.RemoveAt(1);
             }
 
-            DataTable StudentsList = null; //create an empty datatable
+            DataTable RequestList = null; //create an empty datatable
 
             //check if selected state is = "current" and selected year is = "All"
             if (Template_CBox.Text.ToString() == "Current" && YearList_CBox.SelectedValue.ToString() == "All")
             {
-                StudentsList = controllerObj.getAllStudents(); //sends a query to retrieve all students (ID, Name, Email, Year)
-                Data_Dt.DataSource = StudentsList; //linking student datagridview with students list datatable
+                RequestList = controllerObj.getAllStudents(); //sends a query to retrieve all students (ID, Name, Email, Year)
+                Data_Dt.DataSource = RequestList; //linking student datagridview with students list datatable
                 CurrentStudentView(); //changes to current student view
             }
             else if (Template_CBox.Text.ToString() == "Graduated") //check if selected state is = "Graduated
             {
-                StudentsList = controllerObj.getAllGraduatedStudents();
-                Data_Dt.DataSource = StudentsList; //linking student datagridview with students list datatable
+                RequestList = controllerObj.getAllGraduatedStudents();
+                Data_Dt.DataSource = RequestList; //linking student datagridview with students list datatable
                 GraduateStudentView();
             }
             else //check if selected state is = "current" and selected year is = 1,2,3...etc (not all)
             {
-                StudentsList = controllerObj.getStudentsOfYear(int.Parse(YearList_CBox.Text));
-                Data_Dt.DataSource = StudentsList; //linking student datagridview with students list datatable
+                RequestList = controllerObj.getStudentsOfYear(int.Parse(YearList_CBox.Text));
+                Data_Dt.DataSource = RequestList; //linking student datagridview with students list datatable
                 CurrentStudentView();
             }
 

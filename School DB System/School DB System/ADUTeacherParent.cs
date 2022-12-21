@@ -17,7 +17,7 @@ namespace School_DB_System
     //(Txt -> TextBox) (CBox -> Comboobox) (Pnl -> Panel) (Lbl -> Label)
 
     //AUDSTUDENTPARENT USERCONTROL (BASE USERCONTROL FOR ADD STUDENT, UPDATE STUDENT, VIEW STUDENT)
-    public partial class ADUTeacherParent : BaseAUD //inherits from usercontrol
+    public partial class ADUTeacherParent : AUVStaffBase //inherits from usercontrol
     {
 
         //DATA MEMBERS
@@ -35,22 +35,15 @@ namespace School_DB_System
         protected override void OnPaint(PaintEventArgs pe)
         {
             Tittle_Lbl.Text = "Teacher";
-            TeachSub_Pnl.Visible = true;
-            TeachSub_Pnl.BringToFront();
+            StaffSub_Pnl.Visible = true;
+            StaffSub_Pnl.BringToFront();
             this.Controls.Remove(StdSub_Pnl);
-        }
-
-        //adds the needed controls to the usercontrol i.e adding combooboxes and labels and textboxes...etc
-        protected override void PrepareControls()
-        {
-            this.TeachSalary_Txt.TextChanged += new System.EventHandler(this.TeachSalary_Txt_TextChanged);
-            this.TeachSalary_Txt.Leave += new System.EventHandler(this.TeachSalary_Txt_TextChanged);
-            this.TeachPNum_Txt.TextChanged += new System.EventHandler(this.TeachPNum_txt_TextChanged);
-            this.TeachPNum_Txt.Leave += new System.EventHandler(this.TeachPNum_txt_TextChanged);
-            this.TeachName_Txt.TextChanged += new System.EventHandler(this.TeachName_Txt_TextChanged);
-            this.TeachName_Txt.Leave += new System.EventHandler(this.TeachName_Txt_TextChanged);
-            this.TeachSSN_Txt.TextChanged += new System.EventHandler(this.TeachSSN_txt_TextChanged);
-            this.TeachSSN_Txt.Leave += new System.EventHandler(this.TeachSSN_txt_TextChanged);
+            StaffPos_CBox.Visible = false;
+            StaffPosReq_Lbl.Visible = false;
+            StaffPos_Lbl.Visible = false;
+            StaffDepReq_Lbl.Location = StaffPos_Lbl.Location;
+            StaffDep_CBox.Location = StaffPos_CBox.Location;
+            StaffDep_Lbl.Location = StaffPos_Lbl.Location;
         }
 
         protected override void FillData(string TeachID)
@@ -64,97 +57,22 @@ namespace School_DB_System
             //last column of getGradTeacherData is university as graduate Teacher doesn't have a year (graduated) 
             //filling the common data between both
 
-            TeachName_Txt.Text = TeacherInformation.Rows[0][0].ToString();//filling Teacher name textbox with the selectd Teacher name
-            TeachID_Txt.Text = TeacherInformation.Rows[0][1].ToString();//filling Teacher ID textbox with the selectd Teacher ID
-            TeachEmail_Txt.Text = TeacherInformation.Rows[0][2].ToString();//filling Teacher email textbox with the selectd Teacher email
-            TeachSSN_Txt.Text = TeacherInformation.Rows[0][3].ToString();//filling Teacher SSN textbox with the selectd Teacher SSN
-            TeachAdress_Txt.Text = TeacherInformation.Rows[0][4].ToString();//filling Teacher ID textbox with the selectd Teacher ID
-            TeachPNum_Txt.Text = TeacherInformation.Rows[0][5].ToString();//filling Teacher phone number textbox with the selectd Teacher phone number
-            TeachSalary_Txt.Text = TeacherInformation.Rows[0][6].ToString();//filling Teacher phone number textbox with the selectd Teacher phone number
-            TeachFullTime_CHBox.Checked = bool.Parse(TeacherInformation.Rows[0][7].ToString());
-            TeachDep_CBox.Items.Add(TeacherInformation.Rows[0][8].ToString());//
-            TeachDep_CBox.SelectedIndex = 0;
+            StaffName_Txt.Text = TeacherInformation.Rows[0][0].ToString();//filling Teacher name textbox with the selectd Teacher name
+            StaffID_Txt.Text = TeacherInformation.Rows[0][1].ToString();//filling Teacher ID textbox with the selectd Teacher ID
+            StaffEmail_Txt.Text = TeacherInformation.Rows[0][2].ToString();//filling Teacher email textbox with the selectd Teacher email
+            StaffSSN_Txt.Text = TeacherInformation.Rows[0][3].ToString();//filling Teacher SSN textbox with the selectd Teacher SSN
+            StaffAdress_Txt.Text = TeacherInformation.Rows[0][4].ToString();//filling Teacher ID textbox with the selectd Teacher ID
+            StaffPNum_Txt.Text = TeacherInformation.Rows[0][5].ToString();//filling Teacher phone number textbox with the selectd Teacher phone number
+            StaffSalary_Txt.Text = TeacherInformation.Rows[0][6].ToString();//filling Teacher phone number textbox with the selectd Teacher phone number
+            StaffFullTime_CHBox.Checked = bool.Parse(TeacherInformation.Rows[0][7].ToString());
+            DataTable Departmentslist = controllerObj.getDepartmentslist();
+            StaffDep_CBox.DisplayMember = "dep_Name"; //displaying std_Year column from datatable "Yearslist"
+            StaffDep_CBox.ValueMember = "dep_ID"; //linking value to std_year column from datatable "YearsList"
+            StaffDep_CBox.DataSource = Departmentslist; //linking yearslist comboobox and yearlist datatable
+            StaffDep_CBox.SelectedIndex = StaffDep_CBox.FindString(TeacherInformation.Rows[0][8].ToString()); //initially selecting the first element which is "All"
+                                                                                                              //adding SelectedIndexChanged event to the template comboobox which will be (StateList_CBox)
         }
-        private void TeachSalary_Txt_TextChanged(object sender, EventArgs e)
-        {
-            if (TeachSalary_Txt.Text.ToString() == "") //if name text is equal to "" i.e there is no data entered (empty textbox)
-            {
-                //informing the user with the Error
-                showErrorMessage("invalid Salary, please inert a valid salary"); //informing the user with a suitable message
-                TeachSalary_Txt.BorderColor = Color.Red; //changing text border color to red informing the user that this is invalid data
-                return; //return
-            }
-            else if (TeachSalary_Txt.Text.Any(char.IsLetter)) //if name text contains digits (this is invalid)
-            {
-                showErrorMessage("invalid Salary, salary can't contain characters, please inert a valid salary"); //informing the user with a suitable message
-                TeachSalary_Txt.BorderColor = Color.Red; //changing text border color to red informing the user that this is invalid data
-                return; //return
-            }
-            else //if valid data (no digits) or empty textboxs
-            {
-                //if valid data (no digits or empty textboxs) inform the user that the entered data is valid
-                hideErrorMessage(); //hide error message
-                TeachSalary_Txt.BorderColor = Color.Gray; //changing textbox color back to gray informing the user that it is a valid data
-                return; //return
-            }
-        }
-        private void TeachPNum_txt_TextChanged(object sender, EventArgs e)
-        {
-            //if number text length is not out of range (from 8 to 15 digit) this is invalid
-            if (TeachPNum_Txt.TextLength < 8 || TeachPNum_Txt.TextLength > 15 || TeachPNum_Txt.Text.Any(char.IsLetter))
-            {
-                showErrorMessage("invalid phone number, please inert a valid 8 - 15 numbers"); //informing the user with a suitable message
-                TeachPNum_Txt.BorderColor = Color.Red; //changing text border color to red informing the user that this is invalid data
-                return; //return
-            }
-            else //if valid data (no characters or invalid mobile number length)
-            {
-                //if valid data (no characters or invalid mobile number length) inform the user that the entered data is valid
-                hideErrorMessage(); //hide error message
-                TeachPNum_Txt.BorderColor = Color.Gray; //changing textbox color back to gray informing the user that it is a valid data
-                return; //return
-            }
-        }
-        private void TeachName_Txt_TextChanged(object sender, EventArgs e)
-        {
-            if (TeachName_Txt.Text.ToString() == "") //if name text is equal to "" i.e there is no data entered (empty textbox)
-            {
-                //informing the user with the Error
-                showErrorMessage("invalid name, please inert a valid name"); //informing the user with a suitable message
-                TeachName_Txt.BorderColor = Color.Red; //changing text border color to red informing the user that this is invalid data
-                return; //return
-            }
-            else if (TeachName_Txt.Text.Any(char.IsDigit)) //if name text contains digits (this is invalid)
-            {
-                showErrorMessage("invalid name, names can't contain numbers, please inert a valid name"); //informing the user with a suitable message
-                TeachName_Txt.BorderColor = Color.Red; //changing text border color to red informing the user that this is invalid data
-                return; //return
-            }
-            else //if valid data (no digits) or empty textboxs
-            {
-                //if valid data (no digits or empty textboxs) inform the user that the entered data is valid
-                hideErrorMessage(); //hide error message
-                TeachName_Txt.BorderColor = Color.Gray; //changing textbox color back to gray informing the user that it is a valid data
-                return; //return
-            }
-        }
-        protected virtual void TeachSSN_txt_TextChanged(object sender, EventArgs e)
-        {
-            //if name text contains length is out of range (from 14 to 20 digit) this is invalid
-            if (TeachSSN_Txt.TextLength < 9 || TeachSSN_Txt.TextLength > 20 || TeachSSN_Txt.Text.Any(char.IsLetter))
-            {
-                showErrorMessage("invalid SSN, please inert a valid 9 - 20 numbers SSN"); //informing the user with a suitable message
-                TeachSSN_Txt.BorderColor = Color.Red; //changing text border color to red informing the user that this is invalid data
-                return; //return
-            }
-            else //if valid data (no characters or ovalid SSN length)
-            {
-                //if valid data (no characters or ovalid SSN length) inform the user that the entered data is valid
-                hideErrorMessage(); //hide error message
-                TeachSSN_Txt.BorderColor = Color.Gray; //changing textbox color back to gray informing the user that it is a valid data
-                return; //return
-            }
-        }
+
 
     }
 }

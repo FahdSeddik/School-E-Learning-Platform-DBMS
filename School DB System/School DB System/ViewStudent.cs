@@ -96,9 +96,9 @@ namespace School_DB_System
             Tittle_Lbl.TextAlignment = ContentAlignment.MiddleCenter; //changes tittle text alignment to center
             Submit_Btn.Visible = false; //hides submit button as view doesn't use it
             StdSub_Pnl.Visible = true;
-            TeachSub_Pnl.Visible = false;
+            StaffSub_Pnl.Visible = false;
             StdSub_Pnl.BringToFront();
-            this.Controls.Remove(TeachSub_Pnl);
+            this.Controls.Remove(StaffSub_Pnl);
             //loops on each textbox in the control
             foreach (Control item in StdSub_Pnl.Controls) //loop on each item in the panel
             {

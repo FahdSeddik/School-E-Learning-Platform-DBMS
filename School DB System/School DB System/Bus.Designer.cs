@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bus));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -46,12 +45,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bus));
             this.Menu_Pnl = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.ViewInfo_Btn = new Guna.UI2.WinForms.Guna2Button();
-            this.Update_Btn = new Guna.UI2.WinForms.Guna2Button();
-            this.Delete_Btn = new Guna.UI2.WinForms.Guna2Button();
-            this.Add_Btn = new Guna.UI2.WinForms.Guna2Button();
-            this.MainBack_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.Bus_DT = new Guna.UI2.WinForms.Guna2DataGridView();
             this.Select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.B_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,11 +73,12 @@
             this.Add_Route_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.Add_BNum_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.Add_Menu_Pnl = new Guna.UI2.WinForms.Guna2Panel();
-            this.B_Add_Back_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.Add_Bus_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.DList_Pnl = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            this.DriversListAddress_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.DriversListAddress_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -92,7 +88,6 @@
             this.St_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Driver_Adress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.DL_Back_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Update_Pnl = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
@@ -103,7 +98,6 @@
             this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
-            this.BUpdate_Back_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.BInfoMain_Pnl = new Guna.UI2.WinForms.Guna2Panel();
             this.BInfoSub_Pnl = new Guna.UI2.WinForms.Guna2GradientPanel();
@@ -114,14 +108,12 @@
             this.BInfoBRoute_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.BInfoBNum_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.BInfoMenu_Pnl = new Guna.UI2.WinForms.Guna2Panel();
-            this.BInfoBack_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.BInfoMain_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.BStudList_Pnl = new Guna.UI2.WinForms.Guna2Panel();
             this.BStudListSubMenu_Pnl = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.BStudListViewProf_Btn = new Guna.UI2.WinForms.Guna2Button();
-            this.BStudListDelete_Btn = new Guna.UI2.WinForms.Guna2Button();
-            this.BStudListAdd_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.BStudListFilter_Pnl = new Guna.UI2.WinForms.Guna2Panel();
+            this.BStudListGrade_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.BStudListGrade_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.BStudListFilter_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GradientPanel4 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.BStudList_DT = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -132,12 +124,13 @@
             this.S_Grade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.S_Department = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BStudList_Menu = new Guna.UI2.WinForms.Guna2Panel();
-            this.BStudLBack_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.BStudList_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.ViewProf_Pnl = new Guna.UI2.WinForms.Guna2Panel();
             this.View_S_Pnl = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2TextBox11 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox10 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox9 = new Guna.UI2.WinForms.Guna2TextBox();
             this.View_P_SSN_Txt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.View_ProfPic_Picture = new Krypton.Toolkit.Suite.Extended.Common.CommonCircularPictureBox();
             this.View_Grade_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.View_Dep_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.View_Nationality_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -150,10 +143,11 @@
             this.View_Stud_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.View_FName_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.View_Menu_Pnl = new Guna.UI2.WinForms.Guna2Panel();
-            this.View_Back_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.View_Header_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.AddStudList_Pnl = new Guna.UI2.WinForms.Guna2Panel();
             this.AddStudListFilter_Pnl = new Guna.UI2.WinForms.Guna2Panel();
+            this.StudListGrade_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.StudListGrade_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.AddStudListFilter_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button12 = new Guna.UI2.WinForms.Guna2Button();
             this.AddStudListSelect_Btn = new Guna.UI2.WinForms.Guna2Button();
@@ -165,17 +159,23 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AddStudListMenu_Pnl = new Guna.UI2.WinForms.Guna2Panel();
-            this.AddStudLBack_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.AddStudList_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.DriversListAddress_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.DriversListAddress_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.BStudListGrade_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.BStudListGrade_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2TextBox9 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox10 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox11 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.StudListGrade_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.StudListGrade_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.AddStudLBack_Btn = new Guna.UI2.WinForms.Guna2Button();
+            this.DL_Back_Btn = new Guna.UI2.WinForms.Guna2Button();
+            this.BStudListViewProf_Btn = new Guna.UI2.WinForms.Guna2Button();
+            this.BStudListDelete_Btn = new Guna.UI2.WinForms.Guna2Button();
+            this.BStudListAdd_Btn = new Guna.UI2.WinForms.Guna2Button();
+            this.BStudLBack_Btn = new Guna.UI2.WinForms.Guna2Button();
+            this.BInfoBack_Btn = new Guna.UI2.WinForms.Guna2Button();
+            this.B_Add_Back_Btn = new Guna.UI2.WinForms.Guna2Button();
+            this.View_ProfPic_Picture = new Krypton.Toolkit.Suite.Extended.Common.CommonCircularPictureBox();
+            this.View_Back_Btn = new Guna.UI2.WinForms.Guna2Button();
+            this.BUpdate_Back_Btn = new Guna.UI2.WinForms.Guna2Button();
+            this.ViewInfo_Btn = new Guna.UI2.WinForms.Guna2Button();
+            this.Update_Btn = new Guna.UI2.WinForms.Guna2Button();
+            this.Delete_Btn = new Guna.UI2.WinForms.Guna2Button();
+            this.Add_Btn = new Guna.UI2.WinForms.Guna2Button();
+            this.MainBack_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.Menu_Pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Bus_DT)).BeginInit();
             this.Filter_Pnl.SuspendLayout();
@@ -204,13 +204,13 @@
             this.BStudList_Menu.SuspendLayout();
             this.ViewProf_Pnl.SuspendLayout();
             this.View_S_Pnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.View_ProfPic_Picture)).BeginInit();
             this.View_Menu_Pnl.SuspendLayout();
             this.AddStudList_Pnl.SuspendLayout();
             this.AddStudListFilter_Pnl.SuspendLayout();
             this.guna2GradientPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddStudList_DT)).BeginInit();
             this.AddStudListMenu_Pnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.View_ProfPic_Picture)).BeginInit();
             this.SuspendLayout();
             // 
             // Menu_Pnl
@@ -231,112 +231,6 @@
             this.Menu_Pnl.Size = new System.Drawing.Size(1000, 48);
             this.Menu_Pnl.TabIndex = 2;
             this.Menu_Pnl.UseTransparentBackground = true;
-            // 
-            // ViewInfo_Btn
-            // 
-            this.ViewInfo_Btn.BorderColor = System.Drawing.Color.Silver;
-            this.ViewInfo_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.ViewInfo_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.ViewInfo_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.ViewInfo_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.ViewInfo_Btn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ViewInfo_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
-            this.ViewInfo_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewInfo_Btn.ForeColor = System.Drawing.Color.White;
-            this.ViewInfo_Btn.Image = ((System.Drawing.Image)(resources.GetObject("ViewInfo_Btn.Image")));
-            this.ViewInfo_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.ViewInfo_Btn.Location = new System.Drawing.Point(639, 0);
-            this.ViewInfo_Btn.Margin = new System.Windows.Forms.Padding(0);
-            this.ViewInfo_Btn.Name = "ViewInfo_Btn";
-            this.ViewInfo_Btn.Size = new System.Drawing.Size(141, 48);
-            this.ViewInfo_Btn.TabIndex = 4;
-            this.ViewInfo_Btn.Text = "View Info";
-            this.ViewInfo_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.ViewInfo_Btn.Click += new System.EventHandler(this.ViewInfo_Btn_Click);
-            // 
-            // Update_Btn
-            // 
-            this.Update_Btn.BorderColor = System.Drawing.Color.Silver;
-            this.Update_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.Update_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.Update_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.Update_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Update_Btn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Update_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
-            this.Update_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Update_Btn.ForeColor = System.Drawing.Color.White;
-            this.Update_Btn.Image = ((System.Drawing.Image)(resources.GetObject("Update_Btn.Image")));
-            this.Update_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.Update_Btn.Location = new System.Drawing.Point(498, 0);
-            this.Update_Btn.Margin = new System.Windows.Forms.Padding(0);
-            this.Update_Btn.Name = "Update_Btn";
-            this.Update_Btn.Size = new System.Drawing.Size(141, 48);
-            this.Update_Btn.TabIndex = 3;
-            this.Update_Btn.Text = "Update";
-            this.Update_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.Update_Btn.Click += new System.EventHandler(this.Update_Btn_Click);
-            // 
-            // Delete_Btn
-            // 
-            this.Delete_Btn.BorderColor = System.Drawing.Color.Silver;
-            this.Delete_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.Delete_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.Delete_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.Delete_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Delete_Btn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Delete_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
-            this.Delete_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Delete_Btn.ForeColor = System.Drawing.Color.White;
-            this.Delete_Btn.Image = ((System.Drawing.Image)(resources.GetObject("Delete_Btn.Image")));
-            this.Delete_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.Delete_Btn.Location = new System.Drawing.Point(357, 0);
-            this.Delete_Btn.Margin = new System.Windows.Forms.Padding(0);
-            this.Delete_Btn.Name = "Delete_Btn";
-            this.Delete_Btn.Size = new System.Drawing.Size(141, 48);
-            this.Delete_Btn.TabIndex = 2;
-            this.Delete_Btn.Text = "Delete";
-            this.Delete_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // Add_Btn
-            // 
-            this.Add_Btn.BorderColor = System.Drawing.Color.Silver;
-            this.Add_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.Add_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.Add_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.Add_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Add_Btn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Add_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
-            this.Add_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Add_Btn.ForeColor = System.Drawing.Color.White;
-            this.Add_Btn.Image = ((System.Drawing.Image)(resources.GetObject("Add_Btn.Image")));
-            this.Add_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.Add_Btn.Location = new System.Drawing.Point(216, 0);
-            this.Add_Btn.Margin = new System.Windows.Forms.Padding(0);
-            this.Add_Btn.Name = "Add_Btn";
-            this.Add_Btn.Size = new System.Drawing.Size(141, 48);
-            this.Add_Btn.TabIndex = 1;
-            this.Add_Btn.Text = "Add";
-            this.Add_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.Add_Btn.Click += new System.EventHandler(this.Add_Btn_Click);
-            // 
-            // MainBack_Btn
-            // 
-            this.MainBack_Btn.BorderColor = System.Drawing.Color.Silver;
-            this.MainBack_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.MainBack_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.MainBack_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.MainBack_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.MainBack_Btn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.MainBack_Btn.FillColor = System.Drawing.Color.Silver;
-            this.MainBack_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MainBack_Btn.ForeColor = System.Drawing.Color.White;
-            this.MainBack_Btn.Image = ((System.Drawing.Image)(resources.GetObject("MainBack_Btn.Image")));
-            this.MainBack_Btn.Location = new System.Drawing.Point(0, 0);
-            this.MainBack_Btn.Margin = new System.Windows.Forms.Padding(0);
-            this.MainBack_Btn.Name = "MainBack_Btn";
-            this.MainBack_Btn.Size = new System.Drawing.Size(216, 48);
-            this.MainBack_Btn.TabIndex = 0;
-            this.MainBack_Btn.Click += new System.EventHandler(this.MainBack_Btn_Click);
             // 
             // Bus_DT
             // 
@@ -739,25 +633,6 @@
             this.Add_Menu_Pnl.Size = new System.Drawing.Size(447, 52);
             this.Add_Menu_Pnl.TabIndex = 0;
             // 
-            // B_Add_Back_Btn
-            // 
-            this.B_Add_Back_Btn.BorderColor = System.Drawing.Color.Silver;
-            this.B_Add_Back_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.B_Add_Back_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.B_Add_Back_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.B_Add_Back_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.B_Add_Back_Btn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.B_Add_Back_Btn.FillColor = System.Drawing.Color.Silver;
-            this.B_Add_Back_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.B_Add_Back_Btn.ForeColor = System.Drawing.Color.White;
-            this.B_Add_Back_Btn.Image = ((System.Drawing.Image)(resources.GetObject("B_Add_Back_Btn.Image")));
-            this.B_Add_Back_Btn.Location = new System.Drawing.Point(0, 0);
-            this.B_Add_Back_Btn.Margin = new System.Windows.Forms.Padding(0);
-            this.B_Add_Back_Btn.Name = "B_Add_Back_Btn";
-            this.B_Add_Back_Btn.Size = new System.Drawing.Size(61, 52);
-            this.B_Add_Back_Btn.TabIndex = 1;
-            this.B_Add_Back_Btn.Click += new System.EventHandler(this.B_Add_Back_Btn_Click);
-            // 
             // Add_Bus_Lbl
             // 
             this.Add_Bus_Lbl.BackColor = System.Drawing.Color.Transparent;
@@ -796,6 +671,34 @@
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.Size = new System.Drawing.Size(216, 492);
             this.guna2Panel5.TabIndex = 12;
+            // 
+            // DriversListAddress_CBox
+            // 
+            this.DriversListAddress_CBox.BackColor = System.Drawing.Color.Transparent;
+            this.DriversListAddress_CBox.BorderColor = System.Drawing.Color.Gray;
+            this.DriversListAddress_CBox.BorderRadius = 3;
+            this.DriversListAddress_CBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.DriversListAddress_CBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.DriversListAddress_CBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.DriversListAddress_CBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.DriversListAddress_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.DriversListAddress_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.DriversListAddress_CBox.ItemHeight = 30;
+            this.DriversListAddress_CBox.Location = new System.Drawing.Point(16, 56);
+            this.DriversListAddress_CBox.Name = "DriversListAddress_CBox";
+            this.DriversListAddress_CBox.Size = new System.Drawing.Size(180, 36);
+            this.DriversListAddress_CBox.TabIndex = 21;
+            // 
+            // DriversListAddress_Lbl
+            // 
+            this.DriversListAddress_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.DriversListAddress_Lbl.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.DriversListAddress_Lbl.ForeColor = System.Drawing.Color.Black;
+            this.DriversListAddress_Lbl.Location = new System.Drawing.Point(16, 26);
+            this.DriversListAddress_Lbl.Name = "DriversListAddress_Lbl";
+            this.DriversListAddress_Lbl.Size = new System.Drawing.Size(51, 22);
+            this.DriversListAddress_Lbl.TabIndex = 20;
+            this.DriversListAddress_Lbl.Text = "Adress";
             // 
             // guna2Button5
             // 
@@ -951,25 +854,6 @@
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(694, 52);
             this.guna2Panel4.TabIndex = 0;
-            // 
-            // DL_Back_Btn
-            // 
-            this.DL_Back_Btn.BorderColor = System.Drawing.Color.Silver;
-            this.DL_Back_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.DL_Back_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.DL_Back_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.DL_Back_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.DL_Back_Btn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.DL_Back_Btn.FillColor = System.Drawing.Color.Silver;
-            this.DL_Back_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DL_Back_Btn.ForeColor = System.Drawing.Color.White;
-            this.DL_Back_Btn.Image = ((System.Drawing.Image)(resources.GetObject("DL_Back_Btn.Image")));
-            this.DL_Back_Btn.Location = new System.Drawing.Point(0, 0);
-            this.DL_Back_Btn.Margin = new System.Windows.Forms.Padding(0);
-            this.DL_Back_Btn.Name = "DL_Back_Btn";
-            this.DL_Back_Btn.Size = new System.Drawing.Size(61, 52);
-            this.DL_Back_Btn.TabIndex = 1;
-            this.DL_Back_Btn.Click += new System.EventHandler(this.DL_Back_Btn_Click);
             // 
             // guna2HtmlLabel4
             // 
@@ -1134,25 +1018,6 @@
             this.guna2Panel6.Name = "guna2Panel6";
             this.guna2Panel6.Size = new System.Drawing.Size(447, 52);
             this.guna2Panel6.TabIndex = 0;
-            // 
-            // BUpdate_Back_Btn
-            // 
-            this.BUpdate_Back_Btn.BorderColor = System.Drawing.Color.Silver;
-            this.BUpdate_Back_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BUpdate_Back_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BUpdate_Back_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BUpdate_Back_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BUpdate_Back_Btn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BUpdate_Back_Btn.FillColor = System.Drawing.Color.Silver;
-            this.BUpdate_Back_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BUpdate_Back_Btn.ForeColor = System.Drawing.Color.White;
-            this.BUpdate_Back_Btn.Image = ((System.Drawing.Image)(resources.GetObject("BUpdate_Back_Btn.Image")));
-            this.BUpdate_Back_Btn.Location = new System.Drawing.Point(0, 0);
-            this.BUpdate_Back_Btn.Margin = new System.Windows.Forms.Padding(0);
-            this.BUpdate_Back_Btn.Name = "BUpdate_Back_Btn";
-            this.BUpdate_Back_Btn.Size = new System.Drawing.Size(61, 52);
-            this.BUpdate_Back_Btn.TabIndex = 1;
-            this.BUpdate_Back_Btn.Click += new System.EventHandler(this.BUpdate_Back_Btn_Click);
             // 
             // guna2HtmlLabel5
             // 
@@ -1322,25 +1187,6 @@
             this.BInfoMenu_Pnl.Size = new System.Drawing.Size(447, 52);
             this.BInfoMenu_Pnl.TabIndex = 0;
             // 
-            // BInfoBack_Btn
-            // 
-            this.BInfoBack_Btn.BorderColor = System.Drawing.Color.Silver;
-            this.BInfoBack_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BInfoBack_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BInfoBack_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BInfoBack_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BInfoBack_Btn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BInfoBack_Btn.FillColor = System.Drawing.Color.Silver;
-            this.BInfoBack_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BInfoBack_Btn.ForeColor = System.Drawing.Color.White;
-            this.BInfoBack_Btn.Image = ((System.Drawing.Image)(resources.GetObject("BInfoBack_Btn.Image")));
-            this.BInfoBack_Btn.Location = new System.Drawing.Point(0, 0);
-            this.BInfoBack_Btn.Margin = new System.Windows.Forms.Padding(0);
-            this.BInfoBack_Btn.Name = "BInfoBack_Btn";
-            this.BInfoBack_Btn.Size = new System.Drawing.Size(61, 52);
-            this.BInfoBack_Btn.TabIndex = 1;
-            this.BInfoBack_Btn.Click += new System.EventHandler(this.BInfo_Back_Btn_Click);
-            // 
             // BInfoMain_Lbl
             // 
             this.BInfoMain_Lbl.BackColor = System.Drawing.Color.Transparent;
@@ -1382,71 +1228,6 @@
             this.BStudListSubMenu_Pnl.TabIndex = 11;
             this.BStudListSubMenu_Pnl.UseTransparentBackground = true;
             // 
-            // BStudListViewProf_Btn
-            // 
-            this.BStudListViewProf_Btn.BorderColor = System.Drawing.Color.Silver;
-            this.BStudListViewProf_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BStudListViewProf_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BStudListViewProf_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BStudListViewProf_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BStudListViewProf_Btn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BStudListViewProf_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
-            this.BStudListViewProf_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BStudListViewProf_Btn.ForeColor = System.Drawing.Color.White;
-            this.BStudListViewProf_Btn.Image = ((System.Drawing.Image)(resources.GetObject("BStudListViewProf_Btn.Image")));
-            this.BStudListViewProf_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.BStudListViewProf_Btn.Location = new System.Drawing.Point(319, 0);
-            this.BStudListViewProf_Btn.Margin = new System.Windows.Forms.Padding(0);
-            this.BStudListViewProf_Btn.Name = "BStudListViewProf_Btn";
-            this.BStudListViewProf_Btn.Size = new System.Drawing.Size(159, 48);
-            this.BStudListViewProf_Btn.TabIndex = 4;
-            this.BStudListViewProf_Btn.Text = "View Profile";
-            this.BStudListViewProf_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.BStudListViewProf_Btn.Click += new System.EventHandler(this.ViewProf_Btn_Click);
-            // 
-            // BStudListDelete_Btn
-            // 
-            this.BStudListDelete_Btn.BorderColor = System.Drawing.Color.Silver;
-            this.BStudListDelete_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BStudListDelete_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BStudListDelete_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BStudListDelete_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BStudListDelete_Btn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BStudListDelete_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
-            this.BStudListDelete_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BStudListDelete_Btn.ForeColor = System.Drawing.Color.White;
-            this.BStudListDelete_Btn.Image = ((System.Drawing.Image)(resources.GetObject("BStudListDelete_Btn.Image")));
-            this.BStudListDelete_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.BStudListDelete_Btn.Location = new System.Drawing.Point(161, 0);
-            this.BStudListDelete_Btn.Margin = new System.Windows.Forms.Padding(0);
-            this.BStudListDelete_Btn.Name = "BStudListDelete_Btn";
-            this.BStudListDelete_Btn.Size = new System.Drawing.Size(158, 48);
-            this.BStudListDelete_Btn.TabIndex = 2;
-            this.BStudListDelete_Btn.Text = "Delete";
-            this.BStudListDelete_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // BStudListAdd_Btn
-            // 
-            this.BStudListAdd_Btn.BorderColor = System.Drawing.Color.Silver;
-            this.BStudListAdd_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BStudListAdd_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BStudListAdd_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BStudListAdd_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BStudListAdd_Btn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BStudListAdd_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
-            this.BStudListAdd_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BStudListAdd_Btn.ForeColor = System.Drawing.Color.White;
-            this.BStudListAdd_Btn.Image = ((System.Drawing.Image)(resources.GetObject("BStudListAdd_Btn.Image")));
-            this.BStudListAdd_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.BStudListAdd_Btn.Location = new System.Drawing.Point(0, 0);
-            this.BStudListAdd_Btn.Margin = new System.Windows.Forms.Padding(0);
-            this.BStudListAdd_Btn.Name = "BStudListAdd_Btn";
-            this.BStudListAdd_Btn.Size = new System.Drawing.Size(161, 48);
-            this.BStudListAdd_Btn.TabIndex = 1;
-            this.BStudListAdd_Btn.Text = "Add";
-            this.BStudListAdd_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.BStudListAdd_Btn.Click += new System.EventHandler(this.guna2Button15_Click);
-            // 
             // BStudListFilter_Pnl
             // 
             this.BStudListFilter_Pnl.BackColor = System.Drawing.Color.White;
@@ -1461,6 +1242,34 @@
             this.BStudListFilter_Pnl.Name = "BStudListFilter_Pnl";
             this.BStudListFilter_Pnl.Size = new System.Drawing.Size(216, 504);
             this.BStudListFilter_Pnl.TabIndex = 10;
+            // 
+            // BStudListGrade_CBox
+            // 
+            this.BStudListGrade_CBox.BackColor = System.Drawing.Color.Transparent;
+            this.BStudListGrade_CBox.BorderColor = System.Drawing.Color.Gray;
+            this.BStudListGrade_CBox.BorderRadius = 3;
+            this.BStudListGrade_CBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.BStudListGrade_CBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.BStudListGrade_CBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.BStudListGrade_CBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.BStudListGrade_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.BStudListGrade_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.BStudListGrade_CBox.ItemHeight = 30;
+            this.BStudListGrade_CBox.Location = new System.Drawing.Point(16, 56);
+            this.BStudListGrade_CBox.Name = "BStudListGrade_CBox";
+            this.BStudListGrade_CBox.Size = new System.Drawing.Size(180, 36);
+            this.BStudListGrade_CBox.TabIndex = 23;
+            // 
+            // BStudListGrade_Lbl
+            // 
+            this.BStudListGrade_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.BStudListGrade_Lbl.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.BStudListGrade_Lbl.ForeColor = System.Drawing.Color.Black;
+            this.BStudListGrade_Lbl.Location = new System.Drawing.Point(16, 26);
+            this.BStudListGrade_Lbl.Name = "BStudListGrade_Lbl";
+            this.BStudListGrade_Lbl.Size = new System.Drawing.Size(45, 22);
+            this.BStudListGrade_Lbl.TabIndex = 22;
+            this.BStudListGrade_Lbl.Text = "Grade";
             // 
             // BStudListFilter_Btn
             // 
@@ -1607,25 +1416,6 @@
             this.BStudList_Menu.Size = new System.Drawing.Size(949, 52);
             this.BStudList_Menu.TabIndex = 0;
             // 
-            // BStudLBack_Btn
-            // 
-            this.BStudLBack_Btn.BorderColor = System.Drawing.Color.Silver;
-            this.BStudLBack_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BStudLBack_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BStudLBack_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BStudLBack_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BStudLBack_Btn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BStudLBack_Btn.FillColor = System.Drawing.Color.Silver;
-            this.BStudLBack_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BStudLBack_Btn.ForeColor = System.Drawing.Color.White;
-            this.BStudLBack_Btn.Image = ((System.Drawing.Image)(resources.GetObject("BStudLBack_Btn.Image")));
-            this.BStudLBack_Btn.Location = new System.Drawing.Point(0, 0);
-            this.BStudLBack_Btn.Margin = new System.Windows.Forms.Padding(0);
-            this.BStudLBack_Btn.Name = "BStudLBack_Btn";
-            this.BStudLBack_Btn.Size = new System.Drawing.Size(61, 52);
-            this.BStudLBack_Btn.TabIndex = 1;
-            this.BStudLBack_Btn.Click += new System.EventHandler(this.BStudL_Back_Btn_Click);
-            // 
             // BStudList_Lbl
             // 
             this.BStudList_Lbl.BackColor = System.Drawing.Color.Transparent;
@@ -1673,6 +1463,72 @@
             this.View_S_Pnl.Size = new System.Drawing.Size(822, 418);
             this.View_S_Pnl.TabIndex = 3;
             // 
+            // guna2TextBox11
+            // 
+            this.guna2TextBox11.BorderColor = System.Drawing.Color.Gray;
+            this.guna2TextBox11.BorderRadius = 3;
+            this.guna2TextBox11.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox11.DefaultText = "";
+            this.guna2TextBox11.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox11.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox11.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox11.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox11.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox11.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox11.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox11.Location = new System.Drawing.Point(119, 358);
+            this.guna2TextBox11.Name = "guna2TextBox11";
+            this.guna2TextBox11.PasswordChar = '\0';
+            this.guna2TextBox11.PlaceholderText = "Grade";
+            this.guna2TextBox11.ReadOnly = true;
+            this.guna2TextBox11.SelectedText = "";
+            this.guna2TextBox11.Size = new System.Drawing.Size(422, 31);
+            this.guna2TextBox11.TabIndex = 28;
+            // 
+            // guna2TextBox10
+            // 
+            this.guna2TextBox10.BorderColor = System.Drawing.Color.Gray;
+            this.guna2TextBox10.BorderRadius = 3;
+            this.guna2TextBox10.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox10.DefaultText = "";
+            this.guna2TextBox10.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox10.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox10.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox10.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox10.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox10.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox10.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox10.Location = new System.Drawing.Point(119, 302);
+            this.guna2TextBox10.Name = "guna2TextBox10";
+            this.guna2TextBox10.PasswordChar = '\0';
+            this.guna2TextBox10.PlaceholderText = "Department";
+            this.guna2TextBox10.ReadOnly = true;
+            this.guna2TextBox10.SelectedText = "";
+            this.guna2TextBox10.Size = new System.Drawing.Size(422, 31);
+            this.guna2TextBox10.TabIndex = 27;
+            // 
+            // guna2TextBox9
+            // 
+            this.guna2TextBox9.BorderColor = System.Drawing.Color.Gray;
+            this.guna2TextBox9.BorderRadius = 3;
+            this.guna2TextBox9.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox9.DefaultText = "";
+            this.guna2TextBox9.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox9.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox9.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox9.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox9.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox9.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox9.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox9.Location = new System.Drawing.Point(119, 242);
+            this.guna2TextBox9.Name = "guna2TextBox9";
+            this.guna2TextBox9.PasswordChar = '\0';
+            this.guna2TextBox9.PlaceholderText = "Nationality";
+            this.guna2TextBox9.ReadOnly = true;
+            this.guna2TextBox9.SelectedText = "";
+            this.guna2TextBox9.Size = new System.Drawing.Size(422, 31);
+            this.guna2TextBox9.TabIndex = 26;
+            // 
             // View_P_SSN_Txt
             // 
             this.View_P_SSN_Txt.BorderColor = System.Drawing.Color.Gray;
@@ -1694,17 +1550,6 @@
             this.View_P_SSN_Txt.SelectedText = "";
             this.View_P_SSN_Txt.Size = new System.Drawing.Size(422, 31);
             this.View_P_SSN_Txt.TabIndex = 25;
-            // 
-            // View_ProfPic_Picture
-            // 
-            this.View_ProfPic_Picture.BackColor = System.Drawing.SystemColors.Control;
-            this.View_ProfPic_Picture.Image = ((System.Drawing.Image)(resources.GetObject("View_ProfPic_Picture.Image")));
-            this.View_ProfPic_Picture.Location = new System.Drawing.Point(611, 23);
-            this.View_ProfPic_Picture.Name = "View_ProfPic_Picture";
-            this.View_ProfPic_Picture.Size = new System.Drawing.Size(168, 163);
-            this.View_ProfPic_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.View_ProfPic_Picture.TabIndex = 23;
-            this.View_ProfPic_Picture.TabStop = false;
             // 
             // View_Grade_Lbl
             // 
@@ -1915,25 +1760,6 @@
             this.View_Menu_Pnl.Size = new System.Drawing.Size(873, 52);
             this.View_Menu_Pnl.TabIndex = 0;
             // 
-            // View_Back_Btn
-            // 
-            this.View_Back_Btn.BorderColor = System.Drawing.Color.Silver;
-            this.View_Back_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.View_Back_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.View_Back_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.View_Back_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.View_Back_Btn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.View_Back_Btn.FillColor = System.Drawing.Color.Silver;
-            this.View_Back_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.View_Back_Btn.ForeColor = System.Drawing.Color.White;
-            this.View_Back_Btn.Image = ((System.Drawing.Image)(resources.GetObject("View_Back_Btn.Image")));
-            this.View_Back_Btn.Location = new System.Drawing.Point(0, 0);
-            this.View_Back_Btn.Margin = new System.Windows.Forms.Padding(0);
-            this.View_Back_Btn.Name = "View_Back_Btn";
-            this.View_Back_Btn.Size = new System.Drawing.Size(144, 52);
-            this.View_Back_Btn.TabIndex = 1;
-            this.View_Back_Btn.Click += new System.EventHandler(this.View_Back_Btn_Click);
-            // 
             // View_Header_Lbl
             // 
             this.View_Header_Lbl.BackColor = System.Drawing.Color.Transparent;
@@ -1971,6 +1797,34 @@
             this.AddStudListFilter_Pnl.Name = "AddStudListFilter_Pnl";
             this.AddStudListFilter_Pnl.Size = new System.Drawing.Size(216, 492);
             this.AddStudListFilter_Pnl.TabIndex = 12;
+            // 
+            // StudListGrade_CBox
+            // 
+            this.StudListGrade_CBox.BackColor = System.Drawing.Color.Transparent;
+            this.StudListGrade_CBox.BorderColor = System.Drawing.Color.Gray;
+            this.StudListGrade_CBox.BorderRadius = 3;
+            this.StudListGrade_CBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.StudListGrade_CBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.StudListGrade_CBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.StudListGrade_CBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.StudListGrade_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.StudListGrade_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.StudListGrade_CBox.ItemHeight = 30;
+            this.StudListGrade_CBox.Location = new System.Drawing.Point(15, 58);
+            this.StudListGrade_CBox.Name = "StudListGrade_CBox";
+            this.StudListGrade_CBox.Size = new System.Drawing.Size(180, 36);
+            this.StudListGrade_CBox.TabIndex = 25;
+            // 
+            // StudListGrade_Lbl
+            // 
+            this.StudListGrade_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.StudListGrade_Lbl.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.StudListGrade_Lbl.ForeColor = System.Drawing.Color.Black;
+            this.StudListGrade_Lbl.Location = new System.Drawing.Point(15, 28);
+            this.StudListGrade_Lbl.Name = "StudListGrade_Lbl";
+            this.StudListGrade_Lbl.Size = new System.Drawing.Size(45, 22);
+            this.StudListGrade_Lbl.TabIndex = 24;
+            this.StudListGrade_Lbl.Text = "Grade";
             // 
             // AddStudListFilter_Btn
             // 
@@ -2139,6 +1993,17 @@
             this.AddStudListMenu_Pnl.Size = new System.Drawing.Size(694, 52);
             this.AddStudListMenu_Pnl.TabIndex = 0;
             // 
+            // AddStudList_Lbl
+            // 
+            this.AddStudList_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.AddStudList_Lbl.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.AddStudList_Lbl.ForeColor = System.Drawing.Color.Transparent;
+            this.AddStudList_Lbl.Location = new System.Drawing.Point(284, 3);
+            this.AddStudList_Lbl.Name = "AddStudList_Lbl";
+            this.AddStudList_Lbl.Size = new System.Drawing.Size(168, 39);
+            this.AddStudList_Lbl.TabIndex = 2;
+            this.AddStudList_Lbl.Text = "Students List";
+            // 
             // AddStudLBack_Btn
             // 
             this.AddStudLBack_Btn.BorderColor = System.Drawing.Color.Silver;
@@ -2158,176 +2023,311 @@
             this.AddStudLBack_Btn.TabIndex = 1;
             this.AddStudLBack_Btn.Click += new System.EventHandler(this.StudL_Back_Btn_Click);
             // 
-            // AddStudList_Lbl
+            // DL_Back_Btn
             // 
-            this.AddStudList_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.AddStudList_Lbl.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.AddStudList_Lbl.ForeColor = System.Drawing.Color.Transparent;
-            this.AddStudList_Lbl.Location = new System.Drawing.Point(284, 3);
-            this.AddStudList_Lbl.Name = "AddStudList_Lbl";
-            this.AddStudList_Lbl.Size = new System.Drawing.Size(168, 39);
-            this.AddStudList_Lbl.TabIndex = 2;
-            this.AddStudList_Lbl.Text = "Students List";
+            this.DL_Back_Btn.BorderColor = System.Drawing.Color.Silver;
+            this.DL_Back_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.DL_Back_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.DL_Back_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.DL_Back_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.DL_Back_Btn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.DL_Back_Btn.FillColor = System.Drawing.Color.Silver;
+            this.DL_Back_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DL_Back_Btn.ForeColor = System.Drawing.Color.White;
+            this.DL_Back_Btn.Image = ((System.Drawing.Image)(resources.GetObject("DL_Back_Btn.Image")));
+            this.DL_Back_Btn.Location = new System.Drawing.Point(0, 0);
+            this.DL_Back_Btn.Margin = new System.Windows.Forms.Padding(0);
+            this.DL_Back_Btn.Name = "DL_Back_Btn";
+            this.DL_Back_Btn.Size = new System.Drawing.Size(61, 52);
+            this.DL_Back_Btn.TabIndex = 1;
+            this.DL_Back_Btn.Click += new System.EventHandler(this.DL_Back_Btn_Click);
             // 
-            // DriversListAddress_CBox
+            // BStudListViewProf_Btn
             // 
-            this.DriversListAddress_CBox.BackColor = System.Drawing.Color.Transparent;
-            this.DriversListAddress_CBox.BorderColor = System.Drawing.Color.Gray;
-            this.DriversListAddress_CBox.BorderRadius = 3;
-            this.DriversListAddress_CBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.DriversListAddress_CBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.DriversListAddress_CBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.DriversListAddress_CBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.DriversListAddress_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.DriversListAddress_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.DriversListAddress_CBox.ItemHeight = 30;
-            this.DriversListAddress_CBox.Location = new System.Drawing.Point(16, 56);
-            this.DriversListAddress_CBox.Name = "DriversListAddress_CBox";
-            this.DriversListAddress_CBox.Size = new System.Drawing.Size(180, 36);
-            this.DriversListAddress_CBox.TabIndex = 21;
+            this.BStudListViewProf_Btn.BorderColor = System.Drawing.Color.Silver;
+            this.BStudListViewProf_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BStudListViewProf_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BStudListViewProf_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BStudListViewProf_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BStudListViewProf_Btn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BStudListViewProf_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.BStudListViewProf_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BStudListViewProf_Btn.ForeColor = System.Drawing.Color.White;
+            this.BStudListViewProf_Btn.Image = ((System.Drawing.Image)(resources.GetObject("BStudListViewProf_Btn.Image")));
+            this.BStudListViewProf_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.BStudListViewProf_Btn.Location = new System.Drawing.Point(319, 0);
+            this.BStudListViewProf_Btn.Margin = new System.Windows.Forms.Padding(0);
+            this.BStudListViewProf_Btn.Name = "BStudListViewProf_Btn";
+            this.BStudListViewProf_Btn.Size = new System.Drawing.Size(159, 48);
+            this.BStudListViewProf_Btn.TabIndex = 4;
+            this.BStudListViewProf_Btn.Text = "View Profile";
+            this.BStudListViewProf_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.BStudListViewProf_Btn.Click += new System.EventHandler(this.ViewProf_Btn_Click);
             // 
-            // DriversListAddress_Lbl
+            // BStudListDelete_Btn
             // 
-            this.DriversListAddress_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.DriversListAddress_Lbl.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.DriversListAddress_Lbl.ForeColor = System.Drawing.Color.Black;
-            this.DriversListAddress_Lbl.Location = new System.Drawing.Point(16, 26);
-            this.DriversListAddress_Lbl.Name = "DriversListAddress_Lbl";
-            this.DriversListAddress_Lbl.Size = new System.Drawing.Size(51, 22);
-            this.DriversListAddress_Lbl.TabIndex = 20;
-            this.DriversListAddress_Lbl.Text = "Adress";
+            this.BStudListDelete_Btn.BorderColor = System.Drawing.Color.Silver;
+            this.BStudListDelete_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BStudListDelete_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BStudListDelete_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BStudListDelete_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BStudListDelete_Btn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BStudListDelete_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.BStudListDelete_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BStudListDelete_Btn.ForeColor = System.Drawing.Color.White;
+            this.BStudListDelete_Btn.Image = ((System.Drawing.Image)(resources.GetObject("BStudListDelete_Btn.Image")));
+            this.BStudListDelete_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.BStudListDelete_Btn.Location = new System.Drawing.Point(161, 0);
+            this.BStudListDelete_Btn.Margin = new System.Windows.Forms.Padding(0);
+            this.BStudListDelete_Btn.Name = "BStudListDelete_Btn";
+            this.BStudListDelete_Btn.Size = new System.Drawing.Size(158, 48);
+            this.BStudListDelete_Btn.TabIndex = 2;
+            this.BStudListDelete_Btn.Text = "Delete";
+            this.BStudListDelete_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // BStudListGrade_CBox
+            // BStudListAdd_Btn
             // 
-            this.BStudListGrade_CBox.BackColor = System.Drawing.Color.Transparent;
-            this.BStudListGrade_CBox.BorderColor = System.Drawing.Color.Gray;
-            this.BStudListGrade_CBox.BorderRadius = 3;
-            this.BStudListGrade_CBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.BStudListGrade_CBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.BStudListGrade_CBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.BStudListGrade_CBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.BStudListGrade_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.BStudListGrade_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.BStudListGrade_CBox.ItemHeight = 30;
-            this.BStudListGrade_CBox.Location = new System.Drawing.Point(16, 56);
-            this.BStudListGrade_CBox.Name = "BStudListGrade_CBox";
-            this.BStudListGrade_CBox.Size = new System.Drawing.Size(180, 36);
-            this.BStudListGrade_CBox.TabIndex = 23;
+            this.BStudListAdd_Btn.BorderColor = System.Drawing.Color.Silver;
+            this.BStudListAdd_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BStudListAdd_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BStudListAdd_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BStudListAdd_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BStudListAdd_Btn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BStudListAdd_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.BStudListAdd_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BStudListAdd_Btn.ForeColor = System.Drawing.Color.White;
+            this.BStudListAdd_Btn.Image = ((System.Drawing.Image)(resources.GetObject("BStudListAdd_Btn.Image")));
+            this.BStudListAdd_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.BStudListAdd_Btn.Location = new System.Drawing.Point(0, 0);
+            this.BStudListAdd_Btn.Margin = new System.Windows.Forms.Padding(0);
+            this.BStudListAdd_Btn.Name = "BStudListAdd_Btn";
+            this.BStudListAdd_Btn.Size = new System.Drawing.Size(161, 48);
+            this.BStudListAdd_Btn.TabIndex = 1;
+            this.BStudListAdd_Btn.Text = "Add";
+            this.BStudListAdd_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.BStudListAdd_Btn.Click += new System.EventHandler(this.guna2Button15_Click);
             // 
-            // BStudListGrade_Lbl
+            // BStudLBack_Btn
             // 
-            this.BStudListGrade_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.BStudListGrade_Lbl.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.BStudListGrade_Lbl.ForeColor = System.Drawing.Color.Black;
-            this.BStudListGrade_Lbl.Location = new System.Drawing.Point(16, 26);
-            this.BStudListGrade_Lbl.Name = "BStudListGrade_Lbl";
-            this.BStudListGrade_Lbl.Size = new System.Drawing.Size(45, 22);
-            this.BStudListGrade_Lbl.TabIndex = 22;
-            this.BStudListGrade_Lbl.Text = "Grade";
+            this.BStudLBack_Btn.BorderColor = System.Drawing.Color.Silver;
+            this.BStudLBack_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BStudLBack_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BStudLBack_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BStudLBack_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BStudLBack_Btn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BStudLBack_Btn.FillColor = System.Drawing.Color.Silver;
+            this.BStudLBack_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BStudLBack_Btn.ForeColor = System.Drawing.Color.White;
+            this.BStudLBack_Btn.Image = ((System.Drawing.Image)(resources.GetObject("BStudLBack_Btn.Image")));
+            this.BStudLBack_Btn.Location = new System.Drawing.Point(0, 0);
+            this.BStudLBack_Btn.Margin = new System.Windows.Forms.Padding(0);
+            this.BStudLBack_Btn.Name = "BStudLBack_Btn";
+            this.BStudLBack_Btn.Size = new System.Drawing.Size(61, 52);
+            this.BStudLBack_Btn.TabIndex = 1;
+            this.BStudLBack_Btn.Click += new System.EventHandler(this.BStudL_Back_Btn_Click);
             // 
-            // guna2TextBox9
+            // BInfoBack_Btn
             // 
-            this.guna2TextBox9.BorderColor = System.Drawing.Color.Gray;
-            this.guna2TextBox9.BorderRadius = 3;
-            this.guna2TextBox9.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox9.DefaultText = "";
-            this.guna2TextBox9.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox9.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox9.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox9.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox9.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox9.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox9.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox9.Location = new System.Drawing.Point(119, 242);
-            this.guna2TextBox9.Name = "guna2TextBox9";
-            this.guna2TextBox9.PasswordChar = '\0';
-            this.guna2TextBox9.PlaceholderText = "Nationality";
-            this.guna2TextBox9.ReadOnly = true;
-            this.guna2TextBox9.SelectedText = "";
-            this.guna2TextBox9.Size = new System.Drawing.Size(422, 31);
-            this.guna2TextBox9.TabIndex = 26;
+            this.BInfoBack_Btn.BorderColor = System.Drawing.Color.Silver;
+            this.BInfoBack_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BInfoBack_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BInfoBack_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BInfoBack_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BInfoBack_Btn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BInfoBack_Btn.FillColor = System.Drawing.Color.Silver;
+            this.BInfoBack_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BInfoBack_Btn.ForeColor = System.Drawing.Color.White;
+            this.BInfoBack_Btn.Image = ((System.Drawing.Image)(resources.GetObject("BInfoBack_Btn.Image")));
+            this.BInfoBack_Btn.Location = new System.Drawing.Point(0, 0);
+            this.BInfoBack_Btn.Margin = new System.Windows.Forms.Padding(0);
+            this.BInfoBack_Btn.Name = "BInfoBack_Btn";
+            this.BInfoBack_Btn.Size = new System.Drawing.Size(61, 52);
+            this.BInfoBack_Btn.TabIndex = 1;
+            this.BInfoBack_Btn.Click += new System.EventHandler(this.BInfo_Back_Btn_Click);
             // 
-            // guna2TextBox10
+            // B_Add_Back_Btn
             // 
-            this.guna2TextBox10.BorderColor = System.Drawing.Color.Gray;
-            this.guna2TextBox10.BorderRadius = 3;
-            this.guna2TextBox10.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox10.DefaultText = "";
-            this.guna2TextBox10.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox10.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox10.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox10.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox10.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox10.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox10.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox10.Location = new System.Drawing.Point(119, 302);
-            this.guna2TextBox10.Name = "guna2TextBox10";
-            this.guna2TextBox10.PasswordChar = '\0';
-            this.guna2TextBox10.PlaceholderText = "Department";
-            this.guna2TextBox10.ReadOnly = true;
-            this.guna2TextBox10.SelectedText = "";
-            this.guna2TextBox10.Size = new System.Drawing.Size(422, 31);
-            this.guna2TextBox10.TabIndex = 27;
+            this.B_Add_Back_Btn.BorderColor = System.Drawing.Color.Silver;
+            this.B_Add_Back_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.B_Add_Back_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.B_Add_Back_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.B_Add_Back_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.B_Add_Back_Btn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.B_Add_Back_Btn.FillColor = System.Drawing.Color.Silver;
+            this.B_Add_Back_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_Add_Back_Btn.ForeColor = System.Drawing.Color.White;
+            this.B_Add_Back_Btn.Image = ((System.Drawing.Image)(resources.GetObject("B_Add_Back_Btn.Image")));
+            this.B_Add_Back_Btn.Location = new System.Drawing.Point(0, 0);
+            this.B_Add_Back_Btn.Margin = new System.Windows.Forms.Padding(0);
+            this.B_Add_Back_Btn.Name = "B_Add_Back_Btn";
+            this.B_Add_Back_Btn.Size = new System.Drawing.Size(61, 52);
+            this.B_Add_Back_Btn.TabIndex = 1;
+            this.B_Add_Back_Btn.Click += new System.EventHandler(this.B_Add_Back_Btn_Click);
             // 
-            // guna2TextBox11
+            // View_ProfPic_Picture
             // 
-            this.guna2TextBox11.BorderColor = System.Drawing.Color.Gray;
-            this.guna2TextBox11.BorderRadius = 3;
-            this.guna2TextBox11.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox11.DefaultText = "";
-            this.guna2TextBox11.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox11.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox11.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox11.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox11.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox11.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox11.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox11.Location = new System.Drawing.Point(119, 358);
-            this.guna2TextBox11.Name = "guna2TextBox11";
-            this.guna2TextBox11.PasswordChar = '\0';
-            this.guna2TextBox11.PlaceholderText = "Grade";
-            this.guna2TextBox11.ReadOnly = true;
-            this.guna2TextBox11.SelectedText = "";
-            this.guna2TextBox11.Size = new System.Drawing.Size(422, 31);
-            this.guna2TextBox11.TabIndex = 28;
+            this.View_ProfPic_Picture.BackColor = System.Drawing.SystemColors.Control;
+            this.View_ProfPic_Picture.Image = ((System.Drawing.Image)(resources.GetObject("View_ProfPic_Picture.Image")));
+            this.View_ProfPic_Picture.Location = new System.Drawing.Point(611, 23);
+            this.View_ProfPic_Picture.Name = "View_ProfPic_Picture";
+            this.View_ProfPic_Picture.Size = new System.Drawing.Size(168, 163);
+            this.View_ProfPic_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.View_ProfPic_Picture.TabIndex = 23;
+            this.View_ProfPic_Picture.TabStop = false;
             // 
-            // StudListGrade_CBox
+            // View_Back_Btn
             // 
-            this.StudListGrade_CBox.BackColor = System.Drawing.Color.Transparent;
-            this.StudListGrade_CBox.BorderColor = System.Drawing.Color.Gray;
-            this.StudListGrade_CBox.BorderRadius = 3;
-            this.StudListGrade_CBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.StudListGrade_CBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.StudListGrade_CBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.StudListGrade_CBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.StudListGrade_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.StudListGrade_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.StudListGrade_CBox.ItemHeight = 30;
-            this.StudListGrade_CBox.Location = new System.Drawing.Point(15, 58);
-            this.StudListGrade_CBox.Name = "StudListGrade_CBox";
-            this.StudListGrade_CBox.Size = new System.Drawing.Size(180, 36);
-            this.StudListGrade_CBox.TabIndex = 25;
+            this.View_Back_Btn.BorderColor = System.Drawing.Color.Silver;
+            this.View_Back_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.View_Back_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.View_Back_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.View_Back_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.View_Back_Btn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.View_Back_Btn.FillColor = System.Drawing.Color.Silver;
+            this.View_Back_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.View_Back_Btn.ForeColor = System.Drawing.Color.White;
+            this.View_Back_Btn.Image = ((System.Drawing.Image)(resources.GetObject("View_Back_Btn.Image")));
+            this.View_Back_Btn.Location = new System.Drawing.Point(0, 0);
+            this.View_Back_Btn.Margin = new System.Windows.Forms.Padding(0);
+            this.View_Back_Btn.Name = "View_Back_Btn";
+            this.View_Back_Btn.Size = new System.Drawing.Size(144, 52);
+            this.View_Back_Btn.TabIndex = 1;
+            this.View_Back_Btn.Click += new System.EventHandler(this.View_Back_Btn_Click);
             // 
-            // StudListGrade_Lbl
+            // BUpdate_Back_Btn
             // 
-            this.StudListGrade_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.StudListGrade_Lbl.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.StudListGrade_Lbl.ForeColor = System.Drawing.Color.Black;
-            this.StudListGrade_Lbl.Location = new System.Drawing.Point(15, 28);
-            this.StudListGrade_Lbl.Name = "StudListGrade_Lbl";
-            this.StudListGrade_Lbl.Size = new System.Drawing.Size(45, 22);
-            this.StudListGrade_Lbl.TabIndex = 24;
-            this.StudListGrade_Lbl.Text = "Grade";
+            this.BUpdate_Back_Btn.BorderColor = System.Drawing.Color.Silver;
+            this.BUpdate_Back_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BUpdate_Back_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BUpdate_Back_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BUpdate_Back_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BUpdate_Back_Btn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BUpdate_Back_Btn.FillColor = System.Drawing.Color.Silver;
+            this.BUpdate_Back_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BUpdate_Back_Btn.ForeColor = System.Drawing.Color.White;
+            this.BUpdate_Back_Btn.Image = ((System.Drawing.Image)(resources.GetObject("BUpdate_Back_Btn.Image")));
+            this.BUpdate_Back_Btn.Location = new System.Drawing.Point(0, 0);
+            this.BUpdate_Back_Btn.Margin = new System.Windows.Forms.Padding(0);
+            this.BUpdate_Back_Btn.Name = "BUpdate_Back_Btn";
+            this.BUpdate_Back_Btn.Size = new System.Drawing.Size(61, 52);
+            this.BUpdate_Back_Btn.TabIndex = 1;
+            this.BUpdate_Back_Btn.Click += new System.EventHandler(this.BUpdate_Back_Btn_Click);
+            // 
+            // ViewInfo_Btn
+            // 
+            this.ViewInfo_Btn.BorderColor = System.Drawing.Color.Silver;
+            this.ViewInfo_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ViewInfo_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ViewInfo_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ViewInfo_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ViewInfo_Btn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ViewInfo_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.ViewInfo_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ViewInfo_Btn.ForeColor = System.Drawing.Color.White;
+            this.ViewInfo_Btn.Image = ((System.Drawing.Image)(resources.GetObject("ViewInfo_Btn.Image")));
+            this.ViewInfo_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ViewInfo_Btn.Location = new System.Drawing.Point(639, 0);
+            this.ViewInfo_Btn.Margin = new System.Windows.Forms.Padding(0);
+            this.ViewInfo_Btn.Name = "ViewInfo_Btn";
+            this.ViewInfo_Btn.Size = new System.Drawing.Size(141, 48);
+            this.ViewInfo_Btn.TabIndex = 4;
+            this.ViewInfo_Btn.Text = "View Info";
+            this.ViewInfo_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.ViewInfo_Btn.Click += new System.EventHandler(this.ViewInfo_Btn_Click);
+            // 
+            // Update_Btn
+            // 
+            this.Update_Btn.BorderColor = System.Drawing.Color.Silver;
+            this.Update_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Update_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Update_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Update_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Update_Btn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Update_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.Update_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Update_Btn.ForeColor = System.Drawing.Color.White;
+            this.Update_Btn.Image = ((System.Drawing.Image)(resources.GetObject("Update_Btn.Image")));
+            this.Update_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Update_Btn.Location = new System.Drawing.Point(498, 0);
+            this.Update_Btn.Margin = new System.Windows.Forms.Padding(0);
+            this.Update_Btn.Name = "Update_Btn";
+            this.Update_Btn.Size = new System.Drawing.Size(141, 48);
+            this.Update_Btn.TabIndex = 3;
+            this.Update_Btn.Text = "Update";
+            this.Update_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Update_Btn.Click += new System.EventHandler(this.Update_Btn_Click);
+            // 
+            // Delete_Btn
+            // 
+            this.Delete_Btn.BorderColor = System.Drawing.Color.Silver;
+            this.Delete_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Delete_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Delete_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Delete_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Delete_Btn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Delete_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.Delete_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Delete_Btn.ForeColor = System.Drawing.Color.White;
+            this.Delete_Btn.Image = ((System.Drawing.Image)(resources.GetObject("Delete_Btn.Image")));
+            this.Delete_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Delete_Btn.Location = new System.Drawing.Point(357, 0);
+            this.Delete_Btn.Margin = new System.Windows.Forms.Padding(0);
+            this.Delete_Btn.Name = "Delete_Btn";
+            this.Delete_Btn.Size = new System.Drawing.Size(141, 48);
+            this.Delete_Btn.TabIndex = 2;
+            this.Delete_Btn.Text = "Delete";
+            this.Delete_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // Add_Btn
+            // 
+            this.Add_Btn.BorderColor = System.Drawing.Color.Silver;
+            this.Add_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Add_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Add_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Add_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Add_Btn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Add_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.Add_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Add_Btn.ForeColor = System.Drawing.Color.White;
+            this.Add_Btn.Image = ((System.Drawing.Image)(resources.GetObject("Add_Btn.Image")));
+            this.Add_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Add_Btn.Location = new System.Drawing.Point(216, 0);
+            this.Add_Btn.Margin = new System.Windows.Forms.Padding(0);
+            this.Add_Btn.Name = "Add_Btn";
+            this.Add_Btn.Size = new System.Drawing.Size(141, 48);
+            this.Add_Btn.TabIndex = 1;
+            this.Add_Btn.Text = "Add";
+            this.Add_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Add_Btn.Click += new System.EventHandler(this.Add_Btn_Click);
+            // 
+            // MainBack_Btn
+            // 
+            this.MainBack_Btn.BorderColor = System.Drawing.Color.Silver;
+            this.MainBack_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.MainBack_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.MainBack_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.MainBack_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.MainBack_Btn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.MainBack_Btn.FillColor = System.Drawing.Color.Silver;
+            this.MainBack_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MainBack_Btn.ForeColor = System.Drawing.Color.White;
+            this.MainBack_Btn.Image = ((System.Drawing.Image)(resources.GetObject("MainBack_Btn.Image")));
+            this.MainBack_Btn.Location = new System.Drawing.Point(0, 0);
+            this.MainBack_Btn.Margin = new System.Windows.Forms.Padding(0);
+            this.MainBack_Btn.Name = "MainBack_Btn";
+            this.MainBack_Btn.Size = new System.Drawing.Size(216, 48);
+            this.MainBack_Btn.TabIndex = 0;
+            this.MainBack_Btn.Click += new System.EventHandler(this.MainBack_Btn_Click);
             // 
             // Bus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.Add_Pnl);
-            this.Controls.Add(this.AddStudList_Pnl);
             this.Controls.Add(this.BStudList_Pnl);
-            this.Controls.Add(this.BInfoMain_Pnl);
             this.Controls.Add(this.DList_Pnl);
+            this.Controls.Add(this.AddStudList_Pnl);
+            this.Controls.Add(this.BInfoMain_Pnl);
+            this.Controls.Add(this.Add_Pnl);
             this.Controls.Add(this.ViewProf_Pnl);
             this.Controls.Add(this.Update_Pnl);
             this.Controls.Add(this.Filter_Pnl);
@@ -2377,7 +2377,6 @@
             this.ViewProf_Pnl.ResumeLayout(false);
             this.View_S_Pnl.ResumeLayout(false);
             this.View_S_Pnl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.View_ProfPic_Picture)).EndInit();
             this.View_Menu_Pnl.ResumeLayout(false);
             this.View_Menu_Pnl.PerformLayout();
             this.AddStudList_Pnl.ResumeLayout(false);
@@ -2387,6 +2386,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.AddStudList_DT)).EndInit();
             this.AddStudListMenu_Pnl.ResumeLayout(false);
             this.AddStudListMenu_Pnl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.View_ProfPic_Picture)).EndInit();
             this.ResumeLayout(false);
 
         }

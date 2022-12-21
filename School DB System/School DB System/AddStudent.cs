@@ -50,9 +50,9 @@ namespace School_DB_System
             Tittle_Lbl.Text = "Add Student"; //changes control title text to update student
             Tittle_Lbl.TextAlignment = ContentAlignment.MiddleCenter; //changes tittle text alignment to center
             StdSub_Pnl.Visible = true;
-            TeachSub_Pnl.Visible = false;
+            StaffSub_Pnl.Visible = false;
             StdSub_Pnl.BringToFront();
-            this.Controls.Remove(TeachSub_Pnl);
+            this.Controls.Remove(StaffSub_Pnl);
             StdName_Txt.Select();//initially selecting student name textbox
             StdPayedTuition_CBox.Visible = false; //hiding payed tuition check box in add student panel
         }

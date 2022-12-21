@@ -17,7 +17,7 @@ namespace School_DB_System
     //(Txt -> TextBox) (CBox -> Comboobox) (Pnl -> Panel) (Lbl -> Label)
 
     //ADD teacher USERCONTROL
-    public partial class AddTeacher : ADUTeacherParent //inherits from the base usercontrol which contains the main design and functions (AUDteacherPARENT)
+    public partial class AddTeacher : AddStaff //inherits from the base usercontrol which contains the main design and functions (AUDteacherPARENT)
     {
         //DATA MEMBERS
         ViewController viewController; //viewcontroller object
@@ -30,18 +30,25 @@ namespace School_DB_System
             this.viewController = viewController; //linking viewcontroller object with one viewcontroller object the whole applicaiton use
             this.controllerObj = controllerObj;  //linking controller object with one controller object the whole applicaiton use
             //intiallizing years list comboobox with years (1, 2, 3, ...etc)
-            TeachDep_CBox.DisplayMember = "dep_Name";
-            TeachDep_CBox.ValueMember = "dep_ID";
-            TeachDep_CBox.DataSource = controllerObj.getDepartmentslist();
-            this.TeachDep_CBox.SelectedIndexChanged += new System.EventHandler(this.TeachDep_CBox_SelectedIndexChanged);
+            StaffDep_CBox.DisplayMember = "dep_Name";
+            StaffDep_CBox.ValueMember = "dep_ID";
+            StaffDep_CBox.DataSource = controllerObj.getDepartmentslist();
+            this.StaffDep_CBox.SelectedIndexChanged += new System.EventHandler(this.StaffDep_CBox_SelectedIndexChanged);
         }
 
         //overriding onPaint function to change derived class (Add teacher) design
         protected override void OnPaint(PaintEventArgs pe)
         {
-            Tittle_Lbl.Text = "Add Teacher"; //changes control title text to update teacher
-            Tittle_Lbl.TextAlignment = ContentAlignment.MiddleCenter; //changes tittle text alignment to center
-            TeachName_Txt.Select();//initially selecting teacher name textbox
+            Tittle_Lbl.Text = "Add Teacher";
+            StaffSub_Pnl.Visible = true;
+            StaffSub_Pnl.BringToFront();
+            this.Controls.Remove(StdSub_Pnl);
+            StaffPos_CBox.Visible = false;
+            StaffPosReq_Lbl.Visible = false;
+            StaffPos_Lbl.Visible = false;
+            StaffDepReq_Lbl.Location = StaffPos_Lbl.Location;
+            StaffDep_CBox.Location = StaffPos_CBox.Location;
+            StaffDep_Lbl.Location = StaffPos_Lbl.Location;
         }
 
         //METHODS
@@ -53,62 +60,39 @@ namespace School_DB_System
         //then ID will be  (291100021) (29) stands for 2029 (graduation year last 2 digits) and 11 stands for the first two letters in SSN and 00021 stands for the 21th teacher
         //teacher ID depends on SSN and year so this method is called when selected year changed or SSN text changed (only when adding teacher in the first time)
         //Note that in updating teacher information teacher id is not changed even if selected year and SSN changed
-        private void updateTeacherID()
+        protected override void updateStaffID()
         {
-            if (TeachSSN_Txt.TextLength < 2)
+            if (StaffSSN_Txt.TextLength < 2)
             {
-                TeachID_Txt.Text = ""; //empty teacher ID (reset)
+                StaffID_Txt.Text = ""; //empty teacher ID (reset)
                 return; //return (do nothing)
             }
-            if (TeachSSN_Txt.BorderColor == Color.Gray) //if SSN textbox bordercolor is gray means enetered Valid SSN generate teacher ID
+            if (StaffSSN_Txt.BorderColor == Color.Gray) //if SSN textbox bordercolor is gray means enetered Valid SSN generate teacher ID
             {
-                int TeachsCount = controllerObj.getTeachersCount(); //retrieves teacher count
-                TeachsCount++; //increments teacher count by 1 i.e if teachers count is = 3 means the teacher that will be added is the 4th teacher no the 3th
-                string formattedTeachCount = string.Format("{0:00000}", TeachsCount); //formatting teachers count to 5 digits and padding with zeros if needed i teachers count is 300 it will be 00300 and if 45000 it will be 45000
-                char[] SSNFirst2digits = TeachSSN_Txt.Text.ToCharArray(); //converting SSN to array of characters to access characters (first 2 digits)
-                char[] DepID = (TeachDep_CBox.SelectedValue.ToString()).ToCharArray(); //converting graduation year textbox text to integer to use to calculate graduation year
+                int StaffCount = controllerObj.getStaffCount(); //retrieves teacher count
+                StaffCount++; //increments teacher count by 1 i.e if teachers count is = 3 means the teacher that will be added is the 4th teacher no the 3th
+                string formattedTeachCount = string.Format("{0:00000}", StaffCount); //formatting teachers count to 5 digits and padding with zeros if needed i teachers count is 300 it will be 00300 and if 45000 it will be 45000
+                char[] SSNFirst2digits = StaffSSN_Txt.Text.ToCharArray(); //converting SSN to array of characters to access characters (first 2 digits)
+                char[] DepID = (StaffDep_CBox.SelectedValue.ToString()).ToCharArray(); //converting graduation year textbox text to integer to use to calculate graduation year
                 //note that this calculates depending on the real year in the world (datetime.now.year) so its updated with the real time year (only when adding a new teacher not in updating teacher information)
                 //created teacher ID with the specfied format
-                TeachID_Txt.Text = DepID[0].ToString() + SSNFirst2digits[0].ToString() + SSNFirst2digits[1].ToString() + formattedTeachCount.ToString();
+                StaffID_Txt.Text = "2" + DepID[0].ToString() + SSNFirst2digits[0].ToString() + SSNFirst2digits[1].ToString() + formattedTeachCount.ToString();
                 return; //return (do nothing)
             }
             else //if SSN textbox bordercolor is red means enetered invalid SSN so don't generate teacher ID and return
             {
-                TeachID_Txt.Text = ""; //empty teacher ID (reset)
+                StaffID_Txt.Text = ""; //empty teacher ID (reset)
                 return; //return (do nothing)
             }
         }
 
-        //Reset add panel
-        private void resetAddPanel()
-        {
-            //looping on each item on the panel (Add Panel)
-            foreach (Control item in TeachSub_Pnl.Controls)
-            {
-                if (item is Guna2TextBox) //if item is textbox
-                {
-                    Guna2TextBox textBox = (Guna2TextBox)item; //cast item to textbox to use textbox functionalities
-                    textBox.ResetText(); //reset textbox text (empty)
-                    textBox.BorderColor = Color.Gray; //chnge bordercolor to gray in case te border color was red due to invalid entered data
-                }
-                if (item is Guna2ComboBox) //if item is comboobox
-                {
-                    Guna2ComboBox comboBox = (Guna2ComboBox)item; //cast item to comboobox to use comboobox functionalities 
-                    comboBox.SelectedIndex = 0; //select the first item (reset selection)
-                }
-            }
-            TeachName_Txt.Select();
-            hideErrorMessage();
-        }
+    
 
         //EVENTS
         //add teacher year comboobox selection changed event
         //if the selected year changed change teacher ID as it depeneds on the selected year
         //(first 2 digits of the ID are the last 2 digits of the graduation year that depends on the year the teacher enrolled in the school) 
-        private void TeachDep_CBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            updateTeacherID(); //Call update teacher ID that updates ID and handles uniqness of the ID
-        }
+  
 
         //Submit button click event
         //sends query to database to insert a new teacher
@@ -116,7 +100,7 @@ namespace School_DB_System
         {
             //checks if there a empty required data (empty textboxs)
             //loops on each textbox in the control
-            foreach (Control item in TeachSub_Pnl.Controls) //loop on each item in the panel
+            foreach (Control item in StaffSub_Pnl.Controls) //loop on each item in the panel
             {
                 if (item is Guna2TextBox) //if the item is textbox
                 {
@@ -143,7 +127,7 @@ namespace School_DB_System
             try //handles any unexpected error while converting any string to string or query fail
             {
                 //send a query and gets the result of the query in queryres
-                int queryRes = controllerObj.AddTeacher(TeachID_Txt.Text.ToString(), TeachName_Txt.Text.ToString(), TeachSSN_Txt.Text.ToString(), Int64.Parse(TeachSalary_Txt.Text), TeachAdress_Txt.Text.ToString(), TeachEmail_Txt.Text.ToString(), TeachPNum_Txt.Text.ToString(), TeachDep_CBox.SelectedValue.ToString(), TeachFullTime_CHBox.Checked, TeachID_Txt.Text.ToString(), "0000");
+                int queryRes = controllerObj.AddTeacher(StaffID_Txt.Text.ToString(), StaffName_Txt.Text.ToString(), StaffSSN_Txt.Text.ToString(), Int64.Parse(StaffSalary_Txt.Text), StaffAdress_Txt.Text.ToString(), StaffEmail_Txt.Text.ToString(), StaffPNum_Txt.Text.ToString(), StaffDep_CBox.SelectedValue.ToString(), StaffFullTime_CHBox.Checked, StaffID_Txt.Text.ToString(), "0000");
 
                 if (queryRes == 0) //if queryres = 0 i.e query executing failed
                 {
@@ -178,26 +162,5 @@ namespace School_DB_System
             }
         }
 
-        //teacher SSN Textbox text changed event
-        //also used for teacher SSN Textbox leave event
-        protected override void TeachSSN_txt_TextChanged(object sender, EventArgs e)
-        {
-            //if name text contains length is out of range (from 14 to 20 digit) this is invalid
-            if (TeachSSN_Txt.TextLength < 14 || TeachSSN_Txt.TextLength > 20 || TeachSSN_Txt.Text.Any(char.IsLetter))
-            {
-                showErrorMessage("invalid SSN, please inert a valid 14 - 20 numbers SSN"); //informing the user with a suitable message
-                TeachSSN_Txt.BorderColor = Color.Red; //changing text border color to red informing the user that this is invalid data
-                updateTeacherID();
-                return; //return
-            }
-            else //if valid data (no characters or ovalid SSN length)
-            {
-                //if valid data (no characters or ovalid SSN length) inform the user that the entered data is valid
-                hideErrorMessage(); //hide error message
-                TeachSSN_Txt.BorderColor = Color.Gray; //changing textbox color back to gray informing the user that it is a valid data
-                updateTeacherID();
-                return; //return
-            }
-        }
     }
 }

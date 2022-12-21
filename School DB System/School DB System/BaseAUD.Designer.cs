@@ -30,6 +30,35 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseAUD));
             this.Main_Pnl = new Guna.UI2.WinForms.Guna2Panel();
+            this.StaffSub_Pnl = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.StaffFullTime_CHBox = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.StaffSSNReq_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.StaffPosReq_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.StaffDepReq_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.StaffEmailReq_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.StaffSalaryReq_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.StaffPNumReq_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.StaffIDReq_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.StaffNameReq_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.StaffPos_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.StaffDep_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.StaffAdress_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.StaffSSN_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.StaffEmail_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.StaffSalary_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.StaffPNum_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.StaffID_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.Staff_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.StaffName_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.StaffPos_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.StaffDep_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.StaffSalary_Txt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.StaffPNum_Txt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.StaffAdress_Txt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.StaffSSN_Txt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.StaffID_Txt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.StaffEmail_Txt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.StaffName_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.TitleBar_Pnl = new Guna.UI2.WinForms.Guna2Panel();
             this.Tittle_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Back_btn = new Guna.UI2.WinForms.Guna2Button();
@@ -83,43 +112,67 @@
             this.StdEmail_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.StdParName_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.StdName_Txt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.TeachSub_Pnl = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.TeachSSNReq_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.TeachDepReq_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.TeachEmailReq_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.TeachSalaryReq_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.TeachPNumReq_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.TeachIDReq_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.TeachNameReq_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.TeachDep_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.TeachAdress_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.TeachSSN_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.TeachEmail_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.TeachSalary_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.TeachPNum_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.TeachID_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.Teacher_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.TeachName_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.TeachDep_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.TeachPNum_Txt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.TeachAdress_Txt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.TeachSSN_Txt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.TeachID_Txt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.TeachEmail_Txt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.TeachName_Txt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.TeachFullTime_CHBox = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.TeachSalary_Txt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel14 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.guna2HtmlLabel15 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel16 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel17 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2HtmlLabel18 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel19 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel20 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel21 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel22 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel23 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel24 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2HtmlLabel25 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel26 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel27 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel28 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel29 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel30 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2ComboBox3 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2TextBox5 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox6 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox7 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox8 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox9 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox10 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox11 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2ComboBox4 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.Main_Pnl.SuspendLayout();
+            this.StaffSub_Pnl.SuspendLayout();
             this.TitleBar_Pnl.SuspendLayout();
             this.StdSub_Pnl.SuspendLayout();
-            this.TeachSub_Pnl.SuspendLayout();
+            this.guna2GradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Main_Pnl
             // 
             this.Main_Pnl.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
             this.Main_Pnl.BorderThickness = 3;
-            this.Main_Pnl.Controls.Add(this.TeachSub_Pnl);
+            this.Main_Pnl.Controls.Add(this.guna2GradientPanel1);
+            this.Main_Pnl.Controls.Add(this.StaffSub_Pnl);
             this.Main_Pnl.Controls.Add(this.TitleBar_Pnl);
             this.Main_Pnl.Controls.Add(this.ErrorMessage_Lbl);
             this.Main_Pnl.Controls.Add(this.Submit_Btn);
@@ -129,6 +182,445 @@
             this.Main_Pnl.Name = "Main_Pnl";
             this.Main_Pnl.Size = new System.Drawing.Size(873, 539);
             this.Main_Pnl.TabIndex = 12;
+            // 
+            // StaffSub_Pnl
+            // 
+            this.StaffSub_Pnl.AutoScroll = true;
+            this.StaffSub_Pnl.BackColor = System.Drawing.Color.White;
+            this.StaffSub_Pnl.Controls.Add(this.StaffFullTime_CHBox);
+            this.StaffSub_Pnl.Controls.Add(this.StaffSSNReq_Lbl);
+            this.StaffSub_Pnl.Controls.Add(this.StaffPosReq_Lbl);
+            this.StaffSub_Pnl.Controls.Add(this.StaffDepReq_Lbl);
+            this.StaffSub_Pnl.Controls.Add(this.StaffEmailReq_Lbl);
+            this.StaffSub_Pnl.Controls.Add(this.StaffSalaryReq_Lbl);
+            this.StaffSub_Pnl.Controls.Add(this.StaffPNumReq_Lbl);
+            this.StaffSub_Pnl.Controls.Add(this.StaffIDReq_Lbl);
+            this.StaffSub_Pnl.Controls.Add(this.StaffNameReq_Lbl);
+            this.StaffSub_Pnl.Controls.Add(this.StaffPos_Lbl);
+            this.StaffSub_Pnl.Controls.Add(this.StaffDep_Lbl);
+            this.StaffSub_Pnl.Controls.Add(this.StaffAdress_Lbl);
+            this.StaffSub_Pnl.Controls.Add(this.StaffSSN_Lbl);
+            this.StaffSub_Pnl.Controls.Add(this.StaffEmail_Lbl);
+            this.StaffSub_Pnl.Controls.Add(this.StaffSalary_Lbl);
+            this.StaffSub_Pnl.Controls.Add(this.StaffPNum_Lbl);
+            this.StaffSub_Pnl.Controls.Add(this.StaffID_Lbl);
+            this.StaffSub_Pnl.Controls.Add(this.Staff_Lbl);
+            this.StaffSub_Pnl.Controls.Add(this.StaffName_Lbl);
+            this.StaffSub_Pnl.Controls.Add(this.StaffPos_CBox);
+            this.StaffSub_Pnl.Controls.Add(this.StaffDep_CBox);
+            this.StaffSub_Pnl.Controls.Add(this.StaffSalary_Txt);
+            this.StaffSub_Pnl.Controls.Add(this.StaffPNum_Txt);
+            this.StaffSub_Pnl.Controls.Add(this.StaffAdress_Txt);
+            this.StaffSub_Pnl.Controls.Add(this.StaffSSN_Txt);
+            this.StaffSub_Pnl.Controls.Add(this.StaffID_Txt);
+            this.StaffSub_Pnl.Controls.Add(this.StaffEmail_Txt);
+            this.StaffSub_Pnl.Controls.Add(this.StaffName_Txt);
+            this.StaffSub_Pnl.Location = new System.Drawing.Point(26, 61);
+            this.StaffSub_Pnl.Name = "StaffSub_Pnl";
+            this.StaffSub_Pnl.Size = new System.Drawing.Size(818, 422);
+            this.StaffSub_Pnl.TabIndex = 9;
+            // 
+            // StaffFullTime_CHBox
+            // 
+            this.StaffFullTime_CHBox.AutoSize = true;
+            this.StaffFullTime_CHBox.CheckedState.BorderColor = System.Drawing.Color.Silver;
+            this.StaffFullTime_CHBox.CheckedState.BorderRadius = 0;
+            this.StaffFullTime_CHBox.CheckedState.BorderThickness = 0;
+            this.StaffFullTime_CHBox.CheckedState.FillColor = System.Drawing.Color.Silver;
+            this.StaffFullTime_CHBox.CheckMarkColor = System.Drawing.Color.ForestGreen;
+            this.StaffFullTime_CHBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.StaffFullTime_CHBox.ForeColor = System.Drawing.Color.Silver;
+            this.StaffFullTime_CHBox.Location = new System.Drawing.Point(468, 327);
+            this.StaffFullTime_CHBox.Name = "StaffFullTime_CHBox";
+            this.StaffFullTime_CHBox.Size = new System.Drawing.Size(73, 17);
+            this.StaffFullTime_CHBox.TabIndex = 52;
+            this.StaffFullTime_CHBox.Text = "Full Time";
+            this.StaffFullTime_CHBox.UncheckedState.BorderColor = System.Drawing.Color.Silver;
+            this.StaffFullTime_CHBox.UncheckedState.BorderRadius = 0;
+            this.StaffFullTime_CHBox.UncheckedState.BorderThickness = 0;
+            this.StaffFullTime_CHBox.UncheckedState.FillColor = System.Drawing.Color.Silver;
+            // 
+            // StaffSSNReq_Lbl
+            // 
+            this.StaffSSNReq_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.StaffSSNReq_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StaffSSNReq_Lbl.ForeColor = System.Drawing.Color.DarkRed;
+            this.StaffSSNReq_Lbl.Location = new System.Drawing.Point(453, 128);
+            this.StaffSSNReq_Lbl.Name = "StaffSSNReq_Lbl";
+            this.StaffSSNReq_Lbl.Size = new System.Drawing.Size(11, 27);
+            this.StaffSSNReq_Lbl.TabIndex = 49;
+            this.StaffSSNReq_Lbl.Text = "*";
+            // 
+            // StaffPosReq_Lbl
+            // 
+            this.StaffPosReq_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.StaffPosReq_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StaffPosReq_Lbl.ForeColor = System.Drawing.Color.DarkRed;
+            this.StaffPosReq_Lbl.Location = new System.Drawing.Point(451, 271);
+            this.StaffPosReq_Lbl.Name = "StaffPosReq_Lbl";
+            this.StaffPosReq_Lbl.Size = new System.Drawing.Size(11, 27);
+            this.StaffPosReq_Lbl.TabIndex = 49;
+            this.StaffPosReq_Lbl.Text = "*";
+            // 
+            // StaffDepReq_Lbl
+            // 
+            this.StaffDepReq_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.StaffDepReq_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StaffDepReq_Lbl.ForeColor = System.Drawing.Color.DarkRed;
+            this.StaffDepReq_Lbl.Location = new System.Drawing.Point(36, 347);
+            this.StaffDepReq_Lbl.Name = "StaffDepReq_Lbl";
+            this.StaffDepReq_Lbl.Size = new System.Drawing.Size(11, 27);
+            this.StaffDepReq_Lbl.TabIndex = 49;
+            this.StaffDepReq_Lbl.Text = "*";
+            // 
+            // StaffEmailReq_Lbl
+            // 
+            this.StaffEmailReq_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.StaffEmailReq_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StaffEmailReq_Lbl.ForeColor = System.Drawing.Color.DarkRed;
+            this.StaffEmailReq_Lbl.Location = new System.Drawing.Point(451, 58);
+            this.StaffEmailReq_Lbl.Name = "StaffEmailReq_Lbl";
+            this.StaffEmailReq_Lbl.Size = new System.Drawing.Size(11, 27);
+            this.StaffEmailReq_Lbl.TabIndex = 49;
+            this.StaffEmailReq_Lbl.Text = "*";
+            // 
+            // StaffSalaryReq_Lbl
+            // 
+            this.StaffSalaryReq_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.StaffSalaryReq_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StaffSalaryReq_Lbl.ForeColor = System.Drawing.Color.DarkRed;
+            this.StaffSalaryReq_Lbl.Location = new System.Drawing.Point(36, 270);
+            this.StaffSalaryReq_Lbl.Name = "StaffSalaryReq_Lbl";
+            this.StaffSalaryReq_Lbl.Size = new System.Drawing.Size(11, 27);
+            this.StaffSalaryReq_Lbl.TabIndex = 49;
+            this.StaffSalaryReq_Lbl.Text = "*";
+            // 
+            // StaffPNumReq_Lbl
+            // 
+            this.StaffPNumReq_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.StaffPNumReq_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StaffPNumReq_Lbl.ForeColor = System.Drawing.Color.DarkRed;
+            this.StaffPNumReq_Lbl.Location = new System.Drawing.Point(36, 198);
+            this.StaffPNumReq_Lbl.Name = "StaffPNumReq_Lbl";
+            this.StaffPNumReq_Lbl.Size = new System.Drawing.Size(11, 27);
+            this.StaffPNumReq_Lbl.TabIndex = 49;
+            this.StaffPNumReq_Lbl.Text = "*";
+            // 
+            // StaffIDReq_Lbl
+            // 
+            this.StaffIDReq_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.StaffIDReq_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StaffIDReq_Lbl.ForeColor = System.Drawing.Color.DarkRed;
+            this.StaffIDReq_Lbl.Location = new System.Drawing.Point(36, 128);
+            this.StaffIDReq_Lbl.Name = "StaffIDReq_Lbl";
+            this.StaffIDReq_Lbl.Size = new System.Drawing.Size(11, 27);
+            this.StaffIDReq_Lbl.TabIndex = 49;
+            this.StaffIDReq_Lbl.Text = "*";
+            // 
+            // StaffNameReq_Lbl
+            // 
+            this.StaffNameReq_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.StaffNameReq_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StaffNameReq_Lbl.ForeColor = System.Drawing.Color.DarkRed;
+            this.StaffNameReq_Lbl.Location = new System.Drawing.Point(36, 58);
+            this.StaffNameReq_Lbl.Name = "StaffNameReq_Lbl";
+            this.StaffNameReq_Lbl.Size = new System.Drawing.Size(11, 27);
+            this.StaffNameReq_Lbl.TabIndex = 49;
+            this.StaffNameReq_Lbl.Text = "*";
+            // 
+            // StaffPos_Lbl
+            // 
+            this.StaffPos_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.StaffPos_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StaffPos_Lbl.ForeColor = System.Drawing.Color.Gray;
+            this.StaffPos_Lbl.Location = new System.Drawing.Point(470, 243);
+            this.StaffPos_Lbl.Name = "StaffPos_Lbl";
+            this.StaffPos_Lbl.Size = new System.Drawing.Size(46, 15);
+            this.StaffPos_Lbl.TabIndex = 39;
+            this.StaffPos_Lbl.Text = "Position";
+            // 
+            // StaffDep_Lbl
+            // 
+            this.StaffDep_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.StaffDep_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StaffDep_Lbl.ForeColor = System.Drawing.Color.Gray;
+            this.StaffDep_Lbl.Location = new System.Drawing.Point(53, 319);
+            this.StaffDep_Lbl.Name = "StaffDep_Lbl";
+            this.StaffDep_Lbl.Size = new System.Drawing.Size(65, 15);
+            this.StaffDep_Lbl.TabIndex = 39;
+            this.StaffDep_Lbl.Text = "Department";
+            // 
+            // StaffAdress_Lbl
+            // 
+            this.StaffAdress_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.StaffAdress_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StaffAdress_Lbl.ForeColor = System.Drawing.Color.Gray;
+            this.StaffAdress_Lbl.Location = new System.Drawing.Point(470, 170);
+            this.StaffAdress_Lbl.Name = "StaffAdress_Lbl";
+            this.StaffAdress_Lbl.Size = new System.Drawing.Size(38, 15);
+            this.StaffAdress_Lbl.TabIndex = 38;
+            this.StaffAdress_Lbl.Text = "Adress";
+            // 
+            // StaffSSN_Lbl
+            // 
+            this.StaffSSN_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.StaffSSN_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StaffSSN_Lbl.ForeColor = System.Drawing.Color.Gray;
+            this.StaffSSN_Lbl.Location = new System.Drawing.Point(470, 100);
+            this.StaffSSN_Lbl.Name = "StaffSSN_Lbl";
+            this.StaffSSN_Lbl.Size = new System.Drawing.Size(24, 15);
+            this.StaffSSN_Lbl.TabIndex = 37;
+            this.StaffSSN_Lbl.Text = "SSN";
+            // 
+            // StaffEmail_Lbl
+            // 
+            this.StaffEmail_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.StaffEmail_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StaffEmail_Lbl.ForeColor = System.Drawing.Color.Gray;
+            this.StaffEmail_Lbl.Location = new System.Drawing.Point(470, 30);
+            this.StaffEmail_Lbl.Name = "StaffEmail_Lbl";
+            this.StaffEmail_Lbl.Size = new System.Drawing.Size(31, 15);
+            this.StaffEmail_Lbl.TabIndex = 36;
+            this.StaffEmail_Lbl.Text = "Email";
+            // 
+            // StaffSalary_Lbl
+            // 
+            this.StaffSalary_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.StaffSalary_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StaffSalary_Lbl.ForeColor = System.Drawing.Color.Gray;
+            this.StaffSalary_Lbl.Location = new System.Drawing.Point(53, 242);
+            this.StaffSalary_Lbl.Name = "StaffSalary_Lbl";
+            this.StaffSalary_Lbl.Size = new System.Drawing.Size(34, 15);
+            this.StaffSalary_Lbl.TabIndex = 35;
+            this.StaffSalary_Lbl.Text = "Salary";
+            // 
+            // StaffPNum_Lbl
+            // 
+            this.StaffPNum_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.StaffPNum_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StaffPNum_Lbl.ForeColor = System.Drawing.Color.Gray;
+            this.StaffPNum_Lbl.Location = new System.Drawing.Point(53, 173);
+            this.StaffPNum_Lbl.Name = "StaffPNum_Lbl";
+            this.StaffPNum_Lbl.Size = new System.Drawing.Size(83, 15);
+            this.StaffPNum_Lbl.TabIndex = 34;
+            this.StaffPNum_Lbl.Text = "Phone Number";
+            // 
+            // StaffID_Lbl
+            // 
+            this.StaffID_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.StaffID_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StaffID_Lbl.ForeColor = System.Drawing.Color.Gray;
+            this.StaffID_Lbl.Location = new System.Drawing.Point(53, 100);
+            this.StaffID_Lbl.Name = "StaffID_Lbl";
+            this.StaffID_Lbl.Size = new System.Drawing.Size(14, 15);
+            this.StaffID_Lbl.TabIndex = 33;
+            this.StaffID_Lbl.Text = "ID";
+            // 
+            // Staff_Lbl
+            // 
+            this.Staff_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.Staff_Lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Staff_Lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.Staff_Lbl.Location = new System.Drawing.Point(373, 11);
+            this.Staff_Lbl.Name = "Staff_Lbl";
+            this.Staff_Lbl.Size = new System.Drawing.Size(39, 23);
+            this.Staff_Lbl.TabIndex = 32;
+            this.Staff_Lbl.Text = "Staff";
+            this.Staff_Lbl.Visible = false;
+            // 
+            // StaffName_Lbl
+            // 
+            this.StaffName_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.StaffName_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StaffName_Lbl.ForeColor = System.Drawing.Color.Gray;
+            this.StaffName_Lbl.Location = new System.Drawing.Point(53, 30);
+            this.StaffName_Lbl.Name = "StaffName_Lbl";
+            this.StaffName_Lbl.Size = new System.Drawing.Size(34, 15);
+            this.StaffName_Lbl.TabIndex = 21;
+            this.StaffName_Lbl.Text = "Name";
+            // 
+            // StaffPos_CBox
+            // 
+            this.StaffPos_CBox.BackColor = System.Drawing.Color.Transparent;
+            this.StaffPos_CBox.BorderColor = System.Drawing.Color.Gray;
+            this.StaffPos_CBox.BorderRadius = 3;
+            this.StaffPos_CBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.StaffPos_CBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.StaffPos_CBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.StaffPos_CBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.StaffPos_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.StaffPos_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.StaffPos_CBox.ItemHeight = 30;
+            this.StaffPos_CBox.Location = new System.Drawing.Point(468, 269);
+            this.StaffPos_CBox.Name = "StaffPos_CBox";
+            this.StaffPos_CBox.Size = new System.Drawing.Size(292, 36);
+            this.StaffPos_CBox.TabIndex = 8;
+            // 
+            // StaffDep_CBox
+            // 
+            this.StaffDep_CBox.BackColor = System.Drawing.Color.Transparent;
+            this.StaffDep_CBox.BorderColor = System.Drawing.Color.Gray;
+            this.StaffDep_CBox.BorderRadius = 3;
+            this.StaffDep_CBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.StaffDep_CBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.StaffDep_CBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.StaffDep_CBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.StaffDep_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.StaffDep_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.StaffDep_CBox.ItemHeight = 30;
+            this.StaffDep_CBox.Location = new System.Drawing.Point(53, 344);
+            this.StaffDep_CBox.Name = "StaffDep_CBox";
+            this.StaffDep_CBox.Size = new System.Drawing.Size(303, 36);
+            this.StaffDep_CBox.TabIndex = 8;
+            // 
+            // StaffSalary_Txt
+            // 
+            this.StaffSalary_Txt.BorderColor = System.Drawing.Color.Gray;
+            this.StaffSalary_Txt.BorderRadius = 3;
+            this.StaffSalary_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.StaffSalary_Txt.DefaultText = "";
+            this.StaffSalary_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.StaffSalary_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.StaffSalary_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.StaffSalary_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.StaffSalary_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.StaffSalary_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.StaffSalary_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.StaffSalary_Txt.Location = new System.Drawing.Point(53, 266);
+            this.StaffSalary_Txt.Name = "StaffSalary_Txt";
+            this.StaffSalary_Txt.PasswordChar = '\0';
+            this.StaffSalary_Txt.PlaceholderText = "Salary";
+            this.StaffSalary_Txt.SelectedText = "";
+            this.StaffSalary_Txt.Size = new System.Drawing.Size(303, 38);
+            this.StaffSalary_Txt.TabIndex = 5;
+            // 
+            // StaffPNum_Txt
+            // 
+            this.StaffPNum_Txt.BorderColor = System.Drawing.Color.Gray;
+            this.StaffPNum_Txt.BorderRadius = 3;
+            this.StaffPNum_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.StaffPNum_Txt.DefaultText = "";
+            this.StaffPNum_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.StaffPNum_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.StaffPNum_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.StaffPNum_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.StaffPNum_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.StaffPNum_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.StaffPNum_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.StaffPNum_Txt.Location = new System.Drawing.Point(53, 198);
+            this.StaffPNum_Txt.Name = "StaffPNum_Txt";
+            this.StaffPNum_Txt.PasswordChar = '\0';
+            this.StaffPNum_Txt.PlaceholderText = "Phone Number";
+            this.StaffPNum_Txt.SelectedText = "";
+            this.StaffPNum_Txt.Size = new System.Drawing.Size(303, 31);
+            this.StaffPNum_Txt.TabIndex = 5;
+            // 
+            // StaffAdress_Txt
+            // 
+            this.StaffAdress_Txt.BorderColor = System.Drawing.Color.Gray;
+            this.StaffAdress_Txt.BorderRadius = 3;
+            this.StaffAdress_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.StaffAdress_Txt.DefaultText = "";
+            this.StaffAdress_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.StaffAdress_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.StaffAdress_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.StaffAdress_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.StaffAdress_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.StaffAdress_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.StaffAdress_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.StaffAdress_Txt.Location = new System.Drawing.Point(468, 198);
+            this.StaffAdress_Txt.Name = "StaffAdress_Txt";
+            this.StaffAdress_Txt.PasswordChar = '\0';
+            this.StaffAdress_Txt.PlaceholderText = "Teacher Adress";
+            this.StaffAdress_Txt.SelectedText = "";
+            this.StaffAdress_Txt.Size = new System.Drawing.Size(294, 31);
+            this.StaffAdress_Txt.TabIndex = 6;
+            // 
+            // StaffSSN_Txt
+            // 
+            this.StaffSSN_Txt.BorderColor = System.Drawing.Color.Gray;
+            this.StaffSSN_Txt.BorderRadius = 3;
+            this.StaffSSN_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.StaffSSN_Txt.DefaultText = "";
+            this.StaffSSN_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.StaffSSN_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.StaffSSN_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.StaffSSN_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.StaffSSN_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.StaffSSN_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.StaffSSN_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.StaffSSN_Txt.Location = new System.Drawing.Point(468, 128);
+            this.StaffSSN_Txt.Name = "StaffSSN_Txt";
+            this.StaffSSN_Txt.PasswordChar = '\0';
+            this.StaffSSN_Txt.PlaceholderText = "Teacher SSN";
+            this.StaffSSN_Txt.SelectedText = "";
+            this.StaffSSN_Txt.Size = new System.Drawing.Size(294, 31);
+            this.StaffSSN_Txt.TabIndex = 4;
+            // 
+            // StaffID_Txt
+            // 
+            this.StaffID_Txt.BorderColor = System.Drawing.Color.Gray;
+            this.StaffID_Txt.BorderRadius = 3;
+            this.StaffID_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.StaffID_Txt.DefaultText = "";
+            this.StaffID_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.StaffID_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.StaffID_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.StaffID_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.StaffID_Txt.Enabled = false;
+            this.StaffID_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.StaffID_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.StaffID_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.StaffID_Txt.Location = new System.Drawing.Point(53, 128);
+            this.StaffID_Txt.Name = "StaffID_Txt";
+            this.StaffID_Txt.PasswordChar = '\0';
+            this.StaffID_Txt.PlaceholderText = "Teacher ID";
+            this.StaffID_Txt.ReadOnly = true;
+            this.StaffID_Txt.SelectedText = "";
+            this.StaffID_Txt.Size = new System.Drawing.Size(303, 31);
+            this.StaffID_Txt.TabIndex = 3;
+            // 
+            // StaffEmail_Txt
+            // 
+            this.StaffEmail_Txt.BorderColor = System.Drawing.Color.Gray;
+            this.StaffEmail_Txt.BorderRadius = 3;
+            this.StaffEmail_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.StaffEmail_Txt.DefaultText = "";
+            this.StaffEmail_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.StaffEmail_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.StaffEmail_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.StaffEmail_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.StaffEmail_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.StaffEmail_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.StaffEmail_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.StaffEmail_Txt.Location = new System.Drawing.Point(468, 58);
+            this.StaffEmail_Txt.Name = "StaffEmail_Txt";
+            this.StaffEmail_Txt.PasswordChar = '\0';
+            this.StaffEmail_Txt.PlaceholderText = "Email Adress";
+            this.StaffEmail_Txt.SelectedText = "";
+            this.StaffEmail_Txt.Size = new System.Drawing.Size(294, 31);
+            this.StaffEmail_Txt.TabIndex = 2;
+            // 
+            // StaffName_Txt
+            // 
+            this.StaffName_Txt.BorderColor = System.Drawing.Color.Gray;
+            this.StaffName_Txt.BorderRadius = 3;
+            this.StaffName_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.StaffName_Txt.DefaultText = "";
+            this.StaffName_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.StaffName_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.StaffName_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.StaffName_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.StaffName_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.StaffName_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.StaffName_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.StaffName_Txt.Location = new System.Drawing.Point(53, 58);
+            this.StaffName_Txt.Name = "StaffName_Txt";
+            this.StaffName_Txt.PasswordChar = '\0';
+            this.StaffName_Txt.PlaceholderText = "Name";
+            this.StaffName_Txt.SelectedText = "";
+            this.StaffName_Txt.Size = new System.Drawing.Size(303, 31);
+            this.StaffName_Txt.TabIndex = 1;
             // 
             // TitleBar_Pnl
             // 
@@ -931,401 +1423,733 @@
             this.StdName_Txt.Size = new System.Drawing.Size(303, 31);
             this.StdName_Txt.TabIndex = 1;
             // 
-            // TeachSub_Pnl
+            // guna2GradientPanel1
             // 
-            this.TeachSub_Pnl.AutoScroll = true;
-            this.TeachSub_Pnl.BackColor = System.Drawing.Color.White;
-            this.TeachSub_Pnl.Controls.Add(this.TeachFullTime_CHBox);
-            this.TeachSub_Pnl.Controls.Add(this.TeachSSNReq_Lbl);
-            this.TeachSub_Pnl.Controls.Add(this.TeachDepReq_Lbl);
-            this.TeachSub_Pnl.Controls.Add(this.TeachEmailReq_Lbl);
-            this.TeachSub_Pnl.Controls.Add(this.TeachSalaryReq_Lbl);
-            this.TeachSub_Pnl.Controls.Add(this.TeachPNumReq_Lbl);
-            this.TeachSub_Pnl.Controls.Add(this.TeachIDReq_Lbl);
-            this.TeachSub_Pnl.Controls.Add(this.TeachNameReq_Lbl);
-            this.TeachSub_Pnl.Controls.Add(this.TeachDep_Lbl);
-            this.TeachSub_Pnl.Controls.Add(this.TeachAdress_Lbl);
-            this.TeachSub_Pnl.Controls.Add(this.TeachSSN_Lbl);
-            this.TeachSub_Pnl.Controls.Add(this.TeachEmail_Lbl);
-            this.TeachSub_Pnl.Controls.Add(this.TeachSalary_Lbl);
-            this.TeachSub_Pnl.Controls.Add(this.TeachPNum_Lbl);
-            this.TeachSub_Pnl.Controls.Add(this.TeachID_Lbl);
-            this.TeachSub_Pnl.Controls.Add(this.Teacher_Lbl);
-            this.TeachSub_Pnl.Controls.Add(this.TeachName_Lbl);
-            this.TeachSub_Pnl.Controls.Add(this.TeachDep_CBox);
-            this.TeachSub_Pnl.Controls.Add(this.TeachSalary_Txt);
-            this.TeachSub_Pnl.Controls.Add(this.TeachPNum_Txt);
-            this.TeachSub_Pnl.Controls.Add(this.TeachAdress_Txt);
-            this.TeachSub_Pnl.Controls.Add(this.TeachSSN_Txt);
-            this.TeachSub_Pnl.Controls.Add(this.TeachID_Txt);
-            this.TeachSub_Pnl.Controls.Add(this.TeachEmail_Txt);
-            this.TeachSub_Pnl.Controls.Add(this.TeachName_Txt);
-            this.TeachSub_Pnl.Location = new System.Drawing.Point(26, 61);
-            this.TeachSub_Pnl.Name = "TeachSub_Pnl";
-            this.TeachSub_Pnl.Size = new System.Drawing.Size(818, 422);
-            this.TeachSub_Pnl.TabIndex = 9;
+            this.guna2GradientPanel1.AutoScroll = true;
+            this.guna2GradientPanel1.BackColor = System.Drawing.Color.White;
+            this.guna2GradientPanel1.Controls.Add(this.guna2CheckBox1);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel1);
+            this.guna2GradientPanel1.Controls.Add(this.guna2TextBox1);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel2);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel3);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel4);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel5);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel6);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel7);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel8);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel9);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel10);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel11);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel12);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel13);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel14);
+            this.guna2GradientPanel1.Controls.Add(this.guna2ComboBox1);
+            this.guna2GradientPanel1.Controls.Add(this.guna2DateTimePicker1);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel15);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel16);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel17);
+            this.guna2GradientPanel1.Controls.Add(this.guna2TextBox2);
+            this.guna2GradientPanel1.Controls.Add(this.guna2TextBox3);
+            this.guna2GradientPanel1.Controls.Add(this.guna2TextBox4);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel18);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel19);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel20);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel21);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel22);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel23);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel24);
+            this.guna2GradientPanel1.Controls.Add(this.guna2ComboBox4);
+            this.guna2GradientPanel1.Controls.Add(this.guna2ComboBox2);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel25);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel26);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel27);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel28);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel29);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel30);
+            this.guna2GradientPanel1.Controls.Add(this.guna2ComboBox3);
+            this.guna2GradientPanel1.Controls.Add(this.guna2TextBox5);
+            this.guna2GradientPanel1.Controls.Add(this.guna2TextBox6);
+            this.guna2GradientPanel1.Controls.Add(this.guna2TextBox7);
+            this.guna2GradientPanel1.Controls.Add(this.guna2TextBox8);
+            this.guna2GradientPanel1.Controls.Add(this.guna2TextBox9);
+            this.guna2GradientPanel1.Controls.Add(this.guna2TextBox10);
+            this.guna2GradientPanel1.Controls.Add(this.guna2TextBox11);
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(27, 61);
+            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(818, 422);
+            this.guna2GradientPanel1.TabIndex = 10;
             // 
-            // TeachSSNReq_Lbl
+            // guna2CheckBox1
             // 
-            this.TeachSSNReq_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.TeachSSNReq_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TeachSSNReq_Lbl.ForeColor = System.Drawing.Color.DarkRed;
-            this.TeachSSNReq_Lbl.Location = new System.Drawing.Point(455, 151);
-            this.TeachSSNReq_Lbl.Name = "TeachSSNReq_Lbl";
-            this.TeachSSNReq_Lbl.Size = new System.Drawing.Size(11, 27);
-            this.TeachSSNReq_Lbl.TabIndex = 49;
-            this.TeachSSNReq_Lbl.Text = "*";
+            this.guna2CheckBox1.AutoSize = true;
+            this.guna2CheckBox1.CheckedState.BorderColor = System.Drawing.Color.Silver;
+            this.guna2CheckBox1.CheckedState.BorderRadius = 0;
+            this.guna2CheckBox1.CheckedState.BorderThickness = 0;
+            this.guna2CheckBox1.CheckedState.FillColor = System.Drawing.Color.Silver;
+            this.guna2CheckBox1.CheckMarkColor = System.Drawing.Color.ForestGreen;
+            this.guna2CheckBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.guna2CheckBox1.ForeColor = System.Drawing.Color.Silver;
+            this.guna2CheckBox1.Location = new System.Drawing.Point(689, 253);
+            this.guna2CheckBox1.Name = "guna2CheckBox1";
+            this.guna2CheckBox1.Size = new System.Drawing.Size(96, 17);
+            this.guna2CheckBox1.TabIndex = 52;
+            this.guna2CheckBox1.Text = "payed tuition";
+            this.guna2CheckBox1.UncheckedState.BorderColor = System.Drawing.Color.Silver;
+            this.guna2CheckBox1.UncheckedState.BorderRadius = 0;
+            this.guna2CheckBox1.UncheckedState.BorderThickness = 0;
+            this.guna2CheckBox1.UncheckedState.FillColor = System.Drawing.Color.Silver;
             // 
-            // TeachDepReq_Lbl
+            // guna2HtmlLabel1
             // 
-            this.TeachDepReq_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.TeachDepReq_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TeachDepReq_Lbl.ForeColor = System.Drawing.Color.DarkRed;
-            this.TeachDepReq_Lbl.Location = new System.Drawing.Point(453, 293);
-            this.TeachDepReq_Lbl.Name = "TeachDepReq_Lbl";
-            this.TeachDepReq_Lbl.Size = new System.Drawing.Size(11, 27);
-            this.TeachDepReq_Lbl.TabIndex = 49;
-            this.TeachDepReq_Lbl.Text = "*";
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Gray;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(435, 154);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(54, 15);
+            this.guna2HtmlLabel1.TabIndex = 51;
+            this.guna2HtmlLabel1.Text = "university";
+            this.guna2HtmlLabel1.Visible = false;
             // 
-            // TeachEmailReq_Lbl
+            // guna2TextBox1
             // 
-            this.TeachEmailReq_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.TeachEmailReq_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TeachEmailReq_Lbl.ForeColor = System.Drawing.Color.DarkRed;
-            this.TeachEmailReq_Lbl.Location = new System.Drawing.Point(453, 81);
-            this.TeachEmailReq_Lbl.Name = "TeachEmailReq_Lbl";
-            this.TeachEmailReq_Lbl.Size = new System.Drawing.Size(11, 27);
-            this.TeachEmailReq_Lbl.TabIndex = 49;
-            this.TeachEmailReq_Lbl.Text = "*";
+            this.guna2TextBox1.BorderColor = System.Drawing.Color.Gray;
+            this.guna2TextBox1.BorderRadius = 3;
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox1.DefaultText = "";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Location = new System.Drawing.Point(497, 154);
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.PasswordChar = '\0';
+            this.guna2TextBox1.PlaceholderText = "University";
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.Size = new System.Drawing.Size(292, 36);
+            this.guna2TextBox1.TabIndex = 50;
+            this.guna2TextBox1.Visible = false;
             // 
-            // TeachSalaryReq_Lbl
+            // guna2HtmlLabel2
             // 
-            this.TeachSalaryReq_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.TeachSalaryReq_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TeachSalaryReq_Lbl.ForeColor = System.Drawing.Color.DarkRed;
-            this.TeachSalaryReq_Lbl.Location = new System.Drawing.Point(38, 293);
-            this.TeachSalaryReq_Lbl.Name = "TeachSalaryReq_Lbl";
-            this.TeachSalaryReq_Lbl.Size = new System.Drawing.Size(11, 27);
-            this.TeachSalaryReq_Lbl.TabIndex = 49;
-            this.TeachSalaryReq_Lbl.Text = "*";
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.DarkRed;
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(97, 198);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(11, 27);
+            this.guna2HtmlLabel2.TabIndex = 49;
+            this.guna2HtmlLabel2.Text = "*";
             // 
-            // TeachPNumReq_Lbl
+            // guna2HtmlLabel3
             // 
-            this.TeachPNumReq_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.TeachPNumReq_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TeachPNumReq_Lbl.ForeColor = System.Drawing.Color.DarkRed;
-            this.TeachPNumReq_Lbl.Location = new System.Drawing.Point(38, 221);
-            this.TeachPNumReq_Lbl.Name = "TeachPNumReq_Lbl";
-            this.TeachPNumReq_Lbl.Size = new System.Drawing.Size(11, 27);
-            this.TeachPNumReq_Lbl.TabIndex = 49;
-            this.TeachPNumReq_Lbl.Text = "*";
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.DarkRed;
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(480, 74);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(11, 27);
+            this.guna2HtmlLabel3.TabIndex = 49;
+            this.guna2HtmlLabel3.Text = "*";
             // 
-            // TeachIDReq_Lbl
+            // guna2HtmlLabel4
             // 
-            this.TeachIDReq_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.TeachIDReq_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TeachIDReq_Lbl.ForeColor = System.Drawing.Color.DarkRed;
-            this.TeachIDReq_Lbl.Location = new System.Drawing.Point(38, 151);
-            this.TeachIDReq_Lbl.Name = "TeachIDReq_Lbl";
-            this.TeachIDReq_Lbl.Size = new System.Drawing.Size(11, 27);
-            this.TeachIDReq_Lbl.TabIndex = 49;
-            this.TeachIDReq_Lbl.Text = "*";
+            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.DarkRed;
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(97, 331);
+            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(11, 27);
+            this.guna2HtmlLabel4.TabIndex = 49;
+            this.guna2HtmlLabel4.Text = "*";
             // 
-            // TeachNameReq_Lbl
+            // guna2HtmlLabel5
             // 
-            this.TeachNameReq_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.TeachNameReq_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TeachNameReq_Lbl.ForeColor = System.Drawing.Color.DarkRed;
-            this.TeachNameReq_Lbl.Location = new System.Drawing.Point(38, 81);
-            this.TeachNameReq_Lbl.Name = "TeachNameReq_Lbl";
-            this.TeachNameReq_Lbl.Size = new System.Drawing.Size(11, 27);
-            this.TeachNameReq_Lbl.TabIndex = 49;
-            this.TeachNameReq_Lbl.Text = "*";
+            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.DarkRed;
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(97, 371);
+            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(11, 27);
+            this.guna2HtmlLabel5.TabIndex = 49;
+            this.guna2HtmlLabel5.Text = "*";
             // 
-            // TeachDep_Lbl
+            // guna2HtmlLabel6
             // 
-            this.TeachDep_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.TeachDep_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TeachDep_Lbl.ForeColor = System.Drawing.Color.Gray;
-            this.TeachDep_Lbl.Location = new System.Drawing.Point(472, 265);
-            this.TeachDep_Lbl.Name = "TeachDep_Lbl";
-            this.TeachDep_Lbl.Size = new System.Drawing.Size(65, 15);
-            this.TeachDep_Lbl.TabIndex = 39;
-            this.TeachDep_Lbl.Text = "Department";
+            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel6.ForeColor = System.Drawing.Color.DarkRed;
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(795, 198);
+            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(11, 27);
+            this.guna2HtmlLabel6.TabIndex = 49;
+            this.guna2HtmlLabel6.Text = "*";
             // 
-            // TeachAdress_Lbl
+            // guna2HtmlLabel7
             // 
-            this.TeachAdress_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.TeachAdress_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TeachAdress_Lbl.ForeColor = System.Drawing.Color.Gray;
-            this.TeachAdress_Lbl.Location = new System.Drawing.Point(472, 193);
-            this.TeachAdress_Lbl.Name = "TeachAdress_Lbl";
-            this.TeachAdress_Lbl.Size = new System.Drawing.Size(38, 15);
-            this.TeachAdress_Lbl.TabIndex = 38;
-            this.TeachAdress_Lbl.Text = "Adress";
+            this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel7.ForeColor = System.Drawing.Color.DarkRed;
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(795, 156);
+            this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
+            this.guna2HtmlLabel7.Size = new System.Drawing.Size(11, 27);
+            this.guna2HtmlLabel7.TabIndex = 49;
+            this.guna2HtmlLabel7.Text = "*";
             // 
-            // TeachSSN_Lbl
+            // guna2HtmlLabel8
             // 
-            this.TeachSSN_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.TeachSSN_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TeachSSN_Lbl.ForeColor = System.Drawing.Color.Gray;
-            this.TeachSSN_Lbl.Location = new System.Drawing.Point(472, 123);
-            this.TeachSSN_Lbl.Name = "TeachSSN_Lbl";
-            this.TeachSSN_Lbl.Size = new System.Drawing.Size(24, 15);
-            this.TeachSSN_Lbl.TabIndex = 37;
-            this.TeachSSN_Lbl.Text = "SSN";
+            this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel8.ForeColor = System.Drawing.Color.DarkRed;
+            this.guna2HtmlLabel8.Location = new System.Drawing.Point(480, 34);
+            this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
+            this.guna2HtmlLabel8.Size = new System.Drawing.Size(11, 27);
+            this.guna2HtmlLabel8.TabIndex = 49;
+            this.guna2HtmlLabel8.Text = "*";
             // 
-            // TeachEmail_Lbl
+            // guna2HtmlLabel9
             // 
-            this.TeachEmail_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.TeachEmail_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TeachEmail_Lbl.ForeColor = System.Drawing.Color.Gray;
-            this.TeachEmail_Lbl.Location = new System.Drawing.Point(472, 53);
-            this.TeachEmail_Lbl.Name = "TeachEmail_Lbl";
-            this.TeachEmail_Lbl.Size = new System.Drawing.Size(31, 15);
-            this.TeachEmail_Lbl.TabIndex = 36;
-            this.TeachEmail_Lbl.Text = "Email";
+            this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel9.ForeColor = System.Drawing.Color.DarkRed;
+            this.guna2HtmlLabel9.Location = new System.Drawing.Point(97, 156);
+            this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
+            this.guna2HtmlLabel9.Size = new System.Drawing.Size(11, 27);
+            this.guna2HtmlLabel9.TabIndex = 49;
+            this.guna2HtmlLabel9.Text = "*";
             // 
-            // TeachSalary_Lbl
+            // guna2HtmlLabel10
             // 
-            this.TeachSalary_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.TeachSalary_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TeachSalary_Lbl.ForeColor = System.Drawing.Color.Gray;
-            this.TeachSalary_Lbl.Location = new System.Drawing.Point(55, 265);
-            this.TeachSalary_Lbl.Name = "TeachSalary_Lbl";
-            this.TeachSalary_Lbl.Size = new System.Drawing.Size(34, 15);
-            this.TeachSalary_Lbl.TabIndex = 35;
-            this.TeachSalary_Lbl.Text = "Salary";
+            this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel10.ForeColor = System.Drawing.Color.DarkRed;
+            this.guna2HtmlLabel10.Location = new System.Drawing.Point(97, 115);
+            this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
+            this.guna2HtmlLabel10.Size = new System.Drawing.Size(11, 27);
+            this.guna2HtmlLabel10.TabIndex = 49;
+            this.guna2HtmlLabel10.Text = "*";
             // 
-            // TeachPNum_Lbl
+            // guna2HtmlLabel11
             // 
-            this.TeachPNum_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.TeachPNum_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TeachPNum_Lbl.ForeColor = System.Drawing.Color.Gray;
-            this.TeachPNum_Lbl.Location = new System.Drawing.Point(55, 196);
-            this.TeachPNum_Lbl.Name = "TeachPNum_Lbl";
-            this.TeachPNum_Lbl.Size = new System.Drawing.Size(83, 15);
-            this.TeachPNum_Lbl.TabIndex = 34;
-            this.TeachPNum_Lbl.Text = "Phone Number";
+            this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel11.ForeColor = System.Drawing.Color.DarkRed;
+            this.guna2HtmlLabel11.Location = new System.Drawing.Point(97, 73);
+            this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
+            this.guna2HtmlLabel11.Size = new System.Drawing.Size(11, 27);
+            this.guna2HtmlLabel11.TabIndex = 49;
+            this.guna2HtmlLabel11.Text = "*";
             // 
-            // TeachID_Lbl
+            // guna2HtmlLabel12
             // 
-            this.TeachID_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.TeachID_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TeachID_Lbl.ForeColor = System.Drawing.Color.Gray;
-            this.TeachID_Lbl.Location = new System.Drawing.Point(55, 123);
-            this.TeachID_Lbl.Name = "TeachID_Lbl";
-            this.TeachID_Lbl.Size = new System.Drawing.Size(14, 15);
-            this.TeachID_Lbl.TabIndex = 33;
-            this.TeachID_Lbl.Text = "ID";
+            this.guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel12.ForeColor = System.Drawing.Color.DarkRed;
+            this.guna2HtmlLabel12.Location = new System.Drawing.Point(97, 38);
+            this.guna2HtmlLabel12.Name = "guna2HtmlLabel12";
+            this.guna2HtmlLabel12.Size = new System.Drawing.Size(11, 27);
+            this.guna2HtmlLabel12.TabIndex = 49;
+            this.guna2HtmlLabel12.Text = "*";
             // 
-            // Teacher_Lbl
+            // guna2HtmlLabel13
             // 
-            this.Teacher_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.Teacher_Lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Teacher_Lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
-            this.Teacher_Lbl.Location = new System.Drawing.Point(373, 11);
-            this.Teacher_Lbl.Name = "Teacher_Lbl";
-            this.Teacher_Lbl.Size = new System.Drawing.Size(63, 23);
-            this.Teacher_Lbl.TabIndex = 32;
-            this.Teacher_Lbl.Text = "Teacher";
+            this.guna2HtmlLabel13.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel13.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel13.ForeColor = System.Drawing.Color.Gray;
+            this.guna2HtmlLabel13.Location = new System.Drawing.Point(435, 219);
+            this.guna2HtmlLabel13.Name = "guna2HtmlLabel13";
+            this.guna2HtmlLabel13.Size = new System.Drawing.Size(55, 15);
+            this.guna2HtmlLabel13.TabIndex = 48;
+            this.guna2HtmlLabel13.Text = "Language";
             // 
-            // TeachName_Lbl
+            // guna2HtmlLabel14
             // 
-            this.TeachName_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.TeachName_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TeachName_Lbl.ForeColor = System.Drawing.Color.Gray;
-            this.TeachName_Lbl.Location = new System.Drawing.Point(55, 53);
-            this.TeachName_Lbl.Name = "TeachName_Lbl";
-            this.TeachName_Lbl.Size = new System.Drawing.Size(34, 15);
-            this.TeachName_Lbl.TabIndex = 21;
-            this.TeachName_Lbl.Text = "Name";
+            this.guna2HtmlLabel14.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel14.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel14.ForeColor = System.Drawing.Color.Gray;
+            this.guna2HtmlLabel14.Location = new System.Drawing.Point(435, 198);
+            this.guna2HtmlLabel14.Name = "guna2HtmlLabel14";
+            this.guna2HtmlLabel14.Size = new System.Drawing.Size(41, 15);
+            this.guna2HtmlLabel14.TabIndex = 48;
+            this.guna2HtmlLabel14.Text = "Second";
             // 
-            // TeachDep_CBox
+            // guna2ComboBox1
             // 
-            this.TeachDep_CBox.BackColor = System.Drawing.Color.Transparent;
-            this.TeachDep_CBox.BorderColor = System.Drawing.Color.Gray;
-            this.TeachDep_CBox.BorderRadius = 3;
-            this.TeachDep_CBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.TeachDep_CBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.TeachDep_CBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TeachDep_CBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TeachDep_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.TeachDep_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.TeachDep_CBox.ItemHeight = 30;
-            this.TeachDep_CBox.Location = new System.Drawing.Point(470, 291);
-            this.TeachDep_CBox.Name = "TeachDep_CBox";
-            this.TeachDep_CBox.Size = new System.Drawing.Size(292, 36);
-            this.TeachDep_CBox.TabIndex = 8;
+            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBox1.BorderColor = System.Drawing.Color.Gray;
+            this.guna2ComboBox1.BorderRadius = 3;
+            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBox1.ItemHeight = 30;
+            this.guna2ComboBox1.Location = new System.Drawing.Point(497, 198);
+            this.guna2ComboBox1.Name = "guna2ComboBox1";
+            this.guna2ComboBox1.Size = new System.Drawing.Size(292, 36);
+            this.guna2ComboBox1.TabIndex = 10;
             // 
-            // TeachPNum_Txt
+            // guna2DateTimePicker1
             // 
-            this.TeachPNum_Txt.BorderColor = System.Drawing.Color.Gray;
-            this.TeachPNum_Txt.BorderRadius = 3;
-            this.TeachPNum_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TeachPNum_Txt.DefaultText = "";
-            this.TeachPNum_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.TeachPNum_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.TeachPNum_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TeachPNum_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TeachPNum_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TeachPNum_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TeachPNum_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TeachPNum_Txt.Location = new System.Drawing.Point(55, 221);
-            this.TeachPNum_Txt.Name = "TeachPNum_Txt";
-            this.TeachPNum_Txt.PasswordChar = '\0';
-            this.TeachPNum_Txt.PlaceholderText = "Phone Number";
-            this.TeachPNum_Txt.SelectedText = "";
-            this.TeachPNum_Txt.Size = new System.Drawing.Size(303, 31);
-            this.TeachPNum_Txt.TabIndex = 5;
+            this.guna2DateTimePicker1.Checked = true;
+            this.guna2DateTimePicker1.CustomFormat = "dd MM yyyy";
+            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.White;
+            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.guna2DateTimePicker1.Location = new System.Drawing.Point(114, 198);
+            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
+            this.guna2DateTimePicker1.Size = new System.Drawing.Size(303, 36);
+            this.guna2DateTimePicker1.TabIndex = 9;
+            this.guna2DateTimePicker1.Value = new System.DateTime(2022, 12, 4, 0, 0, 0, 0);
             // 
-            // TeachAdress_Txt
+            // guna2HtmlLabel15
             // 
-            this.TeachAdress_Txt.BorderColor = System.Drawing.Color.Gray;
-            this.TeachAdress_Txt.BorderRadius = 3;
-            this.TeachAdress_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TeachAdress_Txt.DefaultText = "";
-            this.TeachAdress_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.TeachAdress_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.TeachAdress_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TeachAdress_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TeachAdress_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TeachAdress_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TeachAdress_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TeachAdress_Txt.Location = new System.Drawing.Point(470, 221);
-            this.TeachAdress_Txt.Name = "TeachAdress_Txt";
-            this.TeachAdress_Txt.PasswordChar = '\0';
-            this.TeachAdress_Txt.PlaceholderText = "Teacher Adress";
-            this.TeachAdress_Txt.SelectedText = "";
-            this.TeachAdress_Txt.Size = new System.Drawing.Size(294, 31);
-            this.TeachAdress_Txt.TabIndex = 6;
+            this.guna2HtmlLabel15.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel15.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel15.ForeColor = System.Drawing.Color.Gray;
+            this.guna2HtmlLabel15.Location = new System.Drawing.Point(435, 371);
+            this.guna2HtmlLabel15.Name = "guna2HtmlLabel15";
+            this.guna2HtmlLabel15.Size = new System.Drawing.Size(38, 15);
+            this.guna2HtmlLabel15.TabIndex = 45;
+            this.guna2HtmlLabel15.Text = "Adress";
             // 
-            // TeachSSN_Txt
+            // guna2HtmlLabel16
             // 
-            this.TeachSSN_Txt.BorderColor = System.Drawing.Color.Gray;
-            this.TeachSSN_Txt.BorderRadius = 3;
-            this.TeachSSN_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TeachSSN_Txt.DefaultText = "";
-            this.TeachSSN_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.TeachSSN_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.TeachSSN_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TeachSSN_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TeachSSN_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TeachSSN_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TeachSSN_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TeachSSN_Txt.Location = new System.Drawing.Point(470, 151);
-            this.TeachSSN_Txt.Name = "TeachSSN_Txt";
-            this.TeachSSN_Txt.PasswordChar = '\0';
-            this.TeachSSN_Txt.PlaceholderText = "Teacher SSN";
-            this.TeachSSN_Txt.SelectedText = "";
-            this.TeachSSN_Txt.Size = new System.Drawing.Size(294, 31);
-            this.TeachSSN_Txt.TabIndex = 4;
+            this.guna2HtmlLabel16.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel16.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel16.ForeColor = System.Drawing.Color.Gray;
+            this.guna2HtmlLabel16.Location = new System.Drawing.Point(10, 371);
+            this.guna2HtmlLabel16.Name = "guna2HtmlLabel16";
+            this.guna2HtmlLabel16.Size = new System.Drawing.Size(24, 15);
+            this.guna2HtmlLabel16.TabIndex = 44;
+            this.guna2HtmlLabel16.Text = "SSN";
             // 
-            // TeachID_Txt
+            // guna2HtmlLabel17
             // 
-            this.TeachID_Txt.BorderColor = System.Drawing.Color.Gray;
-            this.TeachID_Txt.BorderRadius = 3;
-            this.TeachID_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TeachID_Txt.DefaultText = "";
-            this.TeachID_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.TeachID_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.TeachID_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TeachID_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TeachID_Txt.Enabled = false;
-            this.TeachID_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TeachID_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TeachID_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TeachID_Txt.Location = new System.Drawing.Point(55, 151);
-            this.TeachID_Txt.Name = "TeachID_Txt";
-            this.TeachID_Txt.PasswordChar = '\0';
-            this.TeachID_Txt.PlaceholderText = "Teacher ID";
-            this.TeachID_Txt.ReadOnly = true;
-            this.TeachID_Txt.SelectedText = "";
-            this.TeachID_Txt.Size = new System.Drawing.Size(303, 31);
-            this.TeachID_Txt.TabIndex = 3;
+            this.guna2HtmlLabel17.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel17.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel17.ForeColor = System.Drawing.Color.Gray;
+            this.guna2HtmlLabel17.Location = new System.Drawing.Point(10, 331);
+            this.guna2HtmlLabel17.Name = "guna2HtmlLabel17";
+            this.guna2HtmlLabel17.Size = new System.Drawing.Size(83, 15);
+            this.guna2HtmlLabel17.TabIndex = 43;
+            this.guna2HtmlLabel17.Text = "Phone Number";
             // 
-            // TeachEmail_Txt
+            // guna2TextBox2
             // 
-            this.TeachEmail_Txt.BorderColor = System.Drawing.Color.Gray;
-            this.TeachEmail_Txt.BorderRadius = 3;
-            this.TeachEmail_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TeachEmail_Txt.DefaultText = "";
-            this.TeachEmail_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.TeachEmail_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.TeachEmail_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TeachEmail_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TeachEmail_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TeachEmail_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TeachEmail_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TeachEmail_Txt.Location = new System.Drawing.Point(470, 81);
-            this.TeachEmail_Txt.Name = "TeachEmail_Txt";
-            this.TeachEmail_Txt.PasswordChar = '\0';
-            this.TeachEmail_Txt.PlaceholderText = "Email Adress";
-            this.TeachEmail_Txt.SelectedText = "";
-            this.TeachEmail_Txt.Size = new System.Drawing.Size(294, 31);
-            this.TeachEmail_Txt.TabIndex = 2;
+            this.guna2TextBox2.BorderColor = System.Drawing.Color.Gray;
+            this.guna2TextBox2.BorderRadius = 3;
+            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox2.DefaultText = "";
+            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox2.Location = new System.Drawing.Point(114, 331);
+            this.guna2TextBox2.Name = "guna2TextBox2";
+            this.guna2TextBox2.PasswordChar = '\0';
+            this.guna2TextBox2.PlaceholderText = "Phone Number";
+            this.guna2TextBox2.SelectedText = "";
+            this.guna2TextBox2.Size = new System.Drawing.Size(303, 31);
+            this.guna2TextBox2.TabIndex = 42;
             // 
-            // TeachName_Txt
+            // guna2TextBox3
             // 
-            this.TeachName_Txt.BorderColor = System.Drawing.Color.Gray;
-            this.TeachName_Txt.BorderRadius = 3;
-            this.TeachName_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TeachName_Txt.DefaultText = "";
-            this.TeachName_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.TeachName_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.TeachName_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TeachName_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TeachName_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TeachName_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TeachName_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TeachName_Txt.Location = new System.Drawing.Point(55, 81);
-            this.TeachName_Txt.Name = "TeachName_Txt";
-            this.TeachName_Txt.PasswordChar = '\0';
-            this.TeachName_Txt.PlaceholderText = "Name";
-            this.TeachName_Txt.SelectedText = "";
-            this.TeachName_Txt.Size = new System.Drawing.Size(303, 31);
-            this.TeachName_Txt.TabIndex = 1;
+            this.guna2TextBox3.BorderColor = System.Drawing.Color.Gray;
+            this.guna2TextBox3.BorderRadius = 3;
+            this.guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox3.DefaultText = "";
+            this.guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox3.Location = new System.Drawing.Point(497, 371);
+            this.guna2TextBox3.Name = "guna2TextBox3";
+            this.guna2TextBox3.PasswordChar = '\0';
+            this.guna2TextBox3.PlaceholderText = "Parent Adress";
+            this.guna2TextBox3.SelectedText = "";
+            this.guna2TextBox3.Size = new System.Drawing.Size(294, 31);
+            this.guna2TextBox3.TabIndex = 41;
             // 
-            // TeachFullTime_CHBox
+            // guna2TextBox4
             // 
-            this.TeachFullTime_CHBox.AutoSize = true;
-            this.TeachFullTime_CHBox.CheckedState.BorderColor = System.Drawing.Color.Silver;
-            this.TeachFullTime_CHBox.CheckedState.BorderRadius = 0;
-            this.TeachFullTime_CHBox.CheckedState.BorderThickness = 0;
-            this.TeachFullTime_CHBox.CheckedState.FillColor = System.Drawing.Color.Silver;
-            this.TeachFullTime_CHBox.CheckMarkColor = System.Drawing.Color.ForestGreen;
-            this.TeachFullTime_CHBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.TeachFullTime_CHBox.ForeColor = System.Drawing.Color.Silver;
-            this.TeachFullTime_CHBox.Location = new System.Drawing.Point(470, 350);
-            this.TeachFullTime_CHBox.Name = "TeachFullTime_CHBox";
-            this.TeachFullTime_CHBox.Size = new System.Drawing.Size(73, 17);
-            this.TeachFullTime_CHBox.TabIndex = 52;
-            this.TeachFullTime_CHBox.Text = "Full Time";
-            this.TeachFullTime_CHBox.UncheckedState.BorderColor = System.Drawing.Color.Silver;
-            this.TeachFullTime_CHBox.UncheckedState.BorderRadius = 0;
-            this.TeachFullTime_CHBox.UncheckedState.BorderThickness = 0;
-            this.TeachFullTime_CHBox.UncheckedState.FillColor = System.Drawing.Color.Silver;
+            this.guna2TextBox4.BorderColor = System.Drawing.Color.Gray;
+            this.guna2TextBox4.BorderRadius = 3;
+            this.guna2TextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox4.DefaultText = "";
+            this.guna2TextBox4.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox4.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox4.Location = new System.Drawing.Point(114, 371);
+            this.guna2TextBox4.Name = "guna2TextBox4";
+            this.guna2TextBox4.PasswordChar = '\0';
+            this.guna2TextBox4.PlaceholderText = "Parent SSN";
+            this.guna2TextBox4.SelectedText = "";
+            this.guna2TextBox4.Size = new System.Drawing.Size(303, 31);
+            this.guna2TextBox4.TabIndex = 40;
             // 
-            // TeachSalary_Txt
+            // guna2HtmlLabel18
             // 
-            this.TeachSalary_Txt.BorderColor = System.Drawing.Color.Gray;
-            this.TeachSalary_Txt.BorderRadius = 3;
-            this.TeachSalary_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TeachSalary_Txt.DefaultText = "";
-            this.TeachSalary_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.TeachSalary_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.TeachSalary_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TeachSalary_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TeachSalary_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TeachSalary_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TeachSalary_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TeachSalary_Txt.Location = new System.Drawing.Point(55, 289);
-            this.TeachSalary_Txt.Name = "TeachSalary_Txt";
-            this.TeachSalary_Txt.PasswordChar = '\0';
-            this.TeachSalary_Txt.PlaceholderText = "Salary";
-            this.TeachSalary_Txt.SelectedText = "";
-            this.TeachSalary_Txt.Size = new System.Drawing.Size(303, 38);
-            this.TeachSalary_Txt.TabIndex = 5;
+            this.guna2HtmlLabel18.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel18.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel18.ForeColor = System.Drawing.Color.Gray;
+            this.guna2HtmlLabel18.Location = new System.Drawing.Point(435, 154);
+            this.guna2HtmlLabel18.Name = "guna2HtmlLabel18";
+            this.guna2HtmlLabel18.Size = new System.Drawing.Size(26, 15);
+            this.guna2HtmlLabel18.TabIndex = 39;
+            this.guna2HtmlLabel18.Text = "Year";
+            // 
+            // guna2HtmlLabel19
+            // 
+            this.guna2HtmlLabel19.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel19.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel19.ForeColor = System.Drawing.Color.Gray;
+            this.guna2HtmlLabel19.Location = new System.Drawing.Point(435, 114);
+            this.guna2HtmlLabel19.Name = "guna2HtmlLabel19";
+            this.guna2HtmlLabel19.Size = new System.Drawing.Size(38, 15);
+            this.guna2HtmlLabel19.TabIndex = 38;
+            this.guna2HtmlLabel19.Text = "Adress";
+            // 
+            // guna2HtmlLabel20
+            // 
+            this.guna2HtmlLabel20.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel20.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel20.ForeColor = System.Drawing.Color.Gray;
+            this.guna2HtmlLabel20.Location = new System.Drawing.Point(435, 74);
+            this.guna2HtmlLabel20.Name = "guna2HtmlLabel20";
+            this.guna2HtmlLabel20.Size = new System.Drawing.Size(24, 15);
+            this.guna2HtmlLabel20.TabIndex = 37;
+            this.guna2HtmlLabel20.Text = "SSN";
+            // 
+            // guna2HtmlLabel21
+            // 
+            this.guna2HtmlLabel21.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel21.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel21.ForeColor = System.Drawing.Color.Gray;
+            this.guna2HtmlLabel21.Location = new System.Drawing.Point(435, 331);
+            this.guna2HtmlLabel21.Name = "guna2HtmlLabel21";
+            this.guna2HtmlLabel21.Size = new System.Drawing.Size(31, 15);
+            this.guna2HtmlLabel21.TabIndex = 36;
+            this.guna2HtmlLabel21.Text = "Email";
+            // 
+            // guna2HtmlLabel22
+            // 
+            this.guna2HtmlLabel22.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel22.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel22.ForeColor = System.Drawing.Color.Gray;
+            this.guna2HtmlLabel22.Location = new System.Drawing.Point(435, 34);
+            this.guna2HtmlLabel22.Name = "guna2HtmlLabel22";
+            this.guna2HtmlLabel22.Size = new System.Drawing.Size(42, 15);
+            this.guna2HtmlLabel22.TabIndex = 36;
+            this.guna2HtmlLabel22.Text = "Teachrs";
+            // 
+            // guna2HtmlLabel23
+            // 
+            this.guna2HtmlLabel23.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel23.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel23.ForeColor = System.Drawing.Color.Gray;
+            this.guna2HtmlLabel23.Location = new System.Drawing.Point(9, 198);
+            this.guna2HtmlLabel23.Name = "guna2HtmlLabel23";
+            this.guna2HtmlLabel23.Size = new System.Drawing.Size(69, 15);
+            this.guna2HtmlLabel23.TabIndex = 35;
+            this.guna2HtmlLabel23.Text = "Date of birth";
+            // 
+            // guna2HtmlLabel24
+            // 
+            this.guna2HtmlLabel24.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel24.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel24.ForeColor = System.Drawing.Color.Gray;
+            this.guna2HtmlLabel24.Location = new System.Drawing.Point(9, 154);
+            this.guna2HtmlLabel24.Name = "guna2HtmlLabel24";
+            this.guna2HtmlLabel24.Size = new System.Drawing.Size(61, 15);
+            this.guna2HtmlLabel24.TabIndex = 35;
+            this.guna2HtmlLabel24.Text = "Nationality";
+            // 
+            // guna2ComboBox2
+            // 
+            this.guna2ComboBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBox2.BorderColor = System.Drawing.Color.Gray;
+            this.guna2ComboBox2.BorderRadius = 3;
+            this.guna2ComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBox2.DropDownHeight = 120;
+            this.guna2ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBox2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.guna2ComboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBox2.IntegralHeight = false;
+            this.guna2ComboBox2.ItemHeight = 30;
+            this.guna2ComboBox2.Location = new System.Drawing.Point(114, 30);
+            this.guna2ComboBox2.Name = "guna2ComboBox2";
+            this.guna2ComboBox2.Size = new System.Drawing.Size(303, 36);
+            this.guna2ComboBox2.TabIndex = 7;
+            // 
+            // guna2HtmlLabel25
+            // 
+            this.guna2HtmlLabel25.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel25.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel25.ForeColor = System.Drawing.Color.Gray;
+            this.guna2HtmlLabel25.Location = new System.Drawing.Point(9, 114);
+            this.guna2HtmlLabel25.Name = "guna2HtmlLabel25";
+            this.guna2HtmlLabel25.Size = new System.Drawing.Size(83, 15);
+            this.guna2HtmlLabel25.TabIndex = 34;
+            this.guna2HtmlLabel25.Text = "Phone Number";
+            // 
+            // guna2HtmlLabel26
+            // 
+            this.guna2HtmlLabel26.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel26.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel26.ForeColor = System.Drawing.Color.Gray;
+            this.guna2HtmlLabel26.Location = new System.Drawing.Point(9, 74);
+            this.guna2HtmlLabel26.Name = "guna2HtmlLabel26";
+            this.guna2HtmlLabel26.Size = new System.Drawing.Size(14, 15);
+            this.guna2HtmlLabel26.TabIndex = 33;
+            this.guna2HtmlLabel26.Text = "ID";
+            // 
+            // guna2HtmlLabel27
+            // 
+            this.guna2HtmlLabel27.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel27.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.guna2HtmlLabel27.Location = new System.Drawing.Point(9, 3);
+            this.guna2HtmlLabel27.Name = "guna2HtmlLabel27";
+            this.guna2HtmlLabel27.Size = new System.Drawing.Size(63, 23);
+            this.guna2HtmlLabel27.TabIndex = 32;
+            this.guna2HtmlLabel27.Text = "Student";
+            // 
+            // guna2HtmlLabel28
+            // 
+            this.guna2HtmlLabel28.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel28.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.guna2HtmlLabel28.Location = new System.Drawing.Point(9, 247);
+            this.guna2HtmlLabel28.Name = "guna2HtmlLabel28";
+            this.guna2HtmlLabel28.Size = new System.Drawing.Size(53, 23);
+            this.guna2HtmlLabel28.TabIndex = 32;
+            this.guna2HtmlLabel28.Text = "Parent";
+            // 
+            // guna2HtmlLabel29
+            // 
+            this.guna2HtmlLabel29.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel29.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel29.ForeColor = System.Drawing.Color.Gray;
+            this.guna2HtmlLabel29.Location = new System.Drawing.Point(10, 291);
+            this.guna2HtmlLabel29.Name = "guna2HtmlLabel29";
+            this.guna2HtmlLabel29.Size = new System.Drawing.Size(34, 15);
+            this.guna2HtmlLabel29.TabIndex = 21;
+            this.guna2HtmlLabel29.Text = "Name";
+            // 
+            // guna2HtmlLabel30
+            // 
+            this.guna2HtmlLabel30.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel30.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel30.ForeColor = System.Drawing.Color.Gray;
+            this.guna2HtmlLabel30.Location = new System.Drawing.Point(9, 34);
+            this.guna2HtmlLabel30.Name = "guna2HtmlLabel30";
+            this.guna2HtmlLabel30.Size = new System.Drawing.Size(29, 15);
+            this.guna2HtmlLabel30.TabIndex = 21;
+            this.guna2HtmlLabel30.Text = "Deps";
+            // 
+            // guna2ComboBox3
+            // 
+            this.guna2ComboBox3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBox3.BorderColor = System.Drawing.Color.Gray;
+            this.guna2ComboBox3.BorderRadius = 3;
+            this.guna2ComboBox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBox3.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox3.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.guna2ComboBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBox3.ItemHeight = 30;
+            this.guna2ComboBox3.Location = new System.Drawing.Point(497, 154);
+            this.guna2ComboBox3.Name = "guna2ComboBox3";
+            this.guna2ComboBox3.Size = new System.Drawing.Size(292, 36);
+            this.guna2ComboBox3.TabIndex = 8;
+            // 
+            // guna2TextBox5
+            // 
+            this.guna2TextBox5.BorderColor = System.Drawing.Color.Gray;
+            this.guna2TextBox5.BorderRadius = 3;
+            this.guna2TextBox5.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox5.DefaultText = "";
+            this.guna2TextBox5.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox5.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox5.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox5.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox5.Location = new System.Drawing.Point(114, 115);
+            this.guna2TextBox5.Name = "guna2TextBox5";
+            this.guna2TextBox5.PasswordChar = '\0';
+            this.guna2TextBox5.PlaceholderText = "Phone Number";
+            this.guna2TextBox5.SelectedText = "";
+            this.guna2TextBox5.Size = new System.Drawing.Size(303, 31);
+            this.guna2TextBox5.TabIndex = 5;
+            // 
+            // guna2TextBox6
+            // 
+            this.guna2TextBox6.BorderColor = System.Drawing.Color.Gray;
+            this.guna2TextBox6.BorderRadius = 3;
+            this.guna2TextBox6.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox6.DefaultText = "";
+            this.guna2TextBox6.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox6.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox6.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox6.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox6.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox6.Location = new System.Drawing.Point(497, 114);
+            this.guna2TextBox6.Name = "guna2TextBox6";
+            this.guna2TextBox6.PasswordChar = '\0';
+            this.guna2TextBox6.PlaceholderText = "Student Adress";
+            this.guna2TextBox6.SelectedText = "";
+            this.guna2TextBox6.Size = new System.Drawing.Size(294, 31);
+            this.guna2TextBox6.TabIndex = 6;
+            // 
+            // guna2TextBox7
+            // 
+            this.guna2TextBox7.BorderColor = System.Drawing.Color.Gray;
+            this.guna2TextBox7.BorderRadius = 3;
+            this.guna2TextBox7.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox7.DefaultText = "";
+            this.guna2TextBox7.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox7.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox7.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox7.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox7.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox7.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox7.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox7.Location = new System.Drawing.Point(497, 74);
+            this.guna2TextBox7.Name = "guna2TextBox7";
+            this.guna2TextBox7.PasswordChar = '\0';
+            this.guna2TextBox7.PlaceholderText = "Student SSN";
+            this.guna2TextBox7.SelectedText = "";
+            this.guna2TextBox7.Size = new System.Drawing.Size(294, 31);
+            this.guna2TextBox7.TabIndex = 4;
+            // 
+            // guna2TextBox8
+            // 
+            this.guna2TextBox8.BorderColor = System.Drawing.Color.Gray;
+            this.guna2TextBox8.BorderRadius = 3;
+            this.guna2TextBox8.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox8.DefaultText = "";
+            this.guna2TextBox8.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox8.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox8.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox8.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox8.Enabled = false;
+            this.guna2TextBox8.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox8.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox8.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox8.Location = new System.Drawing.Point(114, 75);
+            this.guna2TextBox8.Name = "guna2TextBox8";
+            this.guna2TextBox8.PasswordChar = '\0';
+            this.guna2TextBox8.PlaceholderText = "Student ID";
+            this.guna2TextBox8.ReadOnly = true;
+            this.guna2TextBox8.SelectedText = "";
+            this.guna2TextBox8.Size = new System.Drawing.Size(303, 31);
+            this.guna2TextBox8.TabIndex = 3;
+            // 
+            // guna2TextBox9
+            // 
+            this.guna2TextBox9.BorderColor = System.Drawing.Color.Gray;
+            this.guna2TextBox9.BorderRadius = 3;
+            this.guna2TextBox9.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox9.DefaultText = "";
+            this.guna2TextBox9.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox9.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox9.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox9.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox9.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox9.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox9.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox9.Location = new System.Drawing.Point(497, 331);
+            this.guna2TextBox9.Name = "guna2TextBox9";
+            this.guna2TextBox9.PasswordChar = '\0';
+            this.guna2TextBox9.PlaceholderText = "Email Adress";
+            this.guna2TextBox9.SelectedText = "";
+            this.guna2TextBox9.Size = new System.Drawing.Size(294, 31);
+            this.guna2TextBox9.TabIndex = 9;
+            // 
+            // guna2TextBox10
+            // 
+            this.guna2TextBox10.BorderColor = System.Drawing.Color.Gray;
+            this.guna2TextBox10.BorderRadius = 3;
+            this.guna2TextBox10.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox10.DefaultText = "";
+            this.guna2TextBox10.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox10.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox10.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox10.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox10.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox10.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox10.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox10.Location = new System.Drawing.Point(121, 161);
+            this.guna2TextBox10.Name = "guna2TextBox10";
+            this.guna2TextBox10.PasswordChar = '\0';
+            this.guna2TextBox10.PlaceholderText = "Email Adress";
+            this.guna2TextBox10.SelectedText = "";
+            this.guna2TextBox10.Size = new System.Drawing.Size(294, 31);
+            this.guna2TextBox10.TabIndex = 2;
+            // 
+            // guna2TextBox11
+            // 
+            this.guna2TextBox11.BorderColor = System.Drawing.Color.Gray;
+            this.guna2TextBox11.BorderRadius = 3;
+            this.guna2TextBox11.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox11.DefaultText = "";
+            this.guna2TextBox11.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox11.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox11.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox11.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox11.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox11.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox11.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox11.Location = new System.Drawing.Point(114, 291);
+            this.guna2TextBox11.Name = "guna2TextBox11";
+            this.guna2TextBox11.PasswordChar = '\0';
+            this.guna2TextBox11.PlaceholderText = "Name";
+            this.guna2TextBox11.SelectedText = "";
+            this.guna2TextBox11.Size = new System.Drawing.Size(303, 31);
+            this.guna2TextBox11.TabIndex = 1;
+            // 
+            // guna2ComboBox4
+            // 
+            this.guna2ComboBox4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBox4.BorderColor = System.Drawing.Color.Gray;
+            this.guna2ComboBox4.BorderRadius = 3;
+            this.guna2ComboBox4.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBox4.DropDownHeight = 120;
+            this.guna2ComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBox4.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox4.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.guna2ComboBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBox4.IntegralHeight = false;
+            this.guna2ComboBox4.ItemHeight = 30;
+            this.guna2ComboBox4.Location = new System.Drawing.Point(497, 30);
+            this.guna2ComboBox4.Name = "guna2ComboBox4";
+            this.guna2ComboBox4.Size = new System.Drawing.Size(303, 36);
+            this.guna2ComboBox4.TabIndex = 7;
             // 
             // BaseAUD
             // 
@@ -1336,12 +2160,14 @@
             this.Size = new System.Drawing.Size(873, 539);
             this.Main_Pnl.ResumeLayout(false);
             this.Main_Pnl.PerformLayout();
+            this.StaffSub_Pnl.ResumeLayout(false);
+            this.StaffSub_Pnl.PerformLayout();
             this.TitleBar_Pnl.ResumeLayout(false);
             this.TitleBar_Pnl.PerformLayout();
             this.StdSub_Pnl.ResumeLayout(false);
             this.StdSub_Pnl.PerformLayout();
-            this.TeachSub_Pnl.ResumeLayout(false);
-            this.TeachSub_Pnl.PerformLayout();
+            this.guna2GradientPanel1.ResumeLayout(false);
+            this.guna2GradientPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1358,7 +2184,6 @@
         protected Guna.UI2.WinForms.Guna2CheckBox StdPayedTuition_CBox;
         protected Guna.UI2.WinForms.Guna2HtmlLabel StdUni_Lbl;
         protected Guna.UI2.WinForms.Guna2TextBox StdUni_Txt;
-        protected Guna.UI2.WinForms.Guna2HtmlLabel StdDobReq_Lbl;
         protected Guna.UI2.WinForms.Guna2HtmlLabel StdSSNReq_Lbl;
         protected Guna.UI2.WinForms.Guna2HtmlLabel ParPNumReq_Lbl;
         protected Guna.UI2.WinForms.Guna2HtmlLabel ParSSNReq_Lbl;
@@ -1402,31 +2227,83 @@
         protected Guna.UI2.WinForms.Guna2TextBox StdEmail_Txt;
         protected Guna.UI2.WinForms.Guna2TextBox StdParName_Txt;
         protected Guna.UI2.WinForms.Guna2TextBox StdName_Txt;
-        protected Guna.UI2.WinForms.Guna2GradientPanel TeachSub_Pnl;
-        protected Guna.UI2.WinForms.Guna2HtmlLabel TeachSSNReq_Lbl;
-        protected Guna.UI2.WinForms.Guna2HtmlLabel TeachDepReq_Lbl;
-        protected Guna.UI2.WinForms.Guna2HtmlLabel TeachEmailReq_Lbl;
-        protected Guna.UI2.WinForms.Guna2HtmlLabel TeachSalaryReq_Lbl;
-        protected Guna.UI2.WinForms.Guna2HtmlLabel TeachPNumReq_Lbl;
-        protected Guna.UI2.WinForms.Guna2HtmlLabel TeachIDReq_Lbl;
-        protected Guna.UI2.WinForms.Guna2HtmlLabel TeachNameReq_Lbl;
-        protected Guna.UI2.WinForms.Guna2HtmlLabel TeachDep_Lbl;
-        protected Guna.UI2.WinForms.Guna2HtmlLabel TeachAdress_Lbl;
-        protected Guna.UI2.WinForms.Guna2HtmlLabel TeachSSN_Lbl;
-        protected Guna.UI2.WinForms.Guna2HtmlLabel TeachEmail_Lbl;
-        protected Guna.UI2.WinForms.Guna2HtmlLabel TeachSalary_Lbl;
-        protected Guna.UI2.WinForms.Guna2HtmlLabel TeachPNum_Lbl;
-        protected Guna.UI2.WinForms.Guna2HtmlLabel TeachID_Lbl;
-        protected Guna.UI2.WinForms.Guna2HtmlLabel Teacher_Lbl;
-        protected Guna.UI2.WinForms.Guna2HtmlLabel TeachName_Lbl;
-        protected Guna.UI2.WinForms.Guna2ComboBox TeachDep_CBox;
-        protected Guna.UI2.WinForms.Guna2TextBox TeachPNum_Txt;
-        protected Guna.UI2.WinForms.Guna2TextBox TeachAdress_Txt;
-        protected Guna.UI2.WinForms.Guna2TextBox TeachSSN_Txt;
-        protected Guna.UI2.WinForms.Guna2TextBox TeachID_Txt;
-        protected Guna.UI2.WinForms.Guna2TextBox TeachEmail_Txt;
-        protected Guna.UI2.WinForms.Guna2TextBox TeachName_Txt;
-        protected Guna.UI2.WinForms.Guna2CheckBox TeachFullTime_CHBox;
-        protected Guna.UI2.WinForms.Guna2TextBox TeachSalary_Txt;
+        protected Guna.UI2.WinForms.Guna2GradientPanel StaffSub_Pnl;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel StaffSSNReq_Lbl;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel StaffDepReq_Lbl;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel StaffEmailReq_Lbl;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel StaffSalaryReq_Lbl;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel StaffPNumReq_Lbl;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel StaffIDReq_Lbl;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel StaffNameReq_Lbl;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel StaffDep_Lbl;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel StaffAdress_Lbl;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel StaffSSN_Lbl;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel StaffEmail_Lbl;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel StaffSalary_Lbl;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel StaffPNum_Lbl;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel StaffID_Lbl;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel Staff_Lbl;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel StaffName_Lbl;
+        protected Guna.UI2.WinForms.Guna2ComboBox StaffDep_CBox;
+        protected Guna.UI2.WinForms.Guna2TextBox StaffPNum_Txt;
+        protected Guna.UI2.WinForms.Guna2TextBox StaffAdress_Txt;
+        protected Guna.UI2.WinForms.Guna2TextBox StaffSSN_Txt;
+        protected Guna.UI2.WinForms.Guna2TextBox StaffID_Txt;
+        protected Guna.UI2.WinForms.Guna2TextBox StaffEmail_Txt;
+        protected Guna.UI2.WinForms.Guna2TextBox StaffName_Txt;
+        protected Guna.UI2.WinForms.Guna2CheckBox StaffFullTime_CHBox;
+        protected Guna.UI2.WinForms.Guna2TextBox StaffSalary_Txt;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel StaffPosReq_Lbl;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel StaffPos_Lbl;
+        protected Guna.UI2.WinForms.Guna2ComboBox StaffPos_CBox;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel StdDobReq_Lbl;
+        protected Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        protected Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox1;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        protected Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel12;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel13;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel14;
+        protected Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        protected Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel15;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel16;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel17;
+        protected Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        protected Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
+        protected Guna.UI2.WinForms.Guna2TextBox guna2TextBox4;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel18;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel19;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel20;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel21;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel22;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel23;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel24;
+        protected Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox2;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel25;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel26;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel27;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel28;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel29;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel30;
+        protected Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox3;
+        protected Guna.UI2.WinForms.Guna2TextBox guna2TextBox5;
+        protected Guna.UI2.WinForms.Guna2TextBox guna2TextBox6;
+        protected Guna.UI2.WinForms.Guna2TextBox guna2TextBox7;
+        protected Guna.UI2.WinForms.Guna2TextBox guna2TextBox8;
+        protected Guna.UI2.WinForms.Guna2TextBox guna2TextBox9;
+        protected Guna.UI2.WinForms.Guna2TextBox guna2TextBox10;
+        protected Guna.UI2.WinForms.Guna2TextBox guna2TextBox11;
+        protected Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox4;
     }
 }
