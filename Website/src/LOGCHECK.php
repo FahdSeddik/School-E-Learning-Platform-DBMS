@@ -1,6 +1,6 @@
 <?php
 if(!isset($_SESSION["username"])){
-    header("location: ../index.php");
+    header("location: includes/logout.inc.php");
     exit();
 }
 ?>

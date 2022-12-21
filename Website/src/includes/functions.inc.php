@@ -57,22 +57,16 @@ function loginUser($conn,$username,$pwd){
         // Allow session variables 
         session_start();
 
-        //get courses
-        $sql = "SELECT COUNT(*)
-        FROM Student,Enrollment
-        Where (Username = ? or std_Email = ?)
-        AND Student.std_ID=Enrollment.std_ID";
-        $params = array($username, $username);
-        $stmt = sqlsrv_query($conn,$sql,$params);
-        $_SESSION["class_count"] = sqlsrv_fetch_array($stmt);
         $_SESSION["username"] = $username;
         $sql = "SELECT std_SSN From Student Where Username= ?";
         $params = array($username);
         $stmt = sqlsrv_query($conn,$sql,$params);
-        $_SESSION["SSN"] = sqlsrv_fetch_array($stmt);
-        $_SESSION["CONN"] = $conn;
-        
-        header("location: ../Dashboard.php");
+        if (sqlsrv_fetch($stmt) === true) {
+            $_SESSION["SSN"] = sqlsrv_get_field($stmt, 0);
+        }else{
+            $_SESSION["SSN"] = 'baka';
+        }
+        header("location: ../Dashboard.php"/*?ssn=".$_SESSION["SSN"]*/);
         // exit();
     }
 
@@ -81,7 +75,7 @@ function loginUser($conn,$username,$pwd){
 function getSubjectNames($conn,$username){
     $subjectNames = array();
     
-    $sql = "SELECT sub_Name,sub_Dep_Name
+    $sql = "SELECT sub_Num,sub_Dep_Name,sub_Name
     From Subject,Student,Current_Student
     Where  Current_Student.std_Year=sub_Year and Student.std_ID=Current_student.std_ID and Student.Username=?";
     $stmt = sqlsrv_query($conn,$sql,array($username));
@@ -89,4 +83,73 @@ function getSubjectNames($conn,$username){
         array_push($subjectNames, $row);
     }
     return $subjectNames;
+}
+
+
+function makeNewPost($conn,$posttext){
+    
+    $sql = "INSERT INTO Posts(sub_Num,sub_Dep_Name,SSN,Post,Date)
+    VALUES(".$_SESSION["sub_Num"].",'".$_SESSION["sub_Dep_Name"]."','".$_SESSION["SSN"]."','".$posttext."',SYSDATETIME())";
+    $stmt = sqlsrv_prepare($conn, $sql);
+    return sqlsrv_execute($stmt);
+}
+
+
+// function getName($conn,$ssn){
+//     $sql = "((SELECT staff_Name
+//     From Staff
+//     WHERE EXISTS
+//     (SELECT staff_Name FROM Staff WHERE staff_SSN=".$ssn.") and staff_SSN=".$ssn.")
+//     UNION
+//     (SELECT std_Name
+//     FROM Student
+//     WHERE EXISTS
+//     (SELECT std_Name FROM Student WHERE std_SSN=".$ssn.") and std_SSN=".$ssn."));";
+//     $stmt = sqlsrv_query($conn, $sql);
+//     $res = sqlsrv_fetch($stmt);
+//     return $res;
+// }
+
+function getPosts($conn){
+    $posts = array();
+
+
+
+
+    $sql = "SELECT Date,SSN 
+    FROM Posts 
+    Where sub_Num=" . $_SESSION["sub_Num"] . " and sub_Dep_Name='" . $_SESSION["sub_Dep_Name"] . "'
+    Order by Date Desc";
+    $stmt = sqlsrv_query($conn, $sql);
+    $ssns = array();
+    while(sqlsrv_fetch( $stmt )===true && $ssn = sqlsrv_get_field( $stmt, 1)){
+        if (!in_array($ssn, $ssns)) {
+            array_push($ssns, $ssn);
+        }
+        //array_push($posts, array($ssn,'ka7yaan',$ssn));
+    }
+    foreach($ssns as $ssn){
+        $sql = "SELECT Post,Date,std_Name
+        FROM POSTS,Student 
+        Where sub_Num=" . $_SESSION["sub_Num"] . " and sub_Dep_Name='" . $_SESSION["sub_Dep_Name"] . "' and std_SSN=SSN and SSN='".$ssn."' 
+         Order by Date Desc";
+        $stmt = sqlsrv_query($conn, $sql);
+        if($stmt==false){
+            $sql = "SELECT Post,Date,staff_Name
+            FROM POSTS,Staff
+            Where sub_Num=" . $_SESSION["sub_Num"] . " and sub_Dep_Name='" . $_SESSION["sub_Dep_Name"] . "' and staff_SSN=SSN and SSN='".$ssn."' 
+             Order by Date Desc";
+            $stmt = sqlsrv_query($conn, $sql);
+            if ($stmt == false)
+                continue;
+            while ($post = sqlsrv_fetch_array($stmt)) {
+                array_push($posts, $post);
+            }
+        }else{
+            while ($post = sqlsrv_fetch_array($stmt)) {
+                array_push($posts, $post);
+            }
+        }
+    }
+    return $posts;
 }
