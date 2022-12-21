@@ -81,6 +81,12 @@
     <Compile Include="AddStudent.Designer.cs">
       <DependentUpon>AddStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddSubject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddSubject.Designer.cs">
+      <DependentUpon>AddSubject.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddTeacher.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -137,11 +143,11 @@
     <Compile Include="FormMessageBox.Designer.cs">
       <DependentUpon>FormMessageBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Message1.cs">
+    <Compile Include="Message.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Message1.Designer.cs">
-      <DependentUpon>Message1.cs</DependentUpon>
+    <Compile Include="Message.Designer.cs">
+      <DependentUpon>Message.cs</DependentUpon>
     </Compile>
     <Compile Include="MiddleClass.cs">
       <SubType>UserControl</SubType>
@@ -260,6 +266,12 @@
     <Compile Include="UpdateStudent.Designer.cs">
       <DependentUpon>UpdateStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateSubject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UpdateSubject.Designer.cs">
+      <DependentUpon>UpdateSubject.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpdateTeacher.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -278,6 +290,12 @@
     </Compile>
     <Compile Include="ViewStudent.Designer.cs">
       <DependentUpon>ViewStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSubject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewSubject.Designer.cs">
+      <DependentUpon>ViewSubject.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewTeacher.cs">
       <SubType>UserControl</SubType>
@@ -312,8 +330,8 @@
     <EmbeddedResource Include="LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Message1.resx">
-      <DependentUpon>Message1.cs</DependentUpon>
+    <EmbeddedResource Include="Message.resx">
+      <DependentUpon>Message.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

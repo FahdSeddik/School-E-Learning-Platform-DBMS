@@ -15,19 +15,13 @@ namespace School_DB_System
     {
         ViewController viewController;
         Controller controllerObj;
-        string Email;
-        string ID;
-        string username;
-        public Adminstrator(ViewController viewController, Controller controllerobj, string ID)
+        string Username;
+        public Adminstrator(ViewController viewController, Controller controllerobj, string username)
         {
             InitializeComponent();
             this.viewController = viewController;
             this.controllerObj = controllerobj;
-            this.ID = ID;
-            DataTable EmailDt = controllerObj.getEmailFromID(ID);
-            Email = EmailDt.Rows[0][0].ToString();
-            DataTable usernameDt = controllerObj.getUsernameFromID(ID);
-            username = usernameDt.Rows[0][0].ToString();
+            Username = username;
         }
 
         private void Stud_IBtn_Click(object sender, EventArgs e)
@@ -52,7 +46,7 @@ namespace School_DB_System
 
         private void Reqs_IBtn_Click(object sender, EventArgs e)
         {
-            viewController.ViewRequest(username);
+            viewController.ViewRequest(Username);
         }
 
         private void Stat_IBtn_Click(object sender, EventArgs e)

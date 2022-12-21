@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 //SCHOOL DATABASE SYSTEM NAMESPACE
 namespace School_DB_System
@@ -33,187 +35,168 @@ namespace School_DB_System
         protected override void OnPaint(PaintEventArgs pe)
         {
 
-
         }
 
         //adds the needed controls to the usercontrol i.e adding combooboxes and labels and textboxes...etc
         protected override void PrepareControls()
         {
-            this.StdName_Txt.TextChanged += new System.EventHandler(this.StdName_Txt_TextChanged);
+            this.SubjTAndLocNext_Btn.Click += new EventHandler(SubjTAndLocNext_Btn_Click);
+            this.SubjTeachNext_Btn.Click += new EventHandler(SubjTeachNext_Btn_Click);
         }
-
-
-
-        
-
-
-
-        //Student SSN Textbox text changed event
-        //also used for Student SSN Textbox leave event
-        protected virtual void StdSSN_Txt_TextChanged(object sender, EventArgs e)
+       protected void  SubjTAndLocNext_Btn_Click(object sender, EventArgs e)
         {
-            //if name text contains length is out of range (from 14 to 20 digit) this is invalid
-            if (StdSSN_Txt.TextLength < 9 || StdSSN_Txt.TextLength > 20 || StdSSN_Txt.Text.Any(char.IsLetter))
-            {
-                showErrorMessage("invalid SSN, please inert a valid 9 - 20 numbers SSN"); //informing the user with a suitable message
-                StdSSN_Txt.BorderColor = Color.Red; //changing text border color to red informing the user that this is invalid data
-                return; //return
-            }
-            else //if valid data (no characters or ovalid SSN length)
-            {
-                //if valid data (no characters or ovalid SSN length) inform the user that the entered data is valid
-                hideErrorMessage(); //hide error message
-                StdSSN_Txt.BorderColor = Color.Gray; //changing textbox color back to gray informing the user that it is a valid data
-                return; //return
-            }
-        }
+            SubjTeach_Pnl.BringToFront();
+            SubjTeach_Pnl.Visible = true;
+            SubjTeach_Pnl.Dock = DockStyle.Top;
+            LockTimeAndLoc();
 
-        //Student phone number Textbox text changed event
-        //also used for student phone number Textbox leave event
-        protected virtual void StdPNum_Txt_TextChanged(object sender, EventArgs e)
+        }
+        protected void SubjTeachNext_Btn_Click(object sender, EventArgs e)
         {
-            //if number text length is not out of range (from 8 to 15 digit) this is invalid
-            if (StdPNum_Txt.TextLength < 8 || StdPNum_Txt.TextLength > 15 || StdPNum_Txt.Text.Any(char.IsLetter))
-            {
-                showErrorMessage("invalid phone number, please inert a valid 8 - 15 numbers"); //informing the user with a suitable message
-                StdPNum_Txt.BorderColor = Color.Red; //changing text border color to red informing the user that this is invalid data
-                return; //return
-            }
-            else //if valid data (no characters or invalid mobile number length)
-            {
-                //if valid data (no characters or invalid mobile number length) inform the user that the entered data is valid
-                hideErrorMessage(); //hide error message
-                StdPNum_Txt.BorderColor = Color.Gray; //changing textbox color back to gray informing the user that it is a valid data
-                return; //return
-            }
+            SubjInfo_Pnl.BringToFront();
+            SubjInfo_Pnl.Visible = true;
+            SubjInfo_Pnl.Dock = DockStyle.Top;
+            LockTeacher();
+            Submit_Btn.Visible = true;
+
         }
 
-        //Parent phone number Textbox text changed event
-        //also used for student phone number Textbox leave event
-        protected virtual void StdParPNum_Txt_TextChanged(object sender, EventArgs e)
+        protected void LockTimeAndLoc()
         {
-            //if number text length is not out of range (from 8 to 15 digit) this is invalid
-            if (StdParPNum_Txt.TextLength < 8 || StdParPNum_Txt.TextLength > 15 || StdParPNum_Txt.Text.Any(char.IsLetter))
+            SubjTimeAndLoc_Pnl.BackColor = Color.FromName("Control");
+            foreach (Control item in SubjTimeAndLoc_Pnl.Controls) //loop on each item in the panel
             {
-                showErrorMessage("invalid phone number, please inert a valid 8 - 15 numbers"); //informing the user with a suitable message
-                StdParPNum_Txt.BorderColor = Color.Red; //changing text border color to red informing the user that this is invalid data
-                return; //return
-            }
-            else //if valid data (no characters or invalid mobile number length)
-            {
-                //if valid data (no characters or invalid mobile number length) inform the user that the entered data is valid
-                hideErrorMessage(); //hide error message
-                StdParPNum_Txt.BorderColor = Color.Gray; //changing textbox color back to gray informing the user that it is a valid data
-                return; //return
-            }
-        }
-
-
-        //Parent SSN Textbox text changed event
-        //also used for Parent SSN Textbox leave event
-        protected virtual void StdParSSN_Txt_TextChanged(object sender, EventArgs e)
+                if (item is Guna2TextBox) //if the item is textbox
+                {
+                    Guna2TextBox textBox = (Guna2TextBox)item; //cast item to textbox to use textbox functionalities
+                    textBox.Enabled = false; //make all textboxes unenabled (read only)
+                }
+                else if (item is Guna2ComboBox)
+                {
+                    Guna2ComboBox comboobox = (Guna2ComboBox)item; //cast item to comboBox to use comboBox functionalities
+                    comboobox.Enabled = false; //make all combooboxes unenabled (read only)
+                }
+                else if (item is Guna2Button)
+                {
+                    Guna2Button button = (Guna2Button)item;
+                    button.Enabled = false;
+                }
+             }
+         }
+   
+        protected void LockTeacher()
         {
-            //if name text contains length is out of range(from 14 to 20 digit) this is invalid
-            if (StdParSSN_Txt.TextLength < 14 || StdSSN_Txt.TextLength > 20 || StdSSN_Txt.Text.Any(char.IsLetter))
+            SubjTeach_Pnl.BackColor = Color.FromName("Control");
+            foreach (Control item in SubjTeach_Pnl.Controls) //loop on each item in the panel
             {
-                showErrorMessage("invalid SSN, please inert a valid 9 - 20 numbers SSN"); //informing the user with a suitable message
-                StdParSSN_Txt.BorderColor = Color.Red; //changing text border color to red informing the user that this is invalid data
-                return; //return
-            }
-            else //if valid data (no characters or ovalid SSN length)
-            {
-                //if valid data (no characters or ovalid SSN length) inform the user that the entered data is valid
-                hideErrorMessage(); //hide error message
-                StdParSSN_Txt.BorderColor = Color.Gray; //changing textbox color back to gray informing the user that it is a valid data
-                return; //return
+                if (item is Guna2TextBox) //if the item is textbox
+                {
+                    Guna2TextBox textBox = (Guna2TextBox)item; //cast item to textbox to use textbox functionalities
+                    textBox.Enabled = false; //make all textboxes unenabled (read only)
+                }
+                else if (item is Guna2ComboBox)
+                {
+                    Guna2ComboBox comboobox = (Guna2ComboBox)item; //cast item to comboBox to use comboBox functionalities
+                    comboobox.Enabled = false; //make all combooboxes unenabled (read only)
+                }
+                else if (item is Guna2Button)
+                {
+                    Guna2Button button = (Guna2Button)item;
+                    button.Enabled = false;
+                }
             }
         }
 
-        //Parent Name Textbox text changed event
-        //also used for Parent Name Textbox leave event
-        protected virtual void StdParName_Txt_TextChanged(object sender, EventArgs e)
+        protected virtual void FillData(string subjID, int roomID, String Day, string Time)
         {
-            if (StdParName_Txt.Text.Any(char.IsDigit)) //if name text contains digits (this is invalid)
-            {
-                //informing the user with the Error
-                showErrorMessage("invalid name, names can't contain numbers, please inert a valid name");//informing the user with a suitable message
-                StdParName_Txt.BorderColor = Color.Red; //changing text border color to red informing the user that this is invalid data
-                return; //return
-            }
-            {
-                //if valid data (no digits) inform the user that the entered data is valid
-                hideErrorMessage(); //hide error message
-                StdParName_Txt.BorderColor = Color.Gray; //changing textbox color back to gray informing the user that it is a valid data
-                return; //return
-            }
+            DataTable SubjInformation;//creating datatable object to retrive Subjs information
+            //to fill textboxes with Subjinformation (View Subj information or update Subj information)
+            SubjInformation = controllerObj.getSubjectData(subjID, roomID, Day, Time);
+ 
+
+            SubjName_Txt.Text = SubjInformation.Rows[0][0].ToString();//filling Subj name textbox with the selectd Subj name
+            SubjID_Txt.Text = SubjInformation.Rows[0][1].ToString();
+
+            DataTable Yearslist = controllerObj.getYears();
+            SubjYear_CBox.DisplayMember = "std_Year"; //displaying std_Year column from datatable "Yearslist"
+            SubjYear_CBox.ValueMember = "std_Year"; //linking value to std_year column from datatable "YearsList"
+            SubjYear_CBox.DataSource = Yearslist; //linking yearslist comboobox and yearlist datatable
+            SubjYear_CBox.SelectedIndex = SubjYear_CBox.FindString(SubjInformation.Rows[0][2].ToString()); //in
+
+            DataTable Roomslist = controllerObj.getRooms();
+            SubjRoom_CBox.DisplayMember = "r_Num"; //displaying std_Year column from datatable "Yearslist"
+            SubjRoom_CBox.ValueMember = "r_Num"; //linking value to std_year column from datatable "YearsList"
+            SubjRoom_CBox.DataSource = Roomslist; //linking yearslist comboobox and yearlist datatable
+            SubjRoom_CBox.SelectedIndex = SubjRoom_CBox.FindString(SubjInformation.Rows[0][3].ToString()); //in
+
+
+            DataTable Dayslist = getWeekDays();
+            SubjDay_CBox.DisplayMember = "Day"; //displaying std_Year column from datatable "Yearslist"
+            SubjDay_CBox.ValueMember = "Day"; //linking value to std_year column from datatable "YearsList"
+            SubjDay_CBox.DataSource = Dayslist; //linking yearslist comboobox and yearlist datatable
+            SubjDay_CBox.SelectedIndex = SubjDay_CBox.FindString(SubjInformation.Rows[0][4].ToString()); //in
+
+            DataTable DayTimes1 = getDayTimes();
+            DataTable DayTimes2 = getDayTimes();
+            SubjStartT_CBox.DisplayMember = "Time"; //displaying std_Year column from datatable "Yearslist"
+            SubjStartT_CBox.ValueMember = "Time"; //linking value to std_year column from datatable "YearsList"
+            SubjStartT_CBox.DataSource = DayTimes1; //linking yearslist comboobox and yearlist datatable
+            SubjEndT_CBox.DisplayMember = "Time"; //displaying std_Year column from datatable "Yearslist"
+            SubjEndT_CBox.ValueMember = "Time"; //linking value to std_year column from datatable "YearsList"
+            SubjEndT_CBox.DataSource = DayTimes2; //linking yearslist comboobox and yearlist datatable
+            SubjStartT_CBox.SelectedIndex = SubjStartT_CBox.FindString(SubjInformation.Rows[0][5].ToString()); //in
+            SubjEndT_CBox.SelectedIndex = SubjEndT_CBox.FindString(SubjInformation.Rows[0][6].ToString()); //in
+
+            DataTable DepartmentsList = controllerObj.getDepartmentslist();
+            SubjDep_CBox.DisplayMember = "dep_Name"; //displaying std_Year column from datatable "Yearslist"
+            SubjDep_CBox.ValueMember = "dep_ID"; //linking value to std_year column from datatable "YearsList"
+            SubjDep_CBox.DataSource = DepartmentsList; //linking yearslist comboobox and yearlist datatable
+            SubjDep_CBox.SelectedIndex = SubjDep_CBox.FindString(SubjInformation.Rows[0][7].ToString()); //in
+
+            DataTable TeachersList = controllerObj.getteachersOfDepartment(SubjInformation.Rows[0][8].ToString());
+            SubjTeach_CBox.DisplayMember = "staff_Name";//displaying std_Year column from datatable "Yearslist"
+            SubjTeach_CBox.ValueMember = "staff_ID"; //linking value to std_year column from datatable "YearsList"
+            SubjTeach_CBox.DataSource = TeachersList; //linking yearslist comboobox and yearlist datatable
+            SubjTeach_CBox.SelectedIndex = SubjTeach_CBox.FindString(SubjInformation.Rows[0][9].ToString()); //in
+
+       
         }
 
-        //Student Name Textbox text changed event
-        //also used for Student Name Textbox leave event
-        protected virtual void StdName_Txt_TextChanged(object sender, EventArgs e)
+        protected DataTable getWeekDays()
         {
-            if (StdName_Txt.Text.ToString() == "") //if name text is equal to "" i.e there is no data entered (empty textbox)
-            {
-                //informing the user with the Error
-                showErrorMessage("invalid name, please inert a valid name"); //informing the user with a suitable message
-                StdName_Txt.BorderColor = Color.Red; //changing text border color to red informing the user that this is invalid data
-                return; //return
-            }
-            else if (StdName_Txt.Text.Any(char.IsDigit)) //if name text contains digits (this is invalid)
-            {
-                showErrorMessage("invalid name, names can't contain numbers, please inert a valid name"); //informing the user with a suitable message
-                StdName_Txt.BorderColor = Color.Red; //changing text border color to red informing the user that this is invalid data
-                return; //return
-            }
-            else //if valid data (no digits) or empty textboxs
-            {
-                //if valid data (no digits or empty textboxs) inform the user that the entered data is valid
-                hideErrorMessage(); //hide error message
-                StdName_Txt.BorderColor = Color.Gray; //changing textbox color back to gray informing the user that it is a valid data
-                return; //return
-            }
+            DataTable WeekDays = new DataTable();
+            WeekDays.Columns.Add("Day");
+            WeekDays.Rows.Add("Saturday");
+            WeekDays.Rows.Add("Sunday");
+            WeekDays.Rows.Add("Monday");
+            WeekDays.Rows.Add("Tuesday");
+            WeekDays.Rows.Add("Wednesday");
+            WeekDays.Rows.Add("Thursday");
+            return WeekDays;
         }
 
-
-
-        //Student Email Textbox text changed event
-        //also used for Student Email Textbox leave event      
-        protected virtual void StdEmail_Txt_TextChanged(object sender, EventArgs e)
+        protected DataTable getDayTimes()
         {
-            //if empty textbox
-            if (StdEmail_Txt.Text.ToString() == "")
-            {
-                showErrorMessage("invalid email adress please enter a valid email adress"); //informing the user with a suitable message
-                StdEmail_Txt.BorderColor = Color.Red; //changing text border color to red informing the user that this is invalid data
-                return; //return
-            }
-            else //if valid data
-            {
-                //if valid data inform the user that the entered data is valid
-                hideErrorMessage(); //hide error message
-                StdEmail_Txt.BorderColor = Color.Gray; //changing textbox color back to gray informing the user that it is a valid data
-                return; //return
-            }
+            DataTable DayTimes = new DataTable();
+            DayTimes.Columns.Add("Time");
+            DayTimes.Rows.Add("00:00:00");
+            DayTimes.Rows.Add("01:00:00");
+            DayTimes.Rows.Add("02:00:00");
+            DayTimes.Rows.Add("03:00:00");
+            DayTimes.Rows.Add("04:00:00");
+            DayTimes.Rows.Add("05:00:00");
+            DayTimes.Rows.Add("06:00:00");
+            DayTimes.Rows.Add("07:00:00");
+            DayTimes.Rows.Add("08:00:00");
+            DayTimes.Rows.Add("09:00:00");
+            DayTimes.Rows.Add("10:00:00");
+            DayTimes.Rows.Add("11:00:00");
+            DayTimes.Rows.Add("12:00:00");
+            return DayTimes;
+
         }
 
-        //University name Textbox text changed event
-        //also used for university name Textbox leave event      
-        protected virtual void University_Txt_TextChanged(object sender, EventArgs e)
-        {
-            //if empty textbox
-            if (StdUni_Txt.Text.ToString() == "")
-            {
-                showErrorMessage("invalid univesity name, please insert a valid name"); //informing the user with a suitable message
-                StdUni_Txt.BorderColor = Color.Red; //changing text border color to red informing the user that this is invalid data
-                return; //return
-            }
-            else //if valid data
-            {
-                //if valid data inform the user that the entered data is valid
-                hideErrorMessage(); //hide error message
-                StdUni_Txt.BorderColor = Color.Gray; //changing textbox color back to gray informing the user that it is a valid data
-                return; //return
-            }
-        }
+
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Guna.UI2.WinForms;
+using School_DB_System.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +10,9 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Microsoft.WindowsAPICodePack.Shell.PropertySystem.SystemProperties.System;
+using System.Windows.Forms.DataVisualization.Charting;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 //SCHOOL DATABASE SYSTEM NAMESPACE
 namespace School_DB_System
@@ -25,7 +29,7 @@ namespace School_DB_System
         protected ViewController viewController; //viewcontroller object
         protected Controller controllerObj; // controller object
         bool inInbox;
-        string ID;
+        string SSN;
 
         //Student usercontrol non default constructor
         public Request(ViewController viewController, Controller controllerObj, string username) : base(viewController, controllerObj)
@@ -40,8 +44,8 @@ namespace School_DB_System
             initializeDataGridView();//initialize Datagridview data (columns and rows)
                                      //(adding column names, adjusting datagridview style...etc)
             inInbox = false;
-            DataTable IDDt = controllerObj.getIDFromUsername(username);
-            ID = IDDt.Rows[0][0].ToString();
+            DataTable SSNDt = controllerObj.getSSNFromUsername(username);
+            SSN = SSNDt.Rows[0][0].ToString();
         }
 
         //overriding onPaint function to change derived class (Add student) design
@@ -51,7 +55,7 @@ namespace School_DB_System
             Template_Lbl.Name = "StateList_Lbl";//changing Label name to "StateList_Lbl"
             Template_Lbl.Text = "State";//changing Label Text to "State"
             Update_Btn.Text = "Respond";
-                Update_Btn.Name = "Respond_Btn";
+            Update_Btn.Name = "Respond_Btn";
         }
 
         //METHODS
@@ -94,14 +98,14 @@ namespace School_DB_System
         //linking combooboxes with data
         protected override void initializeFilter()
         {
-          
+
             //initializing student state comboobox with (current, Graduated)
             Template_CBox.Items.Add("Inbox"); //adding item at row index = 0 (first item)
             Template_CBox.Items.Add("Sent");//adding item at row index = 1 (second item)
             Template_CBox.Items.Add("Pending");//adding item at row index = 1 (second item)
             Template_CBox.SelectedIndex = 0; //initially selecting the first element which is "Current"
-            //adding SelectedIndexChanged event to the template comboobox which will be (StateList_CBox)
-          
+                                             //adding SelectedIndexChanged event to the template comboobox which will be (StateList_CBox)
+
         }
 
         //changes to graduate student view
@@ -145,7 +149,7 @@ namespace School_DB_System
 
         ////////////////////////EVENTS///////////////////////////////
 
-      
+
         //filter button click event
         //filters the datagridview with the selected combooboxes i.e choosen year and state
         protected override void Filter_Btn_Click(object sender, EventArgs e)
@@ -166,19 +170,19 @@ namespace School_DB_System
             //check if selected state is = "current" and selected year is = "All"
             if (Template_CBox.Text.ToString() == "Inbox")
             {
-                RequestList = controllerObj.getInboxOf(ID); //sends a query to retrieve all students (ID, Name, Email, Year)
+                RequestList = controllerObj.getInboxOf(SSN); //sends a query to retrieve all students (ID, Name, Email, Year)
                 Data_Dt.DataSource = RequestList; //linking student datagridview with students list datatable
                 InboxView(); //changes to current student view
             }
             else if (Template_CBox.Text.ToString() == "Sent") //check if selected state is = "Graduated
             {
-                RequestList = controllerObj.getSentOf(ID);
+                RequestList = controllerObj.getSentOf(SSN);
                 Data_Dt.DataSource = RequestList; //linking student datagridview with students list datatable
                 SentView();
             }
             else //check if selected state is = "current" and selected year is = 1,2,3...etc (not all)
             {
-                RequestList = controllerObj.getPendingInboxOf(ID); //sends a query to retrieve all students (ID, Name, Email, Year)
+                RequestList = controllerObj.getPendingInboxOf(SSN); //sends a query to retrieve all students (ID, Name, Email, Year)
                 Data_Dt.DataSource = RequestList; //linking student datagridview with students list datatable
                 InboxView(); //changes to current student view
             }
@@ -234,22 +238,22 @@ namespace School_DB_System
                     string title = selectedRow.Cells["Title"].Value.ToString();//getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
                     string message = selectedRow.Cells["Request"].Value.ToString();//getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
                     DateTime date = DateTime.Parse(selectedRow.Cells["Date"].Value.ToString());//getting data from the selected row (ID) column because its the needed cell value to ened queries
-                    string senderID, reciverID;
+                    string senderSSN, reciverSSN;
 
                     if (inInbox) // on sent tab
                     {
-                        senderID = ID;//////getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
-                        DataTable reciverIDDt = controllerObj.getStdIDFromEmail(selectedRow.Cells["Email"].Value.ToString());//getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
-                        reciverID = reciverIDDt.Rows[0][0].ToString();
+                        reciverSSN = SSN;//////getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
+                        DataTable senderSSNDt = controllerObj.getSSNFromEmail(selectedRow.Cells["Email"].Value.ToString());//getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
+                        senderSSN = senderSSNDt.Rows[0][0].ToString();
                     }
                     else
                     {
-                        DataTable senderIDDt = controllerObj.getStdIDFromEmail(selectedRow.Cells["Email"].Value.ToString());//getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
-                        senderID = senderIDDt.Rows[0][0].ToString();
-                        reciverID = ID;/////////getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
+                        senderSSN = SSN;//////getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
+                        DataTable reciverIDDt = controllerObj.getSSNFromEmail(selectedRow.Cells["Email"].Value.ToString());//getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
+                        reciverSSN = reciverIDDt.Rows[0][0].ToString();
                     }
 
-                    int res = controllerObj.DeleteReq(senderID, reciverID, title, message, date); //sends a query with the student id to delete
+                    int res = controllerObj.DeleteReq(senderSSN, reciverSSN, title, message, date); //sends a query with the student SSN to delete
                     if (res == 0)
                     {
                         RJMessageBox.Show("deletion of selected student failed, please try again.",
@@ -272,7 +276,7 @@ namespace School_DB_System
             }
         }
 
-        
+
 
         //view student button click event
         //views selected student information
@@ -304,21 +308,21 @@ namespace School_DB_System
                 string title = selectedRow.Cells["Title"].Value.ToString();//getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
                 string message = selectedRow.Cells["Request"].Value.ToString();//getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
                 DateTime date = DateTime.Parse(selectedRow.Cells["Date"].Value.ToString());//getting data from the selected row (ID) column because its the needed cell value to ened queries
-                string senderID, reciverID;
+                string Email;
 
                 if (inInbox) // on sent tab
                 {
-                    senderID = ID;//////getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
-                    DataTable reciverIDDt = controllerObj.getStdIDFromEmail(selectedRow.Cells["From"].Value.ToString());//getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
-                    reciverID = reciverIDDt.Rows[0][0].ToString();
+                    //getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
+                    Email = selectedRow.Cells["From"].Value.ToString();
+                    viewController.ViewViewRequest(Email, title, message, 0);
                 }
                 else
                 {
-                    DataTable senderIDDt = controllerObj.getStdIDFromEmail(selectedRow.Cells["To"].Value.ToString());//getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
-                    senderID = senderIDDt.Rows[0][0].ToString();
-                    reciverID = ID;/////////getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
+                    ///getting data from the selected row(ID.ToString() column because its the needed cell value to ened queries
+                    Email = selectedRow.Cells["To"].Value.ToString();
+                    viewController.ViewViewRequest(Email, title, message, 1);
                 }
-                viewController.ViewViewRequest(ID);
+
             }
             return; //return
         }
@@ -345,7 +349,7 @@ namespace School_DB_System
                          MessageBoxButtons.OK);
                 return; //return (do nothing)
             }
-            else if(!inInbox)
+            else if (!inInbox)
             {
                 //inform the user that there are no rows selected
                 RJMessageBox.Show("you can't respond to yourself.",
@@ -357,13 +361,16 @@ namespace School_DB_System
             {
                 int selectedrowindex = Data_Dt.SelectedCells[0].RowIndex; //getting the selected row index
                 DataGridViewRow selectedRow = Data_Dt.Rows[selectedrowindex];//getting the selcted row from the row index                                                      ////////////////////////////////////////////////
-                string senderID = ID;//////getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
-                   DataTable reciverEmailDt = controllerObj.getStdIDFromEmail(selectedRow.Cells["From"].Value.ToString());//getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
-                   string reciverEmail = reciverEmailDt.Rows[0][0].ToString();
-                     viewController.RespondToReq(ID,reciverEmail);
-                     // senderID,reciverEmail
-                    return; //return
-        }
+                string senderSSN = SSN;//////getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
+                DataTable reciverSSNDt = controllerObj.getSSNFromEmail(selectedRow.Cells["From"].Value.ToString());//getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
+                string reciverSSN = reciverSSNDt.Rows[0][0].ToString();
+                string title = selectedRow.Cells["Title"].Value.ToString();//getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
+                string message = selectedRow.Cells["Request"].Value.ToString();//getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
+                viewController.RespondToReq(senderSSN, reciverSSN, title,message);
+                // senderID,reciverEmail
+                return; //return
+            }
 
+        }
     }
 }

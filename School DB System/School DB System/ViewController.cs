@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -35,26 +36,26 @@ namespace School_DB_System
         //View homepage function
         //mainly used on login button click to swtich from login page to homepage
         //takes integer to view the suitable homepage for this user depending on level of authority
-        public int ViewHomePage(int Authority, string Username)
+        public int ViewHomePage(int Authority, string username)
         {
-            DataTable IDDt = controllerobj.getIDFromUsername(Username);
-            string ID = IDDt.Rows[0][0].ToString();
+            //DataTable IDDt = controllerobj.getIDFromUsername(Username);
+            //string ID = IDDt.Rows[0][0].ToString();
             UserControl SubHome;
             switch (Authority)
             {
                 case 1:
-                    SubHome = new Adminstrator(this,controllerobj,ID);
+                    SubHome = new Adminstrator(this,controllerobj,username);
                     break;
                 case 2:
-                    SubHome = new HR(this, controllerobj, ID);
+                    SubHome = new HR(this, controllerobj, username);
                     break;
                 case 3:
-                    SubHome = new Accountant(this, controllerobj, ID);
+                    SubHome = new Accountant(this, controllerobj, username);
                     break;
                 default:
                     return 0;
             }
-            HomePage Homepage = new HomePage(this, Username, SubHome);//creating the home page
+            HomePage Homepage = new HomePage(this, username, SubHome);//creating the home page
             MainPage = Homepage;
             Application_Handler.ViewOnMainPage(Homepage);//viewing homepage on the main application window
             return 1;
@@ -127,9 +128,30 @@ namespace School_DB_System
            SubTab = ViewStaff;
            Application_Handler.ViewOnSubTab(ViewStaff);//viewing homepage on the main application window
         }
+
+        public void ViewViewSubject(string subjID, int roomID, String Day, string Time)
+        {
+            ViewSubject ViewSubj = new ViewSubject(this, controllerobj,subjID, roomID, Day, Time);
+            SubTab = ViewSubj;
+            Application_Handler.ViewOnSubTab(ViewSubj);//viewing homepage on the main application window
+        }
+        public void ViewUpdateSubject(string subjID, int roomID, String Day, string Time)
+        {
+            UpdateSubject UpdateSubj = new UpdateSubject(this, controllerobj, subjID, roomID, Day, Time);
+            SubTab = UpdateSubj;
+            Application_Handler.ViewOnSubTab(UpdateSubj);//viewing homepage on the main application window
+        }
+
+        public void ViewAddSubject()
+        {
+            AddSubject AddSubj = new AddSubject(this, controllerobj);
+            SubTab = AddSubj;
+            Application_Handler.ViewOnSubTab(AddSubj);//viewing homepage on the main application window
+        }
+
         public void refreshDatagridView()
         {
-          //  MainTab.refreshDatagridView(); //refresh datagrid view after insert or delete student
+          //MainTab.refreshDatagridView(); //refresh datagrid view after insert or delete student
         } //refresh datagrid view after insert or delete student
 
         public void viewStudent()
@@ -201,16 +223,16 @@ namespace School_DB_System
             Application_Handler.ViewOnMainTab(RequestPage);//viewing homepage on the main application window
         }
 
-        public void ViewViewRequest(string Email, string ID)
+        public void ViewViewRequest(string Email, string Title, string Message,int view)
         {
-            Message1 ViewReq = new Message1(this, controllerobj, 1, Email, ID);
+            Message ViewReq = new Message(this, controllerobj, Email, Title, Message, view);
             UCSubTab = ViewReq;
             Application_Handler.ViewOnSubTab(ViewReq);//viewing homepage on the main application window
         }
 
-        public void RespondToReq(string Email, string ID)
+        public void RespondToReq(string senderID,string reciverEmail,string oldTitle,string oldReq)
         {
-            Message1 RespondToReq = new Message1(this, controllerobj, 3, Email,ID);
+            Message RespondToReq = new Message(this, controllerobj, senderID,reciverEmail, oldTitle, oldReq);
             UCSubTab = RespondToReq;
             Application_Handler.ViewOnSubTab(RespondToReq);//viewing homepage on the main application window
         }

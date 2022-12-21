@@ -205,10 +205,16 @@ namespace School_DB_System
             Data_Dt.Columns[5].HeaderText = "End Time"; //changes column header text because in database it is named Subj_year
                                                         //initializing datagridview wirh empty columns (ID, Name, Email, Year)
             Data_Dt.Columns[6].HeaderText = "Room Number"; //changes column header text because in database it is named Subj_year
-                                                        //initializing datagridview wirh empty columns (ID, Name, Email, Year)
-                                                        //creating empty columns in subjectsList datatable
-    
- 
+                                                           //initializing datagridview wirh empty columns (ID, Name, Email, Year)
+                                                           //creating empty columns in subjectsList datatable
+
+            Data_Dt.Columns[1].Name= "ID";//adding the first column with header text = "ID"
+            Data_Dt.Columns[2].Name = "Name"; //adding the second column with header text = "Name"
+            Data_Dt.Columns[3].Name = "Day"; //adding the thhird column with header text = "Email"
+            Data_Dt.Columns[4].Name = "StartTime"; //adding the thhird column with header text = "Email"
+            Data_Dt.Columns[5].Name = "EndTime"; //adding the thhird column with header text = "Email"
+            Data_Dt.Columns[6].Name = "RoomNum";//adding the fourth column with header text = "Year"
+
             //adjusting subjects datagridview columns style
             Data_Dt.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; //adjusting first column style (auto size mode depending on the length of content)
             Data_Dt.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; //adjusting second column style (auto size mode depending on the length of content)
@@ -305,10 +311,12 @@ namespace School_DB_System
             else
             {
                 int selectedrowindex = Data_Dt.SelectedCells[0].RowIndex; //getting the selected row index
-                DataGridViewRow selectedRow = Data_Dt.Rows[selectedrowindex];//getting the selcted row from the row index
-                string SubjID = Convert.ToString(selectedRow.Cells["ID"].Value);//getting data from the selected row (ID) column because its the needed cell value to ened queries
-                //creating new object of update subject information
-              // viewController.ViewUpdateSubject(SubjID.ToString());//viewing subject information on new tab
+                DataGridViewRow selectedRow = Data_Dt.Rows[selectedrowindex]; //getting the selcted row from the row index
+                string subjID = Convert.ToString(selectedRow.Cells["ID"].Value); //getting data from the selected row (ID) column because its the needed cell value to ened queries
+                int roomID = int.Parse(selectedRow.Cells["RoomNum"].Value.ToString());
+                string Day = Convert.ToString(selectedRow.Cells["Day"].Value);
+                string Time = Convert.ToString(selectedRow.Cells["StartTime"].Value);//creating new object of view subject information
+                viewController.ViewUpdateSubject(subjID, roomID, Day, Time);//viewing subject information on new tab
             }
             return; //return
         }
@@ -339,9 +347,11 @@ namespace School_DB_System
             {
                 int selectedrowindex = Data_Dt.SelectedCells[0].RowIndex; //getting the selected row index
                 DataGridViewRow selectedRow = Data_Dt.Rows[selectedrowindex]; //getting the selcted row from the row index
-                string SubjID = Convert.ToString(selectedRow.Cells["ID"].Value); //getting data from the selected row (ID) column because its the needed cell value to ened queries
-                                                                                //creating new object of view subject information
-              // viewController.ViewViewSubject(SubjID.ToString());//viewing subject information on new tab
+                string subjID = Convert.ToString(selectedRow.Cells["ID"].Value); //getting data from the selected row (ID) column because its the needed cell value to ened queries
+                int roomID = int.Parse(selectedRow.Cells["RoomNum"].Value.ToString());
+                string Day = Convert.ToString(selectedRow.Cells["Day"].Value);
+                string Time = Convert.ToString(selectedRow.Cells["StartTime"].Value);//creating new object of view subject information
+                viewController.ViewViewSubject(subjID,roomID,Day,Time);//viewing subject information on new tab
             }
             return; //return
         }
@@ -352,7 +362,7 @@ namespace School_DB_System
         protected override void Add_Btn_Click(object sender, EventArgs e)
         {
             //creating new object of Add subject information
-          // viewController.ViewAddSubject();//viewing Add subject information on new tab
+          viewController.ViewAddSubject();//viewing Add subject information on new tab
         }
     }
 }

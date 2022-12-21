@@ -1,6 +1,6 @@
 ﻿namespace School_DB_System
 {
-    partial class Message1
+    partial class Message
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Message1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Message));
             this.Main_Pnl = new Guna.UI2.WinForms.Guna2Panel();
             this.Sub_Pnl = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.ReqMessage_Txt = new Guna.UI2.WinForms.Guna2TextBox();

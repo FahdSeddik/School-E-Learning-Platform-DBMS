@@ -70,5 +70,5 @@ D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System
 D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.BaseAUD.resources
 D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.TempTab.resources
 D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.Subject1.resources
-D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.Message1.resources
 D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.Request1.resources
+D:\Gaser\Univeristy\2022 fall\ELCN101 Database\School DB System\School-DB-System\School DB System\School DB System\obj\Debug\School_DB_System.Message.resources

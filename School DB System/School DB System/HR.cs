@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace School_DB_System
 {
@@ -14,19 +15,16 @@ namespace School_DB_System
     {
         ViewController viewController;
         Controller controllerObj;
-        string Email;
-        string ID;
-        string username;
-        public HR(ViewController viewController, Controller controllerobj, string ID)
+
+        string Username;
+        public HR(ViewController viewController, Controller controllerobj, string username)
         {
             InitializeComponent();
             this.viewController = viewController;
             this.controllerObj = controllerobj;
-            this.ID = ID;
-            DataTable EmailDt = controllerObj.getEmailFromID(ID);
-            Email = EmailDt.Rows[0][0].ToString();
-            DataTable usernameDt = controllerObj.getUsernameFromID(ID);
-            username = usernameDt.Rows[0][0].ToString();
+           
+            Username = username;
+
         }
 
         private void Teach_IBtn_Click(object sender, EventArgs e)
@@ -41,7 +39,7 @@ namespace School_DB_System
 
         private void Reqs_IBtn_Click(object sender, EventArgs e)
         {
-            viewController.ViewRequest(username);
+            viewController.ViewRequest(Username);
         }
     }
 }
