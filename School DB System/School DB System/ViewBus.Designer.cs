@@ -1,6 +1,6 @@
 ﻿namespace School_DB_System
 {
-    partial class Bus
+    partial class ViewBus
     {
         /// <summary> 
         /// Required designer variable.

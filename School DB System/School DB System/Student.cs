@@ -194,7 +194,7 @@ namespace School_DB_System
  
         //filter panel state list comboobox index changed
         //i.e selected a diffrent item from items list
-        private void StateList_CBox_SelectedIndexChanged(object sender, EventArgs e)
+        protected virtual void StateList_CBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (Template_CBox.Text.ToString() == "Graduated")
             {

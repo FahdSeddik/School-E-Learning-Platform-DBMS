@@ -141,21 +141,7 @@ namespace School_DB_System
                 //send a query and gets the result of the query in queryres
                 int queryRes = 0;//intially = 0
 
-                for (int i = 0; i<2; i++)
-                {
-                    if (StdUni_Txt.Visible == true) //means this is a graduate student view (selected student is graduate)
-                    {
-                        queryRes = controllerObj.UpdateGraduateStudent(StdParSSN_Txt.Text.ToString(), StdParName_Txt.Text.ToString(), StdParAdress_Txt.Text.ToString(), StdParPNum_Txt.Text.ToString(),
-                        StdParEmail_Txt.Text.ToString(), StdID_Txt.Text.ToString(), StdName_Txt.Text.ToString(), StdSSN_Txt.Text.ToString(), StdEmail_Txt.Text.ToString(),
-                        StdPNum_Txt.Text.ToString(), StdDob_Dtp.Value.ToString(), StdNation_CBox.Text.ToString(), StdAdress_Txt.Text.ToString(), Std2ndLang_CBox.Text.ToString(), StdUni_Txt.Text.ToString());
-                    }
-                    else
-                    {
-                        queryRes = controllerObj.UpdateCurrentStudent(StdParSSN_Txt.Text.ToString(), StdParName_Txt.Text.ToString(), StdParAdress_Txt.Text.ToString(), StdParPNum_Txt.Text.ToString(),
-                        StdParEmail_Txt.Text.ToString(), StdID_Txt.Text.ToString(), StdName_Txt.Text.ToString(), StdSSN_Txt.Text.ToString(), StdEmail_Txt.Text.ToString(),
-                        StdPNum_Txt.Text.ToString(), StdDob_Dtp.Value.ToString(), StdNation_CBox.Text.ToString(), StdAdress_Txt.Text.ToString(), Std2ndLang_CBox.Text.ToString(), int.Parse(StdYear_CBox.Text.ToString()), bool.Parse(StdPayedTuition_CBox.Checked.ToString()));
-                    }
-                }
+                queryRes = controllerObj.UpdateSubject();
 
                 if (queryRes == 0) //if queryres = 0 i.e query executing failed
                 {
@@ -172,7 +158,8 @@ namespace School_DB_System
                     RJMessageBox.Show("Student information updated successfully",
                    "Successfully added",
                     MessageBoxButtons.OK,
-                    MessageBoxIcon.Information); 
+                    MessageBoxIcon.Information);
+                    Back_btn.PerformClick();
                     return; //return
                 }
             }

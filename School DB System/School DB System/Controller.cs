@@ -12,6 +12,7 @@ using System.Xml.Linq;
 using System.Net.NetworkInformation;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Windows.Forms;
+using static System.Windows.Forms.AxHost;
 
 namespace School_DB_System
 {
@@ -406,6 +407,17 @@ namespace School_DB_System
             return dbMan.ExecuteReader(query);
         }
 
+        public int checkTimeAndLocation(int rNum, string startT,string endT , string Day )
+        {
+            string query = "select count(day) from Subject_Time_Loc where r_Num="+rNum+" and Start_Time='"+startT+"' and End_Time='"+endT+"' and day='"+Day+"';";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+
+        public int getSubjectsCount()
+        {
+            string query = "select count(sub_Num) from Subject;";
+            return (int)dbMan.ExecuteScalar(query);
+        }
         public void TerminateConnection()
         {
             dbMan.CloseConnection();

@@ -42,23 +42,88 @@ namespace School_DB_System
         {
             this.SubjTAndLocNext_Btn.Click += new EventHandler(SubjTAndLocNext_Btn_Click);
             this.SubjTeachNext_Btn.Click += new EventHandler(SubjTeachNext_Btn_Click);
+            this.SubjYear_CBox.SelectedIndexChanged+= new EventHandler(SubjYear_CBox_SelectedIndexChanged);
+            this.AddRoom_Btn.Click += new EventHandler(AddRoom_Btn_Click);
         }
-       protected void  SubjTAndLocNext_Btn_Click(object sender, EventArgs e)
+
+        protected virtual void AddRoom_Btn_Click(object sender, EventArgs e)
         {
-            SubjTeach_Pnl.BringToFront();
-            SubjTeach_Pnl.Visible = true;
-            SubjTeach_Pnl.Dock = DockStyle.Top;
-            LockTimeAndLoc();
+            viewController.viewAddRoom();
+        }
+
+        protected void SubjYear_CBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            updateSubjectID();
 
         }
+
+        private void updateSubjectID()
+        {
+
+                int subjCount = controllerObj.getSubjectsCount(); //retrieves student count
+                subjCount++; //increments student count by 1 i.e if students count is = 3 means the student that will be added is the 4th student no the 3th
+                string formattedSubjectCount = string.Format("{0:000}", subjCount); //formatting students count to 5 digits and padding with zeros if needed i students count is 300 it will be 00300 and if 45000 it will be 45000
+            char[] Department = SubjDep_CBox.Text.ToCharArray();//converting SSN to array of characters to access characters (first 2 digits)
+            string year = string.Format("{0:00}", SubjYear_CBox.SelectedValue); //converting graduation year textbox text to integer to use to calculate graduation year
+                                                                                                       //calculates graduation year depending on the current year and converting to characters array to acces its characters (last 2 digits)
+                                                                                                       //note that this calculates depending on the real year in the world (datetime.now.year) so its updated with the real time year (only when adding a new student not in updating student information)
+                                                                                                       //created Student ID with the specfied format
+            SubjID_Txt.Text = Department[2].ToString()+ Department[1].ToString()+ Department[0].ToString() + year + formattedSubjectCount;
+            return;
+        }
+        protected void  SubjTAndLocNext_Btn_Click(object sender, EventArgs e)
+        {
+            int res = controllerObj.checkTimeAndLocation(int.Parse(SubjRoom_CBox.SelectedValue.ToString()), SubjStartT_CBox.SelectedValue.ToString(), SubjEndT_CBox.ToString(), SubjDay_CBox.SelectedValue.ToString());
+            if(res == 0)
+            {
+                SubjTeach_Pnl.BringToFront();
+                SubjTeach_Pnl.Visible = true;
+                SubjTeach_Pnl.Dock = DockStyle.Top;
+                HideSubjTAndLocErrorMsg();
+                LockTimeAndLoc();
+               
+            }
+            else
+            {
+                showSubjTAndLocErrorMsg("the selected time and location are taken, please try again or add a new room");
+            }
+        }
+        protected void showSubjTAndLocErrorMsg(string errorMsg)
+        {
+            SubjTimeAndLocErrorMsg_Lbl.Text = errorMsg;
+            SubjTimeAndLocErrorMsg_Lbl.Show();
+        }
+        protected void HideSubjTAndLocErrorMsg()
+        {
+            SubjTimeAndLocErrorMsg_Lbl.Hide();
+        }
+
         protected void SubjTeachNext_Btn_Click(object sender, EventArgs e)
         {
-            SubjInfo_Pnl.BringToFront();
-            SubjInfo_Pnl.Visible = true;
-            SubjInfo_Pnl.Dock = DockStyle.Top;
-            LockTeacher();
-            Submit_Btn.Visible = true;
+            int res = controllerObj.checkSubjectTeacher();
+            if (res == 0)
+            {
+                showSubjTeachMsg("this teacher is not available at the selected time and location, please choose another teacher");
+            }
+            else
+            {
+                SubjInfo_Pnl.BringToFront();
+                SubjInfo_Pnl.Visible = true;
+                SubjInfo_Pnl.Dock = DockStyle.Top;
+                HideSubjTeachMsg();
+                LockTeacher();
+                Submit_Btn.Visible = true;
+            }   
+        }
+        protected void showSubjTeachMsg(string errorMsg)
+        {
+            SubjTeachErrorMsg_Pnl.Text = errorMsg;
+            SubjTeachErrorMsg_Pnl.Show();
+        }
+        protected void HideSubjTeachMsg()
+        {
 
+            SubjTeachErrorMsg_Pnl.Hide();
         }
 
         protected void LockTimeAndLoc()
