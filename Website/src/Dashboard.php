@@ -29,9 +29,9 @@
                         <?php  
                         $subjectNames = getSubjectNames($conn, $_SESSION["username"]);
                         foreach ($subjectNames as $subject) {
-                            echo '<a href="Subjects/Subject.php?subject='.$subject[0].'" class="group"><div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">';
+                            echo '<a href="Subjects/Subject.php?Dep='.$subject[1].'&num='.$subject[0].'" class="group"><div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">';
                             echo '<img src="../src/assets/subject/' . $subject[1] . '.png" alt="0" class="h-full w-full object-cover object-center group-hover:opacity-75"/></div>';
-                            echo '<h3 class="mt-4 text-2xl text-gray-400 ">' .ucfirst($subject[0]) . '</h3></a>';
+                            echo '<h3 class="mt-4 text-2xl text-gray-400 ">' .ucfirst($subject[2]) . '</h3></a>';
                         }
                         ?>
                             </div>

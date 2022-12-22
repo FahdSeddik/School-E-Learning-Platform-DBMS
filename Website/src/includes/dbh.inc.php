@@ -11,7 +11,7 @@
 // }
 
 
-$connectionInfo = array("UID" => "fahdseddik", "pwd" => "CMPN202Hello", "Database" => "SchoolDBMS", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$connectionInfo = array("UID" => "fahdseddik", "pwd" => "CMPN202Hello", "Database" => "School_DBMS", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
 $serverName = "tcp:cmpn202-schooldbms.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 if (!$conn){
