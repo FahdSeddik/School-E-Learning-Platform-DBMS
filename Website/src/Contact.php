@@ -1,6 +1,8 @@
 <?php
     include_once 'header.php';
     include_once 'LOGCHECK.php';
+    require_once 'includes/functions.inc.php';
+    require_once 'includes/dbh.inc.php';
 ?>
 
 
@@ -11,9 +13,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../dist/output.css" rel="stylesheet">
-    <title>Document</title>
+    <title>Contact</title>
 </head>
-<body >
+<body class='bg-gray-800'>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="index.js"></script>
