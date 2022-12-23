@@ -142,6 +142,14 @@
             this.StdEmail_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.StdParName_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.StdName_Txt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.DepSub_Pnl = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.DepSubTitle_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.DepID_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.DepHead_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.DepID_Txt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.DepName_Txt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.DepName_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.DepHead_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Main_Pnl.SuspendLayout();
             this.SubjSub_Pnl.SuspendLayout();
             this.SubjTimeAndLoc_Pnl.SuspendLayout();
@@ -150,6 +158,7 @@
             this.StaffSub_Pnl.SuspendLayout();
             this.TitleBar_Pnl.SuspendLayout();
             this.StdSub_Pnl.SuspendLayout();
+            this.DepSub_Pnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // Main_Pnl
@@ -157,6 +166,7 @@
             this.Main_Pnl.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
             this.Main_Pnl.BorderThickness = 3;
             this.Main_Pnl.Controls.Add(this.SubjSub_Pnl);
+            this.Main_Pnl.Controls.Add(this.DepSub_Pnl);
             this.Main_Pnl.Controls.Add(this.StaffSub_Pnl);
             this.Main_Pnl.Controls.Add(this.TitleBar_Pnl);
             this.Main_Pnl.Controls.Add(this.ErrorMessage_Lbl);
@@ -1849,6 +1859,127 @@
             this.StdName_Txt.Size = new System.Drawing.Size(303, 31);
             this.StdName_Txt.TabIndex = 1;
             // 
+            // DepSub_Pnl
+            // 
+            this.DepSub_Pnl.AutoScroll = true;
+            this.DepSub_Pnl.BackColor = System.Drawing.Color.White;
+            this.DepSub_Pnl.Controls.Add(this.DepSubTitle_Lbl);
+            this.DepSub_Pnl.Controls.Add(this.DepHead_Lbl);
+            this.DepSub_Pnl.Controls.Add(this.DepName_Lbl);
+            this.DepSub_Pnl.Controls.Add(this.DepID_Lbl);
+            this.DepSub_Pnl.Controls.Add(this.DepHead_CBox);
+            this.DepSub_Pnl.Controls.Add(this.DepName_Txt);
+            this.DepSub_Pnl.Controls.Add(this.DepID_Txt);
+            this.DepSub_Pnl.Location = new System.Drawing.Point(27, 58);
+            this.DepSub_Pnl.Name = "DepSub_Pnl";
+            this.DepSub_Pnl.Size = new System.Drawing.Size(818, 422);
+            this.DepSub_Pnl.TabIndex = 11;
+            // 
+            // DepSubTitle_Lbl
+            // 
+            this.DepSubTitle_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.DepSubTitle_Lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DepSubTitle_Lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.DepSubTitle_Lbl.Location = new System.Drawing.Point(368, 14);
+            this.DepSubTitle_Lbl.Name = "DepSubTitle_Lbl";
+            this.DepSubTitle_Lbl.Size = new System.Drawing.Size(95, 23);
+            this.DepSubTitle_Lbl.TabIndex = 32;
+            this.DepSubTitle_Lbl.Text = "Department";
+            this.DepSubTitle_Lbl.Visible = false;
+            // 
+            // DepID_Lbl
+            // 
+            this.DepID_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.DepID_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DepID_Lbl.ForeColor = System.Drawing.Color.Gray;
+            this.DepID_Lbl.Location = new System.Drawing.Point(406, 86);
+            this.DepID_Lbl.Name = "DepID_Lbl";
+            this.DepID_Lbl.Size = new System.Drawing.Size(14, 15);
+            this.DepID_Lbl.TabIndex = 21;
+            this.DepID_Lbl.Text = "ID";
+            // 
+            // DepHead_CBox
+            // 
+            this.DepHead_CBox.BackColor = System.Drawing.Color.Transparent;
+            this.DepHead_CBox.BorderColor = System.Drawing.Color.Gray;
+            this.DepHead_CBox.BorderRadius = 3;
+            this.DepHead_CBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.DepHead_CBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.DepHead_CBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.DepHead_CBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.DepHead_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.DepHead_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.DepHead_CBox.ItemHeight = 30;
+            this.DepHead_CBox.Location = new System.Drawing.Point(269, 310);
+            this.DepHead_CBox.Name = "DepHead_CBox";
+            this.DepHead_CBox.Size = new System.Drawing.Size(303, 36);
+            this.DepHead_CBox.TabIndex = 8;
+            // 
+            // DepID_Txt
+            // 
+            this.DepID_Txt.BorderColor = System.Drawing.Color.Gray;
+            this.DepID_Txt.BorderRadius = 3;
+            this.DepID_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.DepID_Txt.DefaultText = "";
+            this.DepID_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.DepID_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.DepID_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.DepID_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.DepID_Txt.Enabled = false;
+            this.DepID_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.DepID_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DepID_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.DepID_Txt.Location = new System.Drawing.Point(269, 111);
+            this.DepID_Txt.Name = "DepID_Txt";
+            this.DepID_Txt.PasswordChar = '\0';
+            this.DepID_Txt.PlaceholderText = "ID";
+            this.DepID_Txt.SelectedText = "";
+            this.DepID_Txt.Size = new System.Drawing.Size(303, 31);
+            this.DepID_Txt.TabIndex = 1;
+            // 
+            // DepName_Txt
+            // 
+            this.DepName_Txt.BorderColor = System.Drawing.Color.Gray;
+            this.DepName_Txt.BorderRadius = 3;
+            this.DepName_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.DepName_Txt.DefaultText = "";
+            this.DepName_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.DepName_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.DepName_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.DepName_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.DepName_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.DepName_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DepName_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.DepName_Txt.Location = new System.Drawing.Point(269, 209);
+            this.DepName_Txt.Name = "DepName_Txt";
+            this.DepName_Txt.PasswordChar = '\0';
+            this.DepName_Txt.PlaceholderText = "Name";
+            this.DepName_Txt.SelectedText = "";
+            this.DepName_Txt.Size = new System.Drawing.Size(303, 31);
+            this.DepName_Txt.TabIndex = 1;
+            // 
+            // DepName_Lbl
+            // 
+            this.DepName_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.DepName_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DepName_Lbl.ForeColor = System.Drawing.Color.Gray;
+            this.DepName_Lbl.Location = new System.Drawing.Point(398, 184);
+            this.DepName_Lbl.Name = "DepName_Lbl";
+            this.DepName_Lbl.Size = new System.Drawing.Size(34, 15);
+            this.DepName_Lbl.TabIndex = 21;
+            this.DepName_Lbl.Text = "Name";
+            // 
+            // DepHead_Lbl
+            // 
+            this.DepHead_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.DepHead_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DepHead_Lbl.ForeColor = System.Drawing.Color.Gray;
+            this.DepHead_Lbl.Location = new System.Drawing.Point(398, 282);
+            this.DepHead_Lbl.Name = "DepHead_Lbl";
+            this.DepHead_Lbl.Size = new System.Drawing.Size(30, 15);
+            this.DepHead_Lbl.TabIndex = 21;
+            this.DepHead_Lbl.Text = "Head";
+            // 
             // BaseAUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1871,13 +2002,13 @@
             this.TitleBar_Pnl.PerformLayout();
             this.StdSub_Pnl.ResumeLayout(false);
             this.StdSub_Pnl.PerformLayout();
+            this.DepSub_Pnl.ResumeLayout(false);
+            this.DepSub_Pnl.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2Panel Main_Pnl;
         protected Guna.UI2.WinForms.Guna2Panel TitleBar_Pnl;
         protected Guna.UI2.WinForms.Guna2HtmlLabel Tittle_Lbl;
         protected Guna.UI2.WinForms.Guna2Button Back_btn;
@@ -1990,5 +2121,14 @@
         protected Guna.UI2.WinForms.Guna2GradientPanel SubjInfo_Pnl;
         protected Guna.UI2.WinForms.Guna2GradientPanel SubjTimeAndLoc_Pnl;
         protected Guna.UI2.WinForms.Guna2GradientPanel SubjTeach_Pnl;
+        protected Guna.UI2.WinForms.Guna2GradientPanel DepSub_Pnl;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel DepSubTitle_Lbl;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel DepHead_Lbl;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel DepName_Lbl;
+        protected Guna.UI2.WinForms.Guna2HtmlLabel DepID_Lbl;
+        protected Guna.UI2.WinForms.Guna2ComboBox DepHead_CBox;
+        protected Guna.UI2.WinForms.Guna2TextBox DepName_Txt;
+        protected Guna.UI2.WinForms.Guna2TextBox DepID_Txt;
+        protected Guna.UI2.WinForms.Guna2Panel Main_Pnl;
     }
 }

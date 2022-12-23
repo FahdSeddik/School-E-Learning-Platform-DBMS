@@ -287,6 +287,7 @@
             this.RoomBack_Btn.Name = "RoomBack_Btn";
             this.RoomBack_Btn.Size = new System.Drawing.Size(61, 52);
             this.RoomBack_Btn.TabIndex = 1;
+            this.RoomBack_Btn.Click += new System.EventHandler(this.RoomBack_Btn_Click);
             // 
             // Title_Txt
             // 

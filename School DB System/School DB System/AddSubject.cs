@@ -30,9 +30,43 @@ namespace School_DB_System
             InitializeComponent(); //initializing component
             this.viewController = viewController; //linking viewcontroller object with one viewcontroller object the whole applicaiton use
             this.controllerObj = controllerObj;  //linking controller object with one controller object the whole applicaiton use
-            //filling textboxes with the selected student data
-            //it send query to retrive selected student data
-            //and fills textboxes with selected student information
+                                                 //filling textboxes with the selected student data
+                                                 //it send query to retrive selected student data
+                                                 //and fills textboxes with selected student information
+            DataTable Yearslist = controllerObj.getYears();
+            SubjYear_CBox.DisplayMember = "std_Year"; //displaying std_Year column from datatable "Yearslist"
+            SubjYear_CBox.ValueMember = "std_Year"; //linking value to std_year column from datatable "YearsList"
+            SubjYear_CBox.DataSource = Yearslist; //linking yearslist comboobox and yearlist datatable
+
+            DataTable Roomslist = controllerObj.getRooms();
+            SubjRoom_CBox.DisplayMember = "r_Num"; //displaying std_Year column from datatable "Yearslist"
+            SubjRoom_CBox.ValueMember = "r_Num"; //linking value to std_year column from datatable "YearsList"
+            SubjRoom_CBox.DataSource = Roomslist; //linking yearslist comboobox and yearlist datatable
+
+            DataTable Dayslist = getWeekDays();
+            SubjDay_CBox.DisplayMember = "Day"; //displaying std_Year column from datatable "Yearslist"
+            SubjDay_CBox.ValueMember = "Day"; //linking value to std_year column from datatable "YearsList"
+            SubjDay_CBox.DataSource = Dayslist; //linking yearslist comboobox and yearlist datatable
+
+            DataTable DayTimes1 = getDayTimes();
+            DataTable DayTimes2 = getDayTimes();
+            SubjStartT_CBox.DisplayMember = "Time"; //displaying std_Year column from datatable "Yearslist"
+            SubjStartT_CBox.ValueMember = "Time"; //linking value to std_year column from datatable "YearsList"
+            SubjStartT_CBox.DataSource = DayTimes1; //linking yearslist comboobox and yearlist datatable
+            SubjEndT_CBox.DisplayMember = "Time"; //displaying std_Year column from datatable "Yearslist"
+            SubjEndT_CBox.ValueMember = "Time"; //linking value to std_year column from datatable "YearsList"
+            SubjEndT_CBox.DataSource = DayTimes2; //linking yearslist comboobox and yearlist datatable
+
+            DataTable DepartmentsList = controllerObj.getDepartmentslist();
+            SubjDep_CBox.DisplayMember = "dep_Name"; //displaying std_Year column from datatable "Yearslist"
+            SubjDep_CBox.ValueMember = "dep_ID"; //linking value to std_year column from datatable "YearsList"
+            SubjDep_CBox.DataSource = DepartmentsList; //linking yearslist comboobox and yearlist datatable
+
+            DataTable TeachersList = controllerObj.getteachersOfDepartment(SubjDep_CBox.SelectedValue.ToString());
+            SubjTeach_CBox.DisplayMember = "staff_Name";//displaying std_Year column from datatable "Yearslist"
+            SubjTeach_CBox.ValueMember = "staff_ID"; //linking value to std_year column from datatable "YearsList"
+            SubjTeach_CBox.DataSource = TeachersList; //linking yearslist comboobox and yearlist datatable
+            updateSubjectID();
         }
         protected override void OnPaint(PaintEventArgs pe)
         {
@@ -52,34 +86,16 @@ namespace School_DB_System
         {
             //checks if there a empty required data (empty textboxs)
             //loops on each textbox in the control
-            foreach (Control item in StdSub_Pnl.Controls) //loop on each item in the panel
-            {
-                if (item is Guna2TextBox) //if the item is textbox
-                {
-                    Guna2TextBox textBox = (Guna2TextBox)item; //cast item to textbox to use textbox functionalities
-                    textBox.Focus(); //focus on each textbox 
-                    //means select the textbox
-                    //next loop it selects the next textbox which performs the previously selected textbox leave event
-                    //each textbox is responsible for validating the data in it using text changed event or leave event
-                    //when there is a non valid in any textbox the textbox bordercolor is changed to red
-                    //so when this loop ends every required textbox data if not valid this textbox border color will be red
-                    if (textBox.BorderColor == Color.Red) //checks if this textbox border color is red (invalid data in textbox)
-                    {
-                        //inform the user to insert all required values
-                        RJMessageBox.Show("Please insert all the required Values.",
-                             "Error",
-                         MessageBoxButtons.OK,
-                         MessageBoxIcon.Error);
-                        return;
-                        //return (do nothing)
-                    }
-                }
-            }
             //if the all the data entered by the user is valid
             try //handles any unexpected error while converting any string to string or query fail
             {
                 //send a query and gets the result of the query in queryres
-                int queryRes = controllerObj.AddSubject();
+                int roomBuildingNum,roomFloor;
+            
+                DataTable RoomData = controllerObj.getRoomData(int.Parse(SubjRoom_CBox.SelectedValue.ToString()));
+                roomBuildingNum = int.Parse(RoomData.Rows[0][0].ToString());
+                roomFloor = int.Parse(RoomData.Rows[0][1].ToString());
+                int queryRes = controllerObj.AddSubject(SubjID_Txt.Text.ToString(), SubjDep_CBox.Text.ToString(), SubjName_Txt.Text.ToString(), int.Parse(SubjYear_CBox.SelectedValue.ToString()), SubjTeach_CBox.SelectedValue.ToString(),roomBuildingNum,roomFloor, int.Parse(SubjRoom_CBox.SelectedValue.ToString()), SubjStartT_CBox.SelectedValue.ToString(),SubjEndT_CBox.SelectedValue.ToString(), SubjDay_CBox.SelectedValue.ToString());
 
                 if (queryRes == 0) //if queryres = 0 i.e query executing failed
                 {
@@ -97,7 +113,7 @@ namespace School_DB_System
                    "Successfully added",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
-                    Back_btn.PerformClick();//reset the panel to be ready for the next insertion
+                    viewController.CloseSubTab();//reset the panel to be ready for the next insertion
                     viewController.refreshDatagridView(); //refresh datagrid view after insert or delete student
                     //resets all textboxes text, clear error message...etc
                     return; //return

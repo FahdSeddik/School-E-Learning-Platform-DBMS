@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,22 +11,36 @@ using System.Windows.Forms;
 
 namespace School_DB_System
 {
-    public partial class UpdateBus : AUVBus
-    {//DATA MEMBERS
+    public partial class UpdateDepartment : AUVDepartment
+    {
+        //DATA MEMBERS
         ViewController viewController; //viewcontroller object
         Controller controllerObj; // controller object
                                   //non default constructor
-        public UpdateBus(ViewController viewController, Controller controllerObj,int BusNum) : base(viewController, controllerObj)
+        public UpdateDepartment(ViewController viewController, Controller controllerObj,string DepID) : base(viewController, controllerObj)
         {
             InitializeComponent();
-            FillData(BusNum);
+            FillData(DepID);
             this.viewController = viewController;
             this.controllerObj = controllerObj;
         }
+
         //overriding onPaint function to change derived class (Add student) design
         protected override void OnPaint(PaintEventArgs pe)
         {
-            Title_Txt.Text = "Update Bus";
+            Tittle_Lbl.Text = "Update Department";
+            foreach (Control item in Main_Pnl.Controls)
+            {
+                if (item is Guna2GradientPanel) //if the item is textbox
+                {
+                    Guna2GradientPanel Panel = (Guna2GradientPanel)item; //cast item to textbox to
+                    if (Panel.Name != "DepSub_Pnl" || Panel.Name == "TitleBar_Pnl")
+                    {
+                        Panel.Hide();
+                        this.Controls.Remove(Panel);
+                    }
+                }
+            }
         }
 
         protected override void Submit_Btn_Click(object sender, EventArgs e)
@@ -33,7 +48,7 @@ namespace School_DB_System
             try //handles any unexpected error while converting any string to string or query fail
             {
                 //send a query and gets the result of the query in queryres
-                int queryRes = controllerObj.UpdateBus(int.Parse(BNum_Txt.Text.ToString()), int.Parse(BCap_Nud.Value.ToString()), BDriver_CBox.SelectedValue.ToString(), Add_Route_Txt.Text.ToString());
+                int queryRes = controllerObj.UpdateDepartment((DepID_Txt.Text.ToString()), DepName_Txt.Text.ToString(), DepHead_CBox.SelectedValue.ToString());
 
                 if (queryRes == 0) //if queryres = 0 i.e query executing failed
                 {
@@ -53,7 +68,8 @@ namespace School_DB_System
                     MessageBoxIcon.Information);
                     //reset the panel to be ready for the next insertion
                     viewController.CloseSubTab();
-                    viewController.refreshDatagridView(); //refresh datagrid view after insert or delete student
+                    viewController.refreshDatagridView();
+                    //refresh datagrid view after insert or delete student
                     //resets all textboxes text, clear error message...etc
                     return; //return
                 }

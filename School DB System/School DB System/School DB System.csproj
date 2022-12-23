@@ -69,6 +69,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddBus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddBus.Designer.cs">
+      <DependentUpon>AddBus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddDepartment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddDepartment.Designer.cs">
+      <DependentUpon>AddDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AUVDepartment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AUVDepartment.Designer.cs">
+      <DependentUpon>AUVDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Department.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Department.Designer.cs">
+      <DependentUpon>Department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentsList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StudentsList.Designer.cs">
+      <DependentUpon>StudentsList.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddStaff.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -104,6 +134,12 @@
     </Compile>
     <Compile Include="Application.Designer.cs">
       <DependentUpon>Application.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AUVBus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AUVBus.Designer.cs">
+      <DependentUpon>AUVBus.cs</DependentUpon>
     </Compile>
     <Compile Include="AUVStaffBase.cs">
       <SubType>UserControl</SubType>
@@ -230,6 +266,12 @@
     <Compile Include="StudentAUD.Designer.cs">
       <DependentUpon>StudentAUD.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddRoom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddRoom.Designer.cs">
+      <DependentUpon>AddRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="Subject.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -253,6 +295,18 @@
     </Compile>
     <Compile Include="TempTab.Designer.cs">
       <DependentUpon>TempTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateBus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UpdateBus.Designer.cs">
+      <DependentUpon>UpdateBus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateDepartment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UpdateDepartment.Designer.cs">
+      <DependentUpon>UpdateDepartment.cs</DependentUpon>
     </Compile>
     <Compile Include="UpdateStaff.cs">
       <SubType>UserControl</SubType>
@@ -278,7 +332,19 @@
     <Compile Include="UpdateTeacher.Designer.cs">
       <DependentUpon>UpdateTeacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewBus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewBus.Designer.cs">
+      <DependentUpon>ViewBus.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewController.cs" />
+    <Compile Include="ViewDepartment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewDepartment.Designer.cs">
+      <DependentUpon>ViewDepartment.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewStaff.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -312,14 +378,14 @@
     <EmbeddedResource Include="Application.resx">
       <DependentUpon>Application.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AUVBus.resx">
+      <DependentUpon>AUVBus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaseAUD.resx">
       <DependentUpon>BaseAUD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AUDStudentParent.resx">
       <DependentUpon>AUDStudentParent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Bus.resx">
-      <DependentUpon>Bus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMessageBox.resx">
       <DependentUpon>FormMessageBox.cs</DependentUpon>
@@ -361,6 +427,9 @@
     <EmbeddedResource Include="SSSTPageParent.resx">
       <DependentUpon>SSSTPageParent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddRoom.resx">
+      <DependentUpon>AddRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Subject1.resx">
       <DependentUpon>Subject1.cs</DependentUpon>
     </EmbeddedResource>
@@ -369,6 +438,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TempTab.resx">
       <DependentUpon>TempTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewBus.resx">
+      <DependentUpon>ViewBus.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

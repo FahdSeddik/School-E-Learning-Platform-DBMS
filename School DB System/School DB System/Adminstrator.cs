@@ -58,5 +58,10 @@ namespace School_DB_System
         {
             viewController.viewSubject();
         }
+
+        private void Dep_IBtn_Click(object sender, EventArgs e)
+        {
+            viewController.viewDepartment();
+        }
     }
 }

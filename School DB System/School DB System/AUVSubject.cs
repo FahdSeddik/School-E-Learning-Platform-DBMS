@@ -44,7 +44,9 @@ namespace School_DB_System
             this.SubjTeachNext_Btn.Click += new EventHandler(SubjTeachNext_Btn_Click);
             this.SubjYear_CBox.SelectedIndexChanged+= new EventHandler(SubjYear_CBox_SelectedIndexChanged);
             this.AddRoom_Btn.Click += new EventHandler(AddRoom_Btn_Click);
+            this.SubjDep_CBox.SelectedIndexChanged += new EventHandler(SubjDep_CBox_SelectedIndexChanged);
         }
+
 
         protected virtual void AddRoom_Btn_Click(object sender, EventArgs e)
         {
@@ -56,11 +58,15 @@ namespace School_DB_System
             updateSubjectID();
 
         }
-
-        private void updateSubjectID()
+        protected void updateSubjectID()
         {
-
-                int subjCount = controllerObj.getSubjectsCount(); //retrieves student count
+            string test = SubjDep_CBox.Text.ToString();
+            if (test.Length < 3)
+            {
+                StdID_Txt.Text = ""; //empty student ID (reset)
+                return; //return (do nothing)
+            }
+            int subjCount = controllerObj.getSubjectsCount(); //retrieves student count
                 subjCount++; //increments student count by 1 i.e if students count is = 3 means the student that will be added is the 4th student no the 3th
                 string formattedSubjectCount = string.Format("{0:000}", subjCount); //formatting students count to 5 digits and padding with zeros if needed i students count is 300 it will be 00300 and if 45000 it will be 45000
             char[] Department = SubjDep_CBox.Text.ToCharArray();//converting SSN to array of characters to access characters (first 2 digits)
@@ -68,12 +74,13 @@ namespace School_DB_System
                                                                                                        //calculates graduation year depending on the current year and converting to characters array to acces its characters (last 2 digits)
                                                                                                        //note that this calculates depending on the real year in the world (datetime.now.year) so its updated with the real time year (only when adding a new student not in updating student information)
                                                                                                        //created Student ID with the specfied format
-            SubjID_Txt.Text = Department[2].ToString()+ Department[1].ToString()+ Department[0].ToString() + year + formattedSubjectCount;
+            SubjID_Txt.Text = Department[0].ToString()+ Department[1].ToString()+ Department[2].ToString() + year + formattedSubjectCount;
             return;
         }
-        protected void  SubjTAndLocNext_Btn_Click(object sender, EventArgs e)
+
+        protected virtual void  SubjTAndLocNext_Btn_Click(object sender, EventArgs e)
         {
-            int res = controllerObj.checkTimeAndLocation(int.Parse(SubjRoom_CBox.SelectedValue.ToString()), SubjStartT_CBox.SelectedValue.ToString(), SubjEndT_CBox.ToString(), SubjDay_CBox.SelectedValue.ToString());
+            int res = controllerObj.checkTimeAndLocation(int.Parse(SubjRoom_CBox.SelectedValue.ToString()), SubjStartT_CBox.SelectedValue.ToString(), SubjEndT_CBox.SelectedValue.ToString(), SubjDay_CBox.SelectedValue.ToString());
             if(res == 0)
             {
                 SubjTeach_Pnl.BringToFront();
@@ -88,6 +95,7 @@ namespace School_DB_System
                 showSubjTAndLocErrorMsg("the selected time and location are taken, please try again or add a new room");
             }
         }
+
         protected void showSubjTAndLocErrorMsg(string errorMsg)
         {
             SubjTimeAndLocErrorMsg_Lbl.Text = errorMsg;
@@ -98,14 +106,10 @@ namespace School_DB_System
             SubjTimeAndLocErrorMsg_Lbl.Hide();
         }
 
-        protected void SubjTeachNext_Btn_Click(object sender, EventArgs e)
+        protected virtual void SubjTeachNext_Btn_Click(object sender, EventArgs e)
         {
-            int res = controllerObj.checkSubjectTeacher();
+            int res = controllerObj.checkSubjectTeacher(SubjTeach_CBox.SelectedValue.ToString(), SubjStartT_CBox.SelectedValue.ToString(), SubjEndT_CBox.SelectedValue.ToString(), SubjDay_CBox.SelectedValue.ToString());
             if (res == 0)
-            {
-                showSubjTeachMsg("this teacher is not available at the selected time and location, please choose another teacher");
-            }
-            else
             {
                 SubjInfo_Pnl.BringToFront();
                 SubjInfo_Pnl.Visible = true;
@@ -113,8 +117,23 @@ namespace School_DB_System
                 HideSubjTeachMsg();
                 LockTeacher();
                 Submit_Btn.Visible = true;
+            
+            }
+            else
+            {
+                showSubjTeachMsg("this teacher is not available at the selected time and location, please choose another teacher");
             }   
         }
+
+        protected virtual void SubjDep_CBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataTable TeachersList = controllerObj.getteachersOfDepartment(SubjDep_CBox.SelectedValue.ToString());
+            SubjTeach_CBox.DisplayMember = "staff_Name";//displaying std_Year column from datatable "Yearslist"
+            SubjTeach_CBox.ValueMember = "staff_ID"; //linking value to std_year column from datatable "YearsList"
+            SubjTeach_CBox.DataSource = TeachersList; //linking yearslist comboobox and yearlist datatable
+            updateSubjectID();
+        }
+
         protected void showSubjTeachMsg(string errorMsg)
         {
             SubjTeachErrorMsg_Pnl.Text = errorMsg;
@@ -126,7 +145,7 @@ namespace School_DB_System
             SubjTeachErrorMsg_Pnl.Hide();
         }
 
-        protected void LockTimeAndLoc()
+        protected virtual void LockTimeAndLoc()
         {
             SubjTimeAndLoc_Pnl.BackColor = Color.FromName("Control");
             foreach (Control item in SubjTimeAndLoc_Pnl.Controls) //loop on each item in the panel
@@ -149,7 +168,7 @@ namespace School_DB_System
              }
          }
    
-        protected void LockTeacher()
+        protected virtual void LockTeacher()
         {
             SubjTeach_Pnl.BackColor = Color.FromName("Control");
             foreach (Control item in SubjTeach_Pnl.Controls) //loop on each item in the panel
@@ -186,7 +205,8 @@ namespace School_DB_System
             SubjYear_CBox.DisplayMember = "std_Year"; //displaying std_Year column from datatable "Yearslist"
             SubjYear_CBox.ValueMember = "std_Year"; //linking value to std_year column from datatable "YearsList"
             SubjYear_CBox.DataSource = Yearslist; //linking yearslist comboobox and yearlist datatable
-            SubjYear_CBox.SelectedIndex = SubjYear_CBox.FindString(SubjInformation.Rows[0][2].ToString()); //in
+            string test = SubjInformation.Rows[0][2].ToString();
+            SubjYear_CBox.SelectedIndex = SubjYear_CBox.FindString(test); //in
 
             DataTable Roomslist = controllerObj.getRooms();
             SubjRoom_CBox.DisplayMember = "r_Num"; //displaying std_Year column from datatable "Yearslist"
@@ -226,8 +246,12 @@ namespace School_DB_System
 
        
         }
+        protected override void Submit_Btn_Click(object sender, EventArgs e)
+        {
 
-        protected DataTable getWeekDays()
+        }
+
+            protected DataTable getWeekDays()
         {
             DataTable WeekDays = new DataTable();
             WeekDays.Columns.Add("Day");
@@ -257,6 +281,18 @@ namespace School_DB_System
             DayTimes.Rows.Add("10:00:00");
             DayTimes.Rows.Add("11:00:00");
             DayTimes.Rows.Add("12:00:00");
+            DayTimes.Rows.Add("13:00:00");
+            DayTimes.Rows.Add("14:00:00");
+            DayTimes.Rows.Add("15:00:00");
+            DayTimes.Rows.Add("16:00:00");
+            DayTimes.Rows.Add("17:00:00");
+            DayTimes.Rows.Add("18:00:00");
+            DayTimes.Rows.Add("19:00:00");
+            DayTimes.Rows.Add("20:00:00");
+            DayTimes.Rows.Add("21:00:00");
+            DayTimes.Rows.Add("22:00:00");
+            DayTimes.Rows.Add("23:00:00");
+            DayTimes.Rows.Add("24:00:00");
             return DayTimes;
 
         }

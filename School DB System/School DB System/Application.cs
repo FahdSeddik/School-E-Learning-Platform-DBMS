@@ -72,6 +72,9 @@ namespace School_DB_System
 
         public void ViewOnSubTab(UserControl subtab)
         {
+            SubTab_Pnl.Size = subtab.Size;
+            SubTab_Pnl.Location = new Point(ClientSize.Width / 2 - SubTab_Pnl.Size.Width / 2, ClientSize.Height / 2 - SubTab_Pnl.Size.Height / 2);
+            SubTab_Pnl.Anchor = AnchorStyles.None;
             SubTab = subtab;
             SubTab_Pnl.Controls.Clear();
             SubTab_Pnl.Controls.Add(subtab);
@@ -91,6 +94,9 @@ namespace School_DB_System
 
         public void ViewOnTempTab(UserControl Temptab)
         {
+            TempTab_Pnl.Size = Temptab.Size;
+            TempTab_Pnl.Location = new Point(ClientSize.Width / 2 - TempTab_Pnl.Size.Width / 2, ClientSize.Height / 2 - TempTab_Pnl.Size.Height / 2);
+            TempTab_Pnl.Anchor = AnchorStyles.None;
             TempTab = Temptab;
             TempTab_Pnl.Controls.Clear();
             TempTab_Pnl.Controls.Add(TempTab);

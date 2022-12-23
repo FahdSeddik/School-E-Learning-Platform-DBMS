@@ -18,7 +18,9 @@ namespace School_DB_System
         public AddRoom(ViewController viewController, Controller controllerObj)
         {
             InitializeComponent();
-            RoomNum_Txt.Text = int.Parse(controllerObj.getRoomsCount().ToString()) + 1;
+            RoomNum_Txt.Text = (int.Parse(controllerObj.getRoomsCount().ToString()) + 1).ToString();
+            this.viewController = viewController;
+            this.controllerObj = controllerObj;
         }
 
         private void RoomSubmit_Btn_Click(object sender, EventArgs e)
@@ -45,6 +47,9 @@ namespace School_DB_System
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                     //reset the panel to be ready for the next insertion
+                    viewController.CloseTempTab();
+                    viewController.CloseSubTab();
+                    viewController.ViewAddSubject();
                     viewController.refreshDatagridView(); //refresh datagrid view after insert or delete student
                     //resets all textboxes text, clear error message...etc
                     return; //return
@@ -60,6 +65,27 @@ namespace School_DB_System
                 return; //return
             }
         }
-    }
+
+        private void RoomBack_Btn_Click(object sender, EventArgs e)
+        {
+            //if there is at least one row selected
+            //view warning message to ask for confrimation
+            var result = RJMessageBox.Show("are you sure you want to delete selected rows?, note that this operation cannot not be undone.",
+            "Warning",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes) //if confirmed "Yes"
+            {
+                //loop on all selected rows and send a query to delete this subject
+                viewController.CloseTempTab();
+                return;
+            }
+            else
+            {
+                return; //return (do nothing)
+            }
+        }
+    
     }
 }

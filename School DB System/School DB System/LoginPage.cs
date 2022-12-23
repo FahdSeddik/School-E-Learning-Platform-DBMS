@@ -31,6 +31,7 @@ namespace School_DB_System
             try
             {
                 authority = controller.Login(Username, Password); //return null if user does not exist.
+
             }
             catch (Exception error)
             {

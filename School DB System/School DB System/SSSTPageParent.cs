@@ -78,7 +78,7 @@ namespace School_DB_System
 
         //Page back button
         //closes page and return to home page
-        private void MainBack_Btn_Click(object sender, EventArgs e)
+        protected virtual void MainBack_Btn_Click(object sender, EventArgs e)
         {
             //asking for confirmation
             var result = RJMessageBox.Show("Your unsaved progress maybe lost.",

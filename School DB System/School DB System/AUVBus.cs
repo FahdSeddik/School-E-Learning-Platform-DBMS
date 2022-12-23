@@ -24,7 +24,7 @@ namespace School_DB_System
 
         }
     
-        protected virtual void FillData(string BusID)
+        protected virtual void FillData(int BusID)
         {
             DataTable BusInformation;//creating datatable object to retrive Staffs information
             //to fill textboxes with Staffinformation (View Staff information or update Staff information)
@@ -40,19 +40,57 @@ namespace School_DB_System
             BCap_Nud.Value = int.Parse(BusInformation.Rows[0][1].ToString());
             BDriver_CBox.ValueMember = "staff_ID";
             BDriver_CBox.DisplayMember = "staff_Name";
-            BDriver_CBox.DataSource = controllerObj.getDrivers();
+            BDriver_CBox.DataSource = controllerObj.getAllDrivers();
             BDriver_CBox.SelectedIndex = BDriver_CBox.FindString(BusInformation.Rows[0][2].ToString());
+
+            // Add_Route_CBox.ValueMember = "bus_Route";
+            //Add_Route_CBox.DisplayMember = "bus_Route";
+            // Add_Route_CBox.DataSource = controllerObj.getBusRoutes();
+            // Add_Route_CBox.SelectedIndex = Add_Route_CBox.FindString(BusInformation.Rows[0][3].ToString());
             Add_Route_Txt.Text = BusInformation.Rows[0][3].ToString();
         }
+    
 
         protected void BStudList_Txt_Click(object sender, EventArgs e)
         {
-            viewController.viewBusStudentsList(BNum_Txt.ToString());
+            var result = RJMessageBox.Show("are you sure you want to delete selected rows?, note that this operation cannot not be undone.",
+           "Warning",
+           MessageBoxButtons.YesNo,
+           MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes) //if confirmed "Yes"
+            {
+
+                viewController.viewBusStudentsList(int.Parse(BNum_Txt.Text.ToString()));
+            }
+            else
+            {
+                return; //return (do nothing)
+            }
+
+            
         }
 
         protected virtual void Submit_Btn_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void BBack_Btn_Click(object sender, EventArgs e)
+        {
+            //asking for confirmation
+            var result = RJMessageBox.Show("Your unsaved progress maybe lost.",
+             "Are you sure you want to Leave homePage?",
+             MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes) //if confirmed "Yes"
+            {
+                viewController.CloseSubTab(); //closes page and return to home page
+            }
+            else //if didn't confirm "No"
+            {
+                return; //stay at student page
+            }
         }
     }
 }

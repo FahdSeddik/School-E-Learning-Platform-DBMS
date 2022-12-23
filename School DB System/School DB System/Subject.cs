@@ -263,8 +263,32 @@ namespace School_DB_System
                 foreach (DataGridViewRow row in Data_Dt.SelectedRows)//looping on each selected row
                 {
                     string subjID = row.Cells[1].Value.ToString();//gets subject ID from selected row
-                  //  int res = controllerObj.deleteSubject(subjID); //sends a query with the subject id to delete
-                   // if (res == 0)
+                    int roomNum = int.Parse(row.Cells[6].Value.ToString());
+                    string Day = row.Cells[3].Value.ToString();
+                    string Time = row.Cells[4].Value.ToString();
+
+                    DataTable RoomData = controllerObj.getRoomData(roomNum);
+                    int roomBuildingNum = int.Parse(RoomData.Rows[0][0].ToString());
+                    int roomFloor = int.Parse(RoomData.Rows[0][1].ToString());
+
+                    DataTable SubjInformation = controllerObj.getSubjectData(subjID, roomNum, Day, Time);
+
+
+                    string subjName = SubjInformation.Rows[0][0].ToString();//filling Subj name textbox with the selectd Subj name
+        
+                    int subjYear = int.Parse(SubjInformation.Rows[0][2].ToString());
+
+
+
+                    string startTime = SubjInformation.Rows[0][5].ToString();
+                    string endTime = SubjInformation.Rows[0][6].ToString();
+
+                    string subjDepName = SubjInformation.Rows[0][7].ToString(); 
+
+                    string teacherID = SubjInformation.Rows[0][10].ToString();
+                  
+                    int res = controllerObj.deleteSubject(teacherID,subjID,subjDepName,roomBuildingNum,roomFloor,roomNum,startTime,endTime,Day,subjYear,subjName); //sends a query with the subject id to delete
+                   if (res == 0)
                     {
                         RJMessageBox.Show("deletion of selected subject failed, please try again.",
                        "Error",

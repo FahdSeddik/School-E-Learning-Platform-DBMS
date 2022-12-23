@@ -16,7 +16,7 @@ namespace School_DB_System
         //PRIVATE DATA MEMBERS
         private Application Application_Handler; //Application Handler
         private UserControl MainPage;
-        private UserControl MainTab;
+        private SSSTPageParent MainTab;
         private UserControl UCMainTab;
         private BaseAUD SubTab;
         private UserControl UCSubTab;
@@ -110,6 +110,26 @@ namespace School_DB_System
             Application_Handler.ViewOnSubTab(ViewTeacher);//viewing homepage on the main application window
         }
 
+        public void ViewAddDepartment()
+        {
+            AddDepartment AddDepartment = new AddDepartment(this, controllerobj);
+            SubTab = AddDepartment;
+            Application_Handler.ViewOnSubTab(AddDepartment);//viewing homepage on the main application window
+        }
+        public void ViewUpdateDepartment(string DepID)
+        {
+            UpdateDepartment UpdateDepartment = new UpdateDepartment(this, controllerobj, DepID);
+            SubTab = UpdateDepartment;
+            Application_Handler.ViewOnSubTab(UpdateDepartment);//viewing homepage on the main application window
+        }
+
+        public void ViewViewDepartment(string DepID)
+        {
+            ViewDepartment ViewDepartment = new ViewDepartment(this, controllerobj, DepID);
+            SubTab = ViewDepartment;
+            Application_Handler.ViewOnSubTab(ViewDepartment);//viewing homepage on the main application window
+        }
+
         public void ViewAddStaff()
         {
             AddStaff Addteacher = new AddStaff(this, controllerobj);
@@ -149,9 +169,38 @@ namespace School_DB_System
             Application_Handler.ViewOnSubTab(AddSubj);//viewing homepage on the main application window
         }
 
+        public void ViewViewBus(int BusNum)
+        {
+            ViewBus ViewBus = new ViewBus(this, controllerobj, BusNum);
+            UCSubTab = ViewBus;
+            Application_Handler.ViewOnSubTab(ViewBus);//viewing homepage on the main application window
+        }
+        public void ViewUpdateBus(int BusNum)
+        {
+            UpdateBus UpdateBus = new UpdateBus(this, controllerobj, BusNum);
+            UCSubTab = UpdateBus;
+            Application_Handler.ViewOnSubTab(UpdateBus);//viewing homepage on the main application window
+        }
+
+        public void viewBusStudentsList(int busNum)
+         {
+
+            StudentsList studentsList = new StudentsList(this, controllerobj, busNum);
+            UCSubTab = studentsList;
+            Application_Handler.ViewOnSubTab(studentsList);//viewing homepage on the main application window
+
+         }
+
+        public void ViewAddBus()
+        {
+            AddBus AddBus = new AddBus(this, controllerobj);
+            UCSubTab = AddBus;
+            Application_Handler.ViewOnSubTab(AddBus);//viewing homepage on the main application window
+        }
+
         public void refreshDatagridView()
         {
-          //MainTab.refreshDatagridView(); //refresh datagrid view after insert or delete student
+          MainTab.refreshDatagridView(); //refresh datagrid view after insert or delete student
         } //refresh datagrid view after insert or delete student
 
         public void viewStudent()
@@ -190,14 +239,14 @@ namespace School_DB_System
 
         public void viewBus()
         {
-           // SSSTPageParent BusPage = new Bus(this, controllerobj);//creating the login page
-           // SSSTPageParent MainTab = BusPage;
-           // Application_Handler.ViewOnMainTab(BusPage);//viewing homepage on the main application window
+            SSSTPageParent BusPage = new Bus(this, controllerobj);//creating the login page
+            SSSTPageParent MainTab = BusPage;
+            Application_Handler.ViewOnMainTab(BusPage);//viewing homepage on the main application window
         }
 
         public void viewRequest(string username)
         {
-            Request1 ReqPage = new Request1(this, controllerobj,username);//creating the login page
+            Request ReqPage = new Request(this, controllerobj,username);//creating the login page
             MainTab = ReqPage;
             Application_Handler.ViewOnMainTab(ReqPage);//viewing homepage on the main application window
         }
@@ -207,6 +256,13 @@ namespace School_DB_System
             UserControl StatisticsPage = new Statistics(this, controllerobj);//creating the login page
             UCMainTab = StatisticsPage;
             Application_Handler.ViewOnMainTab(StatisticsPage);//viewing homepage on the main application window
+        }
+
+        public void viewDepartment()
+        {
+            SSSTPageParent DepartmentPage = new Department(this, controllerobj);//creating the login page
+            MainTab = DepartmentPage;
+            Application_Handler.ViewOnMainTab(DepartmentPage);//viewing homepage on the main application window
         }
 
         public void viewSubject()
@@ -237,6 +293,12 @@ namespace School_DB_System
             Application_Handler.ViewOnSubTab(RespondToReq);//viewing homepage on the main application window
         }
 
+        public void viewAddRoom()
+        {
+            AddRoom addRoom = new AddRoom(this, controllerobj);
+            TempTab = addRoom;
+            Application_Handler.ViewOnTempTab(addRoom);//viewing homepage on the main application window
+        }
 
         public void ApplicationMouseDown(object sender, MouseEventArgs e)
         {

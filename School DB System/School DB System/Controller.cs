@@ -13,6 +13,7 @@ using System.Net.NetworkInformation;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Windows.Forms;
 using static System.Windows.Forms.AxHost;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace School_DB_System
 {
@@ -25,12 +26,13 @@ namespace School_DB_System
         }
         //TODO: functions in the requirement
 
-        public int Login(string username, string password)
+         public int Login(string username, string password)
         {
-            string query = "select staff_LevelAuth from staff where Username = '" + username + "' and Password = '" + password + "';";
-            return (int)dbMan.ExecuteScalar(query);
-        }
+         string query = "select staff_LevelAuth from staff where Username = '" + username + "' and Password = '" + password + "';";
+         return (int)dbMan.ExecuteScalar(query);
+         }
 
+      
         public DataTable getYears()
         {
             string query = "select distinct std_Year from Current_Student;";
@@ -137,6 +139,12 @@ namespace School_DB_System
             return dbMan.ExecuteNonQuery(query);
         }
 
+        public DataTable getAllTeachers()
+        {
+            string query = "select s.staff_Name,t.staff_ID from Teacher as t,Staff as s where s.staff_ID=t.staff_ID ;";
+            return dbMan.ExecuteReader(query);
+        }
+
         public int AddTeacher(string staffID, string staffName, string staffSSN, Int64 staffSalary, string staffAdress, string staffEmail, string staffMobileNumber, string staffDep, bool fullTime, string username, string password)
         {
             string query = "insert into Staff (staff_ID,staff_Name,staff_SSN,staff_Position,staff_LevelAuth,staff_Salary,staff_Address,staff_Email,staff_Mobile,Full_Time,Username,Password) " +
@@ -208,50 +216,50 @@ namespace School_DB_System
 
         public DataTable getAllsubjectsOfDep(string depID)
         {
-            string query = "select s.sub_Num,s.sub_Name,t.day,t.Start_Time,t.End_Time,t.r_Num from Subject as s,Subject_Time_Loc as t,Room as r,Staff as sf,Department as d where s.sub_Num=t.sub_Num and s.sub_Dep_Name=t.sub_Dep_Name and r.r_Building_Num=t.r_Building_Num and r.r_Floor=t.r_Floor and r.r_Num=t.r_Num and t.t_ID=sf.staff_ID and d.dep_Name=t.sub_Dep_Name and d.dep_ID=" + depID + ";";
+            string query = "select s.sub_ID,s.sub_Name,t.day,t.Start_Time,t.End_Time,t.r_Num from Subject as s,Subject_Time_Loc as t,Room as r,Staff as sf,Department as d where s.sub_ID=t.sub_ID and s.sub_Dep_Name=t.sub_Dep_Name and r.r_Building_Num=t.r_Building_Num and r.r_Floor=t.r_Floor and r.r_Num=t.r_Num and t.t_ID=sf.staff_ID and d.dep_Name=t.sub_Dep_Name and d.dep_ID=" + depID + ";";
             return dbMan.ExecuteReader(query);
         }
 
 
         public DataTable getSubjectsOfDepAndYear(string depID, int year)
         {
-            string query = "select s.sub_Num,s.sub_Name,t.day,t.Start_Time,t.End_Time,t.r_Num from Subject as s,Subject_Time_Loc as t,Room as r,Staff as sf,Department as d where s.sub_Num=t.sub_Num and s.sub_Dep_Name=t.sub_Dep_Name and r.r_Building_Num=t.r_Building_Num and r.r_Floor=t.r_Floor and r.r_Num=t.r_Num and t.t_ID=sf.staff_ID and d.dep_Name=t.sub_Dep_Name and d.dep_ID=" + depID + " and s.sub_Year=" + year + ";";
+            string query = "select s.sub_ID,s.sub_Name,t.day,t.Start_Time,t.End_Time,t.r_Num from Subject as s,Subject_Time_Loc as t,Room as r,Staff as sf,Department as d where s.sub_ID=t.sub_ID and s.sub_Dep_Name=t.sub_Dep_Name and r.r_Building_Num=t.r_Building_Num and r.r_Floor=t.r_Floor and r.r_Num=t.r_Num and t.t_ID=sf.staff_ID and d.dep_Name=t.sub_Dep_Name and d.dep_ID=" + depID + " and s.sub_Year=" + year + ";";
             return dbMan.ExecuteReader(query);
         }
         public DataTable getSubjectsOfYear(int year)
         {
-            string query = "select s.sub_Num,s.sub_Name from Subject as s,Subject_Time_Loc as t,Room as r,Staff as sf,Department as d where s.sub_Num=t.sub_Num and s.sub_Dep_Name=t.sub_Dep_Name and r.r_Building_Num=t.r_Building_Num and r.r_Floor=t.r_Floor and r.r_Num=t.r_Num and t.t_ID=sf.staff_ID and d.dep_Name=t.sub_Dep_Name and s.sub_Year=" + year + ";";
+            string query = "select s.sub_ID,s.sub_Name from Subject as s,Subject_Time_Loc as t,Room as r,Staff as sf,Department as d where s.sub_ID=t.sub_ID and s.sub_Dep_Name=t.sub_Dep_Name and r.r_Building_Num=t.r_Building_Num and r.r_Floor=t.r_Floor and r.r_Num=t.r_Num and t.t_ID=sf.staff_ID and d.dep_Name=t.sub_Dep_Name and s.sub_Year=" + year + ";";
             return dbMan.ExecuteReader(query);
         }
 
         public int getAGradeCount(int year, int subjNum)
         {
-            string query = "select COUNT(e.std_ID) from Enrollment as e,Current_Student as s where s.std_Year=" + year + " and s.std_ID=e.std_ID and e.sub_Num=" + subjNum + " and e.Grade='A';";
+            string query = "select COUNT(e.std_ID) from Enrollment as e,Current_Student as s where s.std_Year=" + year + " and s.std_ID=e.std_ID and e.sub_ID=" + subjNum + " and e.Grade='A';";
             return (int)dbMan.ExecuteScalar(query);
         }
         public int getBGradeCount(int year, int subjNum)
         {
-            string query = "select COUNT(e.std_ID) from Enrollment as e,Current_Student as s where s.std_Year=" + year + " and s.std_ID=e.std_ID and e.sub_Num=" + subjNum + " and e.Grade='B';";
+            string query = "select COUNT(e.std_ID) from Enrollment as e,Current_Student as s where s.std_Year=" + year + " and s.std_ID=e.std_ID and e.sub_ID=" + subjNum + " and e.Grade='B';";
             return (int)dbMan.ExecuteScalar(query);
         }
         public int getCGradeCount(int year, int subjNum)
         {
-            string query = "select COUNT(e.std_ID) from Enrollment as e,Current_Student as s where s.std_Year=" + year + " and s.std_ID=e.std_ID and e.sub_Num=" + subjNum + " and e.Grade='C';";
+            string query = "select COUNT(e.std_ID) from Enrollment as e,Current_Student as s where s.std_Year=" + year + " and s.std_ID=e.std_ID and e.sub_ID=" + subjNum + " and e.Grade='C';";
             return (int)dbMan.ExecuteScalar(query);
         }
         public int getDGradeCount(int year, int subjNum)
         {
-            string query = "select COUNT(e.std_ID) from Enrollment as e,Current_Student as s where s.std_Year=" + year + " and s.std_ID=e.std_ID and e.sub_Num=" + subjNum + " and e.Grade='D';";
+            string query = "select COUNT(e.std_ID) from Enrollment as e,Current_Student as s where s.std_Year=" + year + " and s.std_ID=e.std_ID and e.sub_ID=" + subjNum + " and e.Grade='D';";
             return (int)dbMan.ExecuteScalar(query);
         }
         public int getFGradeCount(int year, int subjNum)
         {
-            string query = "select COUNT(e.std_ID) from Enrollment as e,Current_Student as s where s.std_Year=" + year + " and s.std_ID=e.std_ID and e.sub_Num=" + subjNum + " and e.Grade='F';";
+            string query = "select COUNT(e.std_ID) from Enrollment as e,Current_Student as s where s.std_Year=" + year + " and s.std_ID=e.std_ID and e.sub_ID=" + subjNum + " and e.Grade='F';";
             return (int)dbMan.ExecuteScalar(query);
         }
         public int getPassCount(int year, int subjNum)
         {
-            string query = "select COUNT(e.std_ID) from Enrollment as e,Current_Student as s where s.std_Year=" + year + " and s.std_ID=e.std_ID and e.sub_Num = " + subjNum + " and not e.Grade='F';";
+            string query = "select COUNT(e.std_ID) from Enrollment as e,Current_Student as s where s.std_Year=" + year + " and s.std_ID=e.std_ID and e.sub_ID = " + subjNum + " and not e.Grade='F';";
             return (int)dbMan.ExecuteScalar(query);
         }
 
@@ -365,9 +373,9 @@ namespace School_DB_System
 
         public DataTable getSubjectData(string subjID, int roomID, String Day, string Time)
         {
-            string query = "select s.sub_Name,st.sub_Num,s.sub_Year,st.r_Num,st.day,st.Start_Time,st.End_Time,d.dep_Name,d.dep_ID,sf.staff_Name,t.staff_ID " +
+            string query = "select s.sub_Name,st.sub_ID,s.sub_Year,st.r_Num,st.day,st.Start_Time,st.End_Time,d.dep_Name,d.dep_ID,sf.staff_Name,t.staff_ID " +
                 "from Subject_Time_Loc as st,Subject as s,Department as d,Teacher as t,Staff as sf " +
-                "where sf.staff_ID=t.staff_ID and t.tDep_ID=d.dep_ID and st.t_ID=t.staff_ID and s.sub_Num=st.sub_Num and st.sub_Num=" + subjID + " and st.r_Num=" + roomID + " and st.day='" + Day + "' and st.Start_Time='" + Time + "';;";
+                "where sf.staff_ID=t.staff_ID and t.tDep_ID=d.dep_ID and st.t_ID=t.staff_ID and s.sub_ID=st.sub_ID and st.sub_ID='" + subjID + "' and st.r_Num=" + roomID + " and st.day='" + Day + "' and st.Start_Time='" + Time + "';;";
             return dbMan.ExecuteReader(query);
         }
 
@@ -382,6 +390,106 @@ namespace School_DB_System
             return dbMan.ExecuteReader(query);
         }
        
+        public int deleteStudentfromBus(string stdID)
+        {
+            string query = "update Current_Student set bus_Num=null where std_ID='"+ stdID + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int AddStudentToBus(string stdID,int busNum)
+        {
+            string query = "update Current_Student set bus_Num="+busNum+" where std_ID='"+stdID+"';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int getRoomsCount()
+        {
+            string query = "select count(r_Num) from Room;";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+        public int UpdateBus(int busNum,int busCap,string busDriverID, string route)
+        {
+            string query = "update Bus set bus_Driver_ID='"+busDriverID+"',bus_Capacity="+busCap+",bus_Route='"+route+"'where bus_Num="+busNum+";";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int getBusesCount()
+        {
+            string query = "select COUNT(bus_Num) from Bus;";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+        public int AddBus(int busNum, int busCap, string busDriverID, string route)
+        {
+            string query = "insert into Bus (bus_Num,bus_Driver_ID,bus_Capacity,bus_Route) values ("+busNum+",'"+busDriverID+"',"+busCap+",'"+route+"');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public DataTable getAllDrivers()
+        {
+            string query = "select staff_Name,staff_ID from Staff where staff_LevelAuth=4;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable getBusData(int BusNum)
+        {
+            string query = "select b.bus_Num,b.bus_Capacity,s.staff_Name,b.bus_Route,b.bus_Driver_ID from Bus as b,Staff as s where s.staff_ID=b.bus_Driver_ID and bus_Num=" + BusNum+";";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable getBusesOfRoute(string route)
+        {
+            string query = "select b.bus_Num, s.staff_Name, b.bus_Capacity,b.bus_Route from Bus as b,Staff as s where s.staff_ID=b.bus_Driver_ID and b.bus_Route='" + route+"';";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable getStudentsInBus(int BusNum)
+        {
+            string query = "select Student.std_ID,std_Name,std_Email,std_Year from Student,Current_Student where Current_Student.std_ID = Student.std_ID and bus_Num = " + BusNum + ";";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable getStudentsNotInBus(int BusNum)
+        {
+            string query = "SELECT Student.std_ID,Student.std_Name,Student.std_Email,std_Year\r\nFROM Student,Current_Student\r\nWhere Student.std_ID = Current_Student.std_ID\r\nExcept\r\n(SELECT Student.std_ID,Student.std_Name,Student.std_Email,std_Year\r\nFROM Current_Student,Student\r\nWhere bus_Num="+BusNum+" and Student.std_ID=Current_Student.std_ID)";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable getAllBuses()
+        {
+            string query = "select b.bus_Num, s.staff_Name, b.bus_Capacity,b.bus_Route from Bus as b,Staff as s where s.staff_ID=b.bus_Driver_ID;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int deleteBus(int busNum)
+        {
+            string query = "delete from Bus where bus_Num="+busNum+";";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int deleteSubject(string teacherID,string subjID,string subDepName,int roomBuildingNum, int roomFloor,int roomNum,string startTime, string endTime, string day,int subjYear ,string subjName)
+        {
+            string query = "delete Teach where t_ID='"+ teacherID + "' and sub_ID='"+ subjID + "' and sub_Dep_Name='"+ subDepName + "';"+
+            "delete Subject_Time_Loc where t_ID = '"+ teacherID + "' and r_Building_Num = "+ roomBuildingNum + " and r_Floor = "+roomFloor+" and r_Num = "+roomNum+ " and sub_ID = '" + subjID + "' and sub_Dep_Name = '"+ subDepName + "' and Start_Time = '"+startTime+"' and End_Time = '"+endTime+"' and day = '"+day+"';"
+         +  " delete Subject where sub_ID = '"+ subjID + "' and sub_Dep_Name = '"+ subDepName + "' and sub_Name = '"+ subjName + "' and sub_Year = "+subjYear+"; ";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public DataTable viewAllTeachers(int BusNum)
+        {
+            string query = ";";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable viewBusInfo(int BusNum)
+        {
+            string query = "select s.staff_Name,b.bus_Driver_ID,b.bus_Num,b.bus_Capacity,b.bus_Route from Bus as b,Staff as s where s.staff_ID=b.bus_Driver_ID and b.bus_Num="+BusNum+";";
+            return dbMan.ExecuteReader(query);
+        }
+
+        //w2fna 3nd 14 msh m3mola
+        public DataTable getBusRoutes()
+        {
+            string query = "select distinct bus_Route from Bus;";
+            return dbMan.ExecuteReader(query);
+        }
 
         public int Respond(string SenderSSN, string reciverSSN, string ReqTitle, string ReqMessage, int status,string oldTitle,String oldReqMessage)
         {
@@ -415,9 +523,77 @@ namespace School_DB_System
 
         public int getSubjectsCount()
         {
-            string query = "select count(sub_Num) from Subject;";
+            string query = "select count(sub_ID) from Subject;";
             return (int)dbMan.ExecuteScalar(query);
         }
+        public int getDepartmentsCount()
+        {
+            string query = "select COUNT(dep_ID) from Department;";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+
+        public DataTable getTeachersNotHeads()
+        {
+            string query = "select s.staff_Name,t.staff_ID from Department as d,Teacher as t,Staff as s where s.staff_ID=t.staff_ID and t.tDep_ID=d.dep_ID and not exists (select d.dep_Head_ID from Department where d.dep_Head_ID=s.staff_ID);";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int AddDepartment(string depID,string depName,string headID)
+        {
+            string query = "insert into Department (dep_ID,dep_Name,dep_Head_ID) values ('"+depID+"','"+depName+"','"+headID+"');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int UpdateDepartment(string depID, string depName, string headID)
+        {
+            string query = "update Department set dep_Name='"+depName+"',dep_Head_ID='"+ headID + "' where dep_ID='"+depID+"';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int deleteDepartment(string depID)
+        {
+            string query = "delete Department where dep_ID='"+depID+"';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public DataTable getDepartmentsData()
+        {
+            string query = "select d.dep_ID,d.dep_Name,s.staff_Name,s.staff_ID from Department as d,Staff as s where d.dep_Head_ID=s.staff_ID;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable getDepartmentData(string depID)
+        {
+            string query = "select d.dep_ID,d.dep_Name,s.staff_Name,s.staff_ID from Department as d,Staff as s where d.dep_Head_ID=s.staff_ID and d.dep_ID ='"+depID+"';";
+            return dbMan.ExecuteReader(query);
+        }
+        public int AddRoom(int BuildingNum, int RFloor,int RNum,int RCap,bool HasProjector)
+        {
+            string query = "insert into Room(r_Building_Num,r_Floor,r_Num,r_Capacity,r_Projector) values ("+ BuildingNum + ","+ RFloor + ","+ RNum + ","+ RCap + ",'"+ HasProjector + "');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int AddSubject(string subID,string subDepName,string subName,int subYear,string teacherID, int roomBuildingNum,int roomFloor, int roomNum,string startTime,string endTime,string day)
+        {
+            string query = "insert into Subject(sub_ID,sub_Dep_Name,sub_Name,sub_Year) " +
+                "values ('"+subID+"','"+subDepName+ "','"+ subName + "',"+subYear+");" +
+                " insert into Subject_Time_Loc(t_ID,r_Building_Num,r_Floor,r_Num,sub_ID,sub_Dep_Name,Start_Time,End_Time,day) values ('"+ teacherID + "',"+roomBuildingNum+","+ roomFloor + ","+roomNum+",'" + subID + "','" + subDepName+ "','"+startTime+"','"+endTime+"','"+day+"');" +
+                "insert into Teach(t_ID,sub_ID,sub_Dep_Name) values ('"+ teacherID + "','" + subID + "','" + subDepName+ "');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int UpdateSubject(string subID, string subName, string subDepName, int subYear, string teacherID, int oldRoomBuildingNum, int roomBuildingNum, int oldRoomFloor, int roomFloor, int oldRoomNum, int roomNum, string oldStartTime, string startTime, string oldEndTime, string endTime, string oldDay, string day)
+        {
+            string query = "update Subject set sub_Name='"+subName+"' where sub_ID='"+subID+"' and sub_Year="+subYear+";" +
+                "update Subject_Time_Loc set t_ID='"+teacherID+"',Start_Time='"+startTime+"',End_Time='"+endTime+"',day='"+day+"',r_Building_Num="+roomBuildingNum+",r_Floor="+roomFloor+",r_Num="+roomNum+" where r_Num="+oldRoomNum+" and sub_ID='"+subID+"' and sub_Dep_Name='"+ subDepName + "' and Start_Time='"+oldStartTime+"' and End_Time='"+oldEndTime+"' and day='"+oldDay+"';" +
+                "update Teach set t_ID='"+teacherID+"' where sub_ID='"+subID+"';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int checkSubjectTeacher(string teacherID,string startTime,string endTime,string Day)
+        {
+            string query = "select count(t_ID) from Subject_Time_Loc where t_ID='"+ teacherID + "' and Start_Time='"+ startTime + "' and End_Time='"+ endTime + "' and day='"+ Day + "';";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+
         public void TerminateConnection()
         {
             dbMan.CloseConnection();

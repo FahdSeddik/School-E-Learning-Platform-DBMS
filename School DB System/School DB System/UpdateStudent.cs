@@ -118,11 +118,11 @@ namespace School_DB_System
                 {
                     Guna2TextBox textBox = (Guna2TextBox)item; //cast item to textbox to use textbox functionalities
                     textBox.Focus(); //focus on each textbox 
-                    //means select the textbox
-                    //next loop it selects the next textbox which performs the previously selected textbox leave event
-                    //each textbox is responsible for validating the data in it using text changed event or leave event
-                    //when there is a non valid in any textbox the textbox bordercolor is changed to red
-                    //so when this loop ends every required textbox data if not valid this textbox border color will be red
+                                     //means select the textbox
+                                     //next loop it selects the next textbox which performs the previously selected textbox leave event
+                                     //each textbox is responsible for validating the data in it using text changed event or leave event
+                                     //when there is a non valid in any textbox the textbox bordercolor is changed to red
+                                     //so when this loop ends every required textbox data if not valid this textbox border color will be red
                     if (textBox.BorderColor == Color.Red) //checks if this textbox border color is red (invalid data in textbox)
                     {
                         //inform the user to insert all required values
@@ -141,7 +141,21 @@ namespace School_DB_System
                 //send a query and gets the result of the query in queryres
                 int queryRes = 0;//intially = 0
 
-                queryRes = controllerObj.UpdateSubject();
+                for (int i = 0; i < 2; i++)
+                {
+                    if (StdUni_Txt.Visible == true) //means this is a graduate student view (selected student is graduate)
+                    {
+                        queryRes = controllerObj.UpdateGraduateStudent(StdParSSN_Txt.Text.ToString(), StdParName_Txt.Text.ToString(), StdParAdress_Txt.Text.ToString(), StdParPNum_Txt.Text.ToString(),
+                        StdParEmail_Txt.Text.ToString(), StdID_Txt.Text.ToString(), StdName_Txt.Text.ToString(), StdSSN_Txt.Text.ToString(), StdEmail_Txt.Text.ToString(),
+                        StdPNum_Txt.Text.ToString(), StdDob_Dtp.Value.ToString(), StdNation_CBox.Text.ToString(), StdAdress_Txt.Text.ToString(), Std2ndLang_CBox.Text.ToString(), StdUni_Txt.Text.ToString());
+                    }
+                    else
+                    {
+                        queryRes = controllerObj.UpdateCurrentStudent(StdParSSN_Txt.Text.ToString(), StdParName_Txt.Text.ToString(), StdParAdress_Txt.Text.ToString(), StdParPNum_Txt.Text.ToString(),
+                        StdParEmail_Txt.Text.ToString(), StdID_Txt.Text.ToString(), StdName_Txt.Text.ToString(), StdSSN_Txt.Text.ToString(), StdEmail_Txt.Text.ToString(),
+                        StdPNum_Txt.Text.ToString(), StdDob_Dtp.Value.ToString(), StdNation_CBox.Text.ToString(), StdAdress_Txt.Text.ToString(), Std2ndLang_CBox.Text.ToString(), int.Parse(StdYear_CBox.Text.ToString()), bool.Parse(StdPayedTuition_CBox.Checked.ToString()));
+                    }
+                }
 
                 if (queryRes == 0) //if queryres = 0 i.e query executing failed
                 {
@@ -159,7 +173,6 @@ namespace School_DB_System
                    "Successfully added",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
-                    Back_btn.PerformClick();
                     return; //return
                 }
             }
@@ -173,6 +186,6 @@ namespace School_DB_System
                 return; //return
             }
         }
+    }
 
     }
-}
