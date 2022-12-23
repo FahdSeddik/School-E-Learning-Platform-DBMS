@@ -1,4 +1,4 @@
-let header = $(`<div class='flex flex-row'>
+let header = $(`<div class='flex flex-row' style="z-index:5"> 
 <div class="fixed top-0 left-0 h-screen w-72 m-0
     flex flex-col 
     bg-gray-900 text-white shadow   
@@ -34,9 +34,9 @@ let header = $(`<div class='flex flex-row'>
 
         </a>
         <a href="../Report.php"
-            class=' text-gray-400 text-sm flex items-center gap-x-4 cursor-pointer 
+            class='text-gray-400 text-sm flex items-center gap-x-4 cursor-pointer 
             hover:bg-slate-400 hover:text-gray-700 mx-4 mt-3 px-3 
-            rounded-md'>
+            rounded-md' >
     
         <img src='../assets/menu/report.png' alt="0" class=' w-8 h-8'/>
         <span>Report</span>

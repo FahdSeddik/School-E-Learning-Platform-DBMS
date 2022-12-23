@@ -11,13 +11,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../dist/output.css" rel="stylesheet">
-    <title>Document</title>
+    <title>Classes Schedule</title>
 </head>
-<body >
-    <div class=' ml-72 p-4  bg-gray-800 absolute'>
-            <div class=' relative '>
+<body class='bg-gray-800'>
+    <div class=' ml-72 p-4  bg-gray-800 absolute' >
+            <div class=' relative gray'>
                 <h1 class='text-gray-400'>Schedule</h1>
             </div>
+
+            <div>
+
+            </div>
+
+
+
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="index.js"></script>
