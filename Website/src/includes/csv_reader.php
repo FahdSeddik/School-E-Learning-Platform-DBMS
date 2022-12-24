@@ -2,7 +2,7 @@
 
 include_once '../header.php';
 
-if(isset($_POST["upload-grades"])){
+if(isset($_POST["upload-grades"]) && file_exists($_FILES['file']['tmp_name']) && is_uploaded_file($_FILES['file']['tmp_name'])){
     
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';

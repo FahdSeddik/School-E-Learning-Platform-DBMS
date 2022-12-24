@@ -8,8 +8,8 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMS - School Management System</title>
-    <link rel="icon" href="http://example.com/favicon.png">
+    <title>Login</title>
+    <link rel="icon" href="src/assets/School_Logo.png">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
     <link rel="stylesheet" href="	https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -72,12 +72,12 @@
                         <?php
                         if(isset($_GET["error"])){
                             if($_GET["error"] == "emptyinput"){
-                                echo "<p>Fill in all field!</p>";
+                                echo '<span class="field-validation-error text-danger" data-valmsg-for="Email" data-valmsg-replace="true">Fill in all fields!</span>';
                             }
                             else if($_GET["error"] == "wronglogin"){
-                                echo "<p>Incorrect login credentials!</p>";
+                                echo '<span class="field-validation-error text-danger" data-valmsg-for="Email" data-valmsg-replace="true">Wrong Credentials!</span>';
                             }else {
-                                echo "<p>Unkown Error Occurred</p>";
+                                echo '<span class="field-validation-error text-danger" data-valmsg-for="Email" data-valmsg-replace="true">Unkown Error Occured.</span>';
                             }
                         }
                         ?>

@@ -11,6 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../dist/output.css" rel="stylesheet">
+    <link rel="icon" href="assets/menu/report.png">
     <title>Full Transcript</title>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
     <link rel="stylesheet" href="	https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
@@ -53,7 +54,7 @@
                 echo '<div class="card-body"><div class="card rounded w-100">';
                 echo '<h3 >Download Subject Based Data (.csv)</h3><hr>';
                 echo '<form id="f1" name="f1" method="post" action="includes/csv_download.php" class="m-3">';
-                echo "<h4>Subject</h4><select title='Available_Subjects' Name='subject' class='border'>";
+                echo "<h4>Available Subjects</h4><select title='Available_Subjects' Name='subject' class='border'>";
                 echo '<option value="">--- Select ---</option> '; 
                 foreach($subjects as $subject){
                     echo '<option value="'.$subject[0].'">'.$subject[2];
@@ -65,11 +66,12 @@
 
                 echo '<div class="card-body"><div class="card rounded w-100">';
                 echo '<form class="form-horizontal" action="includes/csv_reader.php" method="post" name="upload_excel" enctype="multipart/form-data">';
-                echo '<div class="col-md-4 w-100"><h3>Import Data</h3>';
+                echo '<div class="col-md-4 w-100"><h3>Import Data (.csv)</h3>';
+                echo '<p>Please download class list and submit with same format</p>';
                 echo '<div class="form-group">';
                 echo '<input type="file" name="file" id="file" class="input-large m-2">';
                 echo '<div class="col-md-4 m-1">';
-                echo '<button type="submit" id="submit" name="upload-grades" class="btn btn-primary button-loading" data-loading-text="Loading...">Import</button>';
+                echo '<button type="submit" id="submit" name="upload-grades" class="btn btn-primary button-loading" data-loading-text="Loading...">Upload & Update</button>';
                 echo '</div></div></div></form>';
                 if(isset($_GET["updated"]) && isset($_SESSION["G_S"])){
                     $success = $_SESSION["G_S"][0];
