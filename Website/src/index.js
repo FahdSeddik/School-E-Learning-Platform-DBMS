@@ -9,9 +9,9 @@ let header = $(`<div class='flex flex-row'>
     </div>
     <div class='pl-6'>
         <a href="Dashboard.php"
-            class='text-sm flex items-center gap-x-4 cursor-pointer 
-            bg-slate-400 text-gray-700 mx-4 mt-12 px-3 
-            rounded-md'>       
+            class=' rounded-md text-gray-400 text-sm flex items-center gap-x-4 cursor-pointer 
+            hover:bg-slate-400 hover:text-gray-700 mx-4 mt-3 px-3 
+            rounded-md mt-5'>       
         <img src='../src/assets/menu/dashboards.png' alt="0" class=' w-8 h-8'/>
         <span>Dashboard</span>
         </a>

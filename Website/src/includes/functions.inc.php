@@ -108,9 +108,9 @@ function getStdLangNOT($conn){
 }
 
 function getTranscript($conn){
-    $sql = "SELECT sub_Year,sub_Name,Grade
+    $sql = "SELECT sub_Year,sub_Name,Grade,Coursework
     From Subject,Enrollment,Student
-    Where Student.std_ID=Enrollment.std_ID and Subject.sub_Num=Enrollment.sub_Num and Subject.sub_Dep_Name=Enrollment.sub_Dep_Name
+    Where Student.std_ID=Enrollment.std_ID and Subject.sub_ID=Enrollment.sub_ID
     and Student.std_SSN=?
     Order by sub_Year,sub_Name,Grade";
     $params = array($_SESSION["SSN"]);
@@ -137,11 +137,11 @@ function getTeacherID($conn){
     return 0;
 }
 
-function DoesTeach($conn){
+function DoesTeach($conn,$sub_ID){
     $sql = "SELECT *
     From Teach
-    Where t_ID=? and sub_Num=? and sub_Dep_Name=?";
-    $params = array(getTeacherID($conn), $_SESSION["sub_Num"], $_SESSION["sub_Dep_Name"]);
+    Where t_ID=? and sub_ID=?";
+    $params = array(getTeacherID($conn),$sub_ID);
     $stmt = sqlsrv_query($conn, $sql, $params);
     if ($stmt == false)
         return 0;
@@ -152,10 +152,10 @@ function DoesTeach($conn){
 }
 
 function getStudentinSubject($conn){
-    $sql = "SELECT std_Name
-    From Student,Current_Student
-    Where Current_Student.std_ID=Student.std_ID and std_Year=?";
-    $params = array(getStudentYear($conn));
+    $sql = "SELECT std_Name,Student.std_ID
+    From Student,Current_Student,Subject
+    Where Current_Student.std_ID=Student.std_ID and sub_Year=std_Year and sub_ID=?";
+    $params = array($_SESSION["sub_ID"]);
     $stmt = sqlsrv_query($conn, $sql, $params);
     if ($stmt == false)
         return array();
@@ -165,17 +165,17 @@ function getStudentinSubject($conn){
     }
     return $students;
 }
-function getSubjectNames($conn,$username){
+function getSubjectNames($conn){
     $subjectNames = array();
     if ($_SESSION["STUDENT"]==1) {
-        $sql = "SELECT sub_Num,sub_Dep_Name,sub_Name
+        $sql = "SELECT sub_ID,sub_Dep_Name,sub_Name
         From Subject,Student,Current_Student
-        Where  Current_Student.std_Year=sub_Year and Student.std_ID=Current_student.std_ID and Student.Username=?";
-        $stmt = sqlsrv_query($conn, $sql, array($username));
+        Where  Current_Student.std_Year=sub_Year and Student.std_ID=Current_student.std_ID and Student.std_SSN=?";
+        $stmt = sqlsrv_query($conn, $sql, array($_SESSION["SSN"]));
     }else{
-        $sql = "Select Subject.sub_Num,Subject.sub_Dep_Name,Subject.sub_Name
+        $sql = "Select Subject.sub_ID,Subject.sub_Dep_Name,Subject.sub_Name
         From Teach,Teacher,Subject
-        Where staff_ID=t_ID and Teach.sub_Num=Subject.sub_Num and Teach.sub_Dep_Name=Subject.sub_Dep_Name and t_ID=?";
+        Where staff_ID=t_ID and Teach.sub_ID=Subject.sub_ID and t_ID=?";
         $stmt = sqlsrv_query($conn, $sql, array(getTeacherID($conn)));
     }
     while($row = sqlsrv_fetch_array($stmt)){
@@ -185,13 +185,11 @@ function getSubjectNames($conn,$username){
 }
 
 function getPastGrades($conn){
-    $sql = "Select sub_Name,Grade,Count
-    From 
-    (SELECT sub_Num,sub_Dep_Name,Grade,Count(Grade) as Count
+    $sql = "SELECT Grade,Count(Grade) as Count
     From Enrollment
-    Group by sub_Num,sub_Dep_Name,Grade) as E,Subject
-    Where Subject.sub_Num=? and Subject.sub_Dep_Name=? and E.sub_num=Subject.sub_num and Subject.sub_dep_name=E.sub_dep_name";
-    $params = array($_SESSION["sub_Num"], $_SESSION["sub_Dep_Name"]);
+    Where sub_ID=? and NOT Grade='U'
+    Group by Grade";
+    $params = array($_SESSION["sub_ID"]);
     $stmt = sqlsrv_query($conn, $sql, $params);
     if ($stmt == false)
         return array();
@@ -206,8 +204,8 @@ function getPastGrades($conn){
 function getTeachersWhoTeach($conn){
     $sql = "SELECT staff_Name
     From Staff,Teach
-    Where sub_Num =?  and sub_Dep_Name=? and t_id=staff_id ";
-    $params = array($_SESSION["sub_Num"], $_SESSION["sub_Dep_Name"]);
+    Where sub_ID =? and t_id=staff_id ";
+    $params = array($_SESSION["sub_ID"]);
     $stmt = sqlsrv_query($conn, $sql, $params);
     if ($stmt == false)
         return array();
@@ -220,9 +218,10 @@ function getTeachersWhoTeach($conn){
 
 function makeNewPost($conn,$posttext){
     $posttext = nl2br($posttext);
-    $sql = "INSERT INTO Posts(sub_Num,sub_Dep_Name,SSN,Post,Date)
-    VALUES(".$_SESSION["sub_Num"].",'".$_SESSION["sub_Dep_Name"]."','".$_SESSION["SSN"]."','".$posttext."',SYSDATETIME())";
-    $stmt = sqlsrv_prepare($conn, $sql);
+    $sql = "INSERT INTO Posts(sub_ID,SSN,Post,Date)
+    VALUES(?,?,?,SYSDATETIME())";
+    $params = array($_SESSION["sub_ID"], $_SESSION["SSN"], $posttext);
+    $stmt = sqlsrv_prepare($conn, $sql,$params);
     return sqlsrv_execute($stmt);
 }
 
@@ -242,11 +241,11 @@ function getStudentYear($conn){
     return $year;
 }
 
-function getSubjectYear($conn,$sub_Num,$sub_Dep_Name){
+function getSubjectYear($conn,$sub_ID){
     $sql = "SELECT sub_Year
     From Subject
-    Where sub_Num=? and Sub_Dep_Name=?";
-    $params = array($sub_Num,$sub_Dep_Name);
+    Where sub_ID=?";
+    $params = array($sub_ID);
     $stmt = sqlsrv_query($conn, $sql, $params);
     $year = -1;
     if ($stmt == false)
@@ -256,16 +255,29 @@ function getSubjectYear($conn,$sub_Num,$sub_Dep_Name){
     }
     return $year;
 }
-
+function getDepName($conn){
+    $sql = "SELECT sub_Dep_Name
+    From Subject
+    Where sub_ID=?";
+    $params = array($_SESSION["sub_ID"]);
+    $stmt = sqlsrv_query($conn, $sql, $params);
+    if ($stmt == false)
+    return 'ERROR';
+    $name = ' ';
+    if(sqlsrv_fetch($stmt)===true){
+        $name = sqlsrv_get_field($stmt, 0);
+    }
+    return $name;
+}
 
 function getPosts($conn){
     $posts = array();
 
     $sql = "SELECT Post,Date,SSN
     FRom Posts
-    Where sub_Num=? and sub_Dep_Name=?
+    Where sub_ID=?
     Order by Date Desc";
-    $params = array($_SESSION["sub_Num"],$_SESSION["sub_Dep_Name"]);
+    $params = array($_SESSION["sub_ID"]);
     $stmt = sqlsrv_query($conn, $sql,$params);
     while($post = sqlsrv_fetch_array($stmt)){
         array_push($posts, $post);
@@ -287,4 +299,175 @@ function getPosts($conn){
         }
     }
     return $posts;
+}
+
+function getSchedule($conn){
+    //5 days per week
+    $schedule = array(array(),array(),array(),array(),array());
+    $days = array('Sunday','Monday','Tuesday','Wednesday','Thursday');
+    if($_SESSION["STUDENT"]==1){
+        $year = getStudentYear($conn);
+        for($i=0;$i<count($days);$i++){
+            $sql = "SELECT r_Building_Num,r_Floor,r_Num,sub_Name,Start_Time,End_Time,day
+            From Subject_Time_Loc,Subject
+            Where Subject.sub_ID=Subject_Time_Loc.sub_ID and day=? and sub_Year=?
+            Order by Start_Time";
+            $params = array($days[$i],$year);
+            $stmt = sqlsrv_query($conn, $sql, $params);
+            while($sb = sqlsrv_fetch_array($stmt)){
+                array_push($schedule[$i], $sb);
+            }
+        }
+    }else{
+        $tid = getTeacherID($conn);
+        for($i=0;$i<count($days);$i++){
+            $sql = "SELECT r_Building_Num,r_Floor,r_Num,sub_Name,Start_Time,End_Time,day
+            From Subject_Time_Loc,Subject
+            Where Subject.sub_ID=Subject_Time_Loc.sub_ID and day=? and Subject_Time_Loc.t_ID=?
+            Order by Start_Time";
+            $params = array($days[$i],$tid);
+            $stmt = sqlsrv_query($conn, $sql, $params);
+            while($sb = sqlsrv_fetch_array($stmt)){
+                array_push($schedule[$i], $sb);
+            }
+        }
+    }
+    return $schedule;
+}
+
+function getClassList_WithGrades($conn,$sub_ID){
+    $sql = "SELECT Enrollment.sub_ID,sub_Name,Student.std_ID,std_Name,Grade,Coursework
+    From Student,Enrollment,Subject,Current_Student
+    Where Subject.sub_ID=Enrollment.sub_ID and Current_Student.std_ID=Enrollment.std_ID
+     and Student.std_ID=Enrollment.std_ID  and std_Year=sub_Year and Enrollment.sub_ID=?
+     order by std_Name";
+    $params = array($sub_ID);
+    $stmt = sqlsrv_query($conn, $sql, $params);
+    if ($stmt == false)
+        return array();
+    $class = array();
+    while($row = sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC)){
+        array_push($class, $row);
+    }
+    return $class;
+}
+
+function UpdateGrade($conn,$params){
+    foreach($params as $param){
+        if (empty($param))
+            return false;
+    }
+    $sql = "UPDATE Enrollment
+    SET Grade = ?,Coursework=?
+    Where sub_ID=? and std_ID=?";
+    $stmt = sqlsrv_prepare($conn, $sql,$params);
+    if (sqlsrv_execute($stmt))
+        return true;
+    return false;
+}
+
+
+function getTeachers($conn){
+    $sql = "SELECT staff_SSN,Staff_Name,staff_Email
+    From Teach,Staff
+    Where t_id=staff_ID and sub_ID in
+    (SELECT sub_ID
+    From Subject,Student,Current_Student
+    Where  Current_Student.std_Year=sub_Year and Student.std_ID=Current_student.std_ID and Student.std_SSN=?)";
+    $stmt = sqlsrv_query($conn, $sql, array($_SESSION["SSN"]));
+    $teachers = array();
+    while($t = sqlsrv_fetch_array($stmt)){
+        array_push($teachers, $t);
+    }
+    return $teachers;
+}
+
+
+function getAdmins($conn){
+    $sql = "Select staff_SSN,staff_Name,staff_Email
+    From Staff
+    Where staff_levelAuth=1";
+    $stmt = sqlsrv_query($conn, $sql);
+    $admins = array();
+    while ($row = sqlsrv_fetch_array($stmt)){
+        array_push($row, '(Admin)');
+        array_push($admins, $row);
+    }
+    return $admins;
+}
+
+function sendRequest($conn,$params){
+    $sql = "INSERT INTO Request VALUES(?,?,?,?,-1,SYSDATETIME())";
+    $stmt = sqlsrv_prepare($conn, $sql, $params);
+    if (sqlsrv_execute($stmt))
+        return true;
+    return false;
+}
+function getInbox($conn){
+    $sql = "SELECT staff_Name,staff_Email,title,request,state,date,sender
+    fROM REQUEST,Staff
+    where receiver=? and sender=Staff.staff_SSN
+    order by date desc";
+    $inbox = array();
+    $stmt = sqlsrv_query($conn, $sql, array($_SESSION["SSN"]));
+    while($row = sqlsrv_fetch_array($stmt)){
+        array_push($inbox, $row);
+    }
+    $sql = "SELECT std_Name,std_Email,title,request,state,date,sender
+    fROM REQUEST,Student
+    where receiver=? and sender=std_SSN
+    order by date desc";
+    $stmt = sqlsrv_query($conn, $sql, array($_SESSION["SSN"]));
+    while($row = sqlsrv_fetch_array($stmt)){
+        array_push($row, 1);
+        array_push($inbox, $row);
+    }
+    return $inbox;
+}
+function DeleteRequest($conn,$params){
+    $sql = "Delete from request
+    Where sender = ? and receiver = ? and title = ? and request = ?
+    and state = ? and date=?";
+    $stmt = sqlsrv_prepare($conn, $sql, $params);
+    if (sqlsrv_execute($stmt))
+        return true;
+    return false;
+}
+function getNumberRequests($conn){
+    $sql = "SELECT Count(*)
+    fROM REQUEST
+    where receiver=?";
+    $stmt = sqlsrv_query($conn,$sql,array($_SESSION["SSN"]));
+    return sqlsrv_fetch_array($stmt)[0];
+}
+
+function UpdateRequestStatus($conn,$p1,$p2){
+    $sql = "UPDATE Request
+    Set state=?
+    Where sender=? and receiver=? and title=? and request=? and date=?";
+    $stmt = sqlsrv_prepare($conn,$sql,array((int)$p2[4],$p1[0],$p1[1],$p1[2],$p1[3],$p1[5]));
+    if(!sqlsrv_execute($stmt))return 2;
+    $sql = "INSERT INTO Request VALUES(?,?,?,?,?,SYSDATETIME())";
+    $stmt = sqlsrv_prepare($conn,$sql,$p2);
+    if(!sqlsrv_execute($stmt))return 1;
+    return 0;
+}
+
+function makeNewAnnouncement($conn,$posttext){
+    $sql = "INSERT INTO Announcement VALUES(?,?,SYSDATETIME())";
+    $stmt = sqlsrv_prepare($conn, $sql, array($_SESSION["SSN"], $posttext));
+    return sqlsrv_execute($stmt);
+}
+
+function getAnnouncements($conn){
+    $sql = "SELECT staff_Name,Post,Date
+    From Staff,Announcement
+    where staff_SSN=SSN
+    ORder by date desc";
+    $stmt = sqlsrv_query($conn, $sql);
+    $ann = array();
+    while($a = sqlsrv_fetch_array($stmt)){
+        array_push($ann, $a);
+    }
+    return $ann;
 }

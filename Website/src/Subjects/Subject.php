@@ -3,18 +3,17 @@
     include_once 'handleSubject.inc.php';
     require_once '../includes/functions.inc.php';
     require_once '../includes/dbh.inc.php';
-    if(!isset($_GET["Dep"]) || !isset($_SESSION["username"])){
+    if(!isset($_GET["sub"]) || !isset($_SESSION["username"])){
         header("location: ../Dashboard.php?error=ACCESSDENIED");
         exit();
     }
-    $_SESSION["sub_Num"] = $_GET["num"];
-    $_SESSION["sub_Dep_Name"] = $_GET["Dep"];
+    $_SESSION["sub_ID"] = $_GET["sub"];
     if($_SESSION["STUDENT"]==1){
-        if(getStudentYear($conn)!==getSubjectYear($conn,$_SESSION["sub_Num"],$_SESSION["sub_Dep_Name"])){
+        if(getStudentYear($conn)!==getSubjectYear($conn,$_SESSION["sub_ID"])){
             header("location: ../Dashboard.php?error=ACCESSDENIED");
             exit();
         }
-    }else if(DoesTeach($conn)==0){
+    }else if(DoesTeach($conn,$_SESSION["sub_ID"])==0){
         header("location: ../Dashboard.php?error=ACCESSDENIED");
         exit();
     }
@@ -30,7 +29,7 @@
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
         <link rel="stylesheet" href="	https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <title><?php echo ucfirst($_GET["Dep"])?></title>  
+        <title><?php echo ucfirst(getDepName($conn))?></title>  
         <style>
             html, body {
                 max-width: 100%;
@@ -45,16 +44,16 @@
             <div class="container w-100 d-flex justify-content-center">
                 <div class="row align-items-start w-100">
                     <div class="col mr-0">
-                        <h1 class='text-gray-400 w-auto h-auto'><?php echo ucfirst($_GET["Dep"])?></h1>
+                        <h1 class='text-gray-400 w-auto h-auto'><?php echo ucfirst(getDepName($conn))?></h1>
                     </div>
                     <div class="col ml-xl-5">
-                        <a href="Subject.php?Dep=<?php echo $_SESSION["sub_Dep_Name"]?>&num=<?php echo $_SESSION["sub_Num"]?>" class="ml-72 ml-xl-72 btn btn-info mt-2" name="new-post">View Posts</a>
+                        <a href="Subject.php?sub=<?php echo $_SESSION["sub_ID"]?>" class="ml-72 ml-xl-72 btn btn-info mt-2" name="new-post">View Posts</a>
                     </div>
                     <div class="col ml-xl-5">
-                        <a href="Subject.php?Dep=<?php echo $_SESSION["sub_Dep_Name"]?>&num=<?php echo $_SESSION["sub_Num"]?>&p=1" class="ml-50 ml-xl-50 btn btn-info mt-2" name="new-post">Participants</a>
+                        <a href="Subject.php?sub=<?php echo $_SESSION["sub_ID"]?>&p=1" class="ml-50 ml-xl-50 btn btn-info mt-2" name="new-post">Participants</a>
                     </div>
                     <div class="col">
-                        <a href="Subject.php?Dep=<?php echo $_SESSION["sub_Dep_Name"]?>&num=<?php echo $_SESSION["sub_Num"]?>&s=1" class="btn btn-info mt-2" name="new-post">Statistics</a>
+                        <a href="Subject.php?sub=<?php echo $_SESSION["sub_ID"]?>&s=1" class="btn btn-info mt-2" name="new-post">Statistics</a>
                     </div>
                     
                 </div>
@@ -97,11 +96,11 @@
                 $grade_counts = getPastGrades($conn);
                 foreach($grade_counts as $gc){
                     echo '<div class="card rounded w-50 ml-5">';
-                    echo "<h6>Grade: ".$gc[1]."</h6><h6>Count: ".$gc[2]."</h6>";
+                    echo "<h6>Grade: ".$gc[0]."</h6><h6>Count: ".$gc[1]."</h6>";
                     echo '</div><br>';
                 }
             } else {
-                $posts = getPosts($conn);
+                $posts = getPosts($conn); //post, date, name
                 echo '<div class="d-flex ml-72" style="margin-left:21%">';
                 echo '<div class="shadow card w-50">';
                 echo '<h5 class="shadow card-header d-flex justify-content-center">New Post</h5>';
@@ -114,7 +113,7 @@
                     echo '<div class="shadow card rounded-pill w-75 ml-5 " style="width:100%;height:auto">';
                     echo '<div class="m-4">';
                     echo "<h5 >Posted by: " . $post[2] . "</h5>";
-                    echo "<p>Date: " . date_format($post[1], 'c') . "</p>";
+                    echo "<p>Date: " . date_format($post[1], 'Y-m-d H:i') . " GMT+00:00</p>";
                     echo "<hr><p class='ml-4 mt-0 b'>" . $post[0] . "</p>";
                     echo '</div><br></div><hr>';
                     

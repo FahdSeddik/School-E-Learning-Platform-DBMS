@@ -32,7 +32,7 @@
                         <div class="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 " id="add_sub">
                         
                         <?php  
-                        $subjectNames = getSubjectNames($conn, $_SESSION["username"]);
+                        $subjectNames = getSubjectNames($conn);
                         if(count($subjectNames)<=0){
                             echo '<div class="card ml-50 w-100">';
                             echo '<h5 class="card-header">No Available Courses!</h5></div><hr>';
@@ -41,7 +41,7 @@
                             foreach ($subjectNames as $subject) {
                                 if ($langnot == $subject[1])
                                     continue;
-                                echo '<a href="Subjects/Subject.php?Dep=' . $subject[1] . '&num=' . $subject[0] . '" class="group"><div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">';
+                                echo '<a href="Subjects/Subject.php?sub='.$subject[0].'" class="group"><div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">';
                                 echo '<img src="../src/assets/subject/' . $subject[1] . '.png" alt="0" class="h-full w-full object-cover object-center group-hover:opacity-75"/></div>';
                                 echo '<h3 class="mt-4 text-2xl text-gray-400 ">' . ucfirst($subject[2]) . '</h3></a>';
                             }
