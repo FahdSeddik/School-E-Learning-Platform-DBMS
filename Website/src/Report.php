@@ -61,14 +61,14 @@
                     echo '</option>';
                 }
                 echo '</select>';
-                echo '<button type="submit" name="d_class_list" class="btn btn-primary button-loading" data-loading-text="Loading...">Download class list</button>';
+                echo '<button type="submit" name="d_class_list" class="btn btn-primary button-loading m-3" data-loading-text="Loading...">Download class list</button>';
                 echo '</form></div></div><br>';
 
                 echo '<div class="card-body"><div class="card rounded w-100">';
                 echo '<form class="form-horizontal" action="includes/csv_reader.php" method="post" name="upload_excel" enctype="multipart/form-data">';
-                echo '<div class="col-md-4 w-100"><h3>Import Data (.csv)</h3>';
+                echo '<h3>Upload Data (.csv)</h3><hr><div class="col-md-5 w-100">';
                 echo '<p>Please download class list and submit with same format</p>';
-                echo '<div class="form-group">';
+                echo '<div class="form-group"><h4>Grades (.csv)</h4>';
                 echo '<input type="file" name="file" id="file" class="input-large m-2">';
                 echo '<div class="col-md-4 m-1">';
                 echo '<button type="submit" id="submit" name="upload-grades" class="btn btn-primary button-loading" data-loading-text="Loading...">Upload & Update</button>';
