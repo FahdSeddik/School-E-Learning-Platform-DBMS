@@ -1,9 +1,5 @@
 <?php
-    include_once './src/header.php';
-    if (session_status() == PHP_SESSION_ACTIVE) {
-        session_unset();
-        session_destroy();
-    }
+  include_once './src/header.php';
 ?>
 
 
@@ -12,7 +8,7 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Reset Password</title>
     <link rel="icon" href="src/assets/School_Logo.png">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
     <link rel="stylesheet" href="	https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
@@ -61,37 +57,25 @@
                         
                         <img src="src/assets/School_Logo.png" alt="Logo" style="height: 13rem;">
                     </div>
-                    <h3 class="auth-title text-center">Log in</h3>
-                    <p class="auth-subtitle text-center mb-3">Log in with your official account</p>
-
-<form action="src/includes/login.inc.php" class="form-horizontal" method="post" role="form"><input name="__RequestVerificationToken" type="hidden" value="qGYEfQVruwycZVKrg0h-b2zr4KSqp-CniMdD5dBb2nVUKN9evbEybXejx6XGaSxj-iN9iWTKIoAw7mXIvW_BPBVpLtS72jlKX3aHMaxoORI1">                        <div class="form-group position-relative has-icon-left mb-4">
-                            <input class="form-control form-control-xl" data-val="true" data-val-required="The Email field is required." id="Email" name="uid" placeholder="Username/Email" type="text" value="">
+                    <h3 class="auth-title text-center">Forgot Password</h3>
+                    <p class="auth-subtitle text-center mb-3">Please enter your Email/Username associated with account</p>
+                    
+                    <form action="src/includes/forgot_password.inc.php" class="form-horizontal" method="post" role="form">
+                        <div class="form-group position-relative has-icon-left mb-4">
+                            <input class="form-control form-control-xl" data-val="true" id="Email" name="uid" placeholder="Username/Email" type="text" value="">
                             
                             <span class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
                         </div>
-                        <div class="form-group position-relative has-icon-left mb-4">
-                            <input class="form-control form-control-xl" data-val="true" data-val-required="The Password field is required." id="Password" name="pwd" placeholder="Password" type="password">
-                            <span class="field-validation-valid text-danger" data-valmsg-for="Password" data-valmsg-replace="true"></span>
-                        </div>
+                        <p class="auth-subtitle text-center ml-3" >Please Check your email after</p>
                         <?php
-                        if(isset($_GET["error"])){
-                            if($_GET["error"] == "emptyinput"){
-                                echo '<span class="field-validation-error text-danger" data-valmsg-for="Email" data-valmsg-replace="true">Fill in all fields!</span>';
-                            }
-                            else if($_GET["error"] == "wronglogin"){
-                                echo '<span class="field-validation-error text-danger" data-valmsg-for="Email" data-valmsg-replace="true">Wrong Credentials!</span>';
-                            }else {
-                                echo '<span class="field-validation-error text-danger" data-valmsg-for="Email" data-valmsg-replace="true">Unkown Error Occured.</span>';
-                            }
-                        }
-                        if(isset($_GET["reset"]) && $_GET["reset"]=="success"){
-                            echo '<span class="field-validation-error text-success" data-valmsg-for="Email" data-valmsg-replace="true">Reset Success.</span>';
+                        if (isset($_GET["status"]) && $_GET["status"] === "FILL") {
+                            echo "<span class='field-validation-error text-danger text-center auth-subtitle' >Fill in all fields!</span>";
                         }
                         ?>
-                        
-                        <input type="submit" value="Log in" class="btn btn-primary btn-block btn-lg shadow-lg mt-3" name="submit">
+                        <input type="submit" value="Send Email" class="btn btn-primary btn-block btn-lg shadow-lg mt-3" name="submit">
+                        <a class="btn btn-primary btn-block btn-lg shadow-lg mt-3" href="index.php">Back to HomePage</a>
 </form>                    <div class="text-center mt-3 text-lg fs-5">
-                        <p><a class="font-bold" href="Forgot_password.php">Forgot password?</a></p>
+                        <!-- <p><a class="font-bold" href="#">Forgot password?</a></p> -->
                     </div>
                 </div>
             </div>

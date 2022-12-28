@@ -51,7 +51,7 @@ let header = $(`<div class='flex flex-row' style="z-index:5">
         <span>Contact School/teacher</span>
 
         </a>
-        <a href="#"
+        <a href="../Settings.php"
             class=' text-gray-400 text-sm flex items-center gap-x-4 cursor-pointer 
             hover:bg-slate-400 hover:text-gray-700 mx-4 mt-12 px-3 
             rounded-md'>
