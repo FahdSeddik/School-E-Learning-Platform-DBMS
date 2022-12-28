@@ -19,7 +19,7 @@ namespace School_DB_System
     //(Dt - > datagridview)
 
     //STUDENT USERCONTROL
-    public partial class Department : SSSTPageParent //inherits from the base usercontrol which contains the main design and functions (SSSTPageParent)
+    public partial class Department : SecondaryTabBase //inherits from the base usercontrol which contains the main design and functions (SSSTPageParent)
     {
         //DATA MEMBERS
         protected ViewController viewController; //viewcontroller object

@@ -100,20 +100,92 @@ namespace School_DB_System
             string query = "delete Parent where p_SSN in ((select std_ParentSSN from Student where std_ID='" + stdID + "'));";
             return dbMan.ExecuteNonQuery(query);
         }
+
         public int AddStudent(string pssn, string pname, string paddress, string pmob, string pemail, string sid, string sname, string sssn, string semail, string smob, string dob, string nationatity, string saddress, string seclan, int syear)
         {
             string query = "insert into Parent(p_SSN, p_Name, p_Address, p_Mobile, p_Email) values(" + pssn + ",'" + pname + "','" + paddress + "'," + pmob + ",'" + pemail + "');"
             + "insert into Student(std_ID, std_Name, std_SSN, std_Email, std_Mobile, std_DoB, std_Nationality, std_Address, std_ParentSSN, Username, Password, second_language)"
-            + "values('" + sid + "','" + sname + "','" + sssn + "','" + semail + "','" + smob + "','" + dob + "','" + nationatity + "','" + saddress + "','" + pssn + "','" + sid.ToString() + "','" + sname + "','" + seclan + "');"
+            + "values('" + sid + "','" + sname + "','" + sssn + "','" + semail + "','" + smob + "','" + dob + "','" + nationatity + "','" + saddress + "','" + pssn + "','" + sid+ "','0000','" + seclan + "');"
             + "insert into Current_Student(std_ID, std_Year) values('" + sid + "'," + syear + ");";
             return dbMan.ExecuteNonQuery(query);
         }
-        public int UpdateCurrentStudent(string pssn, string pname, string paddress, string pmob, string pemail, string sid, string sname, string sssn, string semail, string smob, string dob, string nationatity, string saddress, string seclan, int syear, bool payedtuition)
+
+        public int Insert_DEFAULT_ENROLLMENT(string sub_ID, string std_ID)
+        {
+            string query = "Insert into Enrollment Values('" + std_ID + "','" + sub_ID + "','U',0)";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public DataTable getSubjectsInYear(int year)
+        {
+            string query = "SELECT sub_ID ,sub_Dep_Name from Subject Where sub_year = " + year;
+            return dbMan.ExecuteReader(query);
+        }
+
+        public string getSecondNot(string std_ID)
+        {
+            string query = "SELECT second_language from Student where std_ID=" + std_ID;
+            string lang = (string)dbMan.ExecuteScalar(query);
+            if (lang == "German") return "French";
+            return "German";
+        }
+        public DataTable getStudentsinYear(int year)
+        {
+            string query = "SELECT std_ID From Current_Student Where std_Year=" + year +";";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int DeleteCurrent(string std_ID)
+        {
+            string query = "Delete From Current_Student Where std_ID=" + std_ID;
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int AddGraduate(string std_ID, string uni = "")
+        {
+            string query;
+            if (uni == "")
+            {
+                query = "INSERT INTO Grad_Student VALUES('" + std_ID + "', NULL )";
+            }
+            else
+            {
+                query = "INSERT INTO Grad_Student VALUES('" + std_ID + "','" + uni + "')";
+            }
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public bool GraduateCurrentStudent(string std_ID, string uni = "")
+        {
+            return (DeleteCurrent(std_ID) !=0) && (AddGraduate(std_ID, uni) != 0);
+        }
+
+        public int UpdateYear(string std_ID, int year)
+        {
+            if (year >= 13) return 0;
+            string query = "Update Current_Student set std_Year=" + year + " Where std_ID=" + std_ID;
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int MoveStudentYear(string std_ID, int year)
+        {
+            DataTable subjects = getSubjectsInYear(year);
+            //next year
+            if (UpdateYear(std_ID, year) ==0) return 0;
+            //student updated in current student
+            for (int i = 0; i < subjects.Rows.Count; i++)
+            {
+                //skip german if takes french and vice versa
+                if (subjects.Rows[i][1].ToString() == getSecondNot(std_ID)) continue;
+                //enroll subject
+                if (Insert_DEFAULT_ENROLLMENT(subjects.Rows[i][0].ToString(), std_ID) == 0) return 0;
+            }
+            return 1;
+        }
+            
+
+            public int UpdateCurrentStudent(string pssn, string pname, string paddress, string pmob, string pemail, string sid, string sname, string sssn, string semail, string smob, string dob, string nationatity, string saddress, string seclan, int syear, bool payedtuition)
         {
             string query = "update Student set std_Name = '" + sname + "', std_SSN = '" + sssn + "', std_Email = '" + semail + "', std_Mobile = '" + smob + "', std_DoB = '" + dob + "', std_Nationality = '" + nationatity + "', std_Address = '" + saddress + "', std_ParentSSN = '" + pssn + "', second_language = '" + seclan + "' where std_ID = '" + sid + "';"
-
              + "update Current_Student set std_Year = " + syear + ", pay_tuition = '" + payedtuition + "' where std_ID = '" + sid + "';"
-
              + "update Parent set p_SSN = '" + pssn + "', p_Name = '" + pname + "', p_Address = '" + paddress + "', p_Mobile = '" + pmob + "', p_Email = '" + pemail + "' where p_SSN in ((select std_ParentSSN from Student where std_ID = '" + sid + "' ));";
             return dbMan.ExecuteNonQuery(query);
         }
@@ -228,38 +300,19 @@ namespace School_DB_System
         }
         public DataTable getSubjectsOfYear(int year)
         {
-            string query = "select s.sub_ID,s.sub_Name from Subject as s,Subject_Time_Loc as t,Room as r,Staff as sf,Department as d where s.sub_ID=t.sub_ID and s.sub_Dep_Name=t.sub_Dep_Name and r.r_Building_Num=t.r_Building_Num and r.r_Floor=t.r_Floor and r.r_Num=t.r_Num and t.t_ID=sf.staff_ID and d.dep_Name=t.sub_Dep_Name and s.sub_Year=" + year + ";";
+            string query = "select sub_ID,sub_Name from subject where sub_year = "+year+";";
             return dbMan.ExecuteReader(query);
         }
 
-        public int getAGradeCount(int year, int subjNum)
+        public int getGradeCount(string subID, string grade)
         {
-            string query = "select COUNT(e.std_ID) from Enrollment as e,Current_Student as s where s.std_Year=" + year + " and s.std_ID=e.std_ID and e.sub_ID=" + subjNum + " and e.Grade='A';";
+            string query = "select count(grade) from enrollment where sub_ID = '"+subID+"' and grade = '"+grade+"' ;";
             return (int)dbMan.ExecuteScalar(query);
         }
-        public int getBGradeCount(int year, int subjNum)
+     
+        public int getPassCount(string subID)
         {
-            string query = "select COUNT(e.std_ID) from Enrollment as e,Current_Student as s where s.std_Year=" + year + " and s.std_ID=e.std_ID and e.sub_ID=" + subjNum + " and e.Grade='B';";
-            return (int)dbMan.ExecuteScalar(query);
-        }
-        public int getCGradeCount(int year, int subjNum)
-        {
-            string query = "select COUNT(e.std_ID) from Enrollment as e,Current_Student as s where s.std_Year=" + year + " and s.std_ID=e.std_ID and e.sub_ID=" + subjNum + " and e.Grade='C';";
-            return (int)dbMan.ExecuteScalar(query);
-        }
-        public int getDGradeCount(int year, int subjNum)
-        {
-            string query = "select COUNT(e.std_ID) from Enrollment as e,Current_Student as s where s.std_Year=" + year + " and s.std_ID=e.std_ID and e.sub_ID=" + subjNum + " and e.Grade='D';";
-            return (int)dbMan.ExecuteScalar(query);
-        }
-        public int getFGradeCount(int year, int subjNum)
-        {
-            string query = "select COUNT(e.std_ID) from Enrollment as e,Current_Student as s where s.std_Year=" + year + " and s.std_ID=e.std_ID and e.sub_ID=" + subjNum + " and e.Grade='F';";
-            return (int)dbMan.ExecuteScalar(query);
-        }
-        public int getPassCount(int year, int subjNum)
-        {
-            string query = "select COUNT(e.std_ID) from Enrollment as e,Current_Student as s where s.std_Year=" + year + " and s.std_ID=e.std_ID and e.sub_ID = " + subjNum + " and not e.Grade='F';";
+            string query = "select count(grade) from enrollment where sub_ID = '"+subID+"' and not grade  = 'F';";
             return (int)dbMan.ExecuteScalar(query);
         }
 

@@ -1,4 +1,5 @@
 ﻿using Guna.UI2.WinForms;
+using School_DB_System.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,8 +8,10 @@ using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 //SCHOOL DATABASE SYSTEM NAMESPACE
 namespace School_DB_System
@@ -19,13 +22,14 @@ namespace School_DB_System
     //(Dt - > datagridview)
 
     //STUDENT USERCONTROL
-    public partial class Student : SSSTPageParent //inherits from the base usercontrol which contains the main design and functions (SSSTPageParent)
+    public partial class Student : SecondaryTabBase //inherits from the base usercontrol which contains the main design and functions (SSSTPageParent)
     {
         //DATA MEMBERS
         protected ViewController viewController; //viewcontroller object
         protected Controller controllerObj; // controller object
         Guna2ComboBox YearList_CBox;
         Guna2HtmlLabel YearList_Lbl;
+        Guna2Button MoveToNextYear_Btn;
 
         //Student usercontrol non default constructor
         public Student(ViewController viewController, Controller controllerObj) : base(viewController, controllerObj)
@@ -39,15 +43,15 @@ namespace School_DB_System
                                 //(Student states : Current, Graduated, Years : 1,2,3,...etc)
             initializeDataGridView();//initialize Datagridview data (columns and rows)
                                      //(adding column names, adjusting datagridview style...etc)
+            EditControls();
         }
 
-        //overriding onPaint function to change derived class (Add student) design
-        protected override void OnPaint(PaintEventArgs pe)
+        protected override void EditControls()
         {
             Filter_Pnl.Controls.Add(YearList_Lbl);//adding the Label to the filter panel
             Filter_Pnl.Controls.Add(YearList_CBox);//adding the comboobox to the filter panel
-
-            String[] CBoxPropertiesToClone = new String[] { "Size", "BorderRadius", "BorderColor"};//properties to clone from the source (template)
+            Menu_Pnl.Controls.Add(MoveToNextYear_Btn);
+            String[] CBoxPropertiesToClone = new String[] { "Size", "BorderRadius", "BorderColor" };//properties to clone from the source (template)
             PropertyInfo[] CBoxcontrolProperties = Template_CBox.GetType().GetProperties();
             //adjusting comboobox style depending on the template comboobox "Template_CBox"
             foreach (String Property in CBoxPropertiesToClone) //loop on each property in string array properties to clone in the source control (template control)
@@ -56,7 +60,7 @@ namespace School_DB_System
                 ObjPropertyInfo.SetValue(YearList_CBox, ObjPropertyInfo.GetValue(Template_CBox)); //sets the property value from the source control (template) in the destination control (yearList_CBox)
             }
 
-            String[] LblPropertiesToClone = new String[] {"Font"};//properties to clone from the source (template)
+            String[] LblPropertiesToClone = new String[] { "Font" };//properties to clone from the source (template)
             PropertyInfo[] LblcontrolProperties = Template_Lbl.GetType().GetProperties();
             //adjusting label style depending on the template label "Template_Lbl"
             foreach (String Property in LblPropertiesToClone)
@@ -64,6 +68,31 @@ namespace School_DB_System
                 PropertyInfo ObjPropertyInfo = LblcontrolProperties.First(a => a.Name == Property);//get the property value from the source control (template)
                 ObjPropertyInfo.SetValue(YearList_Lbl, ObjPropertyInfo.GetValue(Template_Lbl));//sets the property value from the source control (template) in the destination control (yearList_Lbl)
             }
+
+           MoveToNextYear_Btn.BackColor = System.Drawing.Color.White;
+           MoveToNextYear_Btn.BorderColor = System.Drawing.Color.Silver;
+           MoveToNextYear_Btn.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+           MoveToNextYear_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+           MoveToNextYear_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+           MoveToNextYear_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+           MoveToNextYear_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+           MoveToNextYear_Btn.Dock = System.Windows.Forms.DockStyle.Right;
+           MoveToNextYear_Btn.FillColor = System.Drawing.Color.White;
+           MoveToNextYear_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+           MoveToNextYear_Btn.ForeColor = System.Drawing.Color.Black;
+           MoveToNextYear_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+           MoveToNextYear_Btn.Margin = new System.Windows.Forms.Padding(0);
+           MoveToNextYear_Btn.Size = new System.Drawing.Size(196, 37);
+           MoveToNextYear_Btn.TabIndex = 4;
+           MoveToNextYear_Btn.Text = "Move to next year";
+           MoveToNextYear_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+           MoveToNextYear_Btn.Click += new System.EventHandler(this.MoveToNextYear_Btn_Click);
+             foreach(Control item in Menu_Pnl.Controls)
+            {
+                Guna2Button Button = (Guna2Button)item;
+                Button.Width = (Menu_Pnl.Width / 5);
+            }
+
 
             //changing style of the new controls
             //location of the new Label is at 75 offset on y axis direction from the first Label
@@ -76,6 +105,7 @@ namespace School_DB_System
             Template_CBox.Name = "StateList_CBox";//changing comboobox name to "StateList_CBox"
             Template_Lbl.Name = "StateList_Lbl";//changing Label name to "StateList_Lbl"
             Template_Lbl.Text = "State";//changing Label Text to "State"
+            Title_Lbl.Text = "Student";
         }
 
         //METHODS
@@ -87,6 +117,9 @@ namespace School_DB_System
             YearList_CBox = new Guna2ComboBox();
             //creating a new Label "yearslist_Lbl"
             YearList_Lbl = new Guna2HtmlLabel();
+            //creating a new Label "yearslist_Lbl"
+            MoveToNextYear_Btn = new Guna2Button();
+
         }
 
 
@@ -117,6 +150,8 @@ namespace School_DB_System
             Data_Dt.Refresh(); //refresh datagridview
         }
 
+     
+
         //initialize filter panel components (ComboBoxes)
         //linking combooboxes with data
         protected override void initializeFilter()
@@ -125,16 +160,18 @@ namespace School_DB_System
             DataTable yearslist = getYearslist();//retrving years datatable (All, 1, 2, 3...etc)
             YearList_CBox.DisplayMember = "std_Year"; //displaying std_Year column from datatable "Yearslist"
             YearList_CBox.ValueMember = "std_Year"; //linking value to std_year column from datatable "YearsList"
-            YearList_CBox.BindingContext = this.BindingContext;
             YearList_CBox.DataSource = yearslist; //linking yearslist comboobox and yearlist datatable
+            YearList_CBox.BindingContext = this.BindingContext;
             YearList_CBox.SelectedIndex = 0; //initially selecting the first element which is "All"
             //initializing student state comboobox with (current, Graduated)
             Template_CBox.Items.Add("Current"); //adding item at row index = 0 (first item)
             Template_CBox.Items.Add("Graduated");//adding item at row index = 1 (second item)
+            Template_CBox.BindingContext = this.BindingContext;
             Template_CBox.SelectedIndex = 0; //initially selecting the first element which is "Current"
             //adding SelectedIndexChanged event to the template comboobox which will be (StateList_CBox)
             this.Template_CBox.SelectedIndexChanged += new System.EventHandler(this.StateList_CBox_SelectedIndexChanged);
         }
+
 
         //changes to graduate student view
         //mainly used when the user filters graudated students
@@ -142,17 +179,17 @@ namespace School_DB_System
         //shows uinversity textbox and label in view and update panels
         private void GraduateStudentView()
         {
-            //changing datagridview columns names because they are named in a dfiffrent names in database
-            Data_Dt.Columns[1].Name = "ID"; //changes column name because in database it is named std_id
-            Data_Dt.Columns[2].Name = "Name"; //changes column name text because in database it is named std_name
-            Data_Dt.Columns[3].Name = "Email"; //changes column name text because in database it is named std_email
-            Data_Dt.Columns[4].Name = "University"; //changes name header text because in database it is named std_year
-            //changing datagridview columns headertext because they are named in a dfiffrent names in database
-            Data_Dt.Columns[1].HeaderText = "ID"; //changes column header text because in database it is named std_id
-            Data_Dt.Columns[2].HeaderText = "Name"; //changes column header text because in database it is named std_name
-            Data_Dt.Columns[3].HeaderText = "Email"; //changes column header text because in database it is named std_email
-            Data_Dt.Columns[4].HeaderText = "University"; //changes column header text because in database it is named std_year
-        }
+                //changing datagridview columns names because they are named in a dfiffrent names in database
+                Data_Dt.Columns[1].Name = "ID"; //changes column name because in database it is named std_id
+                Data_Dt.Columns[2].Name = "Name"; //changes column name text because in database it is named std_name
+                Data_Dt.Columns[3].Name = "Email"; //changes column name text because in database it is named std_email
+                Data_Dt.Columns[4].Name = "University"; //changes name header text because in database it is named std_year
+                                                        //changing datagridview columns headertext because they are named in a dfiffrent names in database
+                Data_Dt.Columns[1].HeaderText = "ID"; //changes column header text because in database it is named std_id
+                Data_Dt.Columns[2].HeaderText = "Name"; //changes column header text because in database it is named std_name
+                Data_Dt.Columns[3].HeaderText = "Email"; //changes column header text because in database it is named std_email
+                Data_Dt.Columns[4].HeaderText = "University"; //changes column header text because in database it is named std_year
+         }
 
         //changes to current student view
         //mainly used when the user filters current students
@@ -160,7 +197,7 @@ namespace School_DB_System
         //shows year textbox and label in view and update panels
         private void CurrentStudentView()
         {
-            //changing datagridview columns names because they are named in a dfiffrent names in database
+                //changing datagridview columns names because they are named in a dfiffrent names in database
             Data_Dt.Columns[1].Name = "ID"; //changes column name because in database it is named std_id
             Data_Dt.Columns[2].Name = "Name"; //changes column name text because in database it is named std_name
             Data_Dt.Columns[3].Name = "Email"; //changes column name text because in database it is named std_email
@@ -170,23 +207,30 @@ namespace School_DB_System
             Data_Dt.Columns[2].HeaderText = "Name"; //changes column header text because in database it is named std_name
             Data_Dt.Columns[3].HeaderText = "Email"; //changes column header text because in database it is named std_email
             Data_Dt.Columns[4].HeaderText = "Year"; //changes column header text because in database it is named std_year
+           
         }
+
 
         //creating filter years list (All,1,2,3,4...etc)
         //gets years list (1,2,3,...etc)
         //converting list to string to add "All" in the first row
         private DataTable getYearslist()
         {
-            DataTable tempYearsList = controllerObj.getYears(); //gets years in datatable column type int 
-            //creating a new years datatable but column type string because we need to add 'all' row in the top of years (can't add string and int in same column)
-            int YearsC = tempYearsList.Rows.Count; //getting yearslist count to loop on it
-            DataTable yearsList = new DataTable(); //creating a new list
-            yearsList.Columns.Add("std_Year", typeof(string)); //creating a column of name 'std_year' and of type string
-            yearsList.Rows.Add("All"); //adding the first item in the list 'all' to allow choosing all years for filter
-            for (int i = 0; i < YearsC; i++) //looping in the integer list and converting each row value to string and adding on the string list
-            {
-                yearsList.Rows.Add(tempYearsList.Rows[i][0].ToString()); //converting each row value to string and adding on the string list
-            }
+            DataTable yearsList = new DataTable(); //gets years in datatable column type int 
+            yearsList.Columns.Add("std_Year");
+            yearsList.Rows.Add("All"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("1"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("2"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("3"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("4"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("5"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("6"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("7"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("8"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("9"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("10"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("11"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("12"); //converting each row value to string and adding on the string list
             return yearsList; //returns the string list (All,1,2,3,4...etc)
         }
  
@@ -210,39 +254,61 @@ namespace School_DB_System
         //filters the datagridview with the selected combooboxes i.e choosen year and state
         protected override void Filter_Btn_Click(object sender, EventArgs e)
         {
-            //checks if columns count > 1 i.e the first filter click
-            //initially empty columns added when the student page is opened first time (constructor)
-            if (Data_Dt.Columns.Count > 1)
-            {
-                //remove columns from datagridview
-                Data_Dt.Columns.RemoveAt(1);
-                Data_Dt.Columns.RemoveAt(1);
-                Data_Dt.Columns.RemoveAt(1);
-                Data_Dt.Columns.RemoveAt(1);
-            }
-
             DataTable RequestList = null; //create an empty datatable
 
             //check if selected state is = "current" and selected year is = "All"
             if (Template_CBox.Text.ToString() == "Current" && YearList_CBox.SelectedValue.ToString() == "All")
             {
                 RequestList = controllerObj.getAllStudents(); //sends a query to retrieve all students (ID, Name, Email, Year)
+                if(RequestList == null)
+                {
+                    RJMessageBox.Show("There are no current students in the current database.",
+                   "Error",
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
                 Data_Dt.DataSource = RequestList; //linking student datagridview with students list datatable
                 CurrentStudentView(); //changes to current student view
             }
             else if (Template_CBox.Text.ToString() == "Graduated") //check if selected state is = "Graduated
             {
                 RequestList = controllerObj.getAllGraduatedStudents();
+                if (RequestList == null)
+                {
+                    RJMessageBox.Show("There are no graduate students in the current database.",
+                   "Error",
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
                 Data_Dt.DataSource = RequestList; //linking student datagridview with students list datatable
                 GraduateStudentView();
             }
             else //check if selected state is = "current" and selected year is = 1,2,3...etc (not all)
             {
-                RequestList = controllerObj.getStudentsOfYear(int.Parse(YearList_CBox.Text));
-                Data_Dt.DataSource = RequestList; //linking student datagridview with students list datatable
-                CurrentStudentView();
+                try
+                {
+                    RequestList = controllerObj.getStudentsOfYear(int.Parse(YearList_CBox.Text));
+                    if (RequestList == null)
+                    {
+                        RJMessageBox.Show("There are no current students in this year.",
+                       "Error",
+                       MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    Data_Dt.DataSource = RequestList; //linking student datagridview with students list datatable
+                    CurrentStudentView();
+                }
+                catch
+                {
+                   RJMessageBox.Show("there are no year selected.",
+                   "Error",
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+               
             }
 
+            //checks if columns count > 1 i.e the first filter click
+            //initially empty columns added when the student page is opened first time (constructor)        
             //adjusting students datagridview columns style
             Data_Dt.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; //adjusting first column style (auto size mode depending on the length of content)
             Data_Dt.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; //adjusting second column style (auto size mode depending on the length of content)
@@ -259,6 +325,7 @@ namespace School_DB_System
             return;
 
         }
+
 
         //delete student button click event
         //deletes selected students
@@ -302,8 +369,18 @@ namespace School_DB_System
                "Successfully deleted",
                MessageBoxButtons.OK,
                MessageBoxIcon.Information);
-                refreshDatagridView(); //refresh datagrid view after insert or delete student
-                return;
+                if (Data_Dt.SelectedRows.Count == Data_Dt.Rows.Count)
+                {
+                    initializeDataGridView();
+                    SelectAll_Btn.PerformClick();
+                    return;
+                }
+                else
+                {
+                    refreshDatagridView(); //refresh datagrid view after insert or delete student
+                    return;
+                }
+              
             }
             else
             {
@@ -311,6 +388,82 @@ namespace School_DB_System
             }     
         }
 
+
+        //delete student button click event
+        //deletes selected students
+        protected void MoveToNextYear_Btn_Click(object sender, EventArgs e)
+        {
+
+            //inform the user that there are no rows selected
+            RJMessageBox.Show("This button updates students year from current year to next year, moves current students who where in grade 12 to graduate students...etc.",
+              "Note",
+              MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            //if there is at least one row selected
+            //view warning message to ask for confrimation
+            var result = RJMessageBox.Show("are you sure you want to update student information?, note that this operation cannot not be undone.",
+            "Warning",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes) //if confirmed "Yes"
+            {
+                //loop on all selected rows and send a query to delete this student
+                int year = 12;
+                DataTable students;
+                try
+                {
+                    students = controllerObj.getStudentsinYear(year);
+                    for (int i = 0; i < students.Rows.Count; i++)
+                    {
+                        //university is optional , you may not enter it in function call
+                        controllerObj.GraduateCurrentStudent(students.Rows[i][0].ToString());
+                    }
+                }
+                catch
+                {
+                    RJMessageBox.Show("There was no students in year 12 to move to graduate students.",
+                                         "Information",
+                                         MessageBoxButtons.OK);
+                }
+
+
+                year = 11;
+                for (; year >= 1; year--)
+                {
+                    try
+                    {
+                        students = controllerObj.getStudentsinYear(year);
+                        for (int i = 0; i < students.Rows.Count; i++)
+                        {
+                            //student id and new year are passed
+                            //this moves student to next year 
+                            //and adds the default enrollment in the new courses
+                            if (controllerObj.MoveStudentYear(students.Rows[i][0].ToString(), year + 1) == 0)
+                            {
+                                //error handling if needed (optional)
+                                RJMessageBox.Show("Something went wrong, please try again.",
+                                "Failed",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                                return;
+
+                            }
+                        }
+                    }
+                    catch
+                    {
+                        continue;
+                    }
+                }
+            
+                RJMessageBox.Show("Successfully update students information.",
+                                        "Failed",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon. Information);
+                refreshDatagridView();
+            }
+        }
         //update student button click event
         //updated selected student information
         protected override void Update_Btn_Click(object sender, EventArgs e)

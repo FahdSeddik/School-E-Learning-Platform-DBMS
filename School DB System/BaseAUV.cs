@@ -19,14 +19,14 @@ namespace School_DB_System
     //(Txt -> TextBox) (CBox -> Comboobox) (Pnl -> Panel) (Lbl -> Label)
 
     //AUDSTUDENTPARENT USERCONTROL (BASE USERCONTROL FOR ADD STUDENT, UPDATE STUDENT, VIEW STUDENT)
-    public partial class BaseAUD : UserControl //inherits from usercontrol
+    public partial class BaseAUV : UserControl //inherits from usercontrol
     {
         //DATA MEMBERS
         ViewController viewController; //viewcontroller object
         Controller controllerObj; // controller object
 
         //non default constructor
-        protected BaseAUD(ViewController viewController, Controller controllerObj)
+        protected BaseAUV(ViewController viewController, Controller controllerObj)
         {
             InitializeComponent(); //initializing component
             this.viewController = viewController; //linking viewcontroller object with one viewcontroller object the whole applicaiton use
@@ -34,6 +34,37 @@ namespace School_DB_System
         }
 
         //METHODS
+
+
+        //adds the needed controls to the usercontrol i.e adding combooboxes and labels and textboxes...etc
+        protected virtual void EditControls()
+        {
+
+            //functinality depending on the child usercontrol (student, staff, subject, teacher)
+            //so it is virtual function
+        }
+
+        //creating filter years list (All,1,2,3,4...etc)
+        //gets years list (1,2,3,...etc)
+        //converting list to string to add "All" in the first row
+        protected DataTable getYearslist()
+        {
+            DataTable yearsList = new DataTable(); //gets years in datatable column type int 
+            yearsList.Columns.Add("std_Year");
+            yearsList.Rows.Add("1"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("2"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("3"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("4"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("5"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("6"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("7"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("8"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("9"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("10"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("11"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("12"); //converting each row value to string and adding on the string list
+            return yearsList; //returns the string list (All,1,2,3,4...etc)
+        }
 
         //adds the needed controls to the usercontrol i.e adding combooboxes and labels and textboxes...etc
         protected virtual void PrepareControls()

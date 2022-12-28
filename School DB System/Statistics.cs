@@ -30,7 +30,7 @@ namespace School_DB_System
             YearList_CBox.DataSource = controllerObj.getYears();
 
             SubjList_CBox.DisplayMember = "sub_Name"; //displaying std_Year column from datatable "Yearslist"
-            SubjList_CBox.ValueMember = "sub_Num"; //linking value to std_year column from datatable "YearsList"
+            SubjList_CBox.ValueMember = "sub_ID"; //linking value to std_year column from datatable "YearsList"
             SubjList_CBox.DataSource = controllerObj.getSubjectsOfYear(int.Parse(YearList_CBox.SelectedValue.ToString()));
 
             TeachDep_CBox.DisplayMember = "dep_Name"; //displaying std_Year column from datatable "Yearslist"
@@ -49,8 +49,10 @@ namespace School_DB_System
             StdGrades2.Columns.Add("S");
             StdGrades2.Columns.Add("F");
             StudPass_Chart.Series.Add("PassOrFail").ChartType = SeriesChartType.Pie;
+
             StudPass_Chart.Series["PassOrFail"].XValueMember = "S";
             StudPass_Chart.Series["PassOrFail"].YValueMembers = "F";
+           
             StudPass_Chart.DataSource = StdGrades2;
             //////////////////////////////////////////////
             DataTable StaffSalaries = new DataTable();
@@ -69,6 +71,7 @@ namespace School_DB_System
             StaffSalaries.Rows.Add("Standar Deviation", Stdev.ToString());
             StaffStat_Dgv.DataSource = StaffSalaries;
             NumOfStaffVal_Lbl.Text = Count.ToString();
+            hideEmptyChartMsg();
             ///////////////
 
         }
@@ -94,13 +97,23 @@ namespace School_DB_System
         {
             int ACount, BCount, CCount, DCount, FCount,SuccedCount;
             int year = int.Parse(YearList_CBox.SelectedValue.ToString());
-            int SubjNum = int.Parse(SubjList_CBox.SelectedValue.ToString());
-            ACount = controllerObj.getAGradeCount(year,SubjNum);
-            BCount = controllerObj.getBGradeCount(year, SubjNum);
-            CCount = controllerObj.getCGradeCount(year, SubjNum);
-            DCount = controllerObj.getDGradeCount(year, SubjNum);
-            FCount = controllerObj.getFGradeCount(year, SubjNum);
-            SuccedCount = controllerObj.getPassCount(year, SubjNum);
+            string sub_ID = SubjList_CBox.SelectedValue.ToString();
+            ACount = controllerObj.getGradeCount(sub_ID,"A");
+            BCount = controllerObj.getGradeCount(sub_ID,"B");
+            CCount = controllerObj.getGradeCount(sub_ID, "C");
+            DCount = controllerObj.getGradeCount(sub_ID, "D");
+            FCount = controllerObj.getGradeCount(sub_ID, "F");
+            SuccedCount = controllerObj.getPassCount(sub_ID);
+            if(ACount == 0 && BCount == 0 && CCount == 0 && DCount == 0 && FCount ==0)
+            {
+                StudGrades_Chart.Series["Students"].Enabled = false;
+                StudPass_Chart.Series["PassOrFail"].Enabled = false;
+                showEmptyChartMsg();
+                return;
+            }
+            StudGrades_Chart.Series["Students"].Enabled = true;
+            StudPass_Chart.Series["PassOrFail"].Enabled = true;
+            hideEmptyChartMsg();
             StdGrades.Rows.Clear();
             StdGrades2.Rows.Clear();
             StdGrades.Rows.Add("A", ACount.ToString());
@@ -110,12 +123,24 @@ namespace School_DB_System
             StdGrades.Rows.Add("F", FCount.ToString());
             StdGrades2.Rows.Add("pass", SuccedCount.ToString());
             StdGrades2.Rows.Add("Fail", FCount.ToString());
+            StudPass_Chart.PaletteCustomColors = new Color[] { Color.BlanchedAlmond, Color.Yellow };
             NumOfStudsOfYearValue_Lbl.Text = (controllerObj.getStudentsCountOfYear(year)).ToString();
             StudGrades_Chart.DataBind();
             StudPass_Chart.DataBind();
+            
         }
 
-     
+        private void showEmptyChartMsg()
+        {
+            EmptyChartErrorMsg_Lbl.Show();
+            EmptyPieChartErrorMsg_Lbl.Show();
+        }
+
+        private void hideEmptyChartMsg()
+        {
+            EmptyChartErrorMsg_Lbl.Hide();
+            EmptyPieChartErrorMsg_Lbl.Hide();
+        }
 
         private void TeachView_Btn_Click(object sender, EventArgs e)
         {
@@ -144,7 +169,7 @@ namespace School_DB_System
         private void YearList_CBox_SelectedIndexChanged_1(object sender, EventArgs e)
         {
                 SubjList_CBox.DisplayMember = "sub_Name"; //displaying std_Year column from datatable "Yearslist"
-                SubjList_CBox.ValueMember = "sub_Num"; //linking value to std_year column from datatable "YearsList"
+                SubjList_CBox.ValueMember = "sub_ID"; //linking value to std_year column from datatable "YearsList"
                 DataTable SubjList = controllerObj.getSubjectsOfYear(int.Parse(YearList_CBox.SelectedValue.ToString()));
                 SubjList_CBox.DataSource = SubjList;
                 SubjList_CBox.Refresh();

@@ -18,7 +18,7 @@ namespace School_DB_System
     //(Txt -> TextBox) (CBox -> Comboobox) (Pnl -> Panel) (Lbl -> Label)
 
     //UPDATE STUDENT USERCONTROL
-    public partial class UpdateStudent : StudentAUD //inherits from the base usercontrol which contains the main design and functions (AUDSTUDENTPARENT)
+    public partial class UpdateStudent : StudentAUVBase //inherits from the base usercontrol which contains the main design and functions (AUDSTUDENTPARENT)
     {
         //DATA MEMBERS
         ViewController viewController; //viewcontroller object
@@ -32,13 +32,12 @@ namespace School_DB_System
             this.controllerObj = controllerObj;  //linking controller object with one controller object the whole applicaiton use
             FillData(StdID); //filling textboxes with the selected student data
             //it send query to retrive selected student data
-            //and fills textboxes with selected student information
+            //and fills textboxes with selected student information\
+            EditControls();
         }
 
-        //overriding onPaint function to change derived class (Update student) design
-        protected override void OnPaint(PaintEventArgs pe)
+        protected override void EditControls()
         {
-
             Tittle_Lbl.Text = "Update Student"; //changes control title text to update student
             Tittle_Lbl.TextAlignment = ContentAlignment.MiddleCenter; //changes tittle text alignment to center
             StdSub_Pnl.Visible = true;
@@ -46,8 +45,12 @@ namespace School_DB_System
             StdSub_Pnl.BringToFront();
             this.Controls.Remove(StaffSub_Pnl);
             StdName_Txt.Select();//initially selecting student name textbox
-            StdPayedTuition_CBox.Visible = false; //hiding payed tuition check box in add student panel
+     
+            StdYear_CBox.Enabled = false;
+            Std2ndLang_CBox.Enabled = false;
         }
+
+           
         //METHODS
 
         protected override void FillData(string stdID)

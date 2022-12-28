@@ -50,7 +50,9 @@
             this.SubjList_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.YearList_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.View_Btn = new Guna.UI2.WinForms.Guna2Button();
+            this.NumOfStudsOfYearValue_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.NumOfStdsVal_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.NumOfStudsOfYear_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.NumOfStuds_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.StudPass_Chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.StudGrades_Chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -67,8 +69,8 @@
             this.TeachDep_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.TeachStat_Dgv = new Guna.UI2.WinForms.Guna2DataGridView();
             this.TeachSalaries_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.NumOfStudsOfYear_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.NumOfStudsOfYearValue_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.EmptyChartErrorMsg_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.EmptyPieChartErrorMsg_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Menu_Pnl.SuspendLayout();
             this.Tabs_Menu.SuspendLayout();
             this.Students_Tab.SuspendLayout();
@@ -156,6 +158,8 @@
             this.Students_Tab.Controls.Add(this.NumOfStudsOfYearValue_Lbl);
             this.Students_Tab.Controls.Add(this.NumOfStdsVal_Lbl);
             this.Students_Tab.Controls.Add(this.NumOfStudsOfYear_Lbl);
+            this.Students_Tab.Controls.Add(this.EmptyPieChartErrorMsg_Lbl);
+            this.Students_Tab.Controls.Add(this.EmptyChartErrorMsg_Lbl);
             this.Students_Tab.Controls.Add(this.NumOfStuds_Lbl);
             this.Students_Tab.Controls.Add(this.StudPass_Chart);
             this.Students_Tab.Controls.Add(this.StudGrades_Chart);
@@ -240,6 +244,17 @@
             this.View_Btn.Text = "View";
             this.View_Btn.Click += new System.EventHandler(this.View_Btn_Click);
             // 
+            // NumOfStudsOfYearValue_Lbl
+            // 
+            this.NumOfStudsOfYearValue_Lbl.BackColor = System.Drawing.Color.White;
+            this.NumOfStudsOfYearValue_Lbl.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.NumOfStudsOfYearValue_Lbl.ForeColor = System.Drawing.Color.Gray;
+            this.NumOfStudsOfYearValue_Lbl.Location = new System.Drawing.Point(342, 420);
+            this.NumOfStudsOfYearValue_Lbl.Name = "NumOfStudsOfYearValue_Lbl";
+            this.NumOfStudsOfYearValue_Lbl.Size = new System.Drawing.Size(12, 22);
+            this.NumOfStudsOfYearValue_Lbl.TabIndex = 20;
+            this.NumOfStudsOfYearValue_Lbl.Text = "0";
+            // 
             // NumOfStdsVal_Lbl
             // 
             this.NumOfStdsVal_Lbl.BackColor = System.Drawing.Color.White;
@@ -250,6 +265,17 @@
             this.NumOfStdsVal_Lbl.Size = new System.Drawing.Size(15, 32);
             this.NumOfStdsVal_Lbl.TabIndex = 20;
             this.NumOfStdsVal_Lbl.Text = "0";
+            // 
+            // NumOfStudsOfYear_Lbl
+            // 
+            this.NumOfStudsOfYear_Lbl.BackColor = System.Drawing.Color.White;
+            this.NumOfStudsOfYear_Lbl.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.NumOfStudsOfYear_Lbl.ForeColor = System.Drawing.Color.Gray;
+            this.NumOfStudsOfYear_Lbl.Location = new System.Drawing.Point(14, 420);
+            this.NumOfStudsOfYear_Lbl.Name = "NumOfStudsOfYear_Lbl";
+            this.NumOfStudsOfYear_Lbl.Size = new System.Drawing.Size(294, 22);
+            this.NumOfStudsOfYear_Lbl.TabIndex = 19;
+            this.NumOfStudsOfYear_Lbl.Text = "Total number of students in selected year";
             // 
             // NumOfStuds_Lbl
             // 
@@ -270,6 +296,9 @@
             this.StudPass_Chart.Legends.Add(legend3);
             this.StudPass_Chart.Location = new System.Drawing.Point(391, 270);
             this.StudPass_Chart.Name = "StudPass_Chart";
+            this.StudPass_Chart.PaletteCustomColors = new System.Drawing.Color[] {
+        System.Drawing.Color.DarkRed,
+        System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))))};
             this.StudPass_Chart.Size = new System.Drawing.Size(400, 233);
             this.StudPass_Chart.TabIndex = 14;
             this.StudPass_Chart.Text = "chart2";
@@ -568,27 +597,27 @@
             this.TeachSalaries_Lbl.TabIndex = 27;
             this.TeachSalaries_Lbl.Text = "Salaries";
             // 
-            // NumOfStudsOfYear_Lbl
+            // EmptyChartErrorMsg_Lbl
             // 
-            this.NumOfStudsOfYear_Lbl.BackColor = System.Drawing.Color.White;
-            this.NumOfStudsOfYear_Lbl.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.NumOfStudsOfYear_Lbl.ForeColor = System.Drawing.Color.Gray;
-            this.NumOfStudsOfYear_Lbl.Location = new System.Drawing.Point(14, 420);
-            this.NumOfStudsOfYear_Lbl.Name = "NumOfStudsOfYear_Lbl";
-            this.NumOfStudsOfYear_Lbl.Size = new System.Drawing.Size(294, 22);
-            this.NumOfStudsOfYear_Lbl.TabIndex = 19;
-            this.NumOfStudsOfYear_Lbl.Text = "Total number of students in selected year";
+            this.EmptyChartErrorMsg_Lbl.BackColor = System.Drawing.Color.White;
+            this.EmptyChartErrorMsg_Lbl.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.EmptyChartErrorMsg_Lbl.ForeColor = System.Drawing.Color.Red;
+            this.EmptyChartErrorMsg_Lbl.Location = new System.Drawing.Point(394, 125);
+            this.EmptyChartErrorMsg_Lbl.Name = "EmptyChartErrorMsg_Lbl";
+            this.EmptyChartErrorMsg_Lbl.Size = new System.Drawing.Size(397, 32);
+            this.EmptyChartErrorMsg_Lbl.TabIndex = 19;
+            this.EmptyChartErrorMsg_Lbl.Text = "There are no past grades for this subject";
             // 
-            // NumOfStudsOfYearValue_Lbl
+            // EmptyPieChartErrorMsg_Lbl
             // 
-            this.NumOfStudsOfYearValue_Lbl.BackColor = System.Drawing.Color.White;
-            this.NumOfStudsOfYearValue_Lbl.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.NumOfStudsOfYearValue_Lbl.ForeColor = System.Drawing.Color.Gray;
-            this.NumOfStudsOfYearValue_Lbl.Location = new System.Drawing.Point(342, 420);
-            this.NumOfStudsOfYearValue_Lbl.Name = "NumOfStudsOfYearValue_Lbl";
-            this.NumOfStudsOfYearValue_Lbl.Size = new System.Drawing.Size(12, 22);
-            this.NumOfStudsOfYearValue_Lbl.TabIndex = 20;
-            this.NumOfStudsOfYearValue_Lbl.Text = "0";
+            this.EmptyPieChartErrorMsg_Lbl.BackColor = System.Drawing.Color.White;
+            this.EmptyPieChartErrorMsg_Lbl.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.EmptyPieChartErrorMsg_Lbl.ForeColor = System.Drawing.Color.Red;
+            this.EmptyPieChartErrorMsg_Lbl.Location = new System.Drawing.Point(394, 370);
+            this.EmptyPieChartErrorMsg_Lbl.Name = "EmptyPieChartErrorMsg_Lbl";
+            this.EmptyPieChartErrorMsg_Lbl.Size = new System.Drawing.Size(397, 32);
+            this.EmptyPieChartErrorMsg_Lbl.TabIndex = 19;
+            this.EmptyPieChartErrorMsg_Lbl.Text = "There are no past grades for this subject";
             // 
             // Statistics
             // 
@@ -644,5 +673,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel NumOfTeach_Lbl;
         private Guna.UI2.WinForms.Guna2HtmlLabel NumOfStudsOfYearValue_Lbl;
         private Guna.UI2.WinForms.Guna2HtmlLabel NumOfStudsOfYear_Lbl;
+        private Guna.UI2.WinForms.Guna2HtmlLabel EmptyPieChartErrorMsg_Lbl;
+        private Guna.UI2.WinForms.Guna2HtmlLabel EmptyChartErrorMsg_Lbl;
     }
 }

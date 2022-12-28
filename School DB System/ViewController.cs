@@ -16,9 +16,9 @@ namespace School_DB_System
         //PRIVATE DATA MEMBERS
         private Application Application_Handler; //Application Handler
         private UserControl MainPage;
-        private SSSTPageParent MainTab;
+        private SecondaryTabBase MainTab;
         private UserControl UCMainTab;
-        private BaseAUD SubTab;
+        private BaseAUV SubTab;
         private UserControl UCSubTab;
         private UserControl TempTab;
         private Controller controllerobj; //contoller object
@@ -205,7 +205,7 @@ namespace School_DB_System
 
         public void viewStudent()
         {
-            SSSTPageParent StudentPage = new Student(this, controllerobj);//creating the login page
+            SecondaryTabBase StudentPage = new Student(this, controllerobj);//creating the login page
             MainTab = StudentPage;
             Application_Handler.ViewOnMainTab(StudentPage);//viewing homepage on the main application window
         }
@@ -225,22 +225,22 @@ namespace School_DB_System
 
         public void viewTeacher()
         {
-            SSSTPageParent TeacherPage = new Teacher(this, controllerobj);//creating the login page
+            SecondaryTabBase TeacherPage = new Teacher(this, controllerobj);//creating the login page
             MainTab = TeacherPage;
             Application_Handler.ViewOnMainTab(TeacherPage);//viewing homepage on the main application window
         }
 
         public void viewStaff()
         {
-            SSSTPageParent StaffPage = new Staff(this, controllerobj);//creating the login page
+            SecondaryTabBase StaffPage = new Staff(this, controllerobj);//creating the login page
             MainTab = StaffPage;
             Application_Handler.ViewOnMainTab(StaffPage);//viewing homepage on the main application window
         }
 
         public void viewBus()
         {
-            SSSTPageParent BusPage = new Bus(this, controllerobj);//creating the login page
-            SSSTPageParent MainTab = BusPage;
+            SecondaryTabBase BusPage = new Bus(this, controllerobj);//creating the login page
+            SecondaryTabBase MainTab = BusPage;
             Application_Handler.ViewOnMainTab(BusPage);//viewing homepage on the main application window
         }
 
@@ -260,14 +260,14 @@ namespace School_DB_System
 
         public void viewDepartment()
         {
-            SSSTPageParent DepartmentPage = new Department(this, controllerobj);//creating the login page
+            SecondaryTabBase DepartmentPage = new Department(this, controllerobj);//creating the login page
             MainTab = DepartmentPage;
             Application_Handler.ViewOnMainTab(DepartmentPage);//viewing homepage on the main application window
         }
 
         public void viewSubject()
         {
-            SSSTPageParent SubjectPage = new Subject(this, controllerobj);//creating the login page
+            SecondaryTabBase SubjectPage = new Subject(this, controllerobj);//creating the login page
             MainTab = SubjectPage;
             Application_Handler.ViewOnMainTab(SubjectPage);//viewing homepage on the main application window
         }

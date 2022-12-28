@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace School_DB_System
 {
-    public partial class Bus : SSSTPageParent
+    public partial class Bus : SecondaryTabBase
     {
         //DATA MEMBERS
         protected ViewController viewController; //viewcontroller object

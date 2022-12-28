@@ -1,6 +1,6 @@
 ﻿namespace School_DB_System
 {
-    partial class StudentAUD
+    partial class StudentAUVBase
     {
         /// <summary> 
         /// Required designer variable.

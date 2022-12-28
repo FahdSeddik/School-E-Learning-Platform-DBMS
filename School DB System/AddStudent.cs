@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,7 +18,7 @@ namespace School_DB_System
     //(Txt -> TextBox) (CBox -> Comboobox) (Pnl -> Panel) (Lbl -> Label)
 
     //ADD STUDENT USERCONTROL
-    public partial class AddStudent : StudentAUD //inherits from the base usercontrol which contains the main design and functions (AUDSTUDENTPARENT)
+    public partial class AddStudent : StudentAUVBase //inherits from the base usercontrol which contains the main design and functions (AUDSTUDENTPARENT)
     {
         //DATA MEMBERS
         ViewController viewController; //viewcontroller object
@@ -30,7 +31,7 @@ namespace School_DB_System
             this.viewController = viewController; //linking viewcontroller object with one viewcontroller object the whole applicaiton use
             this.controllerObj = controllerObj;  //linking controller object with one controller object the whole applicaiton use
             //intiallizing years list comboobox with years (1, 2, 3, ...etc)
-            DataTable yearsList = controllerObj.getYears(); //retrieving years datatable (1, 2, 3, ...etc)
+            DataTable yearsList = getYearslist(); //retrieving years datatable (1, 2, 3, ...etc)
             StdYear_CBox.DisplayMember = "std_Year"; //displaying std_Year column from the datatable "yearsList"
             StdYear_CBox.ValueMember = "std_Year"; //linking value to std_Year column from the datatable "yearsList"
             StdYear_CBox.DataSource = yearsList; //linking yearlist comboobox and yearlist datable
@@ -42,10 +43,12 @@ namespace School_DB_System
             Std2ndLang_CBox.Items.Add("French"); //adding French item at row index = 0  
             Std2ndLang_CBox.Items.Add("German"); //adding German item at row index = 1 
             Std2ndLang_CBox.SelectedIndex = 0; //intially selecting item at index = 0 which is "French"
+            EditControls();
         }
 
-        //overriding onPaint function to change derived class (Add student) design
-        protected override void OnPaint(PaintEventArgs pe)
+ 
+        //adds the needed controls to the usercontrol i.e adding combooboxes and labels and textboxes...etc
+        protected override void EditControls()
         {
             Tittle_Lbl.Text = "Add Student"; //changes control title text to update student
             Tittle_Lbl.TextAlignment = ContentAlignment.MiddleCenter; //changes tittle text alignment to center
@@ -55,7 +58,9 @@ namespace School_DB_System
             this.Controls.Remove(StaffSub_Pnl);
             StdName_Txt.Select();//initially selecting student name textbox
             StdPayedTuition_CBox.Visible = false; //hiding payed tuition check box in add student panel
+            StdDob_Dtp.MaxDate = DateTime.Now.AddYears(-5);
         }
+
 
         //METHODS
 
@@ -159,8 +164,9 @@ namespace School_DB_System
             {
                 //send a query and gets the result of the query in queryres
                 int queryRes = controllerObj.AddStudent(StdParSSN_Txt.Text.ToString(), StdParName_Txt.Text.ToString(), StdParAdress_Txt.Text.ToString(), StdParPNum_Txt.Text.ToString(), StdParEmail_Txt.Text.ToString(),
-                   StdID_Txt.Text.ToString(), StdName_Txt.Text.ToString(), StdSSN_Txt.Text.ToString(), StdEmail_Txt.Text.ToString(), StdPNum_Txt.Text.ToString(), StdDob_Dtp.Value.ToString(),
-                   StdNation_CBox.Text.ToString(), StdAdress_Txt.Text.ToString(), Std2ndLang_CBox.Text.ToString(), int.Parse(StdYear_CBox.Text.ToString()));
+                StdID_Txt.Text.ToString(), StdName_Txt.Text.ToString(), StdSSN_Txt.Text.ToString(), StdEmail_Txt.Text.ToString(), StdPNum_Txt.Text.ToString(), StdDob_Dtp.Value.ToString(),
+                StdNation_CBox.Text.ToString(), StdAdress_Txt.Text.ToString(), Std2ndLang_CBox.Text.ToString(), int.Parse(StdYear_CBox.Text.ToString()));
+               
 
                 if (queryRes == 0) //if queryres = 0 i.e query executing failed
                 {
@@ -178,6 +184,15 @@ namespace School_DB_System
                    "Successfully added",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
+                    string std_ID = StdID_Txt.Text.ToString();
+                    int year = int.Parse(StdYear_CBox.Text.ToString());
+                    DataTable subjects = controllerObj.getSubjectsInYear(year);
+
+                    for (int i = 0; i < subjects.Rows.Count; i++)
+                    {
+                        controllerObj.Insert_DEFAULT_ENROLLMENT(subjects.Rows[i][0].ToString(), std_ID);
+                    }
+
                     resetAddPanel();//reset the panel to be ready for the next insertion
                     viewController.refreshDatagridView(); //refresh datagrid view after insert or delete student
                     //resets all textboxes text, clear error message...etc

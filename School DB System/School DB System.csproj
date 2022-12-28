@@ -159,12 +159,6 @@
     <Compile Include="BaseAUD.Designer.cs">
       <DependentUpon>BaseAUD.cs</DependentUpon>
     </Compile>
-    <Compile Include="AUDStudentParent.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AUDStudentParent.Designer.cs">
-      <DependentUpon>AUDStudentParent.cs</DependentUpon>
-    </Compile>
     <Compile Include="Bus.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -383,9 +377,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaseAUD.resx">
       <DependentUpon>BaseAUD.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AUDStudentParent.resx">
-      <DependentUpon>AUDStudentParent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMessageBox.resx">
       <DependentUpon>FormMessageBox.cs</DependentUpon>

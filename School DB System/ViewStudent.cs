@@ -18,7 +18,7 @@ namespace School_DB_System
     //(Txt -> TextBox) (CBox -> Comboobox) (Pnl -> Panel) (Lbl -> Label)
 
     //VIEW STUDENT USERCONTROL
-    internal partial class ViewStudent : StudentAUD
+    internal partial class ViewStudent : StudentAUVBase
     {
         //DATA MEMBERS
         ViewController viewController; //viewcontroller object
@@ -33,6 +33,7 @@ namespace School_DB_System
             FillData(StdID); //filling textboxes with the selected student data
             //it send query to retrive selected student data
             //and fills textboxes with selected student information
+            EditControls();
         }
 
         //METHODS
@@ -89,8 +90,8 @@ namespace School_DB_System
             return; //return
         }
 
-        //overriding onPaint function to change derived class (Update student) design
-        protected override void OnPaint(PaintEventArgs pe)
+
+        protected override void EditControls()
         {
             Tittle_Lbl.Text = "View Student"; //changes control title text to update student
             Tittle_Lbl.TextAlignment = ContentAlignment.MiddleCenter; //changes tittle text alignment to center
