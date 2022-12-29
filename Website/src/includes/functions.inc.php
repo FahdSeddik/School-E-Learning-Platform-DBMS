@@ -76,8 +76,10 @@ function loginUser($conn,$username,$pwd){
 
         $_SESSION["username"] = $username;
         $_SESSION["SSN"] = $uidExists["SSN"];
-        if (isStudent($conn)==1)
+        if (isStudent($conn) == 1) {
             $_SESSION["STUDENT"] = 1;
+            $_SESSION["dephead"] = 0;
+        }
         else {
             $_SESSION["STUDENT"] = 0;
             if (isDepHead($conn, $uidExists["staff_ID"])==1) {

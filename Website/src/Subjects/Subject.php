@@ -119,7 +119,7 @@
                     echo '</div><br>';
                     echo '<form action="../includes/handle_post.php" method="post">';
                     echo '<input type="hidden" name="post'.$posts[$i][0].'" value="'.$posts[$i][0].'">';
-                    if ($_SESSION["SSN"] ==$posts[$i][3]) {
+                    if ($_SESSION["SSN"] ==$posts[$i][3] || $_SESSION["STUDENT"]==0) {
                         echo '<button class="btn btn-danger w-25 rounded-pill border border-dark shadow" style="float:left" type="submit" name="delete-post'.$posts[$i][0].'"><h4>Delete</h4></button>';
                     }
                     echo '</form>';
