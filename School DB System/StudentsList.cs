@@ -31,7 +31,11 @@ namespace School_DB_System
             Update_Btn.Visible = false;
             MoveToNextYear_Btn.Visible = false;
             initializeDataGridView();
-
+            Delete_Btn.Text = "Remove from bus";
+            Add_Btn.Text = "Add to bus";
+            Title_Lbl.Text = "Bus "+busNum.ToString() + " Students List";
+            YearList_CBox.Hide();
+            YearList_Lbl.Hide();
         }
 
         //filter panel state list comboobox index changed
@@ -90,8 +94,17 @@ namespace School_DB_System
                "Successfully deleted",
                MessageBoxButtons.OK,
                MessageBoxIcon.Information);
-                refreshDatagridView(); //refresh datagrid view after insert or delete student
-                return;
+                if(Data_Dt.SelectedRows.Count == Data_Dt.Rows.Count)
+                {
+                    initializeDataGridView(); //refresh datagrid view after insert or delete student
+                    return;
+                }
+                else
+                {
+                    Filter_Btn.PerformClick();
+                    return;
+                }
+            
             }
             else
             {
@@ -157,33 +170,35 @@ namespace School_DB_System
         {
             try //handles any unexpected error while converting any string to string or query fail
             {
-                int selectedrowindex = Data_Dt.SelectedCells[0].RowIndex; //getting the selected row index
-                DataGridViewRow selectedRow = Data_Dt.Rows[selectedrowindex]; //getting the selcted row from the row index
-                string stdID = Convert.ToString(selectedRow.Cells["ID"].Value); //getting data from the selec
-                //send a query and gets the result of the query in queryres
-                int queryRes = controllerObj.AddStudentToBus(stdID, BusNum);
-
-                if (queryRes == 0) //if queryres = 0 i.e query executing failed
+                foreach (DataGridViewRow row in Data_Dt.SelectedRows)//looping on each selected row
                 {
-                    //inform the user that the insertion failed
-                    RJMessageBox.Show("Insertion of new student failed, revise student information and try again.",
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-                    return; //return
+                    string stdID = row.Cells[1].Value.ToString();//gets student ID from selected row
+                    int queryRes = controllerObj.AddStudentToBus(stdID, BusNum);
+                    if (queryRes == 0) //if queryres = 0 i.e query executing failed
+                    {
+                        //inform the user that the insertion failed
+                        RJMessageBox.Show("Something went wrong while adding students to bus, not all selected students were added to bus.",
+                        "Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                        continue;
+                    }
+                }
+                RJMessageBox.Show("selected students was added to bus Successfully",
+               "Successfully deleted",
+               MessageBoxButtons.OK,
+               MessageBoxIcon.Information);
+                if (Data_Dt.SelectedRows.Count == Data_Dt.Rows.Count)
+                {
+                    initializeDataGridView(); //refresh datagrid view after insert or delete student
+                    return;
                 }
                 else
                 {
-                    //inform the user that the insertion succeded
-                    RJMessageBox.Show("Insertion a new student Successfully",
-                   "Successfully added",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-                    //reset the panel to be ready for the next insertion
-                    viewController.refreshDatagridView(); //refresh datagrid view after insert or delete student
-                    //resets all textboxes text, clear error message...etc
-                    return; //return
+                    Filter_Btn.PerformClick();
+                    return;
                 }
+                
             }
             catch (Exception error) //if any unexpected error while converting any string to string or query fail
             {
@@ -198,32 +213,36 @@ namespace School_DB_System
 
         protected override void Filter_Btn_Click(object sender, EventArgs e)
         {
-            //checks if columns count > 1 i.e the first filter click
-            //initially empty columns added when the student page is opened first time (constructor)
-            if (Data_Dt.Columns.Count > 1)
-            {
-                //remove columns from datagridview
-                Data_Dt.Columns.RemoveAt(1);
-                Data_Dt.Columns.RemoveAt(1);
-                Data_Dt.Columns.RemoveAt(1);
-                Data_Dt.Columns.RemoveAt(1);
-            }
-
-            DataTable RequestList = null; //create an empty datatable
+  
+            DataTable StudentsList = null; //create an empty datatable
 
             //check if selected state is = "current" and selected year is = "All"
             if (Template_CBox.Text.ToString() == "in bus")
             {
-                RequestList = controllerObj.getStudentsInBus(BusNum); //sends a query to retrieve all students (ID, Name, Email, Year)
-                Data_Dt.DataSource = RequestList; //linking student datagridview with students list datatable
+                StudentsList = controllerObj.getStudentsInBus(BusNum); //sends a query to retrieve all students (ID, Name, Email, Year)
+                if (StudentsList == null)
+                {
+                    RJMessageBox.Show("There are no students in this bus at the moment.",
+                   "Error",
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                Data_Dt.DataSource = StudentsList; //linking student datagridview with students list datatable
                 Delete_Btn.Enabled = true; //disable years list comboobox data as graduated student does not have a year
                 Add_Btn.Enabled = false;
 
             }
             else //check if selected state is = "current" and selected year is = 1,2,3...etc (not all)
             {
-                RequestList = controllerObj.getStudentsNotInBus(BusNum); //sends a query to retrieve all students (ID, Name, Email, Year)
-                Data_Dt.DataSource = RequestList; //linking student datagridview with students list datatable
+                StudentsList = controllerObj.getStudentsNotInBus(BusNum); //sends a query to retrieve all students (ID, Name, Email, Year)
+                 if (StudentsList == null)
+                    {
+                        RJMessageBox.Show("all the students are in the bus !",
+                       "Error",
+                       MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                Data_Dt.DataSource = StudentsList; //linking student datagridview with students list datatable
                 Delete_Btn.Enabled = false; //enable years list comboobox data as graduated student does not have a year
                 Add_Btn.Enabled = true;
             }

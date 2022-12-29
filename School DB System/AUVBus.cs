@@ -57,22 +57,11 @@ namespace School_DB_System
 
         protected void BStudList_Txt_Click(object sender, EventArgs e)
         {
-            var result = RJMessageBox.Show("are you sure you want to delete selected rows?, note that this operation cannot not be undone.",
-           "Warning",
-           MessageBoxButtons.YesNo,
-           MessageBoxIcon.Warning);
-
-            if (result == DialogResult.Yes) //if confirmed "Yes"
-            {
+            var result = RJMessageBox.Show("This will open students list in the selected bus on a new tab.",
+           "information",
+           MessageBoxButtons.OK);
 
                 viewController.viewBusStudentsList(int.Parse(BNum_Txt.Text.ToString()));
-            }
-            else
-            {
-                return; //return (do nothing)
-            }
-
-            
         }
 
         protected virtual void Submit_Btn_Click(object sender, EventArgs e)

@@ -37,9 +37,12 @@ namespace School_DB_System
                                 //(subject states : Current, Graduated, Years : 1,2,3,...etc)
             initializeDataGridView();//initialize Datagridview data (columns and rows)
                                      //(adding column names, adjusting datagridview style...etc)
+            EditControls();
         }
+
+
         //overriding onPaint function to change derived class (Add subject) design
-        protected override void OnPaint(PaintEventArgs pe)
+        protected override void EditControls()
         {
             Filter_Pnl.Controls.Add(YearList_Lbl);//adding the Label to the filter panel
             Filter_Pnl.Controls.Add(YearList_CBox);//adding the comboobox to the filter panel
@@ -128,8 +131,8 @@ namespace School_DB_System
         {
             //initializing years comboobox with years (All, 1, 2, 3...etc) 
             DataTable yearslist = getYearslist();//retrving years datatable (All, 1, 2, 3...etc)
-            YearList_CBox.DisplayMember = "Subj_Year"; //displaying Subj_Year column from datatable "Yearslist"
             YearList_CBox.ValueMember = "Subj_Year"; //linking value to Subj_year column from datatable "YearsList"
+            YearList_CBox.DisplayMember = "Subj_Year"; //displaying Subj_Year column from datatable "Yearslist"e to Subj_year column from datatable "YearsList"
             YearList_CBox.BindingContext = this.BindingContext;
             YearList_CBox.DataSource = yearslist; //linking yearslist comboobox and yearlist datatable
             YearList_CBox.SelectedIndex = 0; //initially selecting the first element which is "All"
@@ -149,39 +152,35 @@ namespace School_DB_System
         //converting list to string to add "All" in the first row
         private DataTable getYearslist()
         {
-            DataTable tempYearsList = controllerObj.getYears(); //gets years in datatable column type int 
-            //creating a new years datatable but column type string because we need to add 'all' row in the top of years (can't add string and int in same column)
-            int YearsC = tempYearsList.Rows.Count; //getting yearslist count to loop on it
-            DataTable yearsList = new DataTable(); //creating a new list
-            yearsList.Columns.Add("Subj_Year", typeof(string)); //creating a column of name 'Subj_year' and of type string
-            yearsList.Rows.Add("All"); //adding the first item in the list 'all' to allow choosing all years for filter
-            for (int i = 0; i < YearsC; i++) //looping in the integer list and converting each row value to string and adding on the string list
-            {
-                yearsList.Rows.Add(tempYearsList.Rows[i][0].ToString()); //converting each row value to string and adding on the string list
-            }
+            DataTable yearsList = new DataTable(); //gets years in datatable column type int 
+            yearsList.Columns.Add("Subj_Year");
+            yearsList.Rows.Add("All"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("1"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("2"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("3"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("4"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("5"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("6"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("7"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("8"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("9"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("10"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("11"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("12"); //converting each row value to string and adding on the string list
             return yearsList; //returns the string list (All,1,2,3,4...etc)
         }
 
         ////////////////////////EVENTS///////////////////////////////
 
-    
 
-        //filter button click event
-        //filters the datagridview with the selected combooboxes i.e choosen year and state
+
+            //filter button click event
+            //filters the datagridview with the selected combooboxes i.e choosen year and state
         protected override void Filter_Btn_Click(object sender, EventArgs e)
         {
             //checks if columns count > 1 i.e the first filter click
             //initially empty columns added when the subject page is opened first time (constructor)
-            if (Data_Dt.Columns.Count > 1)
-            {
-                //remove columns from datagridview
-                Data_Dt.Columns.RemoveAt(1);
-                Data_Dt.Columns.RemoveAt(1);
-                Data_Dt.Columns.RemoveAt(1);
-                Data_Dt.Columns.RemoveAt(1);
-                Data_Dt.Columns.RemoveAt(1);
-                Data_Dt.Columns.RemoveAt(1);
-            }
+         
 
             DataTable subjectsList = null; //create an empty datatable
 
@@ -189,11 +188,25 @@ namespace School_DB_System
             if (YearList_CBox.Text.ToString() == "All")
             {
                 subjectsList = controllerObj.getAllsubjectsOfDep(Template_CBox.SelectedValue.ToString()); //sends a query to retrieve all subjects (ID, Name, Email, Year)
+                if (subjectsList == null)
+                {
+                    RJMessageBox.Show("There are no subjects in this department at the moment.",
+                   "Error",
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
                 Data_Dt.DataSource = subjectsList; //linking subject datagridview with subjects list datatable
             }
             else//check if selected state is = "Graduated
             {
                 subjectsList = controllerObj.getSubjectsOfDepAndYear(Template_CBox.SelectedValue.ToString(),int.Parse(YearList_CBox.SelectedValue.ToString()));
+                if (subjectsList == null)
+                {
+                    RJMessageBox.Show("There are no subjects in this department and year at the moment.",
+                   "Error",
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
                 Data_Dt.DataSource = subjectsList; //linking subject datagridview with subjects list datatable
             }
             //changing datagridview columns headertext because they are named in a dfiffrent names in database
@@ -204,16 +217,21 @@ namespace School_DB_System
                                                         //initializing datagridview wirh empty columns (ID, Name, Email, Year)
             Data_Dt.Columns[5].HeaderText = "End Time"; //changes column header text because in database it is named Subj_year
                                                         //initializing datagridview wirh empty columns (ID, Name, Email, Year)
-            Data_Dt.Columns[6].HeaderText = "Room Number"; //changes column header text because in database it is named Subj_year
-                                                           //initializing datagridview wirh empty columns (ID, Name, Email, Year)
-                                                           //creating empty columns in subjectsList datatable
+            Data_Dt.Columns[6].HeaderText = "Building"; //changes column header text because in database it is named Subj_year
+                                                        //initializing datagridview wirh empty columns (ID, Name, Email, Year)
+                                                        //creating empty columns in subjectsList datatable
+
+            Data_Dt.Columns[7].HeaderText = "Floor";
+            Data_Dt.Columns[8].HeaderText = "Room";
 
             Data_Dt.Columns[1].Name= "ID";//adding the first column with header text = "ID"
             Data_Dt.Columns[2].Name = "Name"; //adding the second column with header text = "Name"
             Data_Dt.Columns[3].Name = "Day"; //adding the thhird column with header text = "Email"
             Data_Dt.Columns[4].Name = "StartTime"; //adding the thhird column with header text = "Email"
             Data_Dt.Columns[5].Name = "EndTime"; //adding the thhird column with header text = "Email"
-            Data_Dt.Columns[6].Name = "RoomNum";//adding the fourth column with header text = "Year"
+            Data_Dt.Columns[6].Name = "BuildingNum";//adding the fourth column with header text = "Year"
+            Data_Dt.Columns[7].Name = "FloorNum";//adding the fourth column with header text = "Year"
+            Data_Dt.Columns[8].Name = "RoomNum";//adding the fourth column with header text = "Year"
 
             //adjusting subjects datagridview columns style
             Data_Dt.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; //adjusting first column style (auto size mode depending on the length of content)
@@ -222,6 +240,8 @@ namespace School_DB_System
             Data_Dt.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; //adjusting fourth column style (auto size mode depending on the length of content)
             Data_Dt.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; //adjusting fourth column style (auto size mode depending on the length of content)
             Data_Dt.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; //adjusting fourth column style (auto size mode depending on the length of content)
+            Data_Dt.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; //adjusting fourth column style (auto size mode depending on the length of content)
+            Data_Dt.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; //adjusting fourth column style (auto size mode depending on the length of content)
             //adjusting subjects datagridview columns properties
             Data_Dt.Columns[1].ReadOnly = true; //adjusting first column properties (prevent user from editing column)
             Data_Dt.Columns[2].ReadOnly = true; //adjusting first column properties (prevent user from editing column)
@@ -229,6 +249,8 @@ namespace School_DB_System
             Data_Dt.Columns[4].ReadOnly = true; //adjusting first column properties (prevent user from editing column)
             Data_Dt.Columns[5].ReadOnly = true; //adjusting first column properties (prevent user from editing column)
             Data_Dt.Columns[6].ReadOnly = true; //adjusting first column properties (prevent user from editing column)
+            Data_Dt.Columns[7].ReadOnly = true; //adjusting first column properties (prevent user from editing column)
+            Data_Dt.Columns[8].ReadOnly = true; //adjusting first column properties (prevent user from editing column)
             //refreshing datagridview
             Data_Dt.ClearSelection(); //selecting 0 rows (clearing selection) 
             Data_Dt.Refresh(); //refresh datagridview

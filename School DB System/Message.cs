@@ -22,7 +22,7 @@ namespace School_DB_System
         string SSN;
         string oldTitle;
         string oldReq;
-
+        string reqID;
 
         public Message(ViewController viewController, Controller controllerObj, string Email, string Title, string Message, int view)//view
         {
@@ -47,7 +47,7 @@ namespace School_DB_System
 
         }
 
-        public Message(ViewController viewController, Controller controllerObj, string senderSSN, string reciverSSN,string oldTitle,string oldReq)//respond 
+        public Message(ViewController viewController, Controller controllerObj, string senderSSN, string reciverSSN,string requestID)//respond 
         {
             InitializeComponent();
             this.viewController = viewController;
@@ -59,6 +59,7 @@ namespace School_DB_System
             NewReqSenderOrReciver_Txt.Text = reciverEmail;
             this.oldTitle = oldTitle;
             this.oldReq = oldReq;
+            this.reqID = requestID;
 
         }
 
@@ -113,7 +114,7 @@ namespace School_DB_System
                 return;
             }
             string  reciver = reciverDt.Rows[0][0].ToString();
-            int res = controllerObj.Respond(SSN, reciver, ReqTitle_Txt.Text.ToString(), ReqMessage_Txt.Text.ToString(), 0,oldTitle,oldReq);
+            int res = controllerObj.Respond(SSN, reciver, ReqTitle_Txt.Text.ToString(), ReqMessage_Txt.Text.ToString(), 0,reqID);
             if (res == 0)
             {
                 RJMessageBox.Show("Failed, please try again.",
@@ -141,7 +142,7 @@ namespace School_DB_System
                 return;
             }
             string reciver = reciverDt.Rows[0][0].ToString();
-            int res = controllerObj.Respond(SSN, reciver, ReqTitle_Txt.Text.ToString(), ReqMessage_Txt.Text.ToString(), 1, oldTitle, oldReq);
+            int res = controllerObj.Respond(SSN, reciver, ReqTitle_Txt.Text.ToString(), ReqMessage_Txt.Text.ToString(), 1, reqID);
             if (res == 0)
             {
                 RJMessageBox.Show("Failed, please try again.",

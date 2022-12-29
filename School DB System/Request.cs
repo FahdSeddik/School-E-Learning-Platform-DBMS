@@ -46,17 +46,20 @@ namespace School_DB_System
             inInbox = false;
             DataTable SSNDt = controllerObj.getSSNFromUsername(username);
             SSN = SSNDt.Rows[0][0].ToString();
+            EditControls();
         }
 
         //overriding onPaint function to change derived class (Add student) design
-        protected override void OnPaint(PaintEventArgs pe)
+        protected override void EditControls()
         {
+
             Template_CBox.Name = "StateList_CBox";//changing comboobox name to "StateList_CBox"
             Template_Lbl.Name = "StateList_Lbl";//changing Label name to "StateList_Lbl"
             Template_Lbl.Text = "State";//changing Label Text to "State"
             Update_Btn.Text = "Respond";
             Update_Btn.Name = "Respond_Btn";
         }
+
 
         //METHODS
 
@@ -73,7 +76,8 @@ namespace School_DB_System
         {
             //initializing datagridview wirh empty columns (ID, Name, Email, Year)
             DataTable RequestList = new DataTable(); //creating an empty datatable
-            //creating empty columns in RequestList datatable
+                                                     //creating empty columns in RequestList datatable
+            RequestList.Columns.Add().ColumnName = "ID";//adding the first column with header text = "ID"
             RequestList.Columns.Add().ColumnName = "Date";//adding the first column with header text = "ID"
             RequestList.Columns.Add().ColumnName = "Email"; //adding the second column with header text = "Name"
             RequestList.Columns.Add().ColumnName = "Title"; //adding the thhird column with header text = "Email"
@@ -84,11 +88,13 @@ namespace School_DB_System
             Data_Dt.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; //adjusting second column style (auto size mode depending on the length of content)
             Data_Dt.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; //adjusting third column style (auto size mode depending on the length of content)
             Data_Dt.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; //adjusting fourth column style (auto size mode depending on the length of content)
+            Data_Dt.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; //adjusting fourth column style (auto size mode depending on the length of content)
             //adjusting students datagridview columns properties
             Data_Dt.Columns[1].ReadOnly = true; //adjusting first column properties (prevent user from editing column)
             Data_Dt.Columns[2].ReadOnly = true; //adjusting first column properties (prevent user from editing column)
             Data_Dt.Columns[3].ReadOnly = true; //adjusting first column properties (prevent user from editing column)
             Data_Dt.Columns[4].ReadOnly = true; //adjusting first column properties (prevent user from editing column)
+            Data_Dt.Columns[5].ReadOnly = true; //adjusting first column properties (prevent user from editing column)
             //refreshing datagridview
             Data_Dt.ClearSelection(); //selecting 0 rows (clearing selection) 
             Data_Dt.Refresh(); //refresh datagridview
@@ -115,15 +121,17 @@ namespace School_DB_System
         private void InboxView()
         {
             //changing datagridview columns names because they are named in a dfiffrent names in database
-            Data_Dt.Columns[1].Name = "Date"; //changes column name because in database it is named std_id
-            Data_Dt.Columns[2].Name = "From"; //changes column name text because in database it is named std_name
-            Data_Dt.Columns[3].Name = "Title"; //changes column name text because in database it is named std_email
-            Data_Dt.Columns[4].Name = "Request"; //changes name header text because in database it is named std_year
-            //changing datagridview columns headertext because they are named in a dfiffrent names in database
-            Data_Dt.Columns[1].HeaderText = "Date"; //changes column header text because in database it is named std_id
-            Data_Dt.Columns[2].HeaderText = "From"; //changes column header text because in database it is named std_name
-            Data_Dt.Columns[3].HeaderText = "Title"; //changes column header text because in database it is named std_email
-            Data_Dt.Columns[4].HeaderText = "Request"; //changes column header text because in database it is named std_year
+            Data_Dt.Columns[1].Name = "ID"; //changes column name because in database it is named std_id
+            Data_Dt.Columns[2].Name = "Date"; //changes column name because in database it is named std_id
+            Data_Dt.Columns[3].Name = "From"; //changes column name text because in database it is named std_name
+            Data_Dt.Columns[4].Name = "Title"; //changes column name text because in database it is named std_email
+            Data_Dt.Columns[5].Name = "Request"; //changes name header text because in database it is named std_year
+                                                 //changing datagridview columns headertext because they are named in a dfiffrent names in database
+            Data_Dt.Columns[1].HeaderText = "ID"; //changes column name because in database it is named std_id
+            Data_Dt.Columns[2].HeaderText = "Date"; //changes column header text because in database it is named std_id
+            Data_Dt.Columns[3].HeaderText = "From"; //changes column header text because in database it is named std_name
+            Data_Dt.Columns[4].HeaderText = "Title"; //changes column header text because in database it is named std_email
+            Data_Dt.Columns[5].HeaderText = "Request"; //changes column header text because in database it is named std_year
             inInbox = true;
         }
 
@@ -132,17 +140,18 @@ namespace School_DB_System
         //hides university textbox and label in view and update panels as current student have no university
         //shows year textbox and label in view and update panels
         private void SentView()
-        {
-            //changing datagridview columns names because they are named in a dfiffrent names in database
-            Data_Dt.Columns[1].Name = "Date"; //changes column name because in database it is named std_id
-            Data_Dt.Columns[2].Name = "To"; //changes column name text because in database it is named std_name
-            Data_Dt.Columns[3].Name = "Title"; //changes column name text because in database it is named std_email
-            Data_Dt.Columns[4].Name = "Request"; //changes name header text because in database it is named std_year
-            //changing datagridview columns headertext because they are named in a dfiffrent names in database
-            Data_Dt.Columns[1].HeaderText = "Date"; //changes column header text because in database it is named std_id
-            Data_Dt.Columns[2].HeaderText = "To"; //changes column header text because in database it is named std_name
-            Data_Dt.Columns[3].HeaderText = "Title"; //changes column header text because in database it is named std_email
-            Data_Dt.Columns[4].HeaderText = "Request"; //changes column header text because in database it is named std_year
+        { //changing datagridview columns names because they are named in a dfiffrent names in database
+            Data_Dt.Columns[1].Name = "ID"; //changes column name because in database it is named std_id
+            Data_Dt.Columns[2].Name = "Date"; //changes column name because in database it is named std_id
+            Data_Dt.Columns[3].Name = "To"; //changes column name text because in database it is named std_name
+            Data_Dt.Columns[4].Name = "Title"; //changes column name text because in database it is named std_email
+            Data_Dt.Columns[5].Name = "Request"; //changes name header text because in database it is named std_year
+                                                 //changing datagridview columns headertext because they are named in a dfiffrent names in database
+            Data_Dt.Columns[1].HeaderText = "ID"; //changes column name because in database it is named std_id
+            Data_Dt.Columns[2].HeaderText = "Date"; //changes column header text because in database it is named std_id
+            Data_Dt.Columns[3].HeaderText = "To"; //changes column header text because in database it is named std_name
+            Data_Dt.Columns[4].HeaderText = "Title"; //changes column header text because in database it is named std_email
+            Data_Dt.Columns[5].HeaderText = "Request"; //changes column header text because in database it is named std_year
             inInbox = false;
         }
 
@@ -162,7 +171,7 @@ namespace School_DB_System
                 RequestList = controllerObj.getInboxOf(SSN); //sends a query to retrieve all students (ID, Name, Email, Year)
                 if (RequestList == null)
                 {
-                    RJMessageBox.Show("There are no current students in the current database.",
+                    RJMessageBox.Show("There are no emails in your inbox.",
                    "Error",
                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
@@ -175,7 +184,7 @@ namespace School_DB_System
                 RequestList = controllerObj.getSentOf(SSN);
                 if (RequestList == null)
                 {
-                    RJMessageBox.Show("There are no current students in the current database.",
+                    RJMessageBox.Show("Sent is empty.",
                    "Error",
                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
@@ -188,7 +197,7 @@ namespace School_DB_System
                 RequestList = controllerObj.getPendingInboxOf(SSN); //sends a query to retrieve all students (ID, Name, Email, Year)
                 if (RequestList == null)
                 {
-                    RJMessageBox.Show("There are no current students in the current database.",
+                    RJMessageBox.Show("There are no pending emails.",
                    "Error",
                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
@@ -202,11 +211,13 @@ namespace School_DB_System
             Data_Dt.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; //adjusting second column style (auto size mode depending on the length of content)
             Data_Dt.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; //adjusting third column style (auto size mode depending on the length of content)
             Data_Dt.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; //adjusting fourth column style (auto size mode depending on the length of content)
+            Data_Dt.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; //adjusting fourth column style (auto size mode depending on the length of content)
             //adjusting students datagridview columns properties
             Data_Dt.Columns[1].ReadOnly = true; //adjusting first column properties (prevent user from editing column)
             Data_Dt.Columns[2].ReadOnly = true; //adjusting first column properties (prevent user from editing column)
             Data_Dt.Columns[3].ReadOnly = true; //adjusting first column properties (prevent user from editing column)
             Data_Dt.Columns[4].ReadOnly = true; //adjusting first column properties (prevent user from editing column)
+            Data_Dt.Columns[5].ReadOnly = true; //adjusting first column properties (prevent user from editing column)
             //refreshing datagridview
             Data_Dt.ClearSelection(); //selecting 0 rows (clearing selection) 
             Data_Dt.Refresh(); //refresh datagridview
@@ -241,29 +252,10 @@ namespace School_DB_System
             {
                 //loop on all selected rows and send a query to delete this student
                 foreach (DataGridViewRow row in Data_Dt.SelectedRows)//looping on each selected row
-                {
-                    int selectedrowindex = Data_Dt.SelectedCells[0].RowIndex; //getting the selected row index
-                    DataGridViewRow selectedRow = Data_Dt.Rows[selectedrowindex];//getting the selcted row from the row index                                                      ////////////////////////////////////////////////
+                {                                    ////////////////////////////////////////////////
 
-                    string title = selectedRow.Cells["Title"].Value.ToString();//getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
-                    string message = selectedRow.Cells["Request"].Value.ToString();//getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
-                    DateTime date = DateTime.Parse(selectedRow.Cells["Date"].Value.ToString());//getting data from the selected row (ID) column because its the needed cell value to ened queries
-                    string senderSSN, reciverSSN;
-
-                    if (inInbox) // on sent tab
-                    {
-                        reciverSSN = SSN;//////getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
-                        DataTable senderSSNDt = controllerObj.getSSNFromEmail(selectedRow.Cells["Email"].Value.ToString());//getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
-                        senderSSN = senderSSNDt.Rows[0][0].ToString();
-                    }
-                    else
-                    {
-                        senderSSN = SSN;//////getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
-                        DataTable reciverIDDt = controllerObj.getSSNFromEmail(selectedRow.Cells["Email"].Value.ToString());//getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
-                        reciverSSN = reciverIDDt.Rows[0][0].ToString();
-                    }
-
-                    int res = controllerObj.DeleteReq(senderSSN, reciverSSN, title, message, date); //sends a query with the student SSN to delete
+                    string reqID = row.Cells["ID"].Value.ToString();//getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
+                    int res = controllerObj.DeleteReq(reqID); //sends a query with the student SSN to delete
                     if (res == 0)
                     {
                         RJMessageBox.Show("deletion of selected student failed, please try again.",
@@ -273,12 +265,17 @@ namespace School_DB_System
                         return;
                     }
                 }
-                RJMessageBox.Show("deletion of selected students done Successfully",
-               "Successfully deleted",
-               MessageBoxButtons.OK,
-               MessageBoxIcon.Information);
-                refreshDatagridView(); //refresh datagrid view after insert or delete student
-                return;
+                if (Data_Dt.SelectedRows.Count == Data_Dt.Rows.Count)
+                {
+                    initializeDataGridView();
+                    SelectAll_Btn.PerformClick();
+                    return;
+                }
+                else
+                {
+                    refreshDatagridView(); //refresh datagrid view after insert or delete student
+                    return;
+                }
             }
             else
             {
@@ -374,9 +371,9 @@ namespace School_DB_System
                 string senderSSN = SSN;//////getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
                 DataTable reciverSSNDt = controllerObj.getSSNFromEmail(selectedRow.Cells["From"].Value.ToString());//getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
                 string reciverSSN = reciverSSNDt.Rows[0][0].ToString();
-                string title = selectedRow.Cells["Title"].Value.ToString();//getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
-                string message = selectedRow.Cells["Request"].Value.ToString();//getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
-                viewController.RespondToReq(senderSSN, reciverSSN, title,message);
+                string reqID = selectedRow.Cells["ID"].Value.ToString();//getting data from the selected row (ID.ToString() column because its the needed cell value to ened queries
+                viewController.RespondToReq(senderSSN, reciverSSN, reqID);
+                viewController.RespondToReq(senderSSN, reciverSSN, reqID);
                 // senderID,reciverEmail
                 return; //return
             }

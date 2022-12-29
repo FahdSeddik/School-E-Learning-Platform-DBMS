@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HR));
             this.HRHome_Pnl = new Guna.UI2.WinForms.Guna2Panel();
-            this.Mail_IBtn = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.Mail_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.Req_IBtn = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.Req_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Staff_IBtn = new Guna.UI2.WinForms.Guna2ImageButton();
             this.Staff_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Teach_IBtn = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -41,8 +41,8 @@
             // 
             // HRHome_Pnl
             // 
-            this.HRHome_Pnl.Controls.Add(this.Mail_IBtn);
-            this.HRHome_Pnl.Controls.Add(this.Mail_Lbl);
+            this.HRHome_Pnl.Controls.Add(this.Req_IBtn);
+            this.HRHome_Pnl.Controls.Add(this.Req_Lbl);
             this.HRHome_Pnl.Controls.Add(this.Staff_IBtn);
             this.HRHome_Pnl.Controls.Add(this.Staff_Lbl);
             this.HRHome_Pnl.Controls.Add(this.Teach_IBtn);
@@ -53,29 +53,29 @@
             this.HRHome_Pnl.Size = new System.Drawing.Size(955, 514);
             this.HRHome_Pnl.TabIndex = 25;
             // 
-            // Mail_IBtn
+            // Req_IBtn
             // 
-            this.Mail_IBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.Mail_IBtn.HoverState.ImageSize = new System.Drawing.Size(84, 84);
-            this.Mail_IBtn.Image = global::School_DB_System.Properties.Resources.mail;
-            this.Mail_IBtn.ImageOffset = new System.Drawing.Point(0, 0);
-            this.Mail_IBtn.ImageRotate = 0F;
-            this.Mail_IBtn.Location = new System.Drawing.Point(721, 188);
-            this.Mail_IBtn.Name = "Mail_IBtn";
-            this.Mail_IBtn.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.Mail_IBtn.Size = new System.Drawing.Size(150, 100);
-            this.Mail_IBtn.TabIndex = 32;
-            this.Mail_IBtn.Click += new System.EventHandler(this.Reqs_IBtn_Click);
+            this.Req_IBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.Req_IBtn.HoverState.ImageSize = new System.Drawing.Size(84, 84);
+            this.Req_IBtn.Image = global::School_DB_System.Properties.Resources.mail;
+            this.Req_IBtn.ImageOffset = new System.Drawing.Point(0, 0);
+            this.Req_IBtn.ImageRotate = 0F;
+            this.Req_IBtn.Location = new System.Drawing.Point(721, 188);
+            this.Req_IBtn.Name = "Req_IBtn";
+            this.Req_IBtn.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.Req_IBtn.Size = new System.Drawing.Size(150, 100);
+            this.Req_IBtn.TabIndex = 32;
+            this.Req_IBtn.Click += new System.EventHandler(this.Reqs_IBtn_Click);
             // 
-            // Mail_Lbl
+            // Req_Lbl
             // 
-            this.Mail_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.Mail_Lbl.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Mail_Lbl.Location = new System.Drawing.Point(784, 294);
-            this.Mail_Lbl.Name = "Mail_Lbl";
-            this.Mail_Lbl.Size = new System.Drawing.Size(28, 19);
-            this.Mail_Lbl.TabIndex = 31;
-            this.Mail_Lbl.Text = "Mail";
+            this.Req_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.Req_Lbl.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Req_Lbl.Location = new System.Drawing.Point(784, 294);
+            this.Req_Lbl.Name = "Req_Lbl";
+            this.Req_Lbl.Size = new System.Drawing.Size(28, 19);
+            this.Req_Lbl.TabIndex = 31;
+            this.Req_Lbl.Text = "Mail";
             // 
             // Staff_IBtn
             // 
@@ -141,8 +141,8 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2Panel HRHome_Pnl;
-        private Guna.UI2.WinForms.Guna2ImageButton Mail_IBtn;
-        private Guna.UI2.WinForms.Guna2HtmlLabel Mail_Lbl;
+        private Guna.UI2.WinForms.Guna2ImageButton Req_IBtn;
+        private Guna.UI2.WinForms.Guna2HtmlLabel Req_Lbl;
         private Guna.UI2.WinForms.Guna2ImageButton Staff_IBtn;
         private Guna.UI2.WinForms.Guna2HtmlLabel Staff_Lbl;
         private Guna.UI2.WinForms.Guna2ImageButton Teach_IBtn;

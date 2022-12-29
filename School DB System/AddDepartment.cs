@@ -27,7 +27,7 @@ namespace School_DB_System
             this.viewController = viewController;
             this.controllerObj = controllerObj;
         }
-        //overriding onPaint function to change derived class (Add student) design
+        //overriding onPaint function to change derived class (Add Department) design
         protected override void OnPaint(PaintEventArgs pe)
         {
             Tittle_Lbl.Text = "Add Department";
@@ -55,7 +55,7 @@ namespace School_DB_System
                 if (queryRes == 0) //if queryres = 0 i.e query executing failed
                 {
                     //inform the user that the insertion failed
-                    RJMessageBox.Show("Insertion of new student failed, revise student information and try again.",
+                    RJMessageBox.Show("Insertion of new Department failed, revise Department information and try again.",
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -64,13 +64,13 @@ namespace School_DB_System
                 else
                 {
                     //inform the user that the insertion succeded
-                    RJMessageBox.Show("Insertion a new student Successfully",
+                    RJMessageBox.Show("Insertion a new Department Successfully",
                    "Successfully added",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                     //reset the panel to be ready for the next insertion
                     viewController.CloseSubTab();
-                    viewController.refreshDatagridView(); //refresh datagrid view after insert or delete student
+                    viewController.refreshDatagridView(); //refresh datagrid view after insert or delete Department
                     //resets all textboxes text, clear error message...etc
                     return; //return
                 }

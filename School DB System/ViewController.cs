@@ -287,9 +287,9 @@ namespace School_DB_System
             Application_Handler.ViewOnSubTab(ViewReq);//viewing homepage on the main application window
         }
 
-        public void RespondToReq(string senderID,string reciverEmail,string oldTitle,string oldReq)
+        public void RespondToReq(string senderID,string reciverEmail,string reqID)
         {
-            Message RespondToReq = new Message(this, controllerobj, senderID,reciverEmail, oldTitle, oldReq);
+            Message RespondToReq = new Message(this, controllerobj, senderID,reciverEmail, reqID);
             UCSubTab = RespondToReq;
             Application_Handler.ViewOnSubTab(RespondToReq);//viewing homepage on the main application window
         }

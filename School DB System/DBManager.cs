@@ -11,7 +11,7 @@ namespace School_DB_System
     public class DBManager
     {
         static string DB_Connection_String = @"Data Source=DESKTOP-QQJO3GL\SQLEXPRESS;Initial Catalog=SchoolDBMS;Integrated Security=True";
-        //static string DB_Connection_String = @"Data Source=cmpn202-schooldbms.database.windows.net;Initial Catalog=SchoolDBMS;Persist Security Info=True;User ID=fahdseddik;Password=CMPN202Hello";
+       // static string DB_Connection_String = @"Data Source=cmpn202-schooldbms.database.windows.net;Initial Catalog=SchoolDBMS;Persist Security Info=True;User ID=fahdseddik;Password=CMPN202Hello";
         SqlConnection myConnection;
 
         public DBManager()

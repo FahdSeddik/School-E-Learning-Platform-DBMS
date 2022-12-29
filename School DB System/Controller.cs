@@ -273,13 +273,13 @@ namespace School_DB_System
               return dbMan.ExecuteReader(StoredProcedureName, Parameters);
          }
 
-       public DataTable getInboxOf(string SSN)
-       {
-            string StoredProcedureName = StoredProcedures.getInboxOf;
-           Dictionary<string, object> Parameters = new Dictionary<string, object>();
-           Parameters.Add("@staff_SSN", SSN);
-            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
-      }
+      // public DataTable getInboxOf(string SSN)
+     //  {
+       //     string StoredProcedureName = StoredProcedures.getInboxOf;
+        //   Dictionary<string, object> Parameters = new Dictionary<string, object>();
+        //   Parameters.Add("@staff_SSN", SSN);
+         //   return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+    //  }
 
 
 
@@ -306,14 +306,14 @@ namespace School_DB_System
 
         public DataTable getAllsubjectsOfDep(string depID)
         {
-            string query = "select s.sub_ID,s.sub_Name,t.day,t.Start_Time,t.End_Time,t.r_Num from Subject as s,Subject_Time_Loc as t,Room as r,Staff as sf,Department as d where s.sub_ID=t.sub_ID and s.sub_Dep_Name=t.sub_Dep_Name and r.r_Building_Num=t.r_Building_Num and r.r_Floor=t.r_Floor and r.r_Num=t.r_Num and t.t_ID=sf.staff_ID and d.dep_Name=t.sub_Dep_Name and d.dep_ID=" + depID + ";";
+            string query = "Select s.sub_ID,sub_Name,day,Start_time,End_time,r_Building_Num,r_Floor,r_Num From Subject_Time_Loc as stl,Subject as s,Department as d Where dep_ID='"+depID+"' and dep_Name=sub_Dep_Name and stl.sub_ID = s.sub_ID Order by sub_Name";
             return dbMan.ExecuteReader(query);
         }
 
 
         public DataTable getSubjectsOfDepAndYear(string depID, int year)
         {
-            string query = "select s.sub_ID,s.sub_Name,t.day,t.Start_Time,t.End_Time,t.r_Num from Subject as s,Subject_Time_Loc as t,Room as r,Staff as sf,Department as d where s.sub_ID=t.sub_ID and s.sub_Dep_Name=t.sub_Dep_Name and r.r_Building_Num=t.r_Building_Num and r.r_Floor=t.r_Floor and r.r_Num=t.r_Num and t.t_ID=sf.staff_ID and d.dep_Name=t.sub_Dep_Name and d.dep_ID=" + depID + " and s.sub_Year=" + year + ";";
+            string query = "Select s.sub_ID,sub_Name,day,Start_time,End_time,r_Building_Num,r_Floor,r_Num From Subject_Time_Loc as stl,Subject as s,Department as d Where dep_ID='" + depID + "' and dep_Name=sub_Dep_Name and stl.sub_ID = s.sub_ID and sub_Year = "+year+" Order by sub_Name";
             return dbMan.ExecuteReader(query);
         }
         public DataTable getSubjectsOfYear(int year)
@@ -392,9 +392,9 @@ namespace School_DB_System
              + "update Parent set p_SSN = '" + pssn + "', p_Name = '" + pname + "', p_Address = '" + paddress + "', p_Mobile = '" + pmob + "', p_Email = '" + pemail + "' where p_SSN in ((select std_ParentSSN from Student where std_ID = '" + sid + "' ));";
             return dbMan.ExecuteNonQuery(query);
         }
-        public int DeleteReq(string sender, string reciver, string title, string message, DateTime date)
+        public int DeleteReq(string reqID)
         {
-            string query = "delete from Request where sender = '" + sender + "' and receiver = '" + reciver + "' and title='" + title + "' and request='" + message + "' and date='" + date + "';";
+            string query = "delete from Request where Request_ID = '"+reqID+"';";
             return dbMan.ExecuteNonQuery(query);
         }
         public DataTable getEmailOf(string username)
@@ -414,20 +414,20 @@ namespace School_DB_System
             return dbMan.ExecuteReader(query);
         }
 
-       // public DataTable getInboxOf(string SSN)
-       // {
-        //  string query = "select date,staff_Email,title,request from Request as r,Staff as s where s.staff_SSN = r.sender and r.receiver='" + SSN + "';";
-         //   return dbMan.ExecuteReader(query);
-        //}
+       public DataTable getInboxOf(string SSN)
+        {
+          string query = "select Request_ID,date,staff_Email,title,request from Request as r,Staff as s where s.staff_SSN = r.sender and r.receiver='" + SSN + "';";
+           return dbMan.ExecuteReader(query);
+        }
         public DataTable getPendingInboxOf(string SSN)
         {
-            string query = "select date,staff_Email,title,request from Request as r,Staff as s where s.staff_SSN=r.sender and r.receiver='" + SSN + "' and state = -1;";
+            string query = "select Request_ID,date,staff_Email,title,request from Request as r,Staff as s where s.staff_SSN=r.sender and r.receiver='" + SSN + "' and state = -1;";
             return dbMan.ExecuteReader(query);
         }
 
         public DataTable getSentOf(string SSN)
         {
-            string query = "select date,staff_Email,title,request from Request as r,Staff as s where s.staff_SSN=r.receiver and r.sender='" + SSN + "';";
+            string query = "select Request_ID,date,staff_Email,title,request from Request as r,Staff as s where s.staff_SSN=r.receiver and r.sender='" + SSN + "';";
             return dbMan.ExecuteReader(query);
         }
         public DataTable getSSNFromEmail(string email)
@@ -461,11 +461,11 @@ namespace School_DB_System
             return dbMan.ExecuteReader(query);
         }
        
-        public int deleteStudentfromBus(string stdID)
-        {
-            string query = "update Current_Student set bus_Num=null where std_ID='"+ stdID + "';";
-            return dbMan.ExecuteNonQuery(query);
-        }
+      //  public int deleteStudentfromBus(string stdID)
+       //{
+         //   string query = "update Current_Student set bus_Num=null where std_ID='"+ stdID + "';";
+         //   return dbMan.ExecuteNonQuery(query);
+      //  }
         public int AddStudentToBus(string stdID,int busNum)
         {
             string query = "update Current_Student set bus_Num="+busNum+" where std_ID='"+stdID+"';";
@@ -487,19 +487,21 @@ namespace School_DB_System
             string query = "select COUNT(bus_Num) from Bus;";
             return (int)dbMan.ExecuteScalar(query);
         }
-        public int AddBus(int busNum, int busCap, string busDriverID, string route)
-        {
-            string query = "insert into Bus (bus_Num,bus_Driver_ID,bus_Capacity,bus_Route) values ("+busNum+",'"+busDriverID+"',"+busCap+",'"+route+"');";
-          return dbMan.ExecuteNonQuery(query);
-        }
+        // public int AddBus(int busNum, int busCap, string busDriverID, string route)
+        // {
+        //   string query = "insert into Bus (bus_Num,bus_Driver_ID,bus_Capacity,bus_Route) values ("+busNum+",'"+busDriverID+"',"+busCap+",'"+route+"');";
+        //  return dbMan.ExecuteNonQuery(query);
+        // }
 
-       // public DataTable getEmailFromSSN(string SSN)
-        //{
-       //     string StoredProcedureName = StoredProcedures.getEmailFromSSN;
-        ///    Dictionary<string, object> Parameters = new Dictionary<string, object>();
-         //   Parameters.Add("@staff_SSN", SSN);
-         //   return dbMan.ExecuteReader(StoredProcedureName, Parameters);
-       // }
+
+
+        public DataTable getEmailFromSSN(string SSN)
+        {
+            string StoredProcedureName = StoredProcedures.getEmailFromSSN;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@staff_SSN", SSN);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
 
         public DataTable getAllDrivers()
         {
@@ -580,17 +582,19 @@ namespace School_DB_System
             return dbMan.ExecuteReader(query);
         }
 
-        public int Respond(string SenderSSN, string reciverSSN, string ReqTitle, string ReqMessage, int status,string oldTitle,String oldReqMessage)
+        public int Respond(string SenderSSN, string reciverSSN, string ReqTitle, string ReqMessage, int status, string request_ID)
         {
-            string query = "insert into Request(sender,receiver,title,request,state) values ('"+SenderSSN+"','"+reciverSSN+"','"+ReqTitle+"','"+ReqMessage+"',"+status+");"+
-                "update Request set state = "+status+" where sender='"+reciverSSN+"' and receiver='"+SenderSSN+"' and title='"+ oldTitle + "' and request='"+ oldReqMessage + "';";
+            string Date = "GETDATE()";
+            string query = "insert into Request(sender,receiver,title,request,state,Date) values ('" + SenderSSN + "','" + reciverSSN + "','" + ReqTitle + "','" + ReqMessage + "'," + status + "," + Date + ");" +
+                "Update Request set state = " + status + " where  request_ID = " + request_ID ;
             return dbMan.ExecuteNonQuery(query);
         }
-        public DataTable getEmailFromSSN(string SSN)
-        {
-            string query = "select staff_Email from Staff where staff_SSN ='" + SSN+"';";
-            return dbMan.ExecuteReader(query);
-        }
+
+       // public DataTable getEmailFromSSN(string SSN)
+       // {
+        //    string query = "select staff_Email from Staff where staff_SSN ='" + SSN+"';";
+         //   return dbMan.ExecuteReader(query);
+       // }
         public DataTable getStdEmailFromID(string ID)
         {
             string query = "select std_Email from Student where std_ID= '" + ID + "';";
@@ -627,11 +631,11 @@ namespace School_DB_System
             return dbMan.ExecuteReader(query);
         }
 
-        public int AddDepartment(string depID,string depName,string headID)
-        {
-            string query = "insert into Department (dep_ID,dep_Name,dep_Head_ID) values ('"+depID+"','"+depName+"','"+headID+"');";
-            return dbMan.ExecuteNonQuery(query);
-        }
+       // public int AddDepartment(string depID,string depName,string headID)
+       // {
+       //     string query = "insert into Department (dep_ID,dep_Name,dep_Head_ID) values ('"+depID+"','"+depName+"','"+headID+"');";
+        //    return dbMan.ExecuteNonQuery(query);
+       // }
 
         public int UpdateDepartment(string depID, string depName, string headID)
         {
@@ -694,6 +698,16 @@ namespace School_DB_System
             dbMan.CloseConnection();
         }
 
+        public int AddDepartment(string depID, string depName, string headID)
+        {
+            string StoredProcedureName = StoredProcedures.AddDepartment;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@dep_ID", depID);
+            Parameters.Add("@dep_Name", depName);
+            Parameters.Add("@dep_Head_ID", headID);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+
         public DataTable getTeacherData(string TeachersID)
         {
             string StoredProcedureName = StoredProcedures.getTeacherData;
@@ -716,7 +730,25 @@ namespace School_DB_System
             Parameters.Add("@staffID", staffID);
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
+        public int deleteStudentfromBus(string stdID)
+        {
+            string StoredProcedureName = StoredProcedures.deleteStudentfromBus;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@std_ID", stdID);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+
+        public int AddBus(int busNum, int busCap, string busDriverID, string route)
+        {
+            string StoredProcedureName = StoredProcedures.AddBus;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@bus_Num", busNum);
+            Parameters.Add("@bus_Driver_ID", busCap);
+            Parameters.Add("@bus_Capacity", busDriverID);
+            Parameters.Add("@bus_Route", route);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
     }
 
-    }
+}
 

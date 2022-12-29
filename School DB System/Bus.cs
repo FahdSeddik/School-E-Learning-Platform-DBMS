@@ -38,6 +38,7 @@ namespace School_DB_System
             Template_CBox.Name = "Route_CBox";//changing comboobox name to "StateList_CBox"
             Template_Lbl.Name = "RouteList_Lbl";//changing Label name to "StateList_Lbl"
             Template_Lbl.Text = "Route";//changing Label Text to "State"
+            Title_Lbl.Text = "Bus";
         }
 
 
@@ -102,29 +103,33 @@ namespace School_DB_System
         //filters the datagridview with the selected combooboxes i.e choosen year and state
         protected override void Filter_Btn_Click(object sender, EventArgs e)
         {
-            //checks if columns count > 1 i.e the first filter click
-            //initially empty columns added when the student page is opened first time (constructor)
-            if (Data_Dt.Columns.Count > 1)
-            {
-                //remove columns from datagridview
-                Data_Dt.Columns.RemoveAt(1);
-                Data_Dt.Columns.RemoveAt(1);
-                Data_Dt.Columns.RemoveAt(1);
-                Data_Dt.Columns.RemoveAt(1);
-            }
-
+         
             DataTable busesList = null; //create an empty datatable
 
             //check if selected state is = "current" and selected year is = "All"
             if (Template_CBox.Text.ToString() == "All")
             {
                 busesList =controllerObj.getAllBuses(); //sends a query to retrieve all students (ID, Name, Email, Year)
+                if (busesList == null)
+                {
+                    RJMessageBox.Show("There are no buses in the school at the moment.",
+                   "Error",
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
                 Data_Dt.DataSource = busesList; //linking student datagridview with students list datatable
             }
        
             else //check if selected state is = "current" and selected year is = 1,2,3...etc (not all)
             {
                 busesList = controllerObj.getBusesOfRoute(Template_CBox.SelectedValue.ToString());
+                if (busesList == null)
+                {
+                    RJMessageBox.Show("There are no current buses in this route.",
+                   "Error",
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
                 Data_Dt.DataSource = busesList; //linking student datagridview with students list datatable
 
             }
