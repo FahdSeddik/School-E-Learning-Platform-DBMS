@@ -17,8 +17,7 @@ namespace School_DB_System
                                   //non default constructor
         public AddRoom(ViewController viewController, Controller controllerObj)
         {
-            InitializeComponent();
-            RoomNum_Txt.Text = (int.Parse(controllerObj.getRoomsCount().ToString()) + 1).ToString();
+            InitializeComponent(); 
             this.viewController = viewController;
             this.controllerObj = controllerObj;
         }
@@ -28,7 +27,7 @@ namespace School_DB_System
             try //handles any unexpected error while converting any string to string or query fail
             {
                 //send a query and gets the result of the query in queryres
-                int queryRes = controllerObj.AddRoom(int.Parse(BuildNum_Nud.Value.ToString()), int.Parse(RoomFloor_Nud.Value.ToString()), int.Parse(RoomNum_Txt.Text.ToString()), int.Parse(RoomCap_Nud.Value.ToString()), RoomProjector_CHBox.Checked);
+                int queryRes = controllerObj.AddRoom(int.Parse(BuildNum_Nud.Value.ToString()), int.Parse(RoomFloor_Nud.Value.ToString()), int.Parse(RoomNum_Nud.Text.ToString()), int.Parse(RoomCap_Nud.Value.ToString()), RoomProjector_CHBox.Checked);
 
                 if (queryRes == 0) //if queryres = 0 i.e query executing failed
                 {

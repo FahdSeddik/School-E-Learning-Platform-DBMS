@@ -14,10 +14,10 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 namespace School_DB_System
 {
     //The used abbreviations in the format (abbreviation -> word) 
-    //(std -> student) (par -> parent) (obj -> object) (PNumber -> Phone Number)
+    //(std -> Subject) (par -> parent) (obj -> object) (PNumber -> Phone Number)
     //(Txt -> TextBox) (CBox -> Comboobox) (Pnl -> Panel) (Lbl -> Label)
 
-    //VIEW STUDENT USERCONTROL
+    //VIEW Subject USERCONTROL
     public partial class AddSubject : AUVSubject
     {
         //DATA MEMBERS
@@ -30,13 +30,23 @@ namespace School_DB_System
             InitializeComponent(); //initializing component
             this.viewController = viewController; //linking viewcontroller object with one viewcontroller object the whole applicaiton use
             this.controllerObj = controllerObj;  //linking controller object with one controller object the whole applicaiton use
-                                                 //filling textboxes with the selected student data
-                                                 //it send query to retrive selected student data
-                                                 //and fills textboxes with selected student information
-            DataTable Yearslist = controllerObj.getYears();
+                                                 //filling textboxes with the selected Subject data
+                                                 //it send query to retrive selected Subject data
+                                                 //and fills textboxes with selected Subject information
+            DataTable Yearslist = getYearslist();
             SubjYear_CBox.DisplayMember = "std_Year"; //displaying std_Year column from datatable "Yearslist"
             SubjYear_CBox.ValueMember = "std_Year"; //linking value to std_year column from datatable "YearsList"
             SubjYear_CBox.DataSource = Yearslist; //linking yearslist comboobox and yearlist datatable
+
+            DataTable BuildingList = controllerObj.getBuildingList();
+            SubjBuilding_CBox.DisplayMember = "r_Building_Num";//displaying std_Year column from datatable "Yearslist"
+            SubjBuilding_CBox.ValueMember = "r_Building_Num"; //linking value to std_year column from datatable "YearsList"
+            SubjBuilding_CBox.DataSource = BuildingList; //linking yearslist comboobox and yearlist datatable
+
+            DataTable FloorsList = controllerObj.getFloorsList();
+            SubjFloor_CBox.DisplayMember = "r_Floor";//displaying std_Year column from datatable "Yearslist"
+            SubjFloor_CBox.ValueMember = "r_Floor"; //linking value to std_year column from datatable "YearsList"
+            SubjFloor_CBox.DataSource = FloorsList; //linking yearslist comboobox and yearlist datatable
 
             DataTable Roomslist = controllerObj.getRooms();
             SubjRoom_CBox.DisplayMember = "r_Num"; //displaying std_Year column from datatable "Yearslist"
@@ -71,7 +81,7 @@ namespace School_DB_System
         }
        protected override void EditControls()
         {
-            Tittle_Lbl.Text = "Add Subject"; //changes control title text to update student
+            Tittle_Lbl.Text = "Add Subject"; //changes control title text to update Subject
             Tittle_Lbl.TextAlignment = ContentAlignment.MiddleCenter; //changes tittle text alignment to center
             Submit_Btn.Visible = false; //hides submit button as view doesn't use it
             StdSub_Pnl.Visible = false;
@@ -91,17 +101,13 @@ namespace School_DB_System
             try //handles any unexpected error while converting any string to string or query fail
             {
                 //send a query and gets the result of the query in queryres
-                int roomBuildingNum,roomFloor;
-            
-                DataTable RoomData = controllerObj.getRoomData(int.Parse(SubjRoom_CBox.SelectedValue.ToString()));
-                roomBuildingNum = int.Parse(RoomData.Rows[0][0].ToString());
-                roomFloor = int.Parse(RoomData.Rows[0][1].ToString());
-                int queryRes = controllerObj.AddSubject(SubjID_Txt.Text.ToString(), SubjDep_CBox.Text.ToString(), SubjName_Txt.Text.ToString(), int.Parse(SubjYear_CBox.SelectedValue.ToString()), SubjTeach_CBox.SelectedValue.ToString(),roomBuildingNum,roomFloor, int.Parse(SubjRoom_CBox.SelectedValue.ToString()), SubjStartT_CBox.SelectedValue.ToString(),SubjEndT_CBox.SelectedValue.ToString(), SubjDay_CBox.SelectedValue.ToString());
+
+                int queryRes = controllerObj.AddSubject(SubjID_Txt.Text.ToString(), SubjDep_CBox.Text.ToString(), SubjName_Txt.Text.ToString(), int.Parse(SubjYear_CBox.SelectedValue.ToString()), SubjTeach_CBox.SelectedValue.ToString(), int.Parse(SubjBuilding_CBox.SelectedValue.ToString()), int.Parse(SubjFloor_CBox.SelectedValue.ToString()), int.Parse(SubjRoom_CBox.SelectedValue.ToString()), SubjStartT_CBox.SelectedValue.ToString(),SubjEndT_CBox.SelectedValue.ToString(), SubjDay_CBox.SelectedValue.ToString());
 
                 if (queryRes == 0) //if queryres = 0 i.e query executing failed
                 {
                     //inform the user that the insertion failed
-                    RJMessageBox.Show("Insertion of new student failed, revise student information and try again.",
+                    RJMessageBox.Show("Insertion of new Subject failed, revise Subject information and try again.",
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -110,12 +116,12 @@ namespace School_DB_System
                 else
                 {
                     //inform the user that the insertion succeded
-                    RJMessageBox.Show("Inserted a new student Successfully",
+                    RJMessageBox.Show("Inserted a new Subject Successfully",
                    "Successfully added",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                     viewController.CloseSubTab();//reset the panel to be ready for the next insertion
-                    viewController.refreshDatagridView(); //refresh datagrid view after insert or delete student
+                    viewController.refreshDatagridView(); //refresh datagrid view after insert or delete Subject
                     //resets all textboxes text, clear error message...etc
                     return; //return
                 }

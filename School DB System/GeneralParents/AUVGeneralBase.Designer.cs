@@ -2007,11 +2007,11 @@
             this.SubjBuilding_Lbl.BackColor = System.Drawing.Color.Transparent;
             this.SubjBuilding_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SubjBuilding_Lbl.ForeColor = System.Drawing.Color.Gray;
-            this.SubjBuilding_Lbl.Location = new System.Drawing.Point(48, 35);
+            this.SubjBuilding_Lbl.Location = new System.Drawing.Point(38, 35);
             this.SubjBuilding_Lbl.Name = "SubjBuilding_Lbl";
-            this.SubjBuilding_Lbl.Size = new System.Drawing.Size(34, 15);
+            this.SubjBuilding_Lbl.Size = new System.Drawing.Size(47, 15);
             this.SubjBuilding_Lbl.TabIndex = 35;
-            this.SubjBuilding_Lbl.Text = "Room";
+            this.SubjBuilding_Lbl.Text = "Building";
             // 
             // SubjBuilding_CBox
             // 
@@ -2039,9 +2039,9 @@
             this.SubjFloor_Lbl.ForeColor = System.Drawing.Color.Gray;
             this.SubjFloor_Lbl.Location = new System.Drawing.Point(166, 35);
             this.SubjFloor_Lbl.Name = "SubjFloor_Lbl";
-            this.SubjFloor_Lbl.Size = new System.Drawing.Size(34, 15);
+            this.SubjFloor_Lbl.Size = new System.Drawing.Size(30, 15);
             this.SubjFloor_Lbl.TabIndex = 35;
-            this.SubjFloor_Lbl.Text = "Room";
+            this.SubjFloor_Lbl.Text = "Floor";
             // 
             // SubjFloor_CBox
             // 

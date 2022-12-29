@@ -40,16 +40,17 @@
             this.BuildNum_Nud = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.BuildNum_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Room_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.RoomNum_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.RoomMenu_Pnl = new Guna.UI2.WinForms.Guna2Panel();
             this.RoomBack_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.Title_Txt = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.RoomNum_Nud = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.RoomMain_Pnl.SuspendLayout();
             this.RoomSub_Pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomCap_Nud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RoomFloor_Nud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BuildNum_Nud)).BeginInit();
             this.RoomMenu_Pnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RoomNum_Nud)).BeginInit();
             this.SuspendLayout();
             // 
             // RoomMain_Pnl
@@ -91,10 +92,10 @@
             this.RoomSub_Pnl.Controls.Add(this.RoomCap_Lbl);
             this.RoomSub_Pnl.Controls.Add(this.RoomFloor_Nud);
             this.RoomSub_Pnl.Controls.Add(this.RoomFloor_Lbl);
+            this.RoomSub_Pnl.Controls.Add(this.RoomNum_Nud);
             this.RoomSub_Pnl.Controls.Add(this.BuildNum_Nud);
             this.RoomSub_Pnl.Controls.Add(this.BuildNum_Lbl);
             this.RoomSub_Pnl.Controls.Add(this.Room_Lbl);
-            this.RoomSub_Pnl.Controls.Add(this.RoomNum_Txt);
             this.RoomSub_Pnl.Location = new System.Drawing.Point(30, 73);
             this.RoomSub_Pnl.Name = "RoomSub_Pnl";
             this.RoomSub_Pnl.Size = new System.Drawing.Size(380, 393);
@@ -236,29 +237,6 @@
             this.Room_Lbl.TabIndex = 24;
             this.Room_Lbl.Text = "Room";
             // 
-            // RoomNum_Txt
-            // 
-            this.RoomNum_Txt.BorderColor = System.Drawing.Color.Gray;
-            this.RoomNum_Txt.BorderRadius = 3;
-            this.RoomNum_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.RoomNum_Txt.DefaultText = "";
-            this.RoomNum_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.RoomNum_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.RoomNum_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.RoomNum_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.RoomNum_Txt.Enabled = false;
-            this.RoomNum_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.RoomNum_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.RoomNum_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.RoomNum_Txt.Location = new System.Drawing.Point(67, 62);
-            this.RoomNum_Txt.Name = "RoomNum_Txt";
-            this.RoomNum_Txt.PasswordChar = '\0';
-            this.RoomNum_Txt.PlaceholderText = "Room Number";
-            this.RoomNum_Txt.SelectedText = "";
-            this.RoomNum_Txt.Size = new System.Drawing.Size(249, 31);
-            this.RoomNum_Txt.TabIndex = 1;
-            this.RoomNum_Txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // RoomMenu_Pnl
             // 
             this.RoomMenu_Pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
@@ -300,6 +278,30 @@
             this.Title_Txt.TabIndex = 2;
             this.Title_Txt.Text = "Add Room";
             // 
+            // RoomNum_Nud
+            // 
+            this.RoomNum_Nud.BackColor = System.Drawing.Color.Transparent;
+            this.RoomNum_Nud.BorderColor = System.Drawing.Color.Gray;
+            this.RoomNum_Nud.BorderRadius = 3;
+            this.RoomNum_Nud.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.RoomNum_Nud.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.RoomNum_Nud.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.RoomNum_Nud.Location = new System.Drawing.Point(66, 58);
+            this.RoomNum_Nud.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.RoomNum_Nud.Name = "RoomNum_Nud";
+            this.RoomNum_Nud.Size = new System.Drawing.Size(249, 36);
+            this.RoomNum_Nud.TabIndex = 28;
+            this.RoomNum_Nud.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.RoomNum_Nud.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // AddRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -315,6 +317,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BuildNum_Nud)).EndInit();
             this.RoomMenu_Pnl.ResumeLayout(false);
             this.RoomMenu_Pnl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RoomNum_Nud)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -327,7 +330,6 @@
         protected Guna.UI2.WinForms.Guna2NumericUpDown BuildNum_Nud;
         private Guna.UI2.WinForms.Guna2HtmlLabel BuildNum_Lbl;
         protected Guna.UI2.WinForms.Guna2HtmlLabel Room_Lbl;
-        protected Guna.UI2.WinForms.Guna2TextBox RoomNum_Txt;
         protected Guna.UI2.WinForms.Guna2Panel RoomMenu_Pnl;
         protected Guna.UI2.WinForms.Guna2Button RoomBack_Btn;
         protected Guna.UI2.WinForms.Guna2HtmlLabel Title_Txt;
@@ -336,5 +338,6 @@
         protected Guna.UI2.WinForms.Guna2NumericUpDown RoomFloor_Nud;
         private Guna.UI2.WinForms.Guna2HtmlLabel RoomFloor_Lbl;
         protected Guna.UI2.WinForms.Guna2CheckBox RoomProjector_CHBox;
+        protected Guna.UI2.WinForms.Guna2NumericUpDown RoomNum_Nud;
     }
 }

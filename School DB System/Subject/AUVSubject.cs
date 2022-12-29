@@ -12,12 +12,12 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 //SCHOOL DATABASE SYSTEM NAMESPACE
 namespace School_DB_System
-{   //ADD, UPDATE, DELETE STUDENT USERCONTROL BASE USERCONTROL
+{   //ADD, UPDATE, DELETE Subject USERCONTROL BASE USERCONTROL
     //The used abbreviations in the format (abbreviation -> word) 
-    //(Teach -> student) (par -> parent) (obj -> object) (PNumber -> Phone Number)
+    //(Teach -> Subject) (par -> parent) (obj -> object) (PNumber -> Phone Number)
     //(Txt -> TextBox) (CBox -> Comboobox) (Pnl -> Panel) (Lbl -> Label)
 
-    //AUDSTUDENTPARENT USERCONTROL (BASE USERCONTROL FOR ADD STUDENT, UPDATE STUDENT, VIEW STUDENT)
+    //AUDSubjectPARENT USERCONTROL (BASE USERCONTROL FOR ADD Subject, UPDATE Subject, VIEW Subject)
     public partial class AUVSubject : AUVGeneralBase //inherits from usercontrol
     {
         //DATA MEMBERS
@@ -31,7 +31,7 @@ namespace School_DB_System
             this.controllerObj = controllerObj;  //linking controller object with one controller object the whole applicaiton use
             PrepareControls();
         }
-        //overriding onPaint function to change derived class (Add student) design
+        //overriding onPaint function to change derived class (Add Subject) design
        protected override void EditControls()
         {
 
@@ -63,17 +63,17 @@ namespace School_DB_System
             string test = SubjDep_CBox.Text.ToString();
             if (test.Length < 3)
             {
-                StdID_Txt.Text = ""; //empty student ID (reset)
+                StdID_Txt.Text = ""; //empty Subject ID (reset)
                 return; //return (do nothing)
             }
-            int subjCount = controllerObj.getSubjectsCount(); //retrieves student count
-                subjCount++; //increments student count by 1 i.e if students count is = 3 means the student that will be added is the 4th student no the 3th
-                string formattedSubjectCount = string.Format("{0:000}", subjCount); //formatting students count to 5 digits and padding with zeros if needed i students count is 300 it will be 00300 and if 45000 it will be 45000
+            int subjCount = controllerObj.getSubjectsCount(); //retrieves Subject count
+                subjCount++; //increments Subject count by 1 i.e if Subjects count is = 3 means the Subject that will be added is the 4th Subject no the 3th
+                string formattedSubjectCount = string.Format("{0:000}", subjCount); //formatting Subjects count to 5 digits and padding with zeros if needed i Subjects count is 300 it will be 00300 and if 45000 it will be 45000
             char[] Department = SubjDep_CBox.Text.ToCharArray();//converting SSN to array of characters to access characters (first 2 digits)
             string year = string.Format("{0:00}", SubjYear_CBox.SelectedValue); //converting graduation year textbox text to integer to use to calculate graduation year
                                                                                                        //calculates graduation year depending on the current year and converting to characters array to acces its characters (last 2 digits)
-                                                                                                       //note that this calculates depending on the real year in the world (datetime.now.year) so its updated with the real time year (only when adding a new student not in updating student information)
-                                                                                                       //created Student ID with the specfied format
+                                                                                                       //note that this calculates depending on the real year in the world (datetime.now.year) so its updated with the real time year (only when adding a new Subject not in updating Subject information)
+                                                                                                       //created Subject ID with the specfied format
             SubjID_Txt.Text = Department[0].ToString()+ Department[1].ToString()+ Department[2].ToString() + year + formattedSubjectCount;
             return;
         }
@@ -191,17 +191,36 @@ namespace School_DB_System
             }
         }
 
-        protected virtual void FillData(string subjID, int roomID, String Day, string Time)
+        protected DataTable getYearslist()
+        {
+            DataTable yearsList = new DataTable(); //gets years in datatable column type int 
+            yearsList.Columns.Add("std_Year"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("1"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("2"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("3"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("4"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("5"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("6"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("7"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("8"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("9"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("10"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("11"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("12"); //converting each row value to string and adding on the string list
+            return yearsList; //returns the string list (All,1,2,3,4...etc)
+        }
+
+        protected virtual void FillData(string subjID, int BuildNum, int FloorNum, int roomID, String Day, string Time)
         {
             DataTable SubjInformation;//creating datatable object to retrive Subjs information
             //to fill textboxes with Subjinformation (View Subj information or update Subj information)
-            SubjInformation = controllerObj.getSubjectData(subjID, roomID, Day, Time);
+            SubjInformation = controllerObj.getSubjectData(subjID, BuildNum, FloorNum, roomID, Day, Time);
  
 
             SubjName_Txt.Text = SubjInformation.Rows[0][0].ToString();//filling Subj name textbox with the selectd Subj name
             SubjID_Txt.Text = SubjInformation.Rows[0][1].ToString();
 
-            DataTable Yearslist = controllerObj.getYears();
+            DataTable Yearslist = getYearslist();
             SubjYear_CBox.DisplayMember = "std_Year"; //displaying std_Year column from datatable "Yearslist"
             SubjYear_CBox.ValueMember = "std_Year"; //linking value to std_year column from datatable "YearsList"
             SubjYear_CBox.DataSource = Yearslist; //linking yearslist comboobox and yearlist datatable
@@ -248,13 +267,13 @@ namespace School_DB_System
             SubjBuilding_CBox.DisplayMember = "r_Building_Num";//displaying std_Year column from datatable "Yearslist"
             SubjBuilding_CBox.ValueMember = "r_Building_Num"; //linking value to std_year column from datatable "YearsList"
             SubjBuilding_CBox.DataSource = BuildingList; //linking yearslist comboobox and yearlist datatable
-            SubjBuilding_CBox.SelectedIndex = SubjBuilding_CBox.FindString(SubjInformation.Rows[0][10].ToString()); //in
+            SubjBuilding_CBox.SelectedIndex = SubjBuilding_CBox.FindString(SubjInformation.Rows[0][11].ToString()); //in
 
             DataTable FloorsList = controllerObj.getFloorsList();
             SubjFloor_CBox.DisplayMember = "r_Floor";//displaying std_Year column from datatable "Yearslist"
             SubjFloor_CBox.ValueMember = "r_Floor"; //linking value to std_year column from datatable "YearsList"
             SubjFloor_CBox.DataSource = FloorsList; //linking yearslist comboobox and yearlist datatable
-            SubjFloor_CBox.SelectedIndex = SubjFloor_CBox.FindString(SubjInformation.Rows[0][11].ToString()); //in
+            SubjFloor_CBox.SelectedIndex = SubjFloor_CBox.FindString(SubjInformation.Rows[0][12].ToString()); //in
 
         }
         protected override void Submit_Btn_Click(object sender, EventArgs e)

@@ -24,12 +24,12 @@ namespace School_DB_System
         Controller controllerObj; // controller object
 
         //NON DEFAULT CONSTRUCTOR
-        public ViewSubject(ViewController viewController, Controller controllerObj, string subjID, int roomID, String Day, string Time) : base(viewController, controllerObj) //sends base class parameters
+        public ViewSubject(ViewController viewController, Controller controllerObj, string subjID,int buildingNum,int floorNum, int roomID, String Day, string Time) : base(viewController, controllerObj) //sends base class parameters
         {
             InitializeComponent(); //initializing component
             this.viewController = viewController; //linking viewcontroller object with one viewcontroller object the whole applicaiton use
             this.controllerObj = controllerObj;  //linking controller object with one controller object the whole applicaiton use
-            FillData(subjID,roomID,Day,Time); //filling textboxes with the selected student data
+            FillData(subjID,buildingNum,floorNum,roomID, Day,Time); //filling textboxes with the selected student data
             //it send query to retrive selected student data
             //and fills textboxes with selected student information
             EditControls();

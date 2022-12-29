@@ -27,12 +27,12 @@ namespace School_DB_System
         string oldStartTime, oldEndTime, oldDay,oldTeacherID;
 
         //NON DEFAULT CONSTRUCTOR
-        public UpdateSubject(ViewController viewController, Controller controllerObj, string subjID, int roomID, String Day, string Time) : base(viewController, controllerObj) //sends base class parameters
+        public UpdateSubject(ViewController viewController, Controller controllerObj, string subjID, int buildingNum, int floorNum, int roomID, String Day, string Time) : base(viewController, controllerObj) //sends base class parameters
         {
             InitializeComponent(); //initializing component
             this.viewController = viewController; //linking viewcontroller object with one viewcontroller object the whole applicaiton use
             this.controllerObj = controllerObj;  //linking controller object with one controller object the whole applicaiton use
-            FillData(subjID, roomID, Day, Time); //filling textboxes with the selected student data
+            FillData(subjID, buildingNum, floorNum, roomID, Day, Time); //filling textboxes with the selected student data
             //it send query to retrive selected student data
             //and fills textboxes with selected student information
             oldRoomNum = int.Parse(SubjRoom_CBox.SelectedValue.ToString());
@@ -40,6 +40,7 @@ namespace School_DB_System
             oldEndTime = SubjEndT_CBox.SelectedValue.ToString();
             oldDay = SubjDay_CBox.SelectedValue.ToString();
             oldTeacherID = SubjTeach_CBox.SelectedValue.ToString();
+            EditControls();
         }
        protected override void EditControls()
         {

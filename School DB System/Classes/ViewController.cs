@@ -150,15 +150,15 @@ namespace School_DB_System
            Application_Handler.ViewOnSubTab(ViewStaff);//viewing homepage on the main application window
         }
 
-        public void ViewViewSubject(string subjID, int roomID, String Day, string Time)
+        public void ViewViewSubject(string subjID, int buildNum, int FloorNum, int roomID, String Day, string Time)
         {
-            ViewSubject ViewSubj = new ViewSubject(this, controllerobj,subjID, roomID, Day, Time);
+            ViewSubject ViewSubj = new ViewSubject(this, controllerobj,subjID, buildNum, FloorNum,roomID, Day, Time);
             SubTab = ViewSubj;
             Application_Handler.ViewOnSubTab(ViewSubj);//viewing homepage on the main application window
         }
-        public void ViewUpdateSubject(string subjID, int roomID, String Day, string Time)
+        public void ViewUpdateSubject(string subjID, int buildNum, int FloorNum, int roomID, String Day, string Time)
         {
-            UpdateSubject UpdateSubj = new UpdateSubject(this, controllerobj, subjID, roomID, Day, Time);
+            UpdateSubject UpdateSubj = new UpdateSubject(this, controllerobj, subjID, buildNum, FloorNum, roomID, Day, Time);
             SubTab = UpdateSubj;
             Application_Handler.ViewOnSubTab(UpdateSubj);//viewing homepage on the main application window
         }

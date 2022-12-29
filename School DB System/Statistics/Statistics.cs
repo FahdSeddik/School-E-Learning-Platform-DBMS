@@ -27,7 +27,7 @@ namespace School_DB_System
 
             YearList_CBox.DisplayMember = "std_Year"; //displaying std_Year column from datatable "Yearslist"
             YearList_CBox.ValueMember = "std_Year"; //linking value to std_year column from datatable "YearsList"
-            YearList_CBox.DataSource = controllerObj.getYears();
+            YearList_CBox.DataSource = getYearslist();
 
             SubjList_CBox.DisplayMember = "sub_Name"; //displaying std_Year column from datatable "Yearslist"
             SubjList_CBox.ValueMember = "sub_ID"; //linking value to std_year column from datatable "YearsList"
@@ -76,6 +76,27 @@ namespace School_DB_System
 
         }
 
+        //creating filter years list (All,1,2,3,4...etc)
+        //gets years list (1,2,3,...etc)
+        //converting list to string to add "All" in the first row
+        private DataTable getYearslist()
+        {
+            DataTable yearsList = new DataTable(); //gets years in datatable column type int 
+            yearsList.Columns.Add("std_Year");
+            yearsList.Rows.Add("1"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("2"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("3"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("4"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("5"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("6"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("7"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("8"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("9"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("10"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("11"); //converting each row value to string and adding on the string list
+            yearsList.Rows.Add("12"); //converting each row value to string and adding on the string list
+            return yearsList; //returns the string list (All,1,2,3,4...etc)
+        }
         private void MainBack_Btn_Click(object sender, EventArgs e)
         {
             //asking for confirmation

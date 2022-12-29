@@ -442,11 +442,11 @@ namespace School_DB_System
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable getSubjectData(string subjID, int roomID, String Day, string Time)
+        public DataTable getSubjectData(string subjID, int buildNum, int roomFloor, int roomID, String Day, string Time)
         {
             string query = "select s.sub_Name,st.sub_ID,s.sub_Year,st.r_Num,st.day,st.Start_Time,st.End_Time,d.dep_Name,d.dep_ID,sf.staff_Name,t.staff_ID,st.r_Building_Num,st.r_Floor " +
                 "from Subject_Time_Loc as st,Subject as s,Department as d,Teacher as t,Staff as sf " +
-                "where sf.staff_ID=t.staff_ID and t.tDep_ID=d.dep_ID and st.t_ID=t.staff_ID and s.sub_ID=st.sub_ID and st.sub_ID='" + subjID + "' and st.r_Num=" + roomID + " and st.day='" + Day + "' and st.Start_Time='" + Time + "';;";
+                "where sf.staff_ID=t.staff_ID and t.tDep_ID=d.dep_ID and st.t_ID=t.staff_ID and s.sub_ID=st.sub_ID and st.sub_ID='" + subjID + "' and st.r_Num=" + roomID + " and st.day='" + Day + "' and st.Start_Time='" + Time + "' and st.r_Building_Num = "+buildNum+ " and st.r_Floor = "+roomFloor+";";
             return dbMan.ExecuteReader(query);
         }
 
@@ -559,8 +559,8 @@ namespace School_DB_System
 
         public int deleteSubject(string teacherID,string subjID,string subDepName,int roomBuildingNum, int roomFloor,int roomNum,string startTime, string endTime, string day,int subjYear ,string subjName)
         {
-            string query = "delete Teach where t_ID='"+ teacherID + "' and sub_ID='"+ subjID + "' and sub_Dep_Name='"+ subDepName + "';"+
-            "delete Subject_Time_Loc where t_ID = '"+ teacherID + "' and r_Building_Num = "+ roomBuildingNum + " and r_Floor = "+roomFloor+" and r_Num = "+roomNum+ " and sub_ID = '" + subjID + "' and sub_Dep_Name = '"+ subDepName + "' and Start_Time = '"+startTime+"' and End_Time = '"+endTime+"' and day = '"+day+"';"
+            string query = "delete Teach where t_ID='"+ teacherID + "' and sub_ID='"+ subjID + "';"+
+            "delete Subject_Time_Loc where t_ID = '"+ teacherID + "' and r_Building_Num = "+ roomBuildingNum + " and r_Floor = "+roomFloor+" and r_Num = "+roomNum+ " and sub_ID = '" + subjID + "' and Start_Time = '"+startTime+"' and End_Time = '"+endTime+"' and day = '"+day+"';"
          +  " delete Subject where sub_ID = '"+ subjID + "' and sub_Dep_Name = '"+ subDepName + "' and sub_Name = '"+ subjName + "' and sub_Year = "+subjYear+"; ";
             return dbMan.ExecuteNonQuery(query);
         }
@@ -610,9 +610,9 @@ namespace School_DB_System
             return dbMan.ExecuteReader(query);
         }
 
-        public int checkTimeAndLocation(int rNum, string startT,string endT , string Day )
+        public int checkTimeAndLocation(int rNum, int Build, int Floor, string startT,string endT , string Day )
         {
-            string query = "select count(day) from Subject_Time_Loc where r_Num="+rNum+" and Start_Time='"+startT+"' and End_Time='"+endT+"' and day='"+Day+"';";
+            string query = "select count(day) from Subject_Time_Loc where r_Num="+rNum+" and r_Building_Num="+ Build + " and r_Floor="+Floor+" and Start_Time='"+ startT + "' and End_Time='"+ endT + "' and day='"+ Day + "';";
             return (int)dbMan.ExecuteScalar(query);
         }
 
@@ -670,15 +670,15 @@ namespace School_DB_System
         {
             string query = "insert into Subject(sub_ID,sub_Dep_Name,sub_Name,sub_Year) " +
                 "values ('"+subID+"','"+subDepName+ "','"+ subName + "',"+subYear+");" +
-                " insert into Subject_Time_Loc(t_ID,r_Building_Num,r_Floor,r_Num,sub_ID,sub_Dep_Name,Start_Time,End_Time,day) values ('"+ teacherID + "',"+roomBuildingNum+","+ roomFloor + ","+roomNum+",'" + subID + "','" + subDepName+ "','"+startTime+"','"+endTime+"','"+day+"');" +
-                "insert into Teach(t_ID,sub_ID,sub_Dep_Name) values ('"+ teacherID + "','" + subID + "','" + subDepName+ "');";
+                " insert into Subject_Time_Loc(t_ID,r_Building_Num,r_Floor,r_Num,sub_ID,Start_Time,End_Time,day) values ('"+ teacherID + "',"+roomBuildingNum+","+ roomFloor + ","+roomNum+",'" + subID + "','"+startTime+"','"+endTime+"','"+day+"');" +
+                "insert into Teach(t_ID,sub_ID) values ('"+ teacherID + "','" + subID + "');";
             return dbMan.ExecuteNonQuery(query);
         }
 
         public int UpdateSubject(string subID, string subName, string subDepName, int subYear, string teacherID, int oldRoomBuildingNum, int roomBuildingNum, int oldRoomFloor, int roomFloor, int oldRoomNum, int roomNum, string oldStartTime, string startTime, string oldEndTime, string endTime, string oldDay, string day)
         {
             string query = "update Subject set sub_Name='"+subName+"' where sub_ID='"+subID+"' and sub_Year="+subYear+";" +
-                "update Subject_Time_Loc set t_ID='"+teacherID+"',Start_Time='"+startTime+"',End_Time='"+endTime+"',day='"+day+"',r_Building_Num="+roomBuildingNum+",r_Floor="+roomFloor+",r_Num="+roomNum+" where r_Num="+oldRoomNum+" and sub_ID='"+subID+"' and sub_Dep_Name='"+ subDepName + "' and Start_Time='"+oldStartTime+"' and End_Time='"+oldEndTime+"' and day='"+oldDay+"';" +
+                "update Subject_Time_Loc set t_ID='"+teacherID+"',Start_Time='"+startTime+"',End_Time='"+endTime+"',day='"+day+"',r_Building_Num="+roomBuildingNum+",r_Floor="+roomFloor+",r_Num="+roomNum+" where r_Num="+oldRoomNum+" and sub_ID='"+subID+"' and Start_Time='"+oldStartTime+"' and End_Time='"+oldEndTime+"' and day='"+oldDay+"';" +
                 "update Teach set t_ID='"+teacherID+"' where sub_ID='"+subID+"';";
             return dbMan.ExecuteNonQuery(query);
         }
