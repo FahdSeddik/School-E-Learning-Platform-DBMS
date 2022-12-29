@@ -55,6 +55,7 @@ namespace School_DB_System
                 default:
                     return 0;
             }
+
             HomePage Homepage = new HomePage(this, username, SubHome);//creating the home page
             MainPage = Homepage;
             Application_Handler.ViewOnMainPage(Homepage);//viewing homepage on the main application window

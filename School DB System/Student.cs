@@ -27,9 +27,9 @@ namespace School_DB_System
         //DATA MEMBERS
         protected ViewController viewController; //viewcontroller object
         protected Controller controllerObj; // controller object
-        Guna2ComboBox YearList_CBox;
-        Guna2HtmlLabel YearList_Lbl;
-        Guna2Button MoveToNextYear_Btn;
+        protected Guna2ComboBox YearList_CBox;
+        protected Guna2HtmlLabel YearList_Lbl;
+        protected Guna2Button MoveToNextYear_Btn;
 
         //Student usercontrol non default constructor
         public Student(ViewController viewController, Controller controllerObj) : base(viewController, controllerObj)

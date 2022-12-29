@@ -32,9 +32,10 @@ namespace School_DB_System
             FillData(StaffID); //filling textboxes with the selected Staff data
             //it send query to retrive selected Staff data
             //and fills textboxes with selected Staff information
+            EditControls();
         }
         //overriding onPaint function to change derived class (Update Staff) design
-        protected override void OnPaint(PaintEventArgs pe)
+        protected override void EditControls()
         {
             Tittle_Lbl.Text = "Update Staff"; //changes control title text to update Staff
             Tittle_Lbl.TextAlignment = ContentAlignment.MiddleCenter; //changes tittle text alignment to center
@@ -42,6 +43,7 @@ namespace School_DB_System
             StaffDep_CBox.Visible = false;
             StaffDepReq_Lbl.Visible = false;
             StaffDep_Lbl.Visible = false;
+            StaffSub_Pnl.BringToFront();
         }
         //METHODS
 

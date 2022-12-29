@@ -37,10 +37,10 @@ namespace School_DB_System
             StaffDep_CBox.DataSource = controllerObj.getDepartmentslist();
             this.StaffDep_CBox.SelectedIndexChanged += new System.EventHandler(this.StaffDep_CBox_SelectedIndexChanged);
             this.StaffPos_CBox.SelectedIndexChanged += new System.EventHandler(this.StaffPos_CBox_SelectedIndexChanged);
+            EditControls();
         }
 
-        //overriding onPaint function to change derived class (Add Staff) design
-        protected override void OnPaint(PaintEventArgs pe)
+        protected override void EditControls()
         {
             Tittle_Lbl.Text = "Add Staff";
             StaffSub_Pnl.Visible = true;
@@ -49,7 +49,9 @@ namespace School_DB_System
             StaffDep_CBox.Visible = false;
             StaffDepReq_Lbl.Visible = false;
             StaffDep_Lbl.Visible = false;
+            StaffSub_Pnl.BringToFront();
         }
+   
 
         //METHODS
 

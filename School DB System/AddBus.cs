@@ -26,10 +26,11 @@ namespace School_DB_System
             BNum_Txt.Text = (int.Parse(controllerObj.getBusesCount().ToString()) + 1).ToString();
             this.viewController = viewController;
             this.controllerObj = controllerObj;
+            EditControls();
         }
 
         //overriding onPaint function to change derived class (Add student) design
-        protected override void OnPaint(PaintEventArgs pe)
+        protected override void EditControls()
         {
             Title_Txt.Text = "Add Bus";
             BStudList_Btn.Enabled = false;

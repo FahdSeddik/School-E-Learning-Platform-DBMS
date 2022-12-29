@@ -190,11 +190,11 @@ namespace School_DB_System
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public DataTable getDepartmentslist()
-        {
-            string query = "select dep_Name,dep_ID from Department;";
-            return dbMan.ExecuteReader(query);
-        }
+        //public DataTable getDepartmentslist()
+       // {
+          //  string query = "select dep_Name,dep_ID from Department;";
+           // return dbMan.ExecuteReader(query);
+      //  }
 
 
         public DataTable getteachersOfDepartment(string depID)
@@ -233,18 +233,18 @@ namespace School_DB_System
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public DataTable getTeacherData(string TeachersID)
-        {
-            string query = "select s.staff_Name,s.staff_ID,s.staff_Email,s.staff_SSN,s.staff_Address,s.staff_Mobile,s.staff_Salary,s.Full_Time,d.dep_Name from Staff as s,Teacher as t,Department as d where t.staff_ID=s.staff_ID and t.tDep_ID=d.dep_ID and t.staff_ID = " + TeachersID + ";";
-            return dbMan.ExecuteReader(query);
-        }
+     //   public DataTable getTeacherData(string TeachersID)
+      // {
+        //   string query = "select s.staff_Name,s.staff_ID,s.staff_Email,s.staff_SSN,s.staff_Address,s.staff_Mobile,s.staff_Salary,s.Full_Time,d.dep_Name from Staff as s,Teacher as t,Department as d where t.staff_ID=s.staff_ID and t.tDep_ID=d.dep_ID and t.staff_ID = " + TeachersID + ";";
+         //  return dbMan.ExecuteReader(query);
+        //}
 
 
-        public DataTable getStaffPostionslist()
-        {
-            string query = "select distinct staff_Position,staff_LevelAuth from Staff;";
-            return dbMan.ExecuteReader(query);
-        }
+     //   public DataTable getStaffPostionslist()
+      //  {
+          //  string query = "select distinct staff_Position,staff_LevelAuth from Staff;";
+           // return dbMan.ExecuteReader(query);
+       // }
 
         public DataTable getStaffPostionsFromID(string staffID)
         {
@@ -259,11 +259,29 @@ namespace School_DB_System
         }
 
 
-        public int deleteStaff(string staffID)
-        {
-            string query = "delete Staff where staff_ID='" + staffID + "';";
-            return dbMan.ExecuteNonQuery(query);
-        }
+        // public int deleteStaff(string staffID)
+        // {
+        //    string query = "delete Staff where staff_ID='" + staffID + "';";
+        //   return dbMan.ExecuteNonQuery(query);
+        // }
+
+          public DataTable getStaffData(string staffID)
+          {
+              string StoredProcedureName = StoredProcedures.getStaffData;
+              Dictionary<string, object> Parameters = new Dictionary<string, object>();
+              Parameters.Add("@staffID",staffID); 
+              return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+         }
+
+       public DataTable getInboxOf(string SSN)
+       {
+            string StoredProcedureName = StoredProcedures.getInboxOf;
+           Dictionary<string, object> Parameters = new Dictionary<string, object>();
+           Parameters.Add("@staff_SSN", SSN);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+      }
+
+
 
         public int AddStaff(string staffID, string staffName, string staffSSN, Int64 staffSalary, string staffAdress, string staffEmail, string staffMobileNumber, string staffDep, bool fullTime, string username, string password, string staffPosition, int staffLvlOfAuth)
         {
@@ -279,11 +297,11 @@ namespace School_DB_System
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public DataTable getStaffData(string staffID)
-        {
-            string query = "select staff_Name,staff_ID,staff_Email,staff_SSN,staff_Address,staff_Mobile,staff_Salary,Full_Time,staff_Position from Staff where staff_ID = " + staffID + " ;";
-            return dbMan.ExecuteReader(query);
-        }
+       // public DataTable getStaffData(string staffID)
+       // {
+        //    string query = "select staff_Name,staff_ID,staff_Email,staff_SSN,staff_Address,staff_Mobile,staff_Salary,Full_Time,staff_Position from Staff where staff_ID = " + staffID + " ;";
+        //    return dbMan.ExecuteReader(query);
+       // }
 
 
         public DataTable getAllsubjectsOfDep(string depID)
@@ -396,11 +414,11 @@ namespace School_DB_System
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable getInboxOf(string SSN)
-        {
-            string query = "select date,staff_Email,title,request from Request as r,Staff as s where s.staff_SSN = r.sender and r.receiver='" + SSN + "';";
-            return dbMan.ExecuteReader(query);
-        }
+       // public DataTable getInboxOf(string SSN)
+       // {
+        //  string query = "select date,staff_Email,title,request from Request as r,Staff as s where s.staff_SSN = r.sender and r.receiver='" + SSN + "';";
+         //   return dbMan.ExecuteReader(query);
+        //}
         public DataTable getPendingInboxOf(string SSN)
         {
             string query = "select date,staff_Email,title,request from Request as r,Staff as s where s.staff_SSN=r.sender and r.receiver='" + SSN + "' and state = -1;";
@@ -472,8 +490,16 @@ namespace School_DB_System
         public int AddBus(int busNum, int busCap, string busDriverID, string route)
         {
             string query = "insert into Bus (bus_Num,bus_Driver_ID,bus_Capacity,bus_Route) values ("+busNum+",'"+busDriverID+"',"+busCap+",'"+route+"');";
-            return dbMan.ExecuteNonQuery(query);
+          return dbMan.ExecuteNonQuery(query);
         }
+
+       // public DataTable getEmailFromSSN(string SSN)
+        //{
+       //     string StoredProcedureName = StoredProcedures.getEmailFromSSN;
+        ///    Dictionary<string, object> Parameters = new Dictionary<string, object>();
+         //   Parameters.Add("@staff_SSN", SSN);
+         //   return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+       // }
 
         public DataTable getAllDrivers()
         {
@@ -517,6 +543,16 @@ namespace School_DB_System
             return dbMan.ExecuteNonQuery(query);
         }
 
+     //   public int AddBus(int busNum, int busCap, string busDriverID, string route)
+      //  {
+       //     string StoredProcedureName = StoredProcedures.AddBus;
+        //    Dictionary<string, object> Parameters = new Dictionary<string, object>();
+          //  Parameters.Add("@bus_Num", busNum);
+          //  Parameters.Add("@bus_Driver_ID", busCap);
+          //  Parameters.Add("@bus_Capacity", busDriverID);
+          //  Parameters.Add("@bus_Route", route);
+          //  return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+     //   }
         public int deleteSubject(string teacherID,string subjID,string subDepName,int roomBuildingNum, int roomFloor,int roomNum,string startTime, string endTime, string day,int subjYear ,string subjName)
         {
             string query = "delete Teach where t_ID='"+ teacherID + "' and sub_ID='"+ subjID + "' and sub_Dep_Name='"+ subDepName + "';"+
@@ -552,7 +588,7 @@ namespace School_DB_System
         }
         public DataTable getEmailFromSSN(string SSN)
         {
-            string query = "select staff_Email from Staff where staff_SSN='" + SSN+"';";
+            string query = "select staff_Email from Staff where staff_SSN ='" + SSN+"';";
             return dbMan.ExecuteReader(query);
         }
         public DataTable getStdEmailFromID(string ID)
@@ -647,11 +683,39 @@ namespace School_DB_System
             return (int)dbMan.ExecuteScalar(query);
         }
 
+        public DataTable getDepartmentslist()
+        {
+            string StoredProcedureName = StoredProcedures.getDepartmentslist;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
         public void TerminateConnection()
         {
             dbMan.CloseConnection();
         }
 
+        public DataTable getTeacherData(string TeachersID)
+        {
+            string StoredProcedureName = StoredProcedures.getTeacherData;
+          Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@staff_ID", TeachersID);
+          return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+       }
+
+        public DataTable getStaffPostionslist()
+        {
+            string StoredProcedureName = StoredProcedures.getStaffPostionslist;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+
+        public int deleteStaff(string staffID)
+        {
+            string StoredProcedureName = StoredProcedures.deleteStaff;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@staffID", staffID);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
     }
 
     }

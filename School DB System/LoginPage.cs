@@ -41,7 +41,7 @@ namespace School_DB_System
                 Username_Txt.Select();
                 return;
             }
-            
+  
             int res = ViewController.ViewHomePage(authority, Username);//view homepage function takes authority to view the sutiable view for this user
             if (res == 0)
             {

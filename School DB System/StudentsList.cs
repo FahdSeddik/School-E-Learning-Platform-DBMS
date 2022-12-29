@@ -29,6 +29,7 @@ namespace School_DB_System
             this.Controls.Remove(Update_Btn);
             this.BusNum = busNum;
             Update_Btn.Visible = false;
+            MoveToNextYear_Btn.Visible = false;
             initializeDataGridView();
 
         }

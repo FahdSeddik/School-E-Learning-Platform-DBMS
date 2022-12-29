@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace School_DB_System
 {
-    public partial class AUVDepartment : BaseAUD
+    public partial class AUVDepartment : BaseAUV
     {
         //DATA MEMBERS
         ViewController viewController; //viewcontroller object

@@ -154,35 +154,45 @@ namespace School_DB_System
         //filters the datagridview with the selected combooboxes i.e choosen year and state
         protected override void Filter_Btn_Click(object sender, EventArgs e)
         {
-            //checks if columns count > 1 i.e the first filter click
-            //initially empty columns added when the student page is opened first time (constructor)
-            if (Data_Dt.Columns.Count > 1)
-            {
-                //remove columns from datagridview
-                Data_Dt.Columns.RemoveAt(1);
-                Data_Dt.Columns.RemoveAt(1);
-                Data_Dt.Columns.RemoveAt(1);
-                Data_Dt.Columns.RemoveAt(1);
-            }
-
             DataTable RequestList = null; //create an empty datatable
 
             //check if selected state is = "current" and selected year is = "All"
             if (Template_CBox.Text.ToString() == "Inbox")
             {
                 RequestList = controllerObj.getInboxOf(SSN); //sends a query to retrieve all students (ID, Name, Email, Year)
+                if (RequestList == null)
+                {
+                    RJMessageBox.Show("There are no current students in the current database.",
+                   "Error",
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
                 Data_Dt.DataSource = RequestList; //linking student datagridview with students list datatable
                 InboxView(); //changes to current student view
             }
             else if (Template_CBox.Text.ToString() == "Sent") //check if selected state is = "Graduated
             {
                 RequestList = controllerObj.getSentOf(SSN);
+                if (RequestList == null)
+                {
+                    RJMessageBox.Show("There are no current students in the current database.",
+                   "Error",
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
                 Data_Dt.DataSource = RequestList; //linking student datagridview with students list datatable
                 SentView();
             }
             else //check if selected state is = "current" and selected year is = 1,2,3...etc (not all)
             {
                 RequestList = controllerObj.getPendingInboxOf(SSN); //sends a query to retrieve all students (ID, Name, Email, Year)
+                if (RequestList == null)
+                {
+                    RJMessageBox.Show("There are no current students in the current database.",
+                   "Error",
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
                 Data_Dt.DataSource = RequestList; //linking student datagridview with students list datatable
                 InboxView(); //changes to current student view
             }

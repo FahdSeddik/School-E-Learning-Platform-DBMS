@@ -89,7 +89,6 @@ namespace School_DB_System
                 Data_Dt.Columns.RemoveAt(1);
                 Data_Dt.Columns.RemoveAt(1);
                 Data_Dt.Columns.RemoveAt(1);
-                Data_Dt.Columns.RemoveAt(1);
             }
             Data_Dt.DataSource = null;
             refreshdataGridView();
@@ -97,13 +96,11 @@ namespace School_DB_System
             Data_Dt.Columns[1].Name = "ID"; //changes column name because in database it is named std_id
             Data_Dt.Columns[2].Name = "Name"; //changes column name text because in database it is named std_name
             Data_Dt.Columns[3].Name = "Head"; //changes column name text because in database it is named std_email
-            Data_Dt.Columns[3].Name = "HeadID"; //changes column name text because in database it is named std_email
 
             //changing datagridview columns headertext because they are named in a dfiffrent names in database
             Data_Dt.Columns[1].HeaderText = "ID"; //changes column header text because in database it is named std_id
             Data_Dt.Columns[2].HeaderText = "Name"; //changes column header text because in database it is named std_name
             Data_Dt.Columns[3].HeaderText = "Head"; //changes column header text because in database it is named std_email
-            Data_Dt.Columns[3].HeaderText = "HeadID"; //changes column name text because in database it is named std_email
 
 
             //adjusting students datagridview columns style

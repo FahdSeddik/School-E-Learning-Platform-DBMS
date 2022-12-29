@@ -93,6 +93,7 @@
     <Compile Include="Department.Designer.cs">
       <DependentUpon>Department.cs</DependentUpon>
     </Compile>
+    <Compile Include="StoredProcedures.cs" />
     <Compile Include="StudentsList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -153,11 +154,11 @@
     <Compile Include="AUVSubject.Designer.cs">
       <DependentUpon>AUVSubject.cs</DependentUpon>
     </Compile>
-    <Compile Include="BaseAUD.cs">
+    <Compile Include="BaseAUV.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BaseAUD.Designer.cs">
-      <DependentUpon>BaseAUD.cs</DependentUpon>
+    <Compile Include="BaseAUV.Designer.cs">
+      <DependentUpon>BaseAUV.cs</DependentUpon>
     </Compile>
     <Compile Include="Bus.cs">
       <SubType>UserControl</SubType>
@@ -242,11 +243,11 @@
     <Compile Include="Statistics.Designer.cs">
       <DependentUpon>Statistics.cs</DependentUpon>
     </Compile>
-    <Compile Include="SSSTPageParent.cs">
+    <Compile Include="SecondaryTabBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SSSTPageParent.Designer.cs">
-      <DependentUpon>SSSTPageParent.cs</DependentUpon>
+    <Compile Include="SecondaryTabBase.Designer.cs">
+      <DependentUpon>SecondaryTabBase.cs</DependentUpon>
     </Compile>
     <Compile Include="Student.cs">
       <SubType>UserControl</SubType>
@@ -254,11 +255,11 @@
     <Compile Include="Student.Designer.cs">
       <DependentUpon>Student.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentAUD.cs">
+    <Compile Include="StudentAUVBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="StudentAUD.Designer.cs">
-      <DependentUpon>StudentAUD.cs</DependentUpon>
+    <Compile Include="StudentAUVBase.Designer.cs">
+      <DependentUpon>StudentAUVBase.cs</DependentUpon>
     </Compile>
     <Compile Include="AddRoom.cs">
       <SubType>UserControl</SubType>
@@ -375,8 +376,8 @@
     <EmbeddedResource Include="AUVBus.resx">
       <DependentUpon>AUVBus.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BaseAUD.resx">
-      <DependentUpon>BaseAUD.cs</DependentUpon>
+    <EmbeddedResource Include="BaseAUV.resx">
+      <DependentUpon>BaseAUV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMessageBox.resx">
       <DependentUpon>FormMessageBox.cs</DependentUpon>
@@ -415,8 +416,8 @@
     <EmbeddedResource Include="Statistics.resx">
       <DependentUpon>Statistics.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SSSTPageParent.resx">
-      <DependentUpon>SSSTPageParent.cs</DependentUpon>
+    <EmbeddedResource Include="SecondaryTabBase.resx">
+      <DependentUpon>SecondaryTabBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddRoom.resx">
       <DependentUpon>AddRoom.cs</DependentUpon>

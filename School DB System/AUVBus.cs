@@ -23,7 +23,11 @@ namespace School_DB_System
             this.controllerObj = controllerObj;  //linking controller object with one controller object the whole applicaiton use
 
         }
-    
+        protected virtual void EditControls()
+        {
+
+        }
+
         protected virtual void FillData(int BusID)
         {
             DataTable BusInformation;//creating datatable object to retrive Staffs information

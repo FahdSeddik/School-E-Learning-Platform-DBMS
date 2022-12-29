@@ -95,7 +95,6 @@ D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_Syste
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.ADUTeacherParent.resources
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.Application.resources
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.AUVBus.resources
-D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.BaseAUD.resources
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.FormMessageBox.resources
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.HR.resources
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.LoginPage.resources
@@ -106,7 +105,6 @@ D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_Syste
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.Accountant.resources
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.Request1.resources
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.Statistics.resources
-D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.SSSTPageParent.resources
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.AddRoom.resources
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.Subject1.resources
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.Teacher.resources
@@ -117,3 +115,5 @@ D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School DB Syste
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School DB System.csproj.CopyComplete
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School DB System.exe
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School DB System.pdb
+D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.BaseAUV.resources
+D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.SecondaryTabBase.resources

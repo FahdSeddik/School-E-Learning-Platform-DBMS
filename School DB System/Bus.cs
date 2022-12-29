@@ -28,9 +28,10 @@ namespace School_DB_System
                                 //(Student states : Current, Graduated, Years : 1,2,3,...etc)
             initializeDataGridView();//initialize Datagridview data (columns and rows)
                                      //(adding column names, adjusting datagridview style...etc)
+            EditControls();
         }
         //overriding onPaint function to change derived class (Add student) design
-        protected override void OnPaint(PaintEventArgs pe)
+        protected override void EditControls()
         {
             //adjusting the template comboobox style and text
             //note that template comboobox and label holds the standard design to use when creating new items in the panel
@@ -38,6 +39,7 @@ namespace School_DB_System
             Template_Lbl.Name = "RouteList_Lbl";//changing Label name to "StateList_Lbl"
             Template_Lbl.Text = "Route";//changing Label Text to "State"
         }
+
 
         //METHODS
 
