@@ -15,7 +15,7 @@ function uidExists($conn,$username,$email){
         //sqlsrv_free_stmt($stmt);
         return $row;  
     }else{
-        $sql = "SELECT Username,Password,staff_SSN as SSN FROM Staff WHERE Username = ? OR staff_Email = ?;";
+        $sql = "SELECT Username,Password,staff_SSN as SSN,staff_ID FROM Staff WHERE staff_Position='Teacher' and Username = ? OR staff_Email = ?;";
         // prevent sql injection
         $params = array($username,$username);
         $stmt = sqlsrv_query($conn,$sql,$params);
@@ -53,12 +53,21 @@ function loginUser($conn,$username,$pwd){
         header("location: ../../index.php?error=wronglogin");
         exit();
     }
+    if($uidExists["Password"]=="0000" && $uidExists["Password"]!==$pwd){
+        header("location: ../../index.php?error=wronglogin");
+        exit();
+    }
+    if($uidExists["Password"]=="0000"){
+        session_start();
+        $_SESSION["username"] = $username;
+        header("location: ../../Reset_password.php");
+        exit();
+    }
     // Associate array (column names)
-    // $pwdHashed = $uidExists["usersPwd"];
-    // $checkPwd = password_verify($pwd,$pwdHashed);
+    $pwdHashed = $uidExists["Password"];
+    $checkPwd = password_verify($pwd,$pwdHashed);
     
-    if($uidExists["Password"] !== $pwd){
-        echo 'test';
+    if(!$checkPwd){
         header("location: ../../index.php?error=wronglogin");
         exit();
     }else {
@@ -67,13 +76,35 @@ function loginUser($conn,$username,$pwd){
 
         $_SESSION["username"] = $username;
         $_SESSION["SSN"] = $uidExists["SSN"];
-        if (isStudent($conn)==1)
+        if (isStudent($conn) == 1) {
             $_SESSION["STUDENT"] = 1;
-        else
+            $_SESSION["dephead"] = 0;
+        }
+        else {
             $_SESSION["STUDENT"] = 0;
+            if (isDepHead($conn, $uidExists["staff_ID"])==1) {
+                $_SESSION["dephead"] = 1;
+            }
+            else {
+                $_SESSION["dephead"] = 0;
+            }
+        }
         header("location: ../Dashboard.php");
         // exit();
     }
+
+}
+function isDepHead($conn,$id){
+    $sql = "SELECT *
+    From Department
+    Where dep_Head_ID=?";
+    $params = array($id);
+    $stmt = sqlsrv_query($conn,$sql,$params);
+    if ($stmt == false)
+        return 0;
+    if (sqlsrv_fetch_array($stmt))
+        return 1;
+    return 0;
 
 }
 function isStudent($conn){
@@ -98,10 +129,10 @@ function getStdLangNOT($conn){
     if ($stmt == false)
         return false;
     if ($row = sqlsrv_fetch_array($stmt)){
-        if ($row[0] == 'german')
-            return 'french';
+        if ($row[0] == 'German')
+            return 'French';
         else
-            return 'german';
+            return 'German';
     }
     else
         return false;
@@ -273,7 +304,7 @@ function getDepName($conn){
 function getPosts($conn){
     $posts = array();
 
-    $sql = "SELECT Post,Date,SSN
+    $sql = "SELECT Post_ID,Post,Date,SSN
     FRom Posts
     Where sub_ID=?
     Order by Date Desc";
@@ -283,7 +314,7 @@ function getPosts($conn){
         array_push($posts, $post);
     }
     for($i = 0;$i <count($posts);$i++){
-        $params = array($posts[$i][2]);
+        $params = array($posts[$i][3]);
         $sql = "SELECT std_Name From Student Where std_SSN=?;";
         $stmt = sqlsrv_query($conn, $sql,$params);
         if(sqlsrv_fetch($stmt) == false){
@@ -291,11 +322,11 @@ function getPosts($conn){
             $stmt = sqlsrv_query($conn, $sql,$params);
             if (sqlsrv_fetch($stmt) === true) {
                 $name = sqlsrv_get_field($stmt, 0);
-                $posts[$i][2] = '*TEACHER* '. ucwords($name);
+                array_push($posts[$i],'*TEACHER* '. ucwords($name));
             }
         } else {
             $name = sqlsrv_get_field($stmt, 0);
-            $posts[$i][2] = ucwords($name);
+            array_push($posts[$i],ucwords($name));
         }
     }
     return $posts;
@@ -404,7 +435,7 @@ function sendRequest($conn,$params){
     return false;
 }
 function getInbox($conn){
-    $sql = "SELECT staff_Name,staff_Email,title,request,state,date,sender
+    $sql = "SELECT staff_Name,staff_Email,title,request,state,date,sender,Request_ID
     fROM REQUEST,Staff
     where receiver=? and sender=Staff.staff_SSN
     order by date desc";
@@ -413,7 +444,7 @@ function getInbox($conn){
     while($row = sqlsrv_fetch_array($stmt)){
         array_push($inbox, $row);
     }
-    $sql = "SELECT std_Name,std_Email,title,request,state,date,sender
+    $sql = "SELECT std_Name,std_Email,title,request,state,date,sender,Request_ID
     fROM REQUEST,Student
     where receiver=? and sender=std_SSN
     order by date desc";
@@ -426,8 +457,7 @@ function getInbox($conn){
 }
 function DeleteRequest($conn,$params){
     $sql = "Delete from request
-    Where sender = ? and receiver = ? and title = ? and request = ?
-    and state = ? and date=?";
+    Where request_ID = ?";
     $stmt = sqlsrv_prepare($conn, $sql, $params);
     if (sqlsrv_execute($stmt))
         return true;
@@ -444,8 +474,8 @@ function getNumberRequests($conn){
 function UpdateRequestStatus($conn,$p1,$p2){
     $sql = "UPDATE Request
     Set state=?
-    Where sender=? and receiver=? and title=? and request=? and date=?";
-    $stmt = sqlsrv_prepare($conn,$sql,array((int)$p2[4],$p1[0],$p1[1],$p1[2],$p1[3],$p1[5]));
+    Where request_ID=?";
+    $stmt = sqlsrv_prepare($conn,$sql,$p1);
     if(!sqlsrv_execute($stmt))return 2;
     $sql = "INSERT INTO Request VALUES(?,?,?,?,?,SYSDATETIME())";
     $stmt = sqlsrv_prepare($conn,$sql,$p2);
@@ -460,7 +490,7 @@ function makeNewAnnouncement($conn,$posttext){
 }
 
 function getAnnouncements($conn){
-    $sql = "SELECT staff_Name,Post,Date
+    $sql = "SELECT staff_Name,Post,Date,Ann_ID,SSN
     From Staff,Announcement
     where staff_SSN=SSN
     ORder by date desc";
@@ -470,4 +500,67 @@ function getAnnouncements($conn){
         array_push($ann, $a);
     }
     return $ann;
+}
+
+function UpdatePassword($conn,$pwd){
+    $sql = "Update Student set password=? where username=?";
+    // Hash Password for Security 
+    $hashedPwd = password_hash($pwd,PASSWORD_DEFAULT);
+    $stmt = sqlsrv_prepare($conn, $sql, array($hashedPwd, $_SESSION["username"]));
+    if (!sqlsrv_execute($stmt))
+        return 2;
+    $sql = "Update Staff set password=? where username=?";
+    $stmt = sqlsrv_prepare($conn, $sql, array($hashedPwd, $_SESSION["username"]));
+    if (!sqlsrv_execute($stmt))
+        return 3;
+    return 0;
+}
+
+
+function getUserDetails($conn,$username,$email){
+    $sql = "SELECT std_Email,Username,Password From Student where std_Email=? OR username=?";
+    $stmt = sqlsrv_query($conn, $sql, array($email, $username));
+    if($row = sqlsrv_fetch_array($stmt)){
+        return $row;
+    }
+    $sql = "SELECT staff_Email,Username,Password From Staff where staff_Email=? OR username=?";
+    $stmt = sqlsrv_query($conn, $sql, array($email, $username));
+    if($row = sqlsrv_fetch_array($stmt)){
+        return $row;
+    }
+    return false;
+}
+
+function getPostsIDs($conn){
+    $sql = "SELECT post_ID From Posts where sub_ID=?";
+    $stmt = sqlsrv_query($conn, $sql, array($_SESSION["sub_ID"]));
+    $ids = array();
+    while($row = sqlsrv_fetch_array($stmt)){
+        array_push($ids, $row[0]);
+    }
+    return $ids;
+}
+
+function DeletePost($conn,$post_ID){
+    $sql = "Delete from Posts where post_ID=?";
+    $stmt = sqlsrv_prepare($conn, $sql, $post_ID);
+    return sqlsrv_execute($stmt);
+}
+
+
+function DeleteAnn($conn,$ann_ID){
+    $sql = "Delete from Announcement where ann_ID=?";
+    $stmt = sqlsrv_prepare($conn, $sql, array($ann_ID));
+    return sqlsrv_execute($stmt);
+}
+
+
+function getAnnIDs($conn){
+    $sql = "SELECT Ann_ID From Announcement";
+    $stmt = sqlsrv_query($conn, $sql);
+    $ids = array();
+    while($row = sqlsrv_fetch_array($stmt)){
+        array_push($ids, $row[0]);
+    }
+    return $ids;
 }

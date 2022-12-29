@@ -101,7 +101,7 @@
                     echo '</div><br>';
                 }
             } else {
-                $posts = getPosts($conn); //post, date, name
+                $posts = getPosts($conn); //post_ID,post, date, ssn,name
                 echo '<div class="d-flex ml-72" style="margin-left:21%">';
                 echo '<div class="shadow card w-50">';
                 echo '<h5 class="shadow card-header d-flex justify-content-center">New Post</h5>';
@@ -110,13 +110,20 @@
                 echo '<textarea type="text" name="post-text" placeholder="Write new post..." class="shadow p-0 border border-dark" style="height:201px;width:100%;resize: none;"></textarea>';
                 echo '<button class="btn btn-info ml-50 rounded-pill" style="float:right" type="submit" name="new-post"><h4>Post</h4></button>';
                 echo '</form></div></div></div><div class="astrodivider" style="margin-left:30%"><div class="astrodividermask"></div><span><i>&#10038;</i></span></div>';
-                foreach ($posts as $post) {
+                for ($i=0;$i<count($posts);$i++) {
                     echo '<div class="shadow card rounded-pill w-75 ml-5 " style="width:100%;height:auto">';
                     echo '<div class="m-4">';
-                    echo "<h5 >Posted by: " . $post[2] . "</h5>";
-                    echo "<p>Date: " . date_format($post[1], 'Y-m-d H:i') . " GMT+00:00</p>";
-                    echo "<hr><p class='ml-4 mt-0 b'>" . $post[0] . "</p>";
-                    echo '</div><br></div><hr>';
+                    echo "<h5 >Posted by: " . ucwords($posts[$i][4]) . "</h5>";
+                    echo "<p>Date: " . date_format($posts[$i][2], 'Y-m-d H:i') . " GMT+00:00</p>";
+                    echo "<hr><p class='ml-4 mt-0 b'>" . $posts[$i][1] . "</p>";
+                    echo '</div><br>';
+                    echo '<form action="../includes/handle_post.php" method="post">';
+                    echo '<input type="hidden" name="post'.$posts[$i][0].'" value="'.$posts[$i][0].'">';
+                    if ($_SESSION["SSN"] ==$posts[$i][3] || $_SESSION["STUDENT"]==0) {
+                        echo '<button class="btn btn-danger w-25 rounded-pill border border-dark shadow" style="float:left" type="submit" name="delete-post'.$posts[$i][0].'"><h4>Delete</h4></button>';
+                    }
+                    echo '</form>';
+                    echo '</div><hr>';
                     
                 }
             }

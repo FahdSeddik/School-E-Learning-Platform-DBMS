@@ -65,7 +65,7 @@
     <?php
         $inbox = getInbox($conn);
         $i = 0;
-        for($j = 0;$j<count($inbox);$j++){//staff name , staff email, title , request,state, date, sender
+        for($j = 0;$j<count($inbox);$j++){//staff name , staff email, title , request,state, date, Request_ID
             if($inbox[$j][4]==-1){
                 echo '<div class="shadow card rounded-pill w-75 ml-5 bg-secondary" style="display:flex;width:100%;height:auto">';
                 echo '<h5>State: Pending</h5>';
@@ -85,11 +85,7 @@
             echo '</div><br></div>';
             echo '<form action="includes/handle_request.php" method="post">';
             echo '<input type="hidden" name="sender'.$i.'" value="'.$inbox[$j][6].'">';
-            echo '<input type="hidden" name="receiver'.$i.'" value="'.$_SESSION["SSN"].'">';
-            echo '<input type="hidden" name="title'.$i.'" value="'.$inbox[$j][2].'">';
-            echo '<input type="hidden" name="request'.$i.'" value="'.$inbox[$j][3].'">';
-            echo '<input type="hidden" name="state'.$i.'" value="'.$inbox[$j][4].'">';
-            echo '<input type="hidden" name="date'.$i.'" value="'.date_format($inbox[$j][5], 'Y-m-d').'">';
+            echo '<input type="hidden" name="reqID'.$i.'" value="'.$inbox[$j][7].'">';
             echo '<button class="btn btn-danger w-25 rounded-pill border border-dark shadow" style="float:left" type="submit" name="delete-request'.$i.'"><h4>Delete</h4></button>';
             if(count($inbox[$j]) >= 10){
                 if ($_SESSION["STUDENT"] == 0 && $inbox[$j][4]==-1) {

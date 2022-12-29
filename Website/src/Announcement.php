@@ -27,7 +27,7 @@
             <h1 class='text-gray-400'>Announcements</h1>
 
         <?php
-        if ($_SESSION["STUDENT"] == 0) {
+        if ($_SESSION["dephead"] == 1) {
             echo '<div class="d-flex ml-72" style="margin-left:23%">';
             echo '<div class="shadow card w-50">';
             echo '<h5 class="shadow card-header d-flex justify-content-center">New Announcement</h5>';
@@ -35,17 +35,28 @@
             echo '<form action="includes/NewAnnouncement.inc.php" method="post" style="width:100%">';
             echo '<textarea type="text" name="ann-text" placeholder="Write new post..." class="shadow p-0 border border-dark" style="height:201px;width:100%;resize: none;"></textarea>';
             echo '<button class="btn btn-info ml-50 rounded-pill" style="float:right" type="submit" name="new-ann"><h4>Post</h4></button>';
-            echo '</form></div></div></div></div><div class="astrodivider" style="margin-left:30%"><div class="astrodividermask"></div><span><i>&#10038;</i></span></div>';
+            echo '</form></div></div></div></div><br><hr>';
         }
-        $ann = getAnnouncements($conn);
-        foreach ($ann as $a) {
+        $ann = getAnnouncements($conn);//staff_Name,Post,Date,Ann_ID,SSN
+        if (count($ann) <= 0) {
+            echo '<div class="card ml-50 w-100">';
+            echo '<h5 class="card-header w-100">No Announcements Yet!</h5></div><hr>';
+        }
+        for ($i=0;$i<count($ann);$i++) {
             echo '<div class="shadow card rounded-pill w-75 ml-5 " style="width:100%;height:auto">';
             echo '<div class="m-4">';
-            echo "<h5 >Posted by: " . ucwords($a[0]) . "</h5>";
-            echo "<p>Date: " . date_format($a[2], 'Y-m-d H:i') . " GMT+00:00</p>";
-            echo "<hr><p class='ml-4 mt-0 b'>" . $a[1] . "</p>";
-            echo '</div><br></div><hr>';
-            
+            echo "<h5 >Posted by: " . ucwords($ann[$i][0]) . "</h5>";
+            echo "<p>Date: " . date_format($ann[$i][2], 'Y-m-d H:i') . " GMT+00:00</p>";
+            echo "<hr><p class='ml-4 mt-0 b'>" . nl2br($ann[$i][1]) . "</p>";
+            echo '</div><br>';
+            echo '<form action="includes/handle_ann.php" method="post">';
+            echo '<input type="hidden" name="ann'.$ann[$i][3].'" value="'.$ann[$i][3].'">';
+            if ($_SESSION["SSN"] ==$ann[$i][4]) {
+                echo '<button class="btn btn-danger w-25 rounded-pill border border-dark shadow" style="float:left" type="submit" name="delete-ann'.$ann[$i][3].'"><h4>Delete</h4></button>';
+            }
+            echo '</form>';
+            //insert delete button for teachers
+            echo '</div><hr>';
         }
         ?>
 

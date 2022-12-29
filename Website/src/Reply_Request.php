@@ -47,7 +47,7 @@
         echo '<input type="text" name="title" placeholder="Request Title" class="shadow mb-2 border border-dark" style="width:50%;resize: none;">';
         echo '<textarea type="text" name="request-text" placeholder="Write request..." class="shadow p-0 border border-dark" style="height:201px;width:100%;resize: none;"></textarea>';
         echo '<button class="btn btn-info ml-50 rounded-pill" style="float:right" type="submit" name="new-reply"><h4>Reply</h4></button>';
-        echo '</form></div></div></div><div class="astrodivider" style="margin-left:30%"><div class="astrodividermask"></div><span><i>&#10038;</i></span></div>';
+        echo '</form></div></div></div>';
         
 
     ?>
