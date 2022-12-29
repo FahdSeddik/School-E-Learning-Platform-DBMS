@@ -444,7 +444,7 @@ namespace School_DB_System
 
         public DataTable getSubjectData(string subjID, int roomID, String Day, string Time)
         {
-            string query = "select s.sub_Name,st.sub_ID,s.sub_Year,st.r_Num,st.day,st.Start_Time,st.End_Time,d.dep_Name,d.dep_ID,sf.staff_Name,t.staff_ID " +
+            string query = "select s.sub_Name,st.sub_ID,s.sub_Year,st.r_Num,st.day,st.Start_Time,st.End_Time,d.dep_Name,d.dep_ID,sf.staff_Name,t.staff_ID,st.r_Building_Num,st.r_Floor " +
                 "from Subject_Time_Loc as st,Subject as s,Department as d,Teacher as t,Staff as sf " +
                 "where sf.staff_ID=t.staff_ID and t.tDep_ID=d.dep_ID and st.t_ID=t.staff_ID and s.sub_ID=st.sub_ID and st.sub_ID='" + subjID + "' and st.r_Num=" + roomID + " and st.day='" + Day + "' and st.Start_Time='" + Time + "';;";
             return dbMan.ExecuteReader(query);
@@ -515,6 +515,18 @@ namespace School_DB_System
             return dbMan.ExecuteReader(query);
         }
 
+        public DataTable getBuildingList()
+        {
+            string query = "select distinct r_Building_Num from Subject_Time_Loc;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable getFloorsList()
+        {
+            string query = "select distinct r_Floor from Subject_Time_Loc;";
+            return dbMan.ExecuteReader(query);
+        }
+
         public DataTable getBusesOfRoute(string route)
         {
             string query = "select b.bus_Num, s.staff_Name, b.bus_Capacity,b.bus_Route from Bus as b,Staff as s where s.staff_ID=b.bus_Driver_ID and b.bus_Route='" + route+"';";
@@ -545,16 +557,6 @@ namespace School_DB_System
             return dbMan.ExecuteNonQuery(query);
         }
 
-     //   public int AddBus(int busNum, int busCap, string busDriverID, string route)
-      //  {
-       //     string StoredProcedureName = StoredProcedures.AddBus;
-        //    Dictionary<string, object> Parameters = new Dictionary<string, object>();
-          //  Parameters.Add("@bus_Num", busNum);
-          //  Parameters.Add("@bus_Driver_ID", busCap);
-          //  Parameters.Add("@bus_Capacity", busDriverID);
-          //  Parameters.Add("@bus_Route", route);
-          //  return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
-     //   }
         public int deleteSubject(string teacherID,string subjID,string subDepName,int roomBuildingNum, int roomFloor,int roomNum,string startTime, string endTime, string day,int subjYear ,string subjName)
         {
             string query = "delete Teach where t_ID='"+ teacherID + "' and sub_ID='"+ subjID + "' and sub_Dep_Name='"+ subDepName + "';"+

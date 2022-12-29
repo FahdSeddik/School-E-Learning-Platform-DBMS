@@ -41,7 +41,7 @@ namespace School_DB_System
             oldDay = SubjDay_CBox.SelectedValue.ToString();
             oldTeacherID = SubjTeach_CBox.SelectedValue.ToString();
         }
-        protected override void OnPaint(PaintEventArgs pe)
+       protected override void EditControls()
         {
             Tittle_Lbl.Text = "Update Subject"; //changes control title text to update student
             Tittle_Lbl.TextAlignment = ContentAlignment.MiddleCenter; //changes tittle text alignment to center

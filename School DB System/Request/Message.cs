@@ -57,8 +57,6 @@ namespace School_DB_System
             DataTable reciverEmailDt = controllerObj.getEmailFromSSN(reciverSSN);
             string reciverEmail = reciverEmailDt.Rows[0][0].ToString();
             NewReqSenderOrReciver_Txt.Text = reciverEmail;
-            this.oldTitle = oldTitle;
-            this.oldReq = oldReq;
             this.reqID = requestID;
 
         }

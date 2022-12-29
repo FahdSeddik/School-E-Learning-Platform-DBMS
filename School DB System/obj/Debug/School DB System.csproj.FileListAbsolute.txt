@@ -92,7 +92,6 @@ D:\Gaser\Univeristy\2022 fall\project\School DB System\bin\Debug\Krypton.Toolkit
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School DB System.csproj.AssemblyReference.cache
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School DB System.csproj.SuggestedBindingRedirects.cache
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.AddStudent.resources
-D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.ADUTeacherParent.resources
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.Application.resources
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.AUVBus.resources
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.FormMessageBox.resources
@@ -103,17 +102,15 @@ D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_Syste
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.HomePage.resources
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.Adminstrator.resources
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.Accountant.resources
-D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.Request1.resources
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.Statistics.resources
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.AddRoom.resources
-D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.Subject1.resources
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.Teacher.resources
-D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.TempTab.resources
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.ViewBus.resources
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School DB System.csproj.GenerateResource.cache
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School DB System.csproj.CoreCompileInputs.cache
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School DB System.csproj.CopyComplete
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School DB System.exe
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School DB System.pdb
-D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.BaseAUV.resources
 D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.SecondaryTabBase.resources
+D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.AUVTeacherBase.resources
+D:\Gaser\Univeristy\2022 fall\project\School DB System\obj\Debug\School_DB_System.AUVGeneralBase.resources

@@ -69,66 +69,66 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddBus.cs">
+    <Compile Include="Bus\AddBus.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AddBus.Designer.cs">
+    <Compile Include="Bus\AddBus.Designer.cs">
       <DependentUpon>AddBus.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddDepartment.cs">
+    <Compile Include="Department\AddDepartment.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AddDepartment.Designer.cs">
+    <Compile Include="Department\AddDepartment.Designer.cs">
       <DependentUpon>AddDepartment.cs</DependentUpon>
     </Compile>
-    <Compile Include="AUVDepartment.cs">
+    <Compile Include="Department\AUVDepartment.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AUVDepartment.Designer.cs">
+    <Compile Include="Department\AUVDepartment.Designer.cs">
       <DependentUpon>AUVDepartment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Department.cs">
+    <Compile Include="Department\Department.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Department.Designer.cs">
+    <Compile Include="Department\Department.Designer.cs">
       <DependentUpon>Department.cs</DependentUpon>
     </Compile>
-    <Compile Include="StoredProcedures.cs" />
-    <Compile Include="StudentsList.cs">
+    <Compile Include="Classes\StoredProcedures.cs" />
+    <Compile Include="Student\StudentsList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="StudentsList.Designer.cs">
+    <Compile Include="Student\StudentsList.Designer.cs">
       <DependentUpon>StudentsList.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddStaff.cs">
+    <Compile Include="Staff\AddStaff.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AddStaff.Designer.cs">
+    <Compile Include="Staff\AddStaff.Designer.cs">
       <DependentUpon>AddStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddStudent.cs">
+    <Compile Include="Student\AddStudent.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AddStudent.Designer.cs">
+    <Compile Include="Student\AddStudent.Designer.cs">
       <DependentUpon>AddStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddSubject.cs">
+    <Compile Include="Subject\AddSubject.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AddSubject.Designer.cs">
+    <Compile Include="Subject\AddSubject.Designer.cs">
       <DependentUpon>AddSubject.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddTeacher.cs">
+    <Compile Include="Teacher\AddTeacher.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AddTeacher.Designer.cs">
+    <Compile Include="Teacher\AddTeacher.Designer.cs">
       <DependentUpon>AddTeacher.cs</DependentUpon>
     </Compile>
-    <Compile Include="ADUTeacherParent.cs">
+    <Compile Include="Teacher\AUVTeacherBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ADUTeacherParent.Designer.cs">
-      <DependentUpon>ADUTeacherParent.cs</DependentUpon>
+    <Compile Include="Teacher\AUVTeacherBase.Designer.cs">
+      <DependentUpon>AUVTeacherBase.cs</DependentUpon>
     </Compile>
     <Compile Include="Application.cs">
       <SubType>Form</SubType>
@@ -136,259 +136,235 @@
     <Compile Include="Application.Designer.cs">
       <DependentUpon>Application.cs</DependentUpon>
     </Compile>
-    <Compile Include="AUVBus.cs">
+    <Compile Include="Bus\AUVBus.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AUVBus.Designer.cs">
+    <Compile Include="Bus\AUVBus.Designer.cs">
       <DependentUpon>AUVBus.cs</DependentUpon>
     </Compile>
-    <Compile Include="AUVStaffBase.cs">
+    <Compile Include="Staff\AUVStaffBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AUVStaffBase.Designer.cs">
+    <Compile Include="Staff\AUVStaffBase.Designer.cs">
       <DependentUpon>AUVStaffBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="AUVSubject.cs">
+    <Compile Include="Subject\AUVSubject.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AUVSubject.Designer.cs">
+    <Compile Include="Subject\AUVSubject.Designer.cs">
       <DependentUpon>AUVSubject.cs</DependentUpon>
     </Compile>
-    <Compile Include="BaseAUV.cs">
+    <Compile Include="GeneralParents\AUVGeneralBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BaseAUV.Designer.cs">
-      <DependentUpon>BaseAUV.cs</DependentUpon>
+    <Compile Include="GeneralParents\AUVGeneralBase.Designer.cs">
+      <DependentUpon>AUVGeneralBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Bus.cs">
+    <Compile Include="Bus\Bus.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Bus.Designer.cs">
+    <Compile Include="Bus\Bus.Designer.cs">
       <DependentUpon>Bus.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controller.cs" />
-    <Compile Include="DBManager.cs" />
-    <Compile Include="FormMessageBox.cs">
+    <Compile Include="Classes\Controller.cs" />
+    <Compile Include="Classes\DBManager.cs" />
+    <Compile Include="MainUsercontrols\FormMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMessageBox.Designer.cs">
+    <Compile Include="MainUsercontrols\FormMessageBox.Designer.cs">
       <DependentUpon>FormMessageBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Message.cs">
+    <Compile Include="Request\Message.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Message.Designer.cs">
+    <Compile Include="Request\Message.Designer.cs">
       <DependentUpon>Message.cs</DependentUpon>
     </Compile>
-    <Compile Include="MiddleClass.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MiddleClass.Designer.cs">
-      <DependentUpon>MiddleClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Classes\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="LoginPage.cs">
+    <Compile Include="MainUsercontrols\LoginPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="LoginPage.Designer.cs">
+    <Compile Include="MainUsercontrols\LoginPage.Designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="HomePage.cs">
+    <Compile Include="MainUsercontrols\HomePage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="HomePage.Designer.cs">
+    <Compile Include="MainUsercontrols\HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Adminstrator.cs">
+    <Compile Include="AuthorityView\Adminstrator.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Adminstrator.Designer.cs">
+    <Compile Include="AuthorityView\Adminstrator.Designer.cs">
       <DependentUpon>Adminstrator.cs</DependentUpon>
     </Compile>
-    <Compile Include="HR.cs">
+    <Compile Include="AuthorityView\HR.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="HR.Designer.cs">
+    <Compile Include="AuthorityView\HR.Designer.cs">
       <DependentUpon>HR.cs</DependentUpon>
     </Compile>
-    <Compile Include="Accountant.cs">
+    <Compile Include="AuthorityView\Accountant.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Accountant.Designer.cs">
+    <Compile Include="AuthorityView\Accountant.Designer.cs">
       <DependentUpon>Accountant.cs</DependentUpon>
     </Compile>
-    <Compile Include="Request.cs">
+    <Compile Include="Request\Request.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Request.Designer.cs">
+    <Compile Include="Request\Request.Designer.cs">
       <DependentUpon>Request.cs</DependentUpon>
     </Compile>
-    <Compile Include="Request1.cs">
+    <Compile Include="Classes\RJMessageBox.cs" />
+    <Compile Include="Staff\Staff.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Request1.Designer.cs">
-      <DependentUpon>Request1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RJMessageBox.cs" />
-    <Compile Include="Staff.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Staff.Designer.cs">
+    <Compile Include="Staff\Staff.Designer.cs">
       <DependentUpon>Staff.cs</DependentUpon>
     </Compile>
-    <Compile Include="Statistics.cs">
+    <Compile Include="Statistics\Statistics.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Statistics.Designer.cs">
+    <Compile Include="Statistics\Statistics.Designer.cs">
       <DependentUpon>Statistics.cs</DependentUpon>
     </Compile>
-    <Compile Include="SecondaryTabBase.cs">
+    <Compile Include="GeneralParents\SecondaryTabBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SecondaryTabBase.Designer.cs">
+    <Compile Include="GeneralParents\SecondaryTabBase.Designer.cs">
       <DependentUpon>SecondaryTabBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Student.cs">
+    <Compile Include="Student\Student.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Student.Designer.cs">
+    <Compile Include="Student\Student.Designer.cs">
       <DependentUpon>Student.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentAUVBase.cs">
+    <Compile Include="Student\AUVStudentBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="StudentAUVBase.Designer.cs">
-      <DependentUpon>StudentAUVBase.cs</DependentUpon>
+    <Compile Include="Student\AUVStudentBase.Designer.cs">
+      <DependentUpon>AUVStudentBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddRoom.cs">
+    <Compile Include="Subject\AddRoom.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AddRoom.Designer.cs">
+    <Compile Include="Subject\AddRoom.Designer.cs">
       <DependentUpon>AddRoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="Subject.cs">
+    <Compile Include="Subject\Subject.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Subject.Designer.cs">
+    <Compile Include="Subject\Subject.Designer.cs">
       <DependentUpon>Subject.cs</DependentUpon>
     </Compile>
-    <Compile Include="Subject1.cs">
+    <Compile Include="Teacher\Teacher.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Subject1.Designer.cs">
-      <DependentUpon>Subject1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Teacher.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Teacher.Designer.cs">
+    <Compile Include="Teacher\Teacher.Designer.cs">
       <DependentUpon>Teacher.cs</DependentUpon>
     </Compile>
-    <Compile Include="TempTab.cs">
+    <Compile Include="Bus\UpdateBus.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TempTab.Designer.cs">
-      <DependentUpon>TempTab.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UpdateBus.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UpdateBus.Designer.cs">
+    <Compile Include="Bus\UpdateBus.Designer.cs">
       <DependentUpon>UpdateBus.cs</DependentUpon>
     </Compile>
-    <Compile Include="UpdateDepartment.cs">
+    <Compile Include="Department\UpdateDepartment.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UpdateDepartment.Designer.cs">
+    <Compile Include="Department\UpdateDepartment.Designer.cs">
       <DependentUpon>UpdateDepartment.cs</DependentUpon>
     </Compile>
-    <Compile Include="UpdateStaff.cs">
+    <Compile Include="Staff\UpdateStaff.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UpdateStaff.Designer.cs">
+    <Compile Include="Staff\UpdateStaff.Designer.cs">
       <DependentUpon>UpdateStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="UpdateStudent.cs">
+    <Compile Include="Student\UpdateStudent.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UpdateStudent.Designer.cs">
+    <Compile Include="Student\UpdateStudent.Designer.cs">
       <DependentUpon>UpdateStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="UpdateSubject.cs">
+    <Compile Include="Subject\UpdateSubject.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UpdateSubject.Designer.cs">
+    <Compile Include="Subject\UpdateSubject.Designer.cs">
       <DependentUpon>UpdateSubject.cs</DependentUpon>
     </Compile>
-    <Compile Include="UpdateTeacher.cs">
+    <Compile Include="Teacher\UpdateTeacher.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UpdateTeacher.Designer.cs">
+    <Compile Include="Teacher\UpdateTeacher.Designer.cs">
       <DependentUpon>UpdateTeacher.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewBus.cs">
+    <Compile Include="Bus\ViewBus.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ViewBus.Designer.cs">
+    <Compile Include="Bus\ViewBus.Designer.cs">
       <DependentUpon>ViewBus.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewController.cs" />
-    <Compile Include="ViewDepartment.cs">
+    <Compile Include="Classes\ViewController.cs" />
+    <Compile Include="Department\ViewDepartment.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ViewDepartment.Designer.cs">
+    <Compile Include="Department\ViewDepartment.Designer.cs">
       <DependentUpon>ViewDepartment.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewStaff.cs">
+    <Compile Include="Staff\ViewStaff.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ViewStaff.Designer.cs">
+    <Compile Include="Staff\ViewStaff.Designer.cs">
       <DependentUpon>ViewStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewStudent.cs">
+    <Compile Include="Student\ViewStudent.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ViewStudent.Designer.cs">
+    <Compile Include="Student\ViewStudent.Designer.cs">
       <DependentUpon>ViewStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewSubject.cs">
+    <Compile Include="Subject\ViewSubject.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ViewSubject.Designer.cs">
+    <Compile Include="Subject\ViewSubject.Designer.cs">
       <DependentUpon>ViewSubject.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewTeacher.cs">
+    <Compile Include="Teacher\ViewTeacher.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ViewTeacher.Designer.cs">
+    <Compile Include="Teacher\ViewTeacher.Designer.cs">
       <DependentUpon>ViewTeacher.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddStudent.resx">
+    <EmbeddedResource Include="Student\AddStudent.resx">
       <DependentUpon>AddStudent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ADUTeacherParent.resx">
-      <DependentUpon>ADUTeacherParent.cs</DependentUpon>
+    <EmbeddedResource Include="Teacher\AUVTeacherBase.resx">
+      <DependentUpon>AUVTeacherBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Application.resx">
       <DependentUpon>Application.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AUVBus.resx">
+    <EmbeddedResource Include="Bus\AUVBus.resx">
       <DependentUpon>AUVBus.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BaseAUV.resx">
-      <DependentUpon>BaseAUV.cs</DependentUpon>
+    <EmbeddedResource Include="GeneralParents\AUVGeneralBase.resx">
+      <DependentUpon>AUVGeneralBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMessageBox.resx">
+    <EmbeddedResource Include="MainUsercontrols\FormMessageBox.resx">
       <DependentUpon>FormMessageBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HR.resx">
+    <EmbeddedResource Include="AuthorityView\HR.resx">
       <DependentUpon>HR.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginPage.resx">
+    <EmbeddedResource Include="MainUsercontrols\LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Message.resx">
+    <EmbeddedResource Include="Request\Message.resx">
       <DependentUpon>Message.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -401,40 +377,31 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="HomePage.resx">
+    <EmbeddedResource Include="MainUsercontrols\HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Adminstrator.resx">
+    <EmbeddedResource Include="AuthorityView\Adminstrator.resx">
       <DependentUpon>Adminstrator.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Accountant.resx">
+    <EmbeddedResource Include="AuthorityView\Accountant.resx">
       <DependentUpon>Accountant.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Request1.resx">
-      <DependentUpon>Request1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Statistics.resx">
+    <EmbeddedResource Include="Statistics\Statistics.resx">
       <DependentUpon>Statistics.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SecondaryTabBase.resx">
+    <EmbeddedResource Include="GeneralParents\SecondaryTabBase.resx">
       <DependentUpon>SecondaryTabBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddRoom.resx">
+    <EmbeddedResource Include="Subject\AddRoom.resx">
       <DependentUpon>AddRoom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Subject1.resx">
-      <DependentUpon>Subject1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Teacher.resx">
+    <EmbeddedResource Include="Teacher\Teacher.resx">
       <DependentUpon>Teacher.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TempTab.resx">
-      <DependentUpon>TempTab.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ViewBus.resx">
+    <EmbeddedResource Include="Bus\ViewBus.resx">
       <DependentUpon>ViewBus.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="packages.config" />
+    <None Include="Others\packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -446,10 +413,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="Others\App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="license.txt" />
+    <Content Include="Others\license.txt" />
     <None Include="Resources\chat.png" />
     <None Include="Resources\error.png" />
     <None Include="Resources\exclamation.png" />
@@ -457,7 +424,8 @@
     <None Include="Resources\question.png" />
     <None Include="Resources\Down_Arrow.png" />
     <None Include="Resources\mail.png" />
-    <Content Include="Windows Logo.png" />
+    <Content Include="Others\Windows Logo.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

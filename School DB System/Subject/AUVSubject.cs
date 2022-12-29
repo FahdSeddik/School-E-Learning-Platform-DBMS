@@ -244,7 +244,18 @@ namespace School_DB_System
             SubjTeach_CBox.DataSource = TeachersList; //linking yearslist comboobox and yearlist datatable
             SubjTeach_CBox.SelectedIndex = SubjTeach_CBox.FindString(SubjInformation.Rows[0][9].ToString()); //in
 
-       
+            DataTable BuildingList = controllerObj.getBuildingList();
+            SubjBuilding_CBox.DisplayMember = "r_Building_Num";//displaying std_Year column from datatable "Yearslist"
+            SubjBuilding_CBox.ValueMember = "r_Building_Num"; //linking value to std_year column from datatable "YearsList"
+            SubjBuilding_CBox.DataSource = BuildingList; //linking yearslist comboobox and yearlist datatable
+            SubjBuilding_CBox.SelectedIndex = SubjBuilding_CBox.FindString(SubjInformation.Rows[0][10].ToString()); //in
+
+            DataTable FloorsList = controllerObj.getFloorsList();
+            SubjFloor_CBox.DisplayMember = "r_Floor";//displaying std_Year column from datatable "Yearslist"
+            SubjFloor_CBox.ValueMember = "r_Floor"; //linking value to std_year column from datatable "YearsList"
+            SubjFloor_CBox.DataSource = FloorsList; //linking yearslist comboobox and yearlist datatable
+            SubjFloor_CBox.SelectedIndex = SubjFloor_CBox.FindString(SubjInformation.Rows[0][11].ToString()); //in
+
         }
         protected override void Submit_Btn_Click(object sender, EventArgs e)
         {

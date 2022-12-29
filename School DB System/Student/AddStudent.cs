@@ -18,7 +18,7 @@ namespace School_DB_System
     //(Txt -> TextBox) (CBox -> Comboobox) (Pnl -> Panel) (Lbl -> Label)
 
     //ADD STUDENT USERCONTROL
-    public partial class AddStudent : StudentAUVBase //inherits from the base usercontrol which contains the main design and functions (AUDSTUDENTPARENT)
+    public partial class AddStudent : AUVStudentBase //inherits from the base usercontrol which contains the main design and functions (AUDSTUDENTPARENT)
     {
         //DATA MEMBERS
         ViewController viewController; //viewcontroller object
