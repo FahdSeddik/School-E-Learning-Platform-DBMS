@@ -71,7 +71,7 @@ namespace School_DB_System
             }
             else
             {
-                res = controllerObj.checkTimeAndLocation(int.Parse(SubjRoom_CBox.SelectedValue.ToString()), SubjStartT_CBox.SelectedValue.ToString(), SubjEndT_CBox.SelectedValue.ToString(), SubjDay_CBox.SelectedValue.ToString());
+                res = controllerObj.checkTimeAndLocation(int.Parse(SubjRoom_CBox.SelectedValue.ToString()), int.Parse(SubjBuilding_CBox.SelectedValue.ToString()), int.Parse(SubjRoom_CBox.SelectedValue.ToString()), SubjStartT_CBox.SelectedValue.ToString(), SubjEndT_CBox.SelectedValue.ToString(), SubjDay_CBox.SelectedValue.ToString());
             }
            
             if (res == 0)

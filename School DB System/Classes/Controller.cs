@@ -457,7 +457,7 @@ namespace School_DB_System
         }
         public DataTable getRooms()
         {
-            string query = "select r_Num from Room;";
+            string query = "select distinct r_Num from Room;";
             return dbMan.ExecuteReader(query);
         }
        

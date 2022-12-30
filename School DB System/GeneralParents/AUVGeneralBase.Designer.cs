@@ -30,6 +30,40 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AUVGeneralBase));
             this.Main_Pnl = new Guna.UI2.WinForms.Guna2Panel();
+            this.SubjSub_Pnl = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.SubjTimeAndLoc_Pnl = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.SubjTAndLoc_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.SubjDay_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.SubjFloor_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.SubjBuilding_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.SubjRoom_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.SubjTimeAndLocErrorMsg_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.SubjEndT_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.AddRoom_Btn = new Guna.UI2.WinForms.Guna2Button();
+            this.SubjTAndLocNext_Btn = new Guna.UI2.WinForms.Guna2Button();
+            this.SubjStartT_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.SubjEndT_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.SubjFloor_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.SubjDay_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.SubjBuilding_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.SubjStartT_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.SubjRoom_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.SubjInfo_Pnl = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.SubjYear_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.SubjName_Txt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.SubjYear_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.SubjName_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.SubjID_Txt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.SubjInfo_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.SubjID_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.SubjTeach_Pnl = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.SubjTeachTeacher_lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.SubjTeachErrorMsg_Pnl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.SubjTeach_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.SubjTeachNext_Btn = new Guna.UI2.WinForms.Guna2Button();
+            this.SubjTeach_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.SubjDep_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.SubjDep_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.StdSub_Pnl = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.StdPayedTuition_CBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.StdUni_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -78,36 +112,6 @@
             this.StdEmail_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.StdParName_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.StdName_Txt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.SubjSub_Pnl = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.SubjTimeAndLoc_Pnl = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.SubjTAndLoc_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.SubjDay_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.SubjRoom_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.SubjTimeAndLocErrorMsg_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.SubjEndT_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.AddRoom_Btn = new Guna.UI2.WinForms.Guna2Button();
-            this.SubjTAndLocNext_Btn = new Guna.UI2.WinForms.Guna2Button();
-            this.SubjStartT_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.SubjEndT_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.SubjDay_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.SubjStartT_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.SubjRoom_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.SubjInfo_Pnl = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.SubjYear_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.SubjName_Txt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.SubjYear_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.SubjName_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.SubjID_Txt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.SubjInfo_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.SubjID_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.SubjTeach_Pnl = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.SubjTeachTeacher_lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.SubjTeachErrorMsg_Pnl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.SubjTeach_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.SubjTeachNext_Btn = new Guna.UI2.WinForms.Guna2Button();
-            this.SubjTeach_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.SubjDep_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.SubjDep_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.DepSub_Pnl = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.DepSubTitle_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.DepHead_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -150,16 +154,12 @@
             this.Back_btn = new Guna.UI2.WinForms.Guna2Button();
             this.ErrorMessage_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Submit_Btn = new Guna.UI2.WinForms.Guna2Button();
-            this.SubjBuilding_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.SubjBuilding_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.SubjFloor_Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.SubjFloor_CBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.Main_Pnl.SuspendLayout();
-            this.StdSub_Pnl.SuspendLayout();
             this.SubjSub_Pnl.SuspendLayout();
             this.SubjTimeAndLoc_Pnl.SuspendLayout();
             this.SubjInfo_Pnl.SuspendLayout();
             this.SubjTeach_Pnl.SuspendLayout();
+            this.StdSub_Pnl.SuspendLayout();
             this.DepSub_Pnl.SuspendLayout();
             this.StaffSub_Pnl.SuspendLayout();
             this.TitleBar_Pnl.SuspendLayout();
@@ -181,6 +181,513 @@
             this.Main_Pnl.Name = "Main_Pnl";
             this.Main_Pnl.Size = new System.Drawing.Size(873, 539);
             this.Main_Pnl.TabIndex = 12;
+            // 
+            // SubjSub_Pnl
+            // 
+            this.SubjSub_Pnl.BackColor = System.Drawing.Color.White;
+            this.SubjSub_Pnl.Controls.Add(this.SubjTimeAndLoc_Pnl);
+            this.SubjSub_Pnl.Controls.Add(this.SubjInfo_Pnl);
+            this.SubjSub_Pnl.Controls.Add(this.SubjTeach_Pnl);
+            this.SubjSub_Pnl.Location = new System.Drawing.Point(26, 61);
+            this.SubjSub_Pnl.Name = "SubjSub_Pnl";
+            this.SubjSub_Pnl.Size = new System.Drawing.Size(818, 422);
+            this.SubjSub_Pnl.TabIndex = 10;
+            // 
+            // SubjTimeAndLoc_Pnl
+            // 
+            this.SubjTimeAndLoc_Pnl.Controls.Add(this.SubjTAndLoc_Lbl);
+            this.SubjTimeAndLoc_Pnl.Controls.Add(this.SubjDay_CBox);
+            this.SubjTimeAndLoc_Pnl.Controls.Add(this.SubjFloor_CBox);
+            this.SubjTimeAndLoc_Pnl.Controls.Add(this.SubjBuilding_CBox);
+            this.SubjTimeAndLoc_Pnl.Controls.Add(this.SubjRoom_CBox);
+            this.SubjTimeAndLoc_Pnl.Controls.Add(this.SubjTimeAndLocErrorMsg_Lbl);
+            this.SubjTimeAndLoc_Pnl.Controls.Add(this.SubjEndT_Lbl);
+            this.SubjTimeAndLoc_Pnl.Controls.Add(this.AddRoom_Btn);
+            this.SubjTimeAndLoc_Pnl.Controls.Add(this.SubjTAndLocNext_Btn);
+            this.SubjTimeAndLoc_Pnl.Controls.Add(this.SubjStartT_Lbl);
+            this.SubjTimeAndLoc_Pnl.Controls.Add(this.SubjEndT_CBox);
+            this.SubjTimeAndLoc_Pnl.Controls.Add(this.SubjFloor_Lbl);
+            this.SubjTimeAndLoc_Pnl.Controls.Add(this.SubjDay_Lbl);
+            this.SubjTimeAndLoc_Pnl.Controls.Add(this.SubjBuilding_Lbl);
+            this.SubjTimeAndLoc_Pnl.Controls.Add(this.SubjStartT_CBox);
+            this.SubjTimeAndLoc_Pnl.Controls.Add(this.SubjRoom_Lbl);
+            this.SubjTimeAndLoc_Pnl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SubjTimeAndLoc_Pnl.Location = new System.Drawing.Point(0, 128);
+            this.SubjTimeAndLoc_Pnl.Name = "SubjTimeAndLoc_Pnl";
+            this.SubjTimeAndLoc_Pnl.Size = new System.Drawing.Size(818, 179);
+            this.SubjTimeAndLoc_Pnl.TabIndex = 51;
+            // 
+            // SubjTAndLoc_Lbl
+            // 
+            this.SubjTAndLoc_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.SubjTAndLoc_Lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubjTAndLoc_Lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.SubjTAndLoc_Lbl.Location = new System.Drawing.Point(13, 4);
+            this.SubjTAndLoc_Lbl.Name = "SubjTAndLoc_Lbl";
+            this.SubjTAndLoc_Lbl.Size = new System.Drawing.Size(141, 23);
+            this.SubjTAndLoc_Lbl.TabIndex = 32;
+            this.SubjTAndLoc_Lbl.Text = "Time and location";
+            // 
+            // SubjDay_CBox
+            // 
+            this.SubjDay_CBox.BackColor = System.Drawing.Color.Transparent;
+            this.SubjDay_CBox.BorderColor = System.Drawing.Color.Gray;
+            this.SubjDay_CBox.BorderRadius = 3;
+            this.SubjDay_CBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.SubjDay_CBox.DropDownHeight = 120;
+            this.SubjDay_CBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SubjDay_CBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SubjDay_CBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SubjDay_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.SubjDay_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.SubjDay_CBox.IntegralHeight = false;
+            this.SubjDay_CBox.ItemHeight = 30;
+            this.SubjDay_CBox.Location = new System.Drawing.Point(499, 36);
+            this.SubjDay_CBox.Name = "SubjDay_CBox";
+            this.SubjDay_CBox.Size = new System.Drawing.Size(291, 36);
+            this.SubjDay_CBox.TabIndex = 7;
+            // 
+            // SubjFloor_CBox
+            // 
+            this.SubjFloor_CBox.BackColor = System.Drawing.Color.Transparent;
+            this.SubjFloor_CBox.BorderColor = System.Drawing.Color.Gray;
+            this.SubjFloor_CBox.BorderRadius = 3;
+            this.SubjFloor_CBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.SubjFloor_CBox.DropDownHeight = 120;
+            this.SubjFloor_CBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SubjFloor_CBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SubjFloor_CBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SubjFloor_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.SubjFloor_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.SubjFloor_CBox.IntegralHeight = false;
+            this.SubjFloor_CBox.ItemHeight = 30;
+            this.SubjFloor_CBox.Location = new System.Drawing.Point(195, 36);
+            this.SubjFloor_CBox.Name = "SubjFloor_CBox";
+            this.SubjFloor_CBox.Size = new System.Drawing.Size(96, 36);
+            this.SubjFloor_CBox.TabIndex = 7;
+            // 
+            // SubjBuilding_CBox
+            // 
+            this.SubjBuilding_CBox.BackColor = System.Drawing.Color.Transparent;
+            this.SubjBuilding_CBox.BorderColor = System.Drawing.Color.Gray;
+            this.SubjBuilding_CBox.BorderRadius = 3;
+            this.SubjBuilding_CBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.SubjBuilding_CBox.DropDownHeight = 120;
+            this.SubjBuilding_CBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SubjBuilding_CBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SubjBuilding_CBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SubjBuilding_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.SubjBuilding_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.SubjBuilding_CBox.IntegralHeight = false;
+            this.SubjBuilding_CBox.ItemHeight = 30;
+            this.SubjBuilding_CBox.Location = new System.Drawing.Point(90, 35);
+            this.SubjBuilding_CBox.Name = "SubjBuilding_CBox";
+            this.SubjBuilding_CBox.Size = new System.Drawing.Size(96, 36);
+            this.SubjBuilding_CBox.TabIndex = 7;
+            // 
+            // SubjRoom_CBox
+            // 
+            this.SubjRoom_CBox.BackColor = System.Drawing.Color.Transparent;
+            this.SubjRoom_CBox.BorderColor = System.Drawing.Color.Gray;
+            this.SubjRoom_CBox.BorderRadius = 3;
+            this.SubjRoom_CBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.SubjRoom_CBox.DropDownHeight = 120;
+            this.SubjRoom_CBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SubjRoom_CBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SubjRoom_CBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SubjRoom_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.SubjRoom_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.SubjRoom_CBox.IntegralHeight = false;
+            this.SubjRoom_CBox.ItemHeight = 30;
+            this.SubjRoom_CBox.Location = new System.Drawing.Point(300, 36);
+            this.SubjRoom_CBox.Name = "SubjRoom_CBox";
+            this.SubjRoom_CBox.Size = new System.Drawing.Size(85, 36);
+            this.SubjRoom_CBox.TabIndex = 7;
+            // 
+            // SubjTimeAndLocErrorMsg_Lbl
+            // 
+            this.SubjTimeAndLocErrorMsg_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.SubjTimeAndLocErrorMsg_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.SubjTimeAndLocErrorMsg_Lbl.ForeColor = System.Drawing.Color.Red;
+            this.SubjTimeAndLocErrorMsg_Lbl.Location = new System.Drawing.Point(17, 151);
+            this.SubjTimeAndLocErrorMsg_Lbl.Name = "SubjTimeAndLocErrorMsg_Lbl";
+            this.SubjTimeAndLocErrorMsg_Lbl.Size = new System.Drawing.Size(74, 15);
+            this.SubjTimeAndLocErrorMsg_Lbl.TabIndex = 8;
+            this.SubjTimeAndLocErrorMsg_Lbl.Text = "Incorrect data";
+            this.SubjTimeAndLocErrorMsg_Lbl.Visible = false;
+            // 
+            // SubjEndT_Lbl
+            // 
+            this.SubjEndT_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.SubjEndT_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubjEndT_Lbl.ForeColor = System.Drawing.Color.Gray;
+            this.SubjEndT_Lbl.Location = new System.Drawing.Point(284, 75);
+            this.SubjEndT_Lbl.Name = "SubjEndT_Lbl";
+            this.SubjEndT_Lbl.Size = new System.Drawing.Size(51, 15);
+            this.SubjEndT_Lbl.TabIndex = 35;
+            this.SubjEndT_Lbl.Text = "End Time";
+            // 
+            // AddRoom_Btn
+            // 
+            this.AddRoom_Btn.BorderRadius = 10;
+            this.AddRoom_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.AddRoom_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.AddRoom_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.AddRoom_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.AddRoom_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.AddRoom_Btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.AddRoom_Btn.ForeColor = System.Drawing.Color.White;
+            this.AddRoom_Btn.Location = new System.Drawing.Point(500, 105);
+            this.AddRoom_Btn.Name = "AddRoom_Btn";
+            this.AddRoom_Btn.Size = new System.Drawing.Size(139, 31);
+            this.AddRoom_Btn.TabIndex = 6;
+            this.AddRoom_Btn.Text = "Add room";
+            // 
+            // SubjTAndLocNext_Btn
+            // 
+            this.SubjTAndLocNext_Btn.BorderRadius = 10;
+            this.SubjTAndLocNext_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.SubjTAndLocNext_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.SubjTAndLocNext_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.SubjTAndLocNext_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.SubjTAndLocNext_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.SubjTAndLocNext_Btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.SubjTAndLocNext_Btn.ForeColor = System.Drawing.Color.White;
+            this.SubjTAndLocNext_Btn.Location = new System.Drawing.Point(650, 105);
+            this.SubjTAndLocNext_Btn.Name = "SubjTAndLocNext_Btn";
+            this.SubjTAndLocNext_Btn.Size = new System.Drawing.Size(139, 31);
+            this.SubjTAndLocNext_Btn.TabIndex = 6;
+            this.SubjTAndLocNext_Btn.Text = "Next";
+            // 
+            // SubjStartT_Lbl
+            // 
+            this.SubjStartT_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.SubjStartT_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubjStartT_Lbl.ForeColor = System.Drawing.Color.Gray;
+            this.SubjStartT_Lbl.Location = new System.Drawing.Point(131, 75);
+            this.SubjStartT_Lbl.Name = "SubjStartT_Lbl";
+            this.SubjStartT_Lbl.Size = new System.Drawing.Size(55, 15);
+            this.SubjStartT_Lbl.TabIndex = 35;
+            this.SubjStartT_Lbl.Text = "Start Time";
+            // 
+            // SubjEndT_CBox
+            // 
+            this.SubjEndT_CBox.BackColor = System.Drawing.Color.Transparent;
+            this.SubjEndT_CBox.BorderColor = System.Drawing.Color.Gray;
+            this.SubjEndT_CBox.BorderRadius = 3;
+            this.SubjEndT_CBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.SubjEndT_CBox.DropDownHeight = 120;
+            this.SubjEndT_CBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SubjEndT_CBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SubjEndT_CBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SubjEndT_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.SubjEndT_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.SubjEndT_CBox.IntegralHeight = false;
+            this.SubjEndT_CBox.ItemHeight = 30;
+            this.SubjEndT_CBox.Location = new System.Drawing.Point(245, 99);
+            this.SubjEndT_CBox.Name = "SubjEndT_CBox";
+            this.SubjEndT_CBox.Size = new System.Drawing.Size(137, 36);
+            this.SubjEndT_CBox.TabIndex = 7;
+            // 
+            // SubjFloor_Lbl
+            // 
+            this.SubjFloor_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.SubjFloor_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubjFloor_Lbl.ForeColor = System.Drawing.Color.Gray;
+            this.SubjFloor_Lbl.Location = new System.Drawing.Point(229, 12);
+            this.SubjFloor_Lbl.Name = "SubjFloor_Lbl";
+            this.SubjFloor_Lbl.Size = new System.Drawing.Size(30, 15);
+            this.SubjFloor_Lbl.TabIndex = 35;
+            this.SubjFloor_Lbl.Text = "Floor";
+            // 
+            // SubjDay_Lbl
+            // 
+            this.SubjDay_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.SubjDay_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubjDay_Lbl.ForeColor = System.Drawing.Color.Gray;
+            this.SubjDay_Lbl.Location = new System.Drawing.Point(423, 36);
+            this.SubjDay_Lbl.Name = "SubjDay_Lbl";
+            this.SubjDay_Lbl.Size = new System.Drawing.Size(23, 15);
+            this.SubjDay_Lbl.TabIndex = 35;
+            this.SubjDay_Lbl.Text = "Day";
+            // 
+            // SubjBuilding_Lbl
+            // 
+            this.SubjBuilding_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.SubjBuilding_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubjBuilding_Lbl.ForeColor = System.Drawing.Color.Gray;
+            this.SubjBuilding_Lbl.Location = new System.Drawing.Point(38, 35);
+            this.SubjBuilding_Lbl.Name = "SubjBuilding_Lbl";
+            this.SubjBuilding_Lbl.Size = new System.Drawing.Size(47, 15);
+            this.SubjBuilding_Lbl.TabIndex = 35;
+            this.SubjBuilding_Lbl.Text = "Building";
+            // 
+            // SubjStartT_CBox
+            // 
+            this.SubjStartT_CBox.BackColor = System.Drawing.Color.Transparent;
+            this.SubjStartT_CBox.BorderColor = System.Drawing.Color.Gray;
+            this.SubjStartT_CBox.BorderRadius = 3;
+            this.SubjStartT_CBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.SubjStartT_CBox.DropDownHeight = 120;
+            this.SubjStartT_CBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SubjStartT_CBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SubjStartT_CBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SubjStartT_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.SubjStartT_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.SubjStartT_CBox.IntegralHeight = false;
+            this.SubjStartT_CBox.ItemHeight = 30;
+            this.SubjStartT_CBox.Location = new System.Drawing.Point(92, 98);
+            this.SubjStartT_CBox.Name = "SubjStartT_CBox";
+            this.SubjStartT_CBox.Size = new System.Drawing.Size(137, 36);
+            this.SubjStartT_CBox.TabIndex = 7;
+            // 
+            // SubjRoom_Lbl
+            // 
+            this.SubjRoom_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.SubjRoom_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubjRoom_Lbl.ForeColor = System.Drawing.Color.Gray;
+            this.SubjRoom_Lbl.Location = new System.Drawing.Point(322, 12);
+            this.SubjRoom_Lbl.Name = "SubjRoom_Lbl";
+            this.SubjRoom_Lbl.Size = new System.Drawing.Size(34, 15);
+            this.SubjRoom_Lbl.TabIndex = 35;
+            this.SubjRoom_Lbl.Text = "Room";
+            // 
+            // SubjInfo_Pnl
+            // 
+            this.SubjInfo_Pnl.Controls.Add(this.SubjYear_CBox);
+            this.SubjInfo_Pnl.Controls.Add(this.SubjName_Txt);
+            this.SubjInfo_Pnl.Controls.Add(this.SubjYear_Lbl);
+            this.SubjInfo_Pnl.Controls.Add(this.SubjName_Lbl);
+            this.SubjInfo_Pnl.Controls.Add(this.SubjID_Txt);
+            this.SubjInfo_Pnl.Controls.Add(this.SubjInfo_Lbl);
+            this.SubjInfo_Pnl.Controls.Add(this.SubjID_Lbl);
+            this.SubjInfo_Pnl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SubjInfo_Pnl.Location = new System.Drawing.Point(0, 0);
+            this.SubjInfo_Pnl.Name = "SubjInfo_Pnl";
+            this.SubjInfo_Pnl.Size = new System.Drawing.Size(818, 128);
+            this.SubjInfo_Pnl.TabIndex = 36;
+            // 
+            // SubjYear_CBox
+            // 
+            this.SubjYear_CBox.BackColor = System.Drawing.Color.Transparent;
+            this.SubjYear_CBox.BorderColor = System.Drawing.Color.Gray;
+            this.SubjYear_CBox.BorderRadius = 3;
+            this.SubjYear_CBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.SubjYear_CBox.DropDownHeight = 120;
+            this.SubjYear_CBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SubjYear_CBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SubjYear_CBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SubjYear_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.SubjYear_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.SubjYear_CBox.IntegralHeight = false;
+            this.SubjYear_CBox.ItemHeight = 30;
+            this.SubjYear_CBox.Location = new System.Drawing.Point(502, 34);
+            this.SubjYear_CBox.Name = "SubjYear_CBox";
+            this.SubjYear_CBox.Size = new System.Drawing.Size(293, 36);
+            this.SubjYear_CBox.TabIndex = 7;
+            // 
+            // SubjName_Txt
+            // 
+            this.SubjName_Txt.BorderColor = System.Drawing.Color.Gray;
+            this.SubjName_Txt.BorderRadius = 3;
+            this.SubjName_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.SubjName_Txt.DefaultText = "";
+            this.SubjName_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.SubjName_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.SubjName_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.SubjName_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.SubjName_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SubjName_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.SubjName_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SubjName_Txt.Location = new System.Drawing.Point(92, 34);
+            this.SubjName_Txt.MaxLength = 50;
+            this.SubjName_Txt.Name = "SubjName_Txt";
+            this.SubjName_Txt.PasswordChar = '\0';
+            this.SubjName_Txt.PlaceholderText = "Name";
+            this.SubjName_Txt.SelectedText = "";
+            this.SubjName_Txt.Size = new System.Drawing.Size(293, 36);
+            this.SubjName_Txt.TabIndex = 1;
+            // 
+            // SubjYear_Lbl
+            // 
+            this.SubjYear_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.SubjYear_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubjYear_Lbl.ForeColor = System.Drawing.Color.Gray;
+            this.SubjYear_Lbl.Location = new System.Drawing.Point(428, 34);
+            this.SubjYear_Lbl.Name = "SubjYear_Lbl";
+            this.SubjYear_Lbl.Size = new System.Drawing.Size(26, 15);
+            this.SubjYear_Lbl.TabIndex = 35;
+            this.SubjYear_Lbl.Text = "Year";
+            // 
+            // SubjName_Lbl
+            // 
+            this.SubjName_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.SubjName_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubjName_Lbl.ForeColor = System.Drawing.Color.Gray;
+            this.SubjName_Lbl.Location = new System.Drawing.Point(18, 34);
+            this.SubjName_Lbl.Name = "SubjName_Lbl";
+            this.SubjName_Lbl.Size = new System.Drawing.Size(34, 15);
+            this.SubjName_Lbl.TabIndex = 21;
+            this.SubjName_Lbl.Text = "Name";
+            // 
+            // SubjID_Txt
+            // 
+            this.SubjID_Txt.BorderColor = System.Drawing.Color.Gray;
+            this.SubjID_Txt.BorderRadius = 3;
+            this.SubjID_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.SubjID_Txt.DefaultText = "";
+            this.SubjID_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.SubjID_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.SubjID_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.SubjID_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.SubjID_Txt.Enabled = false;
+            this.SubjID_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SubjID_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.SubjID_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SubjID_Txt.Location = new System.Drawing.Point(92, 83);
+            this.SubjID_Txt.MaxLength = 20;
+            this.SubjID_Txt.Name = "SubjID_Txt";
+            this.SubjID_Txt.PasswordChar = '\0';
+            this.SubjID_Txt.PlaceholderText = "Name";
+            this.SubjID_Txt.SelectedText = "";
+            this.SubjID_Txt.Size = new System.Drawing.Size(295, 36);
+            this.SubjID_Txt.TabIndex = 1;
+            // 
+            // SubjInfo_Lbl
+            // 
+            this.SubjInfo_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.SubjInfo_Lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubjInfo_Lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.SubjInfo_Lbl.Location = new System.Drawing.Point(15, 5);
+            this.SubjInfo_Lbl.Name = "SubjInfo_Lbl";
+            this.SubjInfo_Lbl.Size = new System.Drawing.Size(156, 23);
+            this.SubjInfo_Lbl.TabIndex = 32;
+            this.SubjInfo_Lbl.Text = "Subject Information";
+            // 
+            // SubjID_Lbl
+            // 
+            this.SubjID_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.SubjID_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubjID_Lbl.ForeColor = System.Drawing.Color.Gray;
+            this.SubjID_Lbl.Location = new System.Drawing.Point(20, 83);
+            this.SubjID_Lbl.Name = "SubjID_Lbl";
+            this.SubjID_Lbl.Size = new System.Drawing.Size(14, 15);
+            this.SubjID_Lbl.TabIndex = 21;
+            this.SubjID_Lbl.Text = "ID";
+            // 
+            // SubjTeach_Pnl
+            // 
+            this.SubjTeach_Pnl.Controls.Add(this.SubjTeachTeacher_lbl);
+            this.SubjTeach_Pnl.Controls.Add(this.SubjTeachErrorMsg_Pnl);
+            this.SubjTeach_Pnl.Controls.Add(this.SubjTeach_CBox);
+            this.SubjTeach_Pnl.Controls.Add(this.SubjTeachNext_Btn);
+            this.SubjTeach_Pnl.Controls.Add(this.SubjTeach_Lbl);
+            this.SubjTeach_Pnl.Controls.Add(this.SubjDep_CBox);
+            this.SubjTeach_Pnl.Controls.Add(this.SubjDep_Lbl);
+            this.SubjTeach_Pnl.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.SubjTeach_Pnl.Location = new System.Drawing.Point(0, 307);
+            this.SubjTeach_Pnl.Name = "SubjTeach_Pnl";
+            this.SubjTeach_Pnl.Size = new System.Drawing.Size(818, 115);
+            this.SubjTeach_Pnl.TabIndex = 50;
+            // 
+            // SubjTeachTeacher_lbl
+            // 
+            this.SubjTeachTeacher_lbl.BackColor = System.Drawing.Color.Transparent;
+            this.SubjTeachTeacher_lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubjTeachTeacher_lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.SubjTeachTeacher_lbl.Location = new System.Drawing.Point(15, 3);
+            this.SubjTeachTeacher_lbl.Name = "SubjTeachTeacher_lbl";
+            this.SubjTeachTeacher_lbl.Size = new System.Drawing.Size(63, 23);
+            this.SubjTeachTeacher_lbl.TabIndex = 32;
+            this.SubjTeachTeacher_lbl.Text = "Teacher";
+            // 
+            // SubjTeachErrorMsg_Pnl
+            // 
+            this.SubjTeachErrorMsg_Pnl.BackColor = System.Drawing.Color.Transparent;
+            this.SubjTeachErrorMsg_Pnl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.SubjTeachErrorMsg_Pnl.ForeColor = System.Drawing.Color.Red;
+            this.SubjTeachErrorMsg_Pnl.Location = new System.Drawing.Point(18, 90);
+            this.SubjTeachErrorMsg_Pnl.Name = "SubjTeachErrorMsg_Pnl";
+            this.SubjTeachErrorMsg_Pnl.Size = new System.Drawing.Size(74, 15);
+            this.SubjTeachErrorMsg_Pnl.TabIndex = 8;
+            this.SubjTeachErrorMsg_Pnl.Text = "Incorrect data";
+            this.SubjTeachErrorMsg_Pnl.Visible = false;
+            // 
+            // SubjTeach_CBox
+            // 
+            this.SubjTeach_CBox.BackColor = System.Drawing.Color.Transparent;
+            this.SubjTeach_CBox.BorderColor = System.Drawing.Color.Gray;
+            this.SubjTeach_CBox.BorderRadius = 3;
+            this.SubjTeach_CBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.SubjTeach_CBox.DropDownHeight = 120;
+            this.SubjTeach_CBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SubjTeach_CBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SubjTeach_CBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SubjTeach_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.SubjTeach_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.SubjTeach_CBox.IntegralHeight = false;
+            this.SubjTeach_CBox.ItemHeight = 30;
+            this.SubjTeach_CBox.Location = new System.Drawing.Point(501, 36);
+            this.SubjTeach_CBox.Name = "SubjTeach_CBox";
+            this.SubjTeach_CBox.Size = new System.Drawing.Size(293, 36);
+            this.SubjTeach_CBox.TabIndex = 7;
+            // 
+            // SubjTeachNext_Btn
+            // 
+            this.SubjTeachNext_Btn.BorderRadius = 10;
+            this.SubjTeachNext_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.SubjTeachNext_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.SubjTeachNext_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.SubjTeachNext_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.SubjTeachNext_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.SubjTeachNext_Btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.SubjTeachNext_Btn.ForeColor = System.Drawing.Color.White;
+            this.SubjTeachNext_Btn.Location = new System.Drawing.Point(651, 79);
+            this.SubjTeachNext_Btn.Name = "SubjTeachNext_Btn";
+            this.SubjTeachNext_Btn.Size = new System.Drawing.Size(143, 31);
+            this.SubjTeachNext_Btn.TabIndex = 6;
+            this.SubjTeachNext_Btn.Text = "Next";
+            // 
+            // SubjTeach_Lbl
+            // 
+            this.SubjTeach_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.SubjTeach_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubjTeach_Lbl.ForeColor = System.Drawing.Color.Gray;
+            this.SubjTeach_Lbl.Location = new System.Drawing.Point(421, 33);
+            this.SubjTeach_Lbl.Name = "SubjTeach_Lbl";
+            this.SubjTeach_Lbl.Size = new System.Drawing.Size(43, 15);
+            this.SubjTeach_Lbl.TabIndex = 35;
+            this.SubjTeach_Lbl.Text = "Teacher";
+            // 
+            // SubjDep_CBox
+            // 
+            this.SubjDep_CBox.BackColor = System.Drawing.Color.Transparent;
+            this.SubjDep_CBox.BorderColor = System.Drawing.Color.Gray;
+            this.SubjDep_CBox.BorderRadius = 3;
+            this.SubjDep_CBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.SubjDep_CBox.DropDownHeight = 120;
+            this.SubjDep_CBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SubjDep_CBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SubjDep_CBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SubjDep_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.SubjDep_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.SubjDep_CBox.IntegralHeight = false;
+            this.SubjDep_CBox.ItemHeight = 30;
+            this.SubjDep_CBox.Location = new System.Drawing.Point(97, 32);
+            this.SubjDep_CBox.Name = "SubjDep_CBox";
+            this.SubjDep_CBox.Size = new System.Drawing.Size(293, 36);
+            this.SubjDep_CBox.TabIndex = 7;
+            // 
+            // SubjDep_Lbl
+            // 
+            this.SubjDep_Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.SubjDep_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubjDep_Lbl.ForeColor = System.Drawing.Color.Gray;
+            this.SubjDep_Lbl.Location = new System.Drawing.Point(17, 33);
+            this.SubjDep_Lbl.Name = "SubjDep_Lbl";
+            this.SubjDep_Lbl.Size = new System.Drawing.Size(65, 15);
+            this.SubjDep_Lbl.TabIndex = 35;
+            this.SubjDep_Lbl.Text = "Department";
             // 
             // StdSub_Pnl
             // 
@@ -924,453 +1431,6 @@
             this.StdName_Txt.Size = new System.Drawing.Size(303, 31);
             this.StdName_Txt.TabIndex = 1;
             // 
-            // SubjSub_Pnl
-            // 
-            this.SubjSub_Pnl.BackColor = System.Drawing.Color.White;
-            this.SubjSub_Pnl.Controls.Add(this.SubjTimeAndLoc_Pnl);
-            this.SubjSub_Pnl.Controls.Add(this.SubjInfo_Pnl);
-            this.SubjSub_Pnl.Controls.Add(this.SubjTeach_Pnl);
-            this.SubjSub_Pnl.Location = new System.Drawing.Point(26, 61);
-            this.SubjSub_Pnl.Name = "SubjSub_Pnl";
-            this.SubjSub_Pnl.Size = new System.Drawing.Size(818, 422);
-            this.SubjSub_Pnl.TabIndex = 10;
-            // 
-            // SubjTimeAndLoc_Pnl
-            // 
-            this.SubjTimeAndLoc_Pnl.Controls.Add(this.SubjTAndLoc_Lbl);
-            this.SubjTimeAndLoc_Pnl.Controls.Add(this.SubjDay_CBox);
-            this.SubjTimeAndLoc_Pnl.Controls.Add(this.SubjFloor_CBox);
-            this.SubjTimeAndLoc_Pnl.Controls.Add(this.SubjBuilding_CBox);
-            this.SubjTimeAndLoc_Pnl.Controls.Add(this.SubjRoom_CBox);
-            this.SubjTimeAndLoc_Pnl.Controls.Add(this.SubjTimeAndLocErrorMsg_Lbl);
-            this.SubjTimeAndLoc_Pnl.Controls.Add(this.SubjEndT_Lbl);
-            this.SubjTimeAndLoc_Pnl.Controls.Add(this.AddRoom_Btn);
-            this.SubjTimeAndLoc_Pnl.Controls.Add(this.SubjTAndLocNext_Btn);
-            this.SubjTimeAndLoc_Pnl.Controls.Add(this.SubjStartT_Lbl);
-            this.SubjTimeAndLoc_Pnl.Controls.Add(this.SubjEndT_CBox);
-            this.SubjTimeAndLoc_Pnl.Controls.Add(this.SubjFloor_Lbl);
-            this.SubjTimeAndLoc_Pnl.Controls.Add(this.SubjDay_Lbl);
-            this.SubjTimeAndLoc_Pnl.Controls.Add(this.SubjBuilding_Lbl);
-            this.SubjTimeAndLoc_Pnl.Controls.Add(this.SubjStartT_CBox);
-            this.SubjTimeAndLoc_Pnl.Controls.Add(this.SubjRoom_Lbl);
-            this.SubjTimeAndLoc_Pnl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SubjTimeAndLoc_Pnl.Location = new System.Drawing.Point(0, 128);
-            this.SubjTimeAndLoc_Pnl.Name = "SubjTimeAndLoc_Pnl";
-            this.SubjTimeAndLoc_Pnl.Size = new System.Drawing.Size(818, 179);
-            this.SubjTimeAndLoc_Pnl.TabIndex = 51;
-            // 
-            // SubjTAndLoc_Lbl
-            // 
-            this.SubjTAndLoc_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.SubjTAndLoc_Lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubjTAndLoc_Lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
-            this.SubjTAndLoc_Lbl.Location = new System.Drawing.Point(13, 4);
-            this.SubjTAndLoc_Lbl.Name = "SubjTAndLoc_Lbl";
-            this.SubjTAndLoc_Lbl.Size = new System.Drawing.Size(141, 23);
-            this.SubjTAndLoc_Lbl.TabIndex = 32;
-            this.SubjTAndLoc_Lbl.Text = "Time and location";
-            // 
-            // SubjDay_CBox
-            // 
-            this.SubjDay_CBox.BackColor = System.Drawing.Color.Transparent;
-            this.SubjDay_CBox.BorderColor = System.Drawing.Color.Gray;
-            this.SubjDay_CBox.BorderRadius = 3;
-            this.SubjDay_CBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.SubjDay_CBox.DropDownHeight = 120;
-            this.SubjDay_CBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.SubjDay_CBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SubjDay_CBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SubjDay_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.SubjDay_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.SubjDay_CBox.IntegralHeight = false;
-            this.SubjDay_CBox.ItemHeight = 30;
-            this.SubjDay_CBox.Location = new System.Drawing.Point(499, 36);
-            this.SubjDay_CBox.Name = "SubjDay_CBox";
-            this.SubjDay_CBox.Size = new System.Drawing.Size(291, 36);
-            this.SubjDay_CBox.TabIndex = 7;
-            // 
-            // SubjRoom_CBox
-            // 
-            this.SubjRoom_CBox.BackColor = System.Drawing.Color.Transparent;
-            this.SubjRoom_CBox.BorderColor = System.Drawing.Color.Gray;
-            this.SubjRoom_CBox.BorderRadius = 3;
-            this.SubjRoom_CBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.SubjRoom_CBox.DropDownHeight = 120;
-            this.SubjRoom_CBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.SubjRoom_CBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SubjRoom_CBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SubjRoom_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.SubjRoom_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.SubjRoom_CBox.IntegralHeight = false;
-            this.SubjRoom_CBox.ItemHeight = 30;
-            this.SubjRoom_CBox.Location = new System.Drawing.Point(319, 36);
-            this.SubjRoom_CBox.Name = "SubjRoom_CBox";
-            this.SubjRoom_CBox.Size = new System.Drawing.Size(63, 36);
-            this.SubjRoom_CBox.TabIndex = 7;
-            // 
-            // SubjTimeAndLocErrorMsg_Lbl
-            // 
-            this.SubjTimeAndLocErrorMsg_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.SubjTimeAndLocErrorMsg_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.SubjTimeAndLocErrorMsg_Lbl.ForeColor = System.Drawing.Color.Red;
-            this.SubjTimeAndLocErrorMsg_Lbl.Location = new System.Drawing.Point(17, 151);
-            this.SubjTimeAndLocErrorMsg_Lbl.Name = "SubjTimeAndLocErrorMsg_Lbl";
-            this.SubjTimeAndLocErrorMsg_Lbl.Size = new System.Drawing.Size(74, 15);
-            this.SubjTimeAndLocErrorMsg_Lbl.TabIndex = 8;
-            this.SubjTimeAndLocErrorMsg_Lbl.Text = "Incorrect data";
-            this.SubjTimeAndLocErrorMsg_Lbl.Visible = false;
-            // 
-            // SubjEndT_Lbl
-            // 
-            this.SubjEndT_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.SubjEndT_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubjEndT_Lbl.ForeColor = System.Drawing.Color.Gray;
-            this.SubjEndT_Lbl.Location = new System.Drawing.Point(284, 75);
-            this.SubjEndT_Lbl.Name = "SubjEndT_Lbl";
-            this.SubjEndT_Lbl.Size = new System.Drawing.Size(51, 15);
-            this.SubjEndT_Lbl.TabIndex = 35;
-            this.SubjEndT_Lbl.Text = "End Time";
-            // 
-            // AddRoom_Btn
-            // 
-            this.AddRoom_Btn.BorderRadius = 10;
-            this.AddRoom_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.AddRoom_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.AddRoom_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.AddRoom_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.AddRoom_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.AddRoom_Btn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.AddRoom_Btn.ForeColor = System.Drawing.Color.White;
-            this.AddRoom_Btn.Location = new System.Drawing.Point(500, 105);
-            this.AddRoom_Btn.Name = "AddRoom_Btn";
-            this.AddRoom_Btn.Size = new System.Drawing.Size(139, 31);
-            this.AddRoom_Btn.TabIndex = 6;
-            this.AddRoom_Btn.Text = "Add room";
-            // 
-            // SubjTAndLocNext_Btn
-            // 
-            this.SubjTAndLocNext_Btn.BorderRadius = 10;
-            this.SubjTAndLocNext_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.SubjTAndLocNext_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.SubjTAndLocNext_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.SubjTAndLocNext_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.SubjTAndLocNext_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.SubjTAndLocNext_Btn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.SubjTAndLocNext_Btn.ForeColor = System.Drawing.Color.White;
-            this.SubjTAndLocNext_Btn.Location = new System.Drawing.Point(650, 105);
-            this.SubjTAndLocNext_Btn.Name = "SubjTAndLocNext_Btn";
-            this.SubjTAndLocNext_Btn.Size = new System.Drawing.Size(139, 31);
-            this.SubjTAndLocNext_Btn.TabIndex = 6;
-            this.SubjTAndLocNext_Btn.Text = "Next";
-            // 
-            // SubjStartT_Lbl
-            // 
-            this.SubjStartT_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.SubjStartT_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubjStartT_Lbl.ForeColor = System.Drawing.Color.Gray;
-            this.SubjStartT_Lbl.Location = new System.Drawing.Point(131, 75);
-            this.SubjStartT_Lbl.Name = "SubjStartT_Lbl";
-            this.SubjStartT_Lbl.Size = new System.Drawing.Size(55, 15);
-            this.SubjStartT_Lbl.TabIndex = 35;
-            this.SubjStartT_Lbl.Text = "Start Time";
-            // 
-            // SubjEndT_CBox
-            // 
-            this.SubjEndT_CBox.BackColor = System.Drawing.Color.Transparent;
-            this.SubjEndT_CBox.BorderColor = System.Drawing.Color.Gray;
-            this.SubjEndT_CBox.BorderRadius = 3;
-            this.SubjEndT_CBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.SubjEndT_CBox.DropDownHeight = 120;
-            this.SubjEndT_CBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.SubjEndT_CBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SubjEndT_CBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SubjEndT_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.SubjEndT_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.SubjEndT_CBox.IntegralHeight = false;
-            this.SubjEndT_CBox.ItemHeight = 30;
-            this.SubjEndT_CBox.Location = new System.Drawing.Point(245, 99);
-            this.SubjEndT_CBox.Name = "SubjEndT_CBox";
-            this.SubjEndT_CBox.Size = new System.Drawing.Size(137, 36);
-            this.SubjEndT_CBox.TabIndex = 7;
-            // 
-            // SubjDay_Lbl
-            // 
-            this.SubjDay_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.SubjDay_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubjDay_Lbl.ForeColor = System.Drawing.Color.Gray;
-            this.SubjDay_Lbl.Location = new System.Drawing.Point(423, 36);
-            this.SubjDay_Lbl.Name = "SubjDay_Lbl";
-            this.SubjDay_Lbl.Size = new System.Drawing.Size(23, 15);
-            this.SubjDay_Lbl.TabIndex = 35;
-            this.SubjDay_Lbl.Text = "Day";
-            // 
-            // SubjStartT_CBox
-            // 
-            this.SubjStartT_CBox.BackColor = System.Drawing.Color.Transparent;
-            this.SubjStartT_CBox.BorderColor = System.Drawing.Color.Gray;
-            this.SubjStartT_CBox.BorderRadius = 3;
-            this.SubjStartT_CBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.SubjStartT_CBox.DropDownHeight = 120;
-            this.SubjStartT_CBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.SubjStartT_CBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SubjStartT_CBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SubjStartT_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.SubjStartT_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.SubjStartT_CBox.IntegralHeight = false;
-            this.SubjStartT_CBox.ItemHeight = 30;
-            this.SubjStartT_CBox.Location = new System.Drawing.Point(92, 98);
-            this.SubjStartT_CBox.Name = "SubjStartT_CBox";
-            this.SubjStartT_CBox.Size = new System.Drawing.Size(137, 36);
-            this.SubjStartT_CBox.TabIndex = 7;
-            // 
-            // SubjRoom_Lbl
-            // 
-            this.SubjRoom_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.SubjRoom_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubjRoom_Lbl.ForeColor = System.Drawing.Color.Gray;
-            this.SubjRoom_Lbl.Location = new System.Drawing.Point(279, 37);
-            this.SubjRoom_Lbl.Name = "SubjRoom_Lbl";
-            this.SubjRoom_Lbl.Size = new System.Drawing.Size(34, 15);
-            this.SubjRoom_Lbl.TabIndex = 35;
-            this.SubjRoom_Lbl.Text = "Room";
-            // 
-            // SubjInfo_Pnl
-            // 
-            this.SubjInfo_Pnl.Controls.Add(this.SubjYear_CBox);
-            this.SubjInfo_Pnl.Controls.Add(this.SubjName_Txt);
-            this.SubjInfo_Pnl.Controls.Add(this.SubjYear_Lbl);
-            this.SubjInfo_Pnl.Controls.Add(this.SubjName_Lbl);
-            this.SubjInfo_Pnl.Controls.Add(this.SubjID_Txt);
-            this.SubjInfo_Pnl.Controls.Add(this.SubjInfo_Lbl);
-            this.SubjInfo_Pnl.Controls.Add(this.SubjID_Lbl);
-            this.SubjInfo_Pnl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubjInfo_Pnl.Location = new System.Drawing.Point(0, 0);
-            this.SubjInfo_Pnl.Name = "SubjInfo_Pnl";
-            this.SubjInfo_Pnl.Size = new System.Drawing.Size(818, 128);
-            this.SubjInfo_Pnl.TabIndex = 36;
-            // 
-            // SubjYear_CBox
-            // 
-            this.SubjYear_CBox.BackColor = System.Drawing.Color.Transparent;
-            this.SubjYear_CBox.BorderColor = System.Drawing.Color.Gray;
-            this.SubjYear_CBox.BorderRadius = 3;
-            this.SubjYear_CBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.SubjYear_CBox.DropDownHeight = 120;
-            this.SubjYear_CBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.SubjYear_CBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SubjYear_CBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SubjYear_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.SubjYear_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.SubjYear_CBox.IntegralHeight = false;
-            this.SubjYear_CBox.ItemHeight = 30;
-            this.SubjYear_CBox.Location = new System.Drawing.Point(502, 34);
-            this.SubjYear_CBox.Name = "SubjYear_CBox";
-            this.SubjYear_CBox.Size = new System.Drawing.Size(293, 36);
-            this.SubjYear_CBox.TabIndex = 7;
-            // 
-            // SubjName_Txt
-            // 
-            this.SubjName_Txt.BorderColor = System.Drawing.Color.Gray;
-            this.SubjName_Txt.BorderRadius = 3;
-            this.SubjName_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.SubjName_Txt.DefaultText = "";
-            this.SubjName_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.SubjName_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.SubjName_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.SubjName_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.SubjName_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SubjName_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.SubjName_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SubjName_Txt.Location = new System.Drawing.Point(92, 34);
-            this.SubjName_Txt.MaxLength = 50;
-            this.SubjName_Txt.Name = "SubjName_Txt";
-            this.SubjName_Txt.PasswordChar = '\0';
-            this.SubjName_Txt.PlaceholderText = "Name";
-            this.SubjName_Txt.SelectedText = "";
-            this.SubjName_Txt.Size = new System.Drawing.Size(293, 36);
-            this.SubjName_Txt.TabIndex = 1;
-            // 
-            // SubjYear_Lbl
-            // 
-            this.SubjYear_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.SubjYear_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubjYear_Lbl.ForeColor = System.Drawing.Color.Gray;
-            this.SubjYear_Lbl.Location = new System.Drawing.Point(428, 34);
-            this.SubjYear_Lbl.Name = "SubjYear_Lbl";
-            this.SubjYear_Lbl.Size = new System.Drawing.Size(26, 15);
-            this.SubjYear_Lbl.TabIndex = 35;
-            this.SubjYear_Lbl.Text = "Year";
-            // 
-            // SubjName_Lbl
-            // 
-            this.SubjName_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.SubjName_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubjName_Lbl.ForeColor = System.Drawing.Color.Gray;
-            this.SubjName_Lbl.Location = new System.Drawing.Point(18, 34);
-            this.SubjName_Lbl.Name = "SubjName_Lbl";
-            this.SubjName_Lbl.Size = new System.Drawing.Size(34, 15);
-            this.SubjName_Lbl.TabIndex = 21;
-            this.SubjName_Lbl.Text = "Name";
-            // 
-            // SubjID_Txt
-            // 
-            this.SubjID_Txt.BorderColor = System.Drawing.Color.Gray;
-            this.SubjID_Txt.BorderRadius = 3;
-            this.SubjID_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.SubjID_Txt.DefaultText = "";
-            this.SubjID_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.SubjID_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.SubjID_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.SubjID_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.SubjID_Txt.Enabled = false;
-            this.SubjID_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SubjID_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.SubjID_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SubjID_Txt.Location = new System.Drawing.Point(92, 83);
-            this.SubjID_Txt.MaxLength = 20;
-            this.SubjID_Txt.Name = "SubjID_Txt";
-            this.SubjID_Txt.PasswordChar = '\0';
-            this.SubjID_Txt.PlaceholderText = "Name";
-            this.SubjID_Txt.SelectedText = "";
-            this.SubjID_Txt.Size = new System.Drawing.Size(295, 36);
-            this.SubjID_Txt.TabIndex = 1;
-            // 
-            // SubjInfo_Lbl
-            // 
-            this.SubjInfo_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.SubjInfo_Lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubjInfo_Lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
-            this.SubjInfo_Lbl.Location = new System.Drawing.Point(15, 5);
-            this.SubjInfo_Lbl.Name = "SubjInfo_Lbl";
-            this.SubjInfo_Lbl.Size = new System.Drawing.Size(156, 23);
-            this.SubjInfo_Lbl.TabIndex = 32;
-            this.SubjInfo_Lbl.Text = "Subject Information";
-            // 
-            // SubjID_Lbl
-            // 
-            this.SubjID_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.SubjID_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubjID_Lbl.ForeColor = System.Drawing.Color.Gray;
-            this.SubjID_Lbl.Location = new System.Drawing.Point(20, 83);
-            this.SubjID_Lbl.Name = "SubjID_Lbl";
-            this.SubjID_Lbl.Size = new System.Drawing.Size(14, 15);
-            this.SubjID_Lbl.TabIndex = 21;
-            this.SubjID_Lbl.Text = "ID";
-            // 
-            // SubjTeach_Pnl
-            // 
-            this.SubjTeach_Pnl.Controls.Add(this.SubjTeachTeacher_lbl);
-            this.SubjTeach_Pnl.Controls.Add(this.SubjTeachErrorMsg_Pnl);
-            this.SubjTeach_Pnl.Controls.Add(this.SubjTeach_CBox);
-            this.SubjTeach_Pnl.Controls.Add(this.SubjTeachNext_Btn);
-            this.SubjTeach_Pnl.Controls.Add(this.SubjTeach_Lbl);
-            this.SubjTeach_Pnl.Controls.Add(this.SubjDep_CBox);
-            this.SubjTeach_Pnl.Controls.Add(this.SubjDep_Lbl);
-            this.SubjTeach_Pnl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.SubjTeach_Pnl.Location = new System.Drawing.Point(0, 307);
-            this.SubjTeach_Pnl.Name = "SubjTeach_Pnl";
-            this.SubjTeach_Pnl.Size = new System.Drawing.Size(818, 115);
-            this.SubjTeach_Pnl.TabIndex = 50;
-            // 
-            // SubjTeachTeacher_lbl
-            // 
-            this.SubjTeachTeacher_lbl.BackColor = System.Drawing.Color.Transparent;
-            this.SubjTeachTeacher_lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubjTeachTeacher_lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
-            this.SubjTeachTeacher_lbl.Location = new System.Drawing.Point(15, 3);
-            this.SubjTeachTeacher_lbl.Name = "SubjTeachTeacher_lbl";
-            this.SubjTeachTeacher_lbl.Size = new System.Drawing.Size(63, 23);
-            this.SubjTeachTeacher_lbl.TabIndex = 32;
-            this.SubjTeachTeacher_lbl.Text = "Teacher";
-            // 
-            // SubjTeachErrorMsg_Pnl
-            // 
-            this.SubjTeachErrorMsg_Pnl.BackColor = System.Drawing.Color.Transparent;
-            this.SubjTeachErrorMsg_Pnl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.SubjTeachErrorMsg_Pnl.ForeColor = System.Drawing.Color.Red;
-            this.SubjTeachErrorMsg_Pnl.Location = new System.Drawing.Point(18, 90);
-            this.SubjTeachErrorMsg_Pnl.Name = "SubjTeachErrorMsg_Pnl";
-            this.SubjTeachErrorMsg_Pnl.Size = new System.Drawing.Size(74, 15);
-            this.SubjTeachErrorMsg_Pnl.TabIndex = 8;
-            this.SubjTeachErrorMsg_Pnl.Text = "Incorrect data";
-            this.SubjTeachErrorMsg_Pnl.Visible = false;
-            // 
-            // SubjTeach_CBox
-            // 
-            this.SubjTeach_CBox.BackColor = System.Drawing.Color.Transparent;
-            this.SubjTeach_CBox.BorderColor = System.Drawing.Color.Gray;
-            this.SubjTeach_CBox.BorderRadius = 3;
-            this.SubjTeach_CBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.SubjTeach_CBox.DropDownHeight = 120;
-            this.SubjTeach_CBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.SubjTeach_CBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SubjTeach_CBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SubjTeach_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.SubjTeach_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.SubjTeach_CBox.IntegralHeight = false;
-            this.SubjTeach_CBox.ItemHeight = 30;
-            this.SubjTeach_CBox.Location = new System.Drawing.Point(501, 36);
-            this.SubjTeach_CBox.Name = "SubjTeach_CBox";
-            this.SubjTeach_CBox.Size = new System.Drawing.Size(293, 36);
-            this.SubjTeach_CBox.TabIndex = 7;
-            // 
-            // SubjTeachNext_Btn
-            // 
-            this.SubjTeachNext_Btn.BorderRadius = 10;
-            this.SubjTeachNext_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.SubjTeachNext_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.SubjTeachNext_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.SubjTeachNext_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.SubjTeachNext_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.SubjTeachNext_Btn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.SubjTeachNext_Btn.ForeColor = System.Drawing.Color.White;
-            this.SubjTeachNext_Btn.Location = new System.Drawing.Point(651, 79);
-            this.SubjTeachNext_Btn.Name = "SubjTeachNext_Btn";
-            this.SubjTeachNext_Btn.Size = new System.Drawing.Size(143, 31);
-            this.SubjTeachNext_Btn.TabIndex = 6;
-            this.SubjTeachNext_Btn.Text = "Next";
-            // 
-            // SubjTeach_Lbl
-            // 
-            this.SubjTeach_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.SubjTeach_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubjTeach_Lbl.ForeColor = System.Drawing.Color.Gray;
-            this.SubjTeach_Lbl.Location = new System.Drawing.Point(421, 33);
-            this.SubjTeach_Lbl.Name = "SubjTeach_Lbl";
-            this.SubjTeach_Lbl.Size = new System.Drawing.Size(43, 15);
-            this.SubjTeach_Lbl.TabIndex = 35;
-            this.SubjTeach_Lbl.Text = "Teacher";
-            // 
-            // SubjDep_CBox
-            // 
-            this.SubjDep_CBox.BackColor = System.Drawing.Color.Transparent;
-            this.SubjDep_CBox.BorderColor = System.Drawing.Color.Gray;
-            this.SubjDep_CBox.BorderRadius = 3;
-            this.SubjDep_CBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.SubjDep_CBox.DropDownHeight = 120;
-            this.SubjDep_CBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.SubjDep_CBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SubjDep_CBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SubjDep_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.SubjDep_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.SubjDep_CBox.IntegralHeight = false;
-            this.SubjDep_CBox.ItemHeight = 30;
-            this.SubjDep_CBox.Location = new System.Drawing.Point(97, 32);
-            this.SubjDep_CBox.Name = "SubjDep_CBox";
-            this.SubjDep_CBox.Size = new System.Drawing.Size(293, 36);
-            this.SubjDep_CBox.TabIndex = 7;
-            // 
-            // SubjDep_Lbl
-            // 
-            this.SubjDep_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.SubjDep_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubjDep_Lbl.ForeColor = System.Drawing.Color.Gray;
-            this.SubjDep_Lbl.Location = new System.Drawing.Point(17, 33);
-            this.SubjDep_Lbl.Name = "SubjDep_Lbl";
-            this.SubjDep_Lbl.Size = new System.Drawing.Size(65, 15);
-            this.SubjDep_Lbl.TabIndex = 35;
-            this.SubjDep_Lbl.Text = "Department";
-            // 
             // DepSub_Pnl
             // 
             this.DepSub_Pnl.AutoScroll = true;
@@ -2002,66 +2062,6 @@
             this.Submit_Btn.Text = "Submit";
             this.Submit_Btn.Click += new System.EventHandler(this.Submit_Btn_Click);
             // 
-            // SubjBuilding_Lbl
-            // 
-            this.SubjBuilding_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.SubjBuilding_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubjBuilding_Lbl.ForeColor = System.Drawing.Color.Gray;
-            this.SubjBuilding_Lbl.Location = new System.Drawing.Point(38, 35);
-            this.SubjBuilding_Lbl.Name = "SubjBuilding_Lbl";
-            this.SubjBuilding_Lbl.Size = new System.Drawing.Size(47, 15);
-            this.SubjBuilding_Lbl.TabIndex = 35;
-            this.SubjBuilding_Lbl.Text = "Building";
-            // 
-            // SubjBuilding_CBox
-            // 
-            this.SubjBuilding_CBox.BackColor = System.Drawing.Color.Transparent;
-            this.SubjBuilding_CBox.BorderColor = System.Drawing.Color.Gray;
-            this.SubjBuilding_CBox.BorderRadius = 3;
-            this.SubjBuilding_CBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.SubjBuilding_CBox.DropDownHeight = 120;
-            this.SubjBuilding_CBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.SubjBuilding_CBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SubjBuilding_CBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SubjBuilding_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.SubjBuilding_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.SubjBuilding_CBox.IntegralHeight = false;
-            this.SubjBuilding_CBox.ItemHeight = 30;
-            this.SubjBuilding_CBox.Location = new System.Drawing.Point(90, 36);
-            this.SubjBuilding_CBox.Name = "SubjBuilding_CBox";
-            this.SubjBuilding_CBox.Size = new System.Drawing.Size(63, 36);
-            this.SubjBuilding_CBox.TabIndex = 7;
-            // 
-            // SubjFloor_Lbl
-            // 
-            this.SubjFloor_Lbl.BackColor = System.Drawing.Color.Transparent;
-            this.SubjFloor_Lbl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubjFloor_Lbl.ForeColor = System.Drawing.Color.Gray;
-            this.SubjFloor_Lbl.Location = new System.Drawing.Point(166, 35);
-            this.SubjFloor_Lbl.Name = "SubjFloor_Lbl";
-            this.SubjFloor_Lbl.Size = new System.Drawing.Size(30, 15);
-            this.SubjFloor_Lbl.TabIndex = 35;
-            this.SubjFloor_Lbl.Text = "Floor";
-            // 
-            // SubjFloor_CBox
-            // 
-            this.SubjFloor_CBox.BackColor = System.Drawing.Color.Transparent;
-            this.SubjFloor_CBox.BorderColor = System.Drawing.Color.Gray;
-            this.SubjFloor_CBox.BorderRadius = 3;
-            this.SubjFloor_CBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.SubjFloor_CBox.DropDownHeight = 120;
-            this.SubjFloor_CBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.SubjFloor_CBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SubjFloor_CBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SubjFloor_CBox.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.SubjFloor_CBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.SubjFloor_CBox.IntegralHeight = false;
-            this.SubjFloor_CBox.ItemHeight = 30;
-            this.SubjFloor_CBox.Location = new System.Drawing.Point(206, 36);
-            this.SubjFloor_CBox.Name = "SubjFloor_CBox";
-            this.SubjFloor_CBox.Size = new System.Drawing.Size(63, 36);
-            this.SubjFloor_CBox.TabIndex = 7;
-            // 
             // AUVGeneralBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2071,8 +2071,6 @@
             this.Size = new System.Drawing.Size(873, 539);
             this.Main_Pnl.ResumeLayout(false);
             this.Main_Pnl.PerformLayout();
-            this.StdSub_Pnl.ResumeLayout(false);
-            this.StdSub_Pnl.PerformLayout();
             this.SubjSub_Pnl.ResumeLayout(false);
             this.SubjTimeAndLoc_Pnl.ResumeLayout(false);
             this.SubjTimeAndLoc_Pnl.PerformLayout();
@@ -2080,6 +2078,8 @@
             this.SubjInfo_Pnl.PerformLayout();
             this.SubjTeach_Pnl.ResumeLayout(false);
             this.SubjTeach_Pnl.PerformLayout();
+            this.StdSub_Pnl.ResumeLayout(false);
+            this.StdSub_Pnl.PerformLayout();
             this.DepSub_Pnl.ResumeLayout(false);
             this.DepSub_Pnl.PerformLayout();
             this.StaffSub_Pnl.ResumeLayout(false);
