@@ -7,7 +7,7 @@
 <hr>
 
 
-# School-DB-System
+# School E-Learning Platform & DBMS
 An open-source website and desktop application designed to manage a school DB with an e-learning website for students and teachers.
 
 ## Table of Contents
