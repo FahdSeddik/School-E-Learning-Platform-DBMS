@@ -8,7 +8,7 @@
 
 
 # School-DB-System
- An open-source website and desktop application designed to manage a school DB. 
+An open-source website and desktop application designed to manage a school DB with an e-learning website for students and teachers.
 
 ## Table of Contents
 - [About the Project](#about-the-project)
